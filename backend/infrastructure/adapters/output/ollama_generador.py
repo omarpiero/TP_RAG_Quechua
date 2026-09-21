@@ -42,11 +42,38 @@ class OllamaGenerador(GeneradorTextoPort):
         modelo: str = "qwen3.5:4b",
         temperatura: float = 0.1,
         timeout: float = 120.0,
+        permanencia: str = "30m",
     ):
         self._url_base = url_base.rstrip("/")
         self._modelo = modelo
         self._temperatura = temperatura
         self._timeout = timeout
+        self._permanencia = permanencia
+
+    def precalentar(self) -> bool:
+        """Carga el modelo en memoria antes de la primera consulta real.
+
+        Sin esto la primera respuesta tarda unos 47 segundos frente a los 3,3 habituales,
+        porque incluye el traslado de los pesos a la memoria de video. RNF-01 fija el limite
+        en 8 segundos, de modo que la precarga no es una optimizacion sino la condicion para
+        cumplirlo en la consulta inicial."""
+        try:
+            respuesta = httpx.post(
+                f"{self._url_base}/api/generate",
+                json={
+                    "model": self._modelo,
+                    "prompt": "ok",
+                    "stream": False,
+                    "think": False,
+                    "keep_alive": self._permanencia,
+                    "options": {"num_predict": 1},
+                },
+                timeout=self._timeout,
+            )
+            respuesta.raise_for_status()
+            return True
+        except httpx.HTTPError:
+            return False
 
     def redactar(
         self,
@@ -74,6 +101,7 @@ class OllamaGenerador(GeneradorTextoPort):
                 "prompt": prompt,
                 "stream": False,
                 "think": False,
+                "keep_alive": self._permanencia,
                 "options": {"temperature": self._temperatura, "num_predict": 300},
             },
             timeout=self._timeout,

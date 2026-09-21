@@ -61,7 +61,8 @@ consultas. Reproducibles con `scripts/calibrar_umbral.py`.
 | Umbral de abstención calibrado | 0.48 |
 | Falsos positivos fuera de cobertura | 0 de 28 |
 | Consultas atendibles conservadas | 100 % |
-| Latencia de respuesta completa | 3.3 s en caliente, 47 s en la primera consulta |
+| Latencia de respuesta completa | 3.5 s, incluida la primera consulta |
+| Ejecución del modelo | 100 % en GPU (3.1 GB de los 8 GB disponibles) |
 
 Dos desviaciones respecto de la prueba de concepto, ambas documentadas en el código:
 

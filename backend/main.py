@@ -1,4 +1,5 @@
 import logging
+import threading
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
@@ -13,7 +14,10 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(messag
 
 @asynccontextmanager
 async def ciclo_vida(app: FastAPI):
-    app.state.contenedor = Contenedor()
+    contenedor = Contenedor()
+    app.state.contenedor = contenedor
+    # En un hilo aparte para que el servicio acepte peticiones mientras el modelo se carga.
+    threading.Thread(target=contenedor.generador.precalentar, daemon=True).start()
     yield
 
 

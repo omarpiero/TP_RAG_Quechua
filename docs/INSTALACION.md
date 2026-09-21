@@ -77,10 +77,13 @@ consulta ni fragmento del corpus sale del dispositivo, conforme a los requisitos
 RNF-06 y al compromiso de soberanía sobre los datos declarado en el proyecto. La dirección
 y el modelo se configuran en `.env` mediante `OLLAMA_URL` y `OLLAMA_MODELO`.
 
-**Advertencia sobre la primera consulta.** La carga inicial del modelo en memoria de video
-tarda aproximadamente 47 segundos. Las consultas siguientes se resuelven en unos 3,3
-segundos, dentro del límite de 8 segundos fijado por RNF-01. Conviene lanzar una consulta
-de calentamiento antes de cualquier demostración o medición.
+**Precarga del modelo.** El back-end lanza una petición de calentamiento en un hilo aparte
+al arrancar, de modo que el modelo queda cargado en memoria de video antes de la primera
+consulta real y el servicio acepta peticiones mientras tanto. Sin esa precarga la primera
+respuesta tardaría unos 47 segundos, por encima del límite de 8 segundos fijado por RNF-01;
+con ella se resuelve en 3,5 segundos. La carga completa tarda cerca de un minuto desde que
+se levanta el servicio: conviene arrancar el back-end con antelación antes de una
+demostración.
 
 ## 4. Front-end
 
