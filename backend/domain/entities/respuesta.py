@@ -6,7 +6,7 @@ from domain.value_objects.idioma import Idioma
 
 AVISO_ALCANCE = (
     "Esta es una consulta sobre fuentes documentales publicadas; "
-    "no constituye una validacion por hablantes de la comunidad."
+    "no constituye una validación por hablantes de la comunidad."
 )
 
 

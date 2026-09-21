@@ -16,5 +16,5 @@ class Procedencia:
     def citar(self) -> str:
         cita = f"{self.documento}, p. {self.pagina}"
         if self.derivado_ocr:
-            cita += " (texto derivado de OCR, puede contener errores de transcripcion)"
+            cita += " (texto derivado de OCR, puede contener errores de transcripción)"
         return cita

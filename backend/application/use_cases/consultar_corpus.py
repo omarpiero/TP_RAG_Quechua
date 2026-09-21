@@ -11,7 +11,7 @@ from domain.value_objects.idioma import Idioma
 MENSAJE_SIN_RESPALDO = {
     Idioma.ESPANOL: (
         "No dispongo de respaldo documental para esa consulta en el corpus indexado. "
-        "No propongo ninguna traduccion para evitar introducir una forma no documentada."
+        "No propongo ninguna traducción, para evitar introducir una forma no documentada."
     ),
     Idioma.INGLES: (
         "I have no documentary support for that query in the indexed corpus. "
@@ -20,7 +20,7 @@ MENSAJE_SIN_RESPALDO = {
 }
 
 MENSAJE_IDIOMA = (
-    "Solo se admiten consultas en espanol o en ingles. "
+    "Solo se admiten consultas en español o en inglés. "
     "Only queries in Spanish or English are supported."
 )
 

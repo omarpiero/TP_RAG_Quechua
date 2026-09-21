@@ -12,4 +12,4 @@ class Idioma(str, Enum):
 
     @property
     def nombre_legible(self) -> str:
-        return {"es": "espanol", "en": "ingles", "xx": "no soportado"}[self.value]
+        return {"es": "español", "en": "inglés", "xx": "no soportado"}[self.value]
