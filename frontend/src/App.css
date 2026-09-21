@@ -1,0 +1,258 @@
+.aplicacion {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+  font-size: 1rem;
+}
+
+/* HU-11 escenario 2: ampliar la tipografia sin que se pierda contenido. */
+.aplicacion--grande { font-size: 1.15rem; }
+.aplicacion--mayor { font-size: 1.35rem; }
+
+.cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  border-bottom: 2px solid var(--borde);
+  padding-bottom: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.cabecera__titulo {
+  font-size: 1.6em;
+  margin: 0 0 0.25rem;
+  line-height: 1.25;
+}
+
+.cabecera__subtitulo {
+  margin: 0;
+  color: var(--tinta-suave);
+  font-size: 0.95em;
+}
+
+.cabecera__tipografia {
+  flex-shrink: 0;
+  background: var(--papel-hundido);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  padding: 0.5rem 0.85rem;
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--tinta);
+}
+
+.caja {
+  background: var(--papel-hundido);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.caja__etiqueta {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.caja__fila {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.caja__entrada {
+  flex: 1 1 320px;
+  padding: 0.85rem 1rem;
+  font-size: 1em;
+  font-family: inherit;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--tinta);
+}
+
+.caja__boton {
+  padding: 0.85rem 1.6rem;
+  font-size: 1em;
+  font-weight: 600;
+  color: #fff;
+  background: var(--acento);
+  border: none;
+  border-radius: 8px;
+}
+
+.caja__ejemplos {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+  font-size: 0.9em;
+}
+
+.caja__ejemplos-titulo { color: var(--tinta-suave); }
+
+.caja__ejemplo {
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+  font-size: 1em;
+  color: var(--acento);
+}
+
+.cargando,
+.error {
+  margin-top: 1.5rem;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+}
+
+.cargando {
+  background: var(--acento-claro);
+  color: var(--tinta-suave);
+}
+
+.error {
+  background: #fdecea;
+  color: var(--error);
+  border: 1px solid #f3c6c1;
+}
+
+.respuesta {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-left: 5px solid var(--acento);
+  border-radius: 10px;
+}
+
+.respuesta--abstenida {
+  border-left-color: var(--abstencion);
+  background: var(--abstencion-fondo);
+}
+
+.respuesta__titulo {
+  margin: 0 0 0.75rem;
+  font-size: 1.05em;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--tinta-suave);
+}
+
+.respuesta__texto {
+  margin: 0;
+  font-size: 1.2em;
+  line-height: 1.55;
+}
+
+.respaldo {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--borde);
+}
+
+.respaldo__titulo {
+  margin: 0 0 0.75rem;
+  font-size: 0.95em;
+  color: var(--tinta-suave);
+}
+
+.respaldo__item + .respaldo__item {
+  margin-top: 1rem;
+}
+
+.respaldo__cita {
+  margin: 0 0 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--papel-hundido);
+  border-radius: 8px;
+  font-style: italic;
+}
+
+.respaldo__origen {
+  margin: 0;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.respaldo__metricas {
+  margin: 0.15rem 0 0;
+  font-size: 0.85em;
+  color: var(--tinta-suave);
+}
+
+.respaldo__aviso-ocr {
+  margin: 0.4rem 0 0;
+  font-size: 0.85em;
+  color: var(--abstencion);
+}
+
+.respuesta__pie {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--borde);
+  font-size: 0.85em;
+  color: var(--tinta-suave);
+}
+
+.respuesta__aviso,
+.respuesta__similitud { margin: 0.2rem 0; }
+
+.historial {
+  margin-top: 2.5rem;
+}
+
+.historial__titulo {
+  font-size: 1em;
+  color: var(--tinta-suave);
+  margin: 0 0 0.75rem;
+}
+
+.historial__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.historial__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--borde);
+  font-size: 0.95em;
+}
+
+.historial__marca {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--acento);
+  flex-shrink: 0;
+}
+
+.historial__marca--abstenida { background: var(--abstencion); }
+
+.historial__consulta { flex: 1; }
+
+.historial__estado {
+  font-size: 0.85em;
+  color: var(--tinta-suave);
+}
+
+.pie {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--borde);
+  font-size: 0.8em;
+  color: var(--tinta-suave);
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  .cabecera { flex-direction: column; }
+  .caja__boton { width: 100%; }
+}
