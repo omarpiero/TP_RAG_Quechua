@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import { consultar, obtenerEstado } from "./api";
 import CajaConsulta from "./componentes/CajaConsulta";
+import GestionFuentes from "./componentes/GestionFuentes";
 import Historial from "./componentes/Historial";
 import Respuesta from "./componentes/Respuesta";
 import "./App.css";
@@ -9,6 +10,7 @@ import "./App.css";
 const TAMANOS = ["normal", "grande", "mayor"];
 
 export default function App() {
+  const [vista, setVista] = useState("consulta");
   const [resultado, setResultado] = useState(null);
   const [historial, setHistorial] = useState([]);
   const [estado, setEstado] = useState(null);
@@ -58,14 +60,35 @@ export default function App() {
         </button>
       </header>
 
+      <nav className="pestanas">
+        <button
+          className={`pestana ${vista === "consulta" ? "pestana--activa" : ""}`}
+          onClick={() => setVista("consulta")}
+        >
+          Consultar
+        </button>
+        <button
+          className={`pestana ${vista === "fuentes" ? "pestana--activa" : ""}`}
+          onClick={() => setVista("fuentes")}
+        >
+          Fuentes del corpus
+        </button>
+      </nav>
+
       <main className="contenido">
-        <CajaConsulta onConsultar={lanzarConsulta} cargando={cargando} />
+        {vista === "consulta" ? (
+          <>
+            <CajaConsulta onConsultar={lanzarConsulta} cargando={cargando} />
 
-        {error && <p className="error">{error}</p>}
-        {cargando && <p className="cargando">Buscando en el corpus…</p>}
+            {error && <p className="error">{error}</p>}
+            {cargando && <p className="cargando">Buscando en el corpus…</p>}
 
-        <Respuesta resultado={resultado} />
-        <Historial entradas={historial} />
+            <Respuesta resultado={resultado} />
+            <Historial entradas={historial} />
+          </>
+        ) : (
+          <GestionFuentes />
+        )}
       </main>
 
       <footer className="pie">

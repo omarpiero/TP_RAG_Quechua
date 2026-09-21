@@ -24,5 +24,8 @@ export const listarFuentes = () => pedir("/api/fuentes");
 export const crearFuente = (fuente) =>
   pedir("/api/fuentes", { method: "POST", body: JSON.stringify(fuente) });
 
+export const actualizarFuente = (id, fuente) =>
+  pedir(`/api/fuentes/${id}`, { method: "PUT", body: JSON.stringify(fuente) });
+
 export const eliminarFuente = (id) =>
   pedir(`/api/fuentes/${id}`, { method: "DELETE" });
