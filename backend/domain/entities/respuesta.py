@@ -20,6 +20,8 @@ class Respuesta:
     similitud_maxima: float = 0.0
     momento: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
     aviso: str = AVISO_ALCANCE
+    # Con que terminos se busco realmente, cuando la consulta se tradujo antes de recuperar.
+    consulta_traducida: str | None = None
 
     def __post_init__(self):
         # RNF-08: ninguna respuesta afirmativa puede emitirse sin fuente verificable.

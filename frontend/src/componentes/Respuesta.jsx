@@ -1,7 +1,14 @@
 export default function Respuesta({ resultado }) {
   if (!resultado) return null;
 
-  const { abstenida, texto, respaldo, similitud_maxima, aviso } = resultado;
+  const {
+    abstenida,
+    texto,
+    respaldo,
+    similitud_maxima,
+    aviso,
+    consulta_traducida,
+  } = resultado;
 
   return (
     <section
@@ -11,6 +18,14 @@ export default function Respuesta({ resultado }) {
       <h2 className="respuesta__titulo">
         {abstenida ? "Sin respaldo documental" : "Respuesta"}
       </h2>
+
+      {consulta_traducida && (
+        <p className="respuesta__traduccion">
+          La consulta se tradujo al español para buscar en el corpus:{" "}
+          <strong>{consulta_traducida}</strong>. El término en quechua se toma literal del
+          fragmento, sin traducir.
+        </p>
+      )}
 
       <p className="respuesta__texto">{texto}</p>
 

@@ -142,6 +142,15 @@
   color: var(--tinta-suave);
 }
 
+.respuesta__traduccion {
+  margin: 0 0 0.9rem;
+  padding: 0.6rem 0.85rem;
+  background: var(--acento-claro);
+  border-radius: 7px;
+  font-size: 0.85em;
+  color: var(--tinta-suave);
+}
+
 .respuesta__texto {
   margin: 0;
   font-size: 1.2em;

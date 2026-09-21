@@ -25,6 +25,7 @@ class RespuestaSalida(BaseModel):
     similitud_maxima: float
     aviso: str
     respaldo: list[RespaldoSalida]
+    consulta_traducida: str | None = None
 
 
 class EntradaHistorial(BaseModel):

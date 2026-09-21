@@ -145,6 +145,74 @@ def test_toda_consulta_queda_registrada_incluida_la_abstenida():
     assert len(repositorio.no_cubiertas()) == 1
 
 
+class IndiceSensibleAlIdioma(IndiceRecuperacionPort):
+    """Devuelve una puntuacion baja para la consulta en ingles y alta para su traduccion,
+    que es el comportamiento medido sobre el corpus real."""
+
+    def indexar(self, fragmentos):
+        return 1
+
+    def recuperar(self, consulta, k=5):
+        puntuacion = 0.85 if "zorro" in consulta.lower() else 0.12
+        return [
+            FragmentoRecuperado(
+                fragmento=_fragmento("ZORRO: Atuq.", pagina=37),
+                puntuacion=PuntuacionSimilitud(puntuacion),
+            )
+        ]
+
+    def total_indexado(self):
+        return 1
+
+
+class TraductorFalso:
+    def __init__(self, traduccion="zorro"):
+        self._traduccion = traduccion
+        self.invocaciones = 0
+
+    def traducir_al_espanol(self, texto):
+        self.invocaciones += 1
+        return self._traduccion
+
+
+def test_la_traduccion_previa_rescata_la_consulta_en_ingles():
+    traductor = TraductorFalso("zorro")
+    generador = GeneradorFalso()
+    caso_uso = ConsultarCorpusUseCase(
+        indice=IndiceSensibleAlIdioma(),
+        generador=generador,
+        evaluador=EvaluadorConfianza(),
+        detector_idioma=DetectorFalso(Idioma.INGLES),
+        traductor=traductor,
+    )
+
+    respuesta = caso_uso.ejecutar("how do you say fox in Wanka Quechua?")
+
+    assert traductor.invocaciones == 1
+    assert not respuesta.abstenida
+    # Se conserva la mejor de las dos puntuaciones, no la de la consulta original.
+    assert respuesta.similitud_maxima == pytest.approx(0.85)
+    # La traduccion queda registrada: el usuario puede ver con que terminos se busco.
+    assert respuesta.consulta_traducida == "zorro"
+
+
+def test_una_traduccion_inutil_no_empeora_el_resultado():
+    """Si el traductor falla o devuelve algo irrelevante, el sistema debe comportarse como
+    si no hubiera traducido, nunca peor."""
+    caso_uso = ConsultarCorpusUseCase(
+        indice=IndiceSensibleAlIdioma(),
+        generador=GeneradorFalso(),
+        evaluador=EvaluadorConfianza(),
+        detector_idioma=DetectorFalso(Idioma.INGLES),
+        traductor=TraductorFalso("disparate"),
+    )
+
+    respuesta = caso_uso.ejecutar("how do you say fox in Wanka Quechua?")
+
+    assert respuesta.abstenida
+    assert respuesta.similitud_maxima == pytest.approx(0.12)
+
+
 def test_una_respuesta_no_abstenida_exige_respaldo():
     from domain.entities.respuesta import Respuesta
 

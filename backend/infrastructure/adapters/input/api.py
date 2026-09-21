@@ -44,6 +44,7 @@ def consultar(entrada: ConsultaEntrada, request: Request):
         idioma=respuesta.idioma.value,
         similitud_maxima=round(respuesta.similitud_maxima, 4),
         aviso=respuesta.aviso,
+        consulta_traducida=respuesta.consulta_traducida,
         respaldo=[
             RespaldoSalida(
                 fragmento_id=r.id,

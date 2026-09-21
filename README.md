@@ -56,6 +56,8 @@ consultas. Reproducibles con `scripts/calibrar_umbral.py`.
 | Métrica | Valor |
 |---|---|
 | recall@5 (español, subconjuntos A y B) | 1.000 |
+| recall@5 (inglés, subconjunto D) | 0.950 con traducción previa · 0.175 sin ella |
+| Consultas en inglés atendidas | 90 % con traducción previa · 2,5 % sin ella |
 | MRR@10 | 0.992 |
 | Latencia de recuperación | 1.7 ms (media) |
 | Umbral de abstención calibrado | 0.48 |
@@ -64,7 +66,7 @@ consultas. Reproducibles con `scripts/calibrar_umbral.py`.
 | Latencia de respuesta completa | 3.5 s, incluida la primera consulta |
 | Ejecución del modelo | 100 % en GPU (3.1 GB de los 8 GB disponibles) |
 
-Dos desviaciones respecto de la prueba de concepto, ambas documentadas en el código:
+Tres desviaciones respecto de la prueba de concepto, todas documentadas en el código:
 
 1. **Umbral 0.48 en lugar de 0.41.** El Documento 6 no fija la fórmula exacta de las
    estrategias E2 y E3; aquí ambas se calculan como coseno sobre TF-IDF. El punto de
@@ -76,6 +78,16 @@ Dos desviaciones respecto de la prueba de concepto, ambas documentadas en el có
    exactamente con el lema de una entrada lexicográfica se considera respaldo documental
    sin pasar por el umbral. No puede producir falsos positivos, porque solo se activa si la
    entrada existe literalmente en el corpus.
+
+3. **Se traduce el término depurado, no la pregunta completa.** El experimento E7 preveía
+   traducir la consulta antes de recuperar, y la prueba de concepto dejó el requisito RF-04
+   pendiente de recalibrar el umbral porque la mitad de las consultas traducidas seguía
+   quedando por debajo de la frontera. Medido aquí, la causa es que traducir la pregunta
+   entera devuelve también su fraseo en español («cómo se dice X en quechua de Wanka»), que
+   reintroduce las palabras que la depuración existe para eliminar. Traduciendo únicamente
+   el término ya depurado, las consultas atendidas en inglés pasan del 40 % al 90 % **sin
+   modificar el umbral**, de modo que la recalibración prevista en la condición C-4 no
+   resulta necesaria.
 
 ## Puesta en marcha
 
