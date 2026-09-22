@@ -97,7 +97,33 @@ npm run dev
 La interfaz queda disponible en `http://localhost:5173` y consume la interfaz de
 programación del back-end. La dirección del servicio se configura con `VITE_API_URL`.
 
-## 5. Verificación del entorno
+## 5. Verificación de los endpoints con Postman
+
+La colección `docs/Asistente_Quechua_Wanka.postman_collection.json` cubre los quince
+endpoints del sistema, organizados en cuatro carpetas, y cada petición incorpora
+comprobaciones automáticas.
+
+Para usarla: abrir Postman, pulsar **Import**, seleccionar el archivo y ejecutar la
+colección completa con el **Collection Runner**. El orden importa, porque la creación de una
+fuente guarda su identificador en una variable que emplean las peticiones siguientes. La
+variable `base_url` viene fijada a `http://127.0.0.1:8000`.
+
+Las comprobaciones no se limitan a verificar códigos de estado: validan las reglas del
+sistema. Entre otras, que ninguna respuesta afirmativa se emite sin documento y página
+(RNF-08), que una consulta fuera de cobertura no devuelve ningún fragmento (HU-06), y que
+una fuente sin licenciamiento declarado se rechaza con 422 (RNF-11).
+
+La petición de incorporación de documentos requiere seleccionar un archivo PDF a mano en la
+pestaña *Body* antes de enviarla, porque Postman no almacena el contenido de los archivos
+dentro de la colección.
+
+También puede ejecutarse desde la línea de órdenes, sin abrir Postman:
+
+```bash
+npx newman run docs/Asistente_Quechua_Wanka.postman_collection.json
+```
+
+## 6. Verificación del entorno
 
 ```bash
 cd backend
@@ -114,7 +140,7 @@ Para reproducir la calibración completa del umbral:
 .venv\Scripts\python.exe scripts/calibrar_umbral.py
 ```
 
-## 6. Incorporación de documentos al corpus
+## 7. Incorporación de documentos al corpus
 
 Desde la pestaña **Incorporar documentos** de la aplicación, o por la interfaz de
 programación:
@@ -136,7 +162,7 @@ el recall en el punto de operación del 48,3 % al 85,6 %.
 El índice se reconstruye automáticamente tras la ingesta, sin reiniciar el servicio. Para
 forzar una reconstrucción: `POST /api/corpus/reindexar`.
 
-## 7. Orden de arranque recomendado
+## 8. Orden de arranque recomendado
 
 1. Servicio de PostgreSQL (automático al iniciar Windows).
 2. Servicio de Ollama (automático tras la instalación).

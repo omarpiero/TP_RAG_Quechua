@@ -105,9 +105,13 @@ Tres desviaciones respecto de la prueba de concepto, todas documentadas en el c�
    modificar el umbral**, de modo que la recalibración prevista en la condición C-4 no
    resulta necesaria.
 
-## Puesta en marcha
+## Puesta en marcha y verificación
 
-Ver [docs/INSTALACION.md](docs/INSTALACION.md).
+- Instalación completa del entorno: [docs/INSTALACION.md](docs/INSTALACION.md)
+- Colección de Postman con los quince endpoints y sus comprobaciones automáticas:
+  [docs/Asistente_Quechua_Wanka.postman_collection.json](docs/Asistente_Quechua_Wanka.postman_collection.json)
+- Guion de la demostración: [docs/GUION_DEMO.md](docs/GUION_DEMO.md)
+- Batería de pruebas: `pytest tests/` desde `backend/`
 
 ## Alcance declarado
 
@@ -116,7 +120,21 @@ por hablantes de la comunidad ni se constituye en autoridad lingüística sobre 
 wanka. Ninguna forma quechua mostrada por el sistema es redactada por el modelo: todas
 proceden literalmente de los documentos indexados y se citan con su fuente.
 
-Pendiente para el siguiente incremento: las consultas formuladas en inglés se resuelven por
-debajo del criterio comprometido (recall@5 de 0,175) mientras no se incorpore la traducción
-previa de la consulta y se recalibre el umbral. El fallo se produce en la dirección segura:
-el sistema se abstiene en lugar de responder sin respaldo.
+### Limitaciones reconocidas de este incremento
+
+- **HU-04, consulta de contenido cultural, no está evaluada.** El material en prosa se
+  indexa y se recupera, pero no existe un conjunto de referencia con pasajes anotados que
+  permita medir su desempeño, y construirlo exige criterio lingüístico externo al equipo.
+- **El generador puede interpretar de más.** El umbral impide que el sistema invente una
+  forma quechua, pero no que el modelo atribuya un significado que el fragmento no declara.
+  Se detectó sobre «PERRO: Allqu, ashuti. (perrito) Pichi, uña allqu.», donde el modelo leyó
+  *uña* como la palabra castellana en lugar del morfema quechua. La instrucción se endureció
+  para prohibir el análisis de morfemas y la deducción por parecido con el castellano, pero
+  el riesgo no queda eliminado, solo reducido.
+- **Las cifras de los subconjuntos A y B son un límite superior.** El conjunto de evaluación
+  deriva del propio corpus indexado, de modo que sobrestima el desempeño en uso real. Un
+  conjunto verdaderamente independiente exigiría consultas formuladas por docentes de
+  Educación Intercultural Bilingüe o por hablantes de la variedad.
+- **La analítica predictiva y el despliegue móvil no forman parte de este incremento.**
+  Corresponden al PMV2 y al PMV3, y dependen de artefactos que este incremento produce: el
+  registro de consultas no cubiertas y el corpus segmentado.

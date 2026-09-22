@@ -1,0 +1,650 @@
+{
+  "info": {
+    "name": "Asistente de consulta del quechua wanka",
+    "description": "Coleccion de verificacion de la interfaz de programacion del PMV.\n\nEjecutar con el Collection Runner en el orden en que aparece: la creacion de una fuente guarda su identificador en una variable que usan las peticiones siguientes.\n\nRequisito previo: el back-end levantado en {{base_url}} y el modelo ya cargado en memoria (la primera consulta tras arrancar tarda cerca de un minuto).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000"
+    },
+    {
+      "key": "fuente_id",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Sistema",
+      "item": [
+        {
+          "name": "Estado del sistema",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/estado",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "estado"
+              ]
+            },
+            "description": "Comprueba que el indice, el generador y la base de datos estan operativos."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200', () => pm.response.to.have.status(200));",
+                  "const d = pm.response.json();",
+                  "pm.test('El corpus esta indexado', () => pm.expect(d.fragmentos_indexados).to.be.above(0));",
+                  "pm.test('El generador esta disponible', () => pm.expect(d.generador_disponible).to.be.true);",
+                  "pm.test('La base de datos esta conectada', () => pm.expect(d.base_datos_disponible).to.be.true);",
+                  "pm.test('El umbral es el calibrado', () => pm.expect(d.umbral_abstencion).to.eql(0.48));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2. Consulta del corpus",
+      "item": [
+        {
+          "name": "HU-03 y HU-07: consulta con respaldo documental",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/consultas",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "consultas"
+              ]
+            },
+            "description": "La respuesta debe citar el documento y la pagina que la sustentan.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"texto\": \"¿cómo se dice zorro en quechua wanka?\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200', () => pm.response.to.have.status(200));",
+                  "const d = pm.response.json();",
+                  "pm.test('No se abstiene', () => pm.expect(d.abstenida).to.be.false);",
+                  "pm.test('Cita al menos un fragmento', () => pm.expect(d.respaldo).to.have.lengthOf.at.least(1));",
+                  "pm.test('RNF-08: cada fragmento indica documento y pagina', () => {",
+                  "  d.respaldo.forEach(f => {",
+                  "    pm.expect(f.documento).to.be.a('string').and.not.empty;",
+                  "    pm.expect(f.pagina).to.be.a('number').and.to.be.above(0);",
+                  "  });",
+                  "});",
+                  "pm.test('Incluye el aviso de alcance', () => pm.expect(d.aviso).to.include('no constituye'));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "HU-06: abstencion ante consulta sin respaldo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/consultas",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "consultas"
+              ]
+            },
+            "description": "Salvaguarda antialucinacion. El sistema debe declarar la ausencia de informacion y no proponer ninguna forma.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"texto\": \"¿cómo se dice criptomoneda en quechua wanka?\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200', () => pm.response.to.have.status(200));",
+                  "const d = pm.response.json();",
+                  "pm.test('Se abstiene', () => pm.expect(d.abstenida).to.be.true);",
+                  "pm.test('No propone ningun fragmento', () => pm.expect(d.respaldo).to.be.an('array').that.is.empty);",
+                  "pm.test('La similitud queda por debajo del umbral', () => pm.expect(d.similitud_maxima).to.be.below(0.48));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "HU-05: consulta en ingles con traduccion previa",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/consultas",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "consultas"
+              ]
+            },
+            "description": "Solo se traduce la consulta. La forma quechua sale literal del fragmento, y la traduccion empleada queda registrada en la trazabilidad.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"texto\": \"how do you say dog in Wanka Quechua?\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200', () => pm.response.to.have.status(200));",
+                  "const d = pm.response.json();",
+                  "pm.test('Detecta el ingles', () => pm.expect(d.idioma).to.eql('en'));",
+                  "pm.test('Registra con que termino se busco', () => pm.expect(d.consulta_traducida).to.be.a('string').and.not.empty);",
+                  "pm.test('No se abstiene', () => pm.expect(d.abstenida).to.be.false);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "RF-11: historial de la sesion",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/historial",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "historial"
+              ]
+            },
+            "description": "Las consultas anteriores deben haberse persistido en la base de datos."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200', () => pm.response.to.have.status(200));",
+                  "const d = pm.response.json();",
+                  "pm.test('Devuelve las consultas registradas', () => pm.expect(d).to.have.lengthOf.at.least(1));",
+                  "pm.test('Registra tambien las abstenciones', () => {",
+                  "  pm.expect(d.some(e => e.abstenida === true)).to.be.true;",
+                  "});"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3. Gestion de fuentes (CRUD)",
+      "item": [
+        {
+          "name": "Crear fuente",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/fuentes",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "fuentes"
+              ]
+            },
+            "description": "Guarda el identificador devuelto en la variable fuente_id.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Diccionario Huanca Quechua-Castellano\",\n  \"entidad_publicadora\": \"MINEDU - Biblioteca Quechua Wanka\",\n  \"licenciamiento\": \"Acceso publico con finalidad educativa\",\n  \"fecha_extraccion\": \"2026-09-14\",\n  \"nombre_archivo\": \"diccionario-quechua-wanka.pdf\",\n  \"paginas_totales\": 60,\n  \"paginas_con_texto\": 58,\n  \"derivado_ocr\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 201', () => pm.response.to.have.status(201));",
+                  "const d = pm.response.json();",
+                  "pm.collectionVariables.set('fuente_id', d.id);",
+                  "pm.test('Calcula la cobertura de extraccion', () => pm.expect(d.cobertura_extraccion).to.be.closeTo(0.9667, 0.001));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Listar fuentes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/fuentes",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "fuentes"
+              ]
+            },
+            "description": ""
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Devuelve al menos una fuente', () => pm.expect(pm.response.json()).to.have.lengthOf.at.least(1));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Obtener fuente por identificador",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/fuentes/{{fuente_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "fuentes",
+                "{{fuente_id}}"
+              ]
+            },
+            "description": ""
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Es la fuente solicitada', () => pm.expect(pm.response.json().id).to.eql(pm.collectionVariables.get('fuente_id')));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Actualizar fuente",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/fuentes/{{fuente_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "fuentes",
+                "{{fuente_id}}"
+              ]
+            },
+            "description": "",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Diccionario Huanca Quechua-Castellano (edicion revisada)\",\n  \"entidad_publicadora\": \"MINEDU - Biblioteca Quechua Wanka\",\n  \"licenciamiento\": \"Acceso publico con finalidad educativa\",\n  \"fecha_extraccion\": \"2026-09-14\",\n  \"nombre_archivo\": \"diccionario-quechua-wanka.pdf\",\n  \"paginas_totales\": 60,\n  \"paginas_con_texto\": 60,\n  \"derivado_ocr\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200', () => pm.response.to.have.status(200));",
+                  "const d = pm.response.json();",
+                  "pm.test('Aplica el cambio', () => pm.expect(d.titulo).to.include('revisada'));",
+                  "pm.test('Recalcula la cobertura', () => pm.expect(d.cobertura_extraccion).to.eql(1.0));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "RNF-11: rechazar fuente sin licenciamiento",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/fuentes",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "fuentes"
+              ]
+            },
+            "description": "La regla se hace cumplir en el dominio y no en el formulario: ninguna interfaz puede saltarsela.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Documento sin licencia declarada\",\n  \"entidad_publicadora\": \"Desconocida\",\n  \"licenciamiento\": \"   \",\n  \"fecha_extraccion\": \"2026-09-14\",\n  \"nombre_archivo\": \"sin-licencia.pdf\",\n  \"paginas_totales\": 10,\n  \"paginas_con_texto\": 10,\n  \"derivado_ocr\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Rechaza con 422', () => pm.response.to.have.status(422));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Eliminar fuente",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/fuentes/{{fuente_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "fuentes",
+                "{{fuente_id}}"
+              ]
+            },
+            "description": ""
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 204', () => pm.response.to.have.status(204));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Eliminar fuente inexistente",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/fuentes/no-existe",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "fuentes",
+                "no-existe"
+              ]
+            },
+            "description": ""
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 404', () => pm.response.to.have.status(404));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "4. Corpus documental",
+      "item": [
+        {
+          "name": "Listar documentos indexados",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/corpus/documentos",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "corpus",
+                "documentos"
+              ]
+            },
+            "description": ""
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200', () => pm.response.to.have.status(200));",
+                  "const d = pm.response.json();",
+                  "pm.test('Hay documentos en el corpus', () => pm.expect(d.documentos).to.have.lengthOf.at.least(1));",
+                  "pm.test('Informa del total de fragmentos', () => pm.expect(d.total_fragmentos).to.be.above(0));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "RF-01: incorporar documento PDF",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "archivo",
+                  "type": "file",
+                  "src": [],
+                  "description": "Seleccionar un PDF del corpus"
+                },
+                {
+                  "key": "titulo",
+                  "value": "Documento de prueba",
+                  "type": "text"
+                },
+                {
+                  "key": "entidad_publicadora",
+                  "value": "MINEDU",
+                  "type": "text"
+                },
+                {
+                  "key": "licenciamiento",
+                  "value": "Acceso publico con finalidad educativa",
+                  "type": "text"
+                },
+                {
+                  "key": "tipo",
+                  "value": "lexicografico",
+                  "type": "text",
+                  "description": "lexicografico o prosa"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/api/corpus/documentos",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "corpus",
+                "documentos"
+              ]
+            },
+            "description": "Requiere seleccionar un archivo en la pestana Body antes de enviar. El indice se reconstruye automaticamente tras la ingesta."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// Esta peticion necesita un archivo seleccionado a mano en la pestana Body.",
+                  "// Postman no guarda el contenido de los archivos dentro de la coleccion, de",
+                  "// modo que en una ejecucion automatica llega sin adjunto y el servidor la",
+                  "// rechaza con 422. Se distingue ese caso para no reportar un fallo enganoso.",
+                  "if (pm.response.code === 422) {",
+                  "  pm.test('Pendiente: seleccionar un PDF en la pestana Body y reenviar', () => {",
+                  "    pm.expect(pm.response.code, 'sin archivo adjunto').to.eql(422);",
+                  "  });",
+                  "} else {",
+                  "  pm.test('Responde 200', () => pm.response.to.have.status(200));",
+                  "  const d = pm.response.json();",
+                  "  pm.test('Conserva el recuento de paginas', () => pm.expect(d.paginas_totales).to.be.above(0));",
+                  "  pm.test('El indice queda reconstruido', () => pm.expect(d.total_indexado).to.be.above(0));",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "RF-13: reconstruir el indice",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/corpus/reindexar",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "corpus",
+                "reindexar"
+              ]
+            },
+            "description": "Reconstruye el indice desde el corpus persistido sin reiniciar el servicio."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200', () => pm.response.to.have.status(200));",
+                  "pm.test('El indice conserva los fragmentos', () => pm.expect(pm.response.json().total_fragmentos).to.be.above(0));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
