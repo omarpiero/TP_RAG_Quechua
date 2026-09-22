@@ -3,6 +3,80 @@
 Documento correspondiente a la Parte 1 de la consigna. Describe la instalación completa
 del entorno de desarrollo y la puesta en marcha del Producto Mínimo Viable.
 
+El sistema tiene cuatro componentes —back-end, base de datos, servicio de inteligencia
+artificial y front-end— y los cuatro han de estar disponibles. La sección siguiente reúne
+los comandos en el orden en que hay que ejecutarlos; las secciones numeradas explican qué
+hace cada uno y por qué, y añaden la verificación del entorno.
+
+## Instalación rápida
+
+Comandos para Windows. En Linux o macOS cambian `\` por `/`, `copy` por `cp` y
+`.venv\Scripts\activate` por `source .venv/bin/activate`.
+
+### Una sola vez
+
+```powershell
+# 1. Requisitos. Python 3.12, Node.js 24 y Git se instalan desde sus propias páginas.
+winget install Ollama.Ollama
+winget install PostgreSQL.PostgreSQL.17
+
+# 2. Código
+git clone https://github.com/DalgomXD-byte/asistente-quechua-wanka.git
+cd asistente-quechua-wanka
+
+# 3. Base de datos. Pide la contraseña que se definió al instalar PostgreSQL.
+psql -U postgres -c "CREATE DATABASE quechua_wanka;"
+
+# 4. Modelo generador. Son 3,4 GB: conviene lanzarlo y seguir con el paso 5 mientras baja.
+ollama pull qwen3.5:4b
+
+# 5. Back-end
+cd backend
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+copy .env.example .env
+
+# 6. Front-end
+cd ..\frontend
+npm install
+copy .env.example .env
+```
+
+Antes de arrancar hay que **abrir `backend\.env` y escribir la contraseña de PostgreSQL**
+en `POSTGRES_PASSWORD`. Ese archivo no se versiona, de modo que cada instalación pone la
+suya. Sin él el sistema arranca igual, pero sin historial ni registro de fuentes.
+
+### Cada vez que se usa
+
+Dos terminales, cada una en su carpeta:
+
+```powershell
+# Terminal 1 — back-end
+cd backend
+.venv\Scripts\activate
+uvicorn main:app --port 8000
+
+# Terminal 2 — front-end
+cd frontend
+npm run dev
+```
+
+La aplicación queda en **http://localhost:5173**.
+
+PostgreSQL y Ollama arrancan solos con el sistema, de modo que no hay que hacer nada con
+ellos. El back-end tarda cerca de un minuto en cargar el modelo en memoria de vídeo: acepta
+consultas desde el primer momento, pero la primera responde despacio hasta que termina.
+
+### Si algo falla
+
+| Síntoma | Causa | Solución |
+|---|---|---|
+| Toda consulta se abstiene | Ollama no está corriendo o falta el modelo | `ollama list` debe mostrar `qwen3.5:4b` |
+| No hay historial ni fuentes | `POSTGRES_PASSWORD` vacío o incorrecto en `backend\.env` | Corregirlo y reiniciar el back-end |
+| La interfaz no muestra nada | El back-end no está levantado | Abrir `http://127.0.0.1:8000/docs` para comprobarlo |
+| `psql` no se reconoce | PostgreSQL no está en el PATH | Usar la ruta completa o reiniciar la sesión |
+
 ## Requisitos previos
 
 | Componente | Versión verificada | Comprobación |
@@ -34,7 +108,8 @@ copy .env.example .env          # En Linux o macOS: cp .env.example .env
 Editar `.env` y completar `POSTGRES_PASSWORD` con la contraseña del superusuario de
 PostgreSQL. El archivo `.env` no se versiona.
 
-Levantar el servicio:
+Levantar el servicio, una vez creada la base de datos de la sección 2 y descargado el
+modelo de la sección 3:
 
 ```bash
 uvicorn main:app --reload --port 8000
@@ -98,6 +173,10 @@ La interfaz queda disponible en `http://localhost:5173` y consume la interfaz de
 programación del back-end. La dirección del servicio se configura con `VITE_API_URL`.
 
 ## 5. Verificación de los endpoints con Postman
+
+> Las secciones 5 y 6 no forman parte de la instalación: comprueban que el entorno
+> instalado se comporta como debe. Quien solo necesite poner el sistema en marcha puede
+> saltar a la sección 8.
 
 La colección `docs/Asistente_Quechua_Wanka.postman_collection.json` cubre los quince
 endpoints del sistema, organizados en cuatro carpetas, y cada petición incorpora
