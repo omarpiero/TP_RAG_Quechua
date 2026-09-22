@@ -29,3 +29,24 @@ export const actualizarFuente = (id, fuente) =>
 
 export const eliminarFuente = (id) =>
   pedir(`/api/fuentes/${id}`, { method: "DELETE" });
+
+export const listarDocumentos = () => pedir("/api/corpus/documentos");
+
+export const reindexar = () =>
+  pedir("/api/corpus/reindexar", { method: "POST" });
+
+export async function ingestarDocumento(datos) {
+  const cuerpo = new FormData();
+  Object.entries(datos).forEach(([clave, valor]) => cuerpo.append(clave, valor));
+
+  // Sin Content-Type explicito: el navegador anade el boundary de multipart.
+  const respuesta = await fetch(`${BASE}/api/corpus/documentos`, {
+    method: "POST",
+    body: cuerpo,
+  });
+  if (!respuesta.ok) {
+    const detalle = await respuesta.json().catch(() => ({}));
+    throw new Error(detalle.detail ?? `Error ${respuesta.status}`);
+  }
+  return respuesta.json();
+}

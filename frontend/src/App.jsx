@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import { consultar, obtenerEstado } from "./api";
 import CajaConsulta from "./componentes/CajaConsulta";
+import GestionCorpus from "./componentes/GestionCorpus";
 import GestionFuentes from "./componentes/GestionFuentes";
 import Historial from "./componentes/Historial";
 import Respuesta from "./componentes/Respuesta";
@@ -73,6 +74,12 @@ export default function App() {
         >
           Fuentes del corpus
         </button>
+        <button
+          className={`pestana ${vista === "corpus" ? "pestana--activa" : ""}`}
+          onClick={() => setVista("corpus")}
+        >
+          Incorporar documentos
+        </button>
       </nav>
 
       <main className="contenido">
@@ -86,8 +93,10 @@ export default function App() {
             <Respuesta resultado={resultado} />
             <Historial entradas={historial} />
           </>
-        ) : (
+        ) : vista === "fuentes" ? (
           <GestionFuentes />
+        ) : (
+          <GestionCorpus />
         )}
       </main>
 

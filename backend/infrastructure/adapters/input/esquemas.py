@@ -52,6 +52,24 @@ class FuenteSalida(FuenteEntrada):
     cobertura_extraccion: float
 
 
+class ResultadoIngestaSalida(BaseModel):
+    nombre_archivo: str
+    titulo: str
+    paginas_totales: int
+    paginas_con_texto: int
+    cobertura_extraccion: float
+    fragmentos_generados: int
+    fragmentos_nuevos: int
+    total_indexado: int
+    requiere_ocr: bool
+    aviso: str | None = None
+
+
+class DocumentosCorpus(BaseModel):
+    documentos: list[str]
+    total_fragmentos: int
+
+
 class EstadoSistema(BaseModel):
     fragmentos_indexados: int
     umbral_abstencion: float

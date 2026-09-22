@@ -12,7 +12,9 @@ from sqlalchemy.orm import sessionmaker
 from application.services.evaluador_confianza import EvaluadorConfianza
 from application.use_cases.consultar_corpus import ConsultarCorpusUseCase
 from application.use_cases.gestionar_fuentes import GestionarFuentesUseCase
-from infrastructure.adapters.output.corpus_jsonl import cargar_fragmentos
+from application.use_cases.ingestar_documento import IngestarDocumentoUseCase
+from infrastructure.adapters.output.corpus_jsonl import CorpusJsonl
+from infrastructure.adapters.output.extractor_pdf import ExtractorPdf
 from infrastructure.adapters.output.detector_idioma_heuristico import (
     DetectorIdiomaHeuristico,
 )
@@ -33,9 +35,12 @@ log = logging.getLogger(__name__)
 
 class Contenedor:
     def __init__(self):
+        self.corpus = CorpusJsonl(configuracion.ruta_corpus)
         self.indice = IndiceHibridoLexico()
-        total = self.indice.indexar(cargar_fragmentos(configuracion.ruta_corpus))
+        total = self.indice.indexar(self.corpus.cargar())
         log.info("Indice construido con %s fragmentos", total)
+
+        self.extractor = ExtractorPdf()
 
         self.generador = OllamaGenerador(
             url_base=configuracion.ollama_url, modelo=configuracion.ollama_modelo
@@ -48,7 +53,15 @@ class Contenedor:
 
         self.repositorio_consultas = None
         self.gestionar_fuentes = None
+        self.repositorio_fuentes = None
         self.base_datos_disponible = self._conectar_base_datos()
+
+        self.ingestar_documento = IngestarDocumentoUseCase(
+            extractor=self.extractor,
+            corpus=self.corpus,
+            indice=self.indice,
+            repositorio_fuentes=self.repositorio_fuentes,
+        )
 
         self.consultar_corpus = ConsultarCorpusUseCase(
             indice=self.indice,
@@ -68,9 +81,8 @@ class Contenedor:
             Base.metadata.create_all(motor)
             sesion = sessionmaker(motor, expire_on_commit=False)
             self.repositorio_consultas = RepositorioConsultasPostgres(sesion)
-            self.gestionar_fuentes = GestionarFuentesUseCase(
-                RepositorioFuentesPostgres(sesion)
-            )
+            self.repositorio_fuentes = RepositorioFuentesPostgres(sesion)
+            self.gestionar_fuentes = GestionarFuentesUseCase(self.repositorio_fuentes)
             log.info("Base de datos conectada")
             return True
         except Exception as exc:  # noqa: BLE001

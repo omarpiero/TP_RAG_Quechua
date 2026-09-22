@@ -114,7 +114,29 @@ Para reproducir la calibración completa del umbral:
 .venv\Scripts\python.exe scripts/calibrar_umbral.py
 ```
 
-## 6. Orden de arranque recomendado
+## 6. Incorporación de documentos al corpus
+
+Desde la pestaña **Incorporar documentos** de la aplicación, o por la interfaz de
+programación:
+
+```bash
+curl -X POST http://127.0.0.1:8000/api/corpus/documentos \
+  -F "archivo=@documento.pdf" \
+  -F "titulo=Titulo del documento" \
+  -F "entidad_publicadora=MINEDU" \
+  -F "licenciamiento=Acceso publico con finalidad educativa" \
+  -F "tipo=lexicografico"
+```
+
+El campo `tipo` admite `lexicografico` (diccionarios: se segmenta por entrada) o `prosa`
+(relatos y gramática: se segmenta en bloques). La elección no es cosmética: el experimento
+E6 de la prueba de concepto midió que segmentar el material lexicográfico por entrada eleva
+el recall en el punto de operación del 48,3 % al 85,6 %.
+
+El índice se reconstruye automáticamente tras la ingesta, sin reiniciar el servicio. Para
+forzar una reconstrucción: `POST /api/corpus/reindexar`.
+
+## 7. Orden de arranque recomendado
 
 1. Servicio de PostgreSQL (automático al iniciar Windows).
 2. Servicio de Ollama (automático tras la instalación).

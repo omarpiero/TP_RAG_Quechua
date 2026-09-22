@@ -5,6 +5,8 @@ pydantic-settings==2.7.0
 sqlalchemy==2.0.36
 psycopg[binary]==3.2.3
 python-dotenv==1.0.1
+pypdf==5.1.0
+python-multipart==0.0.20
 numpy==2.2.1
 scikit-learn==1.6.0
 httpx==0.28.1

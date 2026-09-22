@@ -34,19 +34,35 @@ adaptador correspondiente y se resuelve en `infrastructure/contenedor.py`.
 |---|---|---|
 | `IndiceRecuperacionPort` | Índice híbrido léxico en memoria | El mismo, con índice preconstruido |
 | `GeneradorTextoPort` | Ollama por HTTP (Qwen3.5-4B) | llama.cpp embebido (Qwen3.5-0.8B) |
+| `TraductorPort` | Ollama por HTTP | llama.cpp embebido |
+| `ExtraccionDocumentalPort` | pypdf | No aplica: el corpus viaja preindexado |
+| `RepositorioCorpusPort` | Archivo JSONL | SQLite |
 | `RepositorioFuentesPort` | PostgreSQL | SQLite |
 | `RepositorioConsultasPort` | PostgreSQL | SQLite |
 | `DetectorIdiomaPort` | Heurístico por palabras funcionales | El mismo |
 
 ## Historias de usuario implementadas
 
-| Historia | Descripción | Endpoint |
+| Historia | Descripción | Endpoint | Vista |
+|---|---|---|---|
+| HU-01 | Registro de fuentes con procedencia y licenciamiento | `/api/fuentes` (CRUD) | Fuentes del corpus |
+| HU-01 / HU-02 | Ingesta de PDF, segmentación e indexación | `POST /api/corpus/documentos` | Incorporar documentos |
+| HU-03 | Consulta léxica español/inglés | `POST /api/consultas` | Consultar |
+| HU-05 | Multilingüismo con traducción previa | Integrada en la consulta | Consultar |
+| HU-06 | Salvaguarda antialucinación | Integrada en la consulta | Consultar |
+| HU-07 | Trazabilidad documental | Campo `respaldo` de la respuesta | Consultar |
+| RF-11 | Historial de sesión | `GET /api/historial` | Consultar |
+| RF-13 | Reconstrucción del índice | `POST /api/corpus/reindexar` | Incorporar documentos |
+
+## Reparto de roles
+
+| Rol | Responsabilidad en este proyecto | Componentes |
 |---|---|---|
-| HU-01 | Registro de fuentes con procedencia y licenciamiento | `/api/fuentes` (CRUD) |
-| HU-03 | Consulta léxica español/inglés | `POST /api/consultas` |
-| HU-06 | Salvaguarda antialucinación | Integrada en la consulta |
-| HU-07 | Trazabilidad documental | Campo `respaldo` de la respuesta |
-| RF-11 | Historial de sesión | `GET /api/historial` |
+| Arquitecto de software | Estructura hexagonal, definición de los puertos y decisiones de sustitución entre incrementos | `domain/ports/`, `infrastructure/contenedor.py` |
+| Desarrollador back-end | Casos de uso, reglas de abstención y controladores REST | `application/`, `infrastructure/adapters/input/` |
+| Desarrollador front-end | Interfaz de consulta, gestión de fuentes e ingesta documental | `frontend/src/` |
+| Desarrollador de base de datos | Modelo relacional, repositorios y persistencia del historial | `infrastructure/adapters/output/persistencia/` |
+| Desarrollador de integración | Integración con el servicio de inferencia y el traductor | `infrastructure/adapters/output/ollama_*.py` |
 
 ## Resultados medidos
 
