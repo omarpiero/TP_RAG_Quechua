@@ -8,7 +8,10 @@ export default function Respuesta({ resultado }) {
     similitud_maxima,
     aviso,
     consulta_traducida,
+    pasajes = [],
   } = resultado;
+
+  const hayPasajes = pasajes.length > 0;
 
   return (
     <section
@@ -16,7 +19,11 @@ export default function Respuesta({ resultado }) {
       aria-live="polite"
     >
       <h2 className="respuesta__titulo">
-        {abstenida ? "Sin respaldo documental" : "Respuesta"}
+        {abstenida
+          ? hayPasajes
+            ? "Sin respuesta confirmada"
+            : "Sin respaldo documental"
+          : "Respuesta"}
       </h2>
 
       {consulta_traducida && (
@@ -48,6 +55,25 @@ export default function Respuesta({ resultado }) {
                   transcripción.
                 </p>
               )}
+            </article>
+          ))}
+        </div>
+      )}
+
+      {hayPasajes && (
+        <div className="pasajes">
+          <h3 className="pasajes__titulo">Pasajes que podrían tratarla</h3>
+          <p className="pasajes__nota">
+            El sistema no afirma que respondan a la consulta. La similitud léxica no
+            distingue una pregunta de gramática que el corpus cubre de una que no, de modo
+            que el material se entrega literal y citado para que lo juzgue quien consulta.
+          </p>
+          {pasajes.map((f) => (
+            <article key={f.fragmento_id} className="pasajes__item">
+              <blockquote className="pasajes__cita">{f.texto}</blockquote>
+              <p className="pasajes__origen">
+                {f.documento} — página {f.pagina}
+              </p>
             </article>
           ))}
         </div>

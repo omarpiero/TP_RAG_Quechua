@@ -458,3 +458,42 @@
   .formulario__rejilla { grid-template-columns: 1fr; }
   .fuente { flex-direction: column; }
 }
+
+/* Pasajes de prosa ofrecidos sin afirmar que respondan a la consulta.
+   Se distinguen del respaldo por la barra lateral y la ausencia de metricas: no
+   sostienen ninguna afirmacion, de modo que mostrar su similitud sugeriria una
+   confianza que el sistema no tiene. */
+.pasajes {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--borde);
+}
+
+.pasajes__titulo {
+  margin: 0 0 0.4rem;
+  font-size: 0.95em;
+  color: var(--tinta-suave);
+}
+
+.pasajes__nota {
+  margin: 0 0 1rem;
+  font-size: 0.85em;
+  color: var(--tinta-suave);
+}
+
+.pasajes__item + .pasajes__item {
+  margin-top: 1.1rem;
+}
+
+.pasajes__cita {
+  margin: 0 0 0.4rem;
+  padding: 0.2rem 0 0.2rem 0.9rem;
+  border-left: 3px solid var(--borde);
+  font-style: normal;
+}
+
+.pasajes__origen {
+  margin: 0 0 0 0.9rem;
+  font-size: 0.9em;
+  font-weight: 600;
+}
