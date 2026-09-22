@@ -13,6 +13,7 @@ from domain.entities.fragmento import Fragmento, FragmentoRecuperado, TipoFragme
 from domain.ports.detector_idioma_port import DetectorIdiomaPort
 from domain.ports.generador_texto_port import GeneradorTextoPort
 from domain.ports.indice_recuperacion_port import IndiceRecuperacionPort
+from domain.ports.traductor_port import TraductorPort
 from domain.ports.repositorio_consultas_port import RepositorioConsultasPort
 from domain.value_objects.idioma import Idioma
 from domain.value_objects.procedencia import Procedencia
@@ -47,6 +48,9 @@ class IndiceFalso(IndiceRecuperacionPort):
 
     def total_indexado(self):
         return 1
+
+    def es_lema(self, termino):
+        return termino in getattr(self, 'lemas', set())
 
 
 class GeneradorFalso(GeneradorTextoPort):
@@ -164,8 +168,11 @@ class IndiceSensibleAlIdioma(IndiceRecuperacionPort):
     def total_indexado(self):
         return 1
 
+    def es_lema(self, termino):
+        return termino in getattr(self, 'lemas', set())
 
-class TraductorFalso:
+
+class TraductorFalso(TraductorPort):
     def __init__(self, traduccion="zorro"):
         self._traduccion = traduccion
         self.invocaciones = 0

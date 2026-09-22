@@ -1,0 +1,13357 @@
+{
+ "aa": [
+  "a",
+  "a",
+  "ah"
+ ],
+ "abajo": [
+  "down",
+  "below",
+  "under"
+ ],
+ "abandonado": [
+  "abandoned",
+  "forsaken",
+  "deserted"
+ ],
+ "abandonar": [
+  "to abandon",
+  "to forsake",
+  "to desert"
+ ],
+ "abeja": [
+  "bee",
+  "honeybee",
+  "bumblebee"
+ ],
+ "abierto": [
+  "open",
+  "unfastened",
+  "unlocked"
+ ],
+ "ablandado": [
+  "softened",
+  "softened",
+  "pliable"
+ ],
+ "ablandar": [
+  "to soften",
+  "to make soft",
+  "to relax"
+ ],
+ "abochornado": [
+  "crooked",
+  "bent",
+  "curved"
+ ],
+ "abochornar": [
+  "to bend",
+  "to curve",
+  "to crook"
+ ],
+ "abogado": [
+  "lawyer",
+  "attorney",
+  "counsel"
+ ],
+ "abogar": [
+  "to plead",
+  "to argue",
+  "to advocate"
+ ],
+ "abollado": [
+  "dented",
+  "dented",
+  "crumpled"
+ ],
+ "abollar": [
+  "to dent",
+  "to crush",
+  "to crease"
+ ],
+ "abonar": [
+  "to fertilize",
+  "to feed",
+  "to enrich"
+ ],
+ "abono": [
+  "fertilizer",
+  "manure",
+  "subsidy"
+ ],
+ "aborrecer": [
+  "to bore",
+  "to disgust",
+  "to tire"
+ ],
+ "aborrecible": [
+  "boring",
+  "tiresome",
+  "tedious"
+ ],
+ "abortar": [
+  "to abort",
+  "to terminate",
+  "to miscarry"
+ ],
+ "aborto": [
+  "abortion",
+  "miscarriage",
+  "stillbirth"
+ ],
+ "abrazar": [
+  "embrace",
+  "hug",
+  "hold",
+  "clasp"
+ ],
+ "abrevar": [
+  "shorten",
+  "abridge",
+  "condense",
+  "shorten"
+ ],
+ "abrigar": [
+  "warm",
+  "clothe",
+  "cover",
+  "shelter"
+ ],
+ "abrigarse": [
+  "put on warm clothes",
+  "dress warmly",
+  "wrap oneself"
+ ],
+ "abrir": [
+  "open",
+  "unfold",
+  "release",
+  "unlock"
+ ],
+ "absolutamente": [
+  "absolutely",
+  "completely",
+  "totally",
+  "utterly"
+ ],
+ "abuela": [
+  "grandmother",
+  "grandma",
+  "nana",
+  "grandmom"
+ ],
+ "abuelo": [
+  "grandfather",
+  "grandpa",
+  "abuelito",
+  "granddad"
+ ],
+ "abundante": [
+  "plentiful",
+  "abundant",
+  "copious",
+  "plentiful"
+ ],
+ "aca": [
+  "here",
+  "hereabouts",
+  "nearby",
+  "around here"
+ ],
+ "acabar": [
+  "finish",
+  "end",
+  "complete",
+  "conclude"
+ ],
+ "acariciar": [
+  "caress",
+  "stroke",
+  "pet",
+  "fondle"
+ ],
+ "acaso": [
+  "perhaps",
+  "maybe",
+  "possibly",
+  "maybe"
+ ],
+ "acceder": [
+  "access",
+  "admit",
+  "agree",
+  "yield"
+ ],
+ "acechar": [
+  "stalk",
+  "lurk",
+  "spy on",
+  "watch closely"
+ ],
+ "aceptar": [
+  "accept",
+  "approve",
+  "consent to",
+  "accept"
+ ],
+ "acequia": [
+  "irrigation ditch",
+  "aqueduct",
+  "watercourse",
+  "canal"
+ ],
+ "acercarse": [
+  "approach",
+  "come near",
+  "draw near",
+  "get closer"
+ ],
+ "acezar": [
+  "scald",
+  "burn",
+  "scorch",
+  "blister"
+ ],
+ "achicar": [
+  "shrink",
+  "reduce",
+  "contract",
+  "diminish"
+ ],
+ "achicarse": [
+  "shrink",
+  "diminish",
+  "reduce",
+  "get smaller"
+ ],
+ "acomodar": [
+  "arrange",
+  "put away",
+  "tidy up",
+  "place"
+ ],
+ "acompañar": [
+  "accompany",
+  "join",
+  "go with",
+  "attend"
+ ],
+ "acordarse": [
+  "remember",
+  "recall",
+  "think of",
+  "remember"
+ ],
+ "acosar": [
+  "harass",
+  "annoy",
+  "bother",
+  "pest"
+ ],
+ "acostumbrarse": [
+  "get used to",
+  "become accustomed to",
+  "adapt to",
+  "familiarize oneself with"
+ ],
+ "acrecentar": [
+  "increase",
+  "add",
+  "augment",
+  "raise"
+ ],
+ "acuchillar": [
+  "stab",
+  "thrust a knife into",
+  "pierce with a blade",
+  "wound with a dagger"
+ ],
+ "acusador": [
+  "accusatory",
+  "incriminating",
+  "blaming",
+  "reproachful"
+ ],
+ "acusar": [
+  "accuse",
+  "blame",
+  "charge",
+  "implicate"
+ ],
+ "acuñar": [
+  "coin",
+  "mint",
+  "create",
+  "forge"
+ ],
+ "adelantarse": [
+  "go ahead",
+  "move forward",
+  "advance",
+  "proceed"
+ ],
+ "adelgazar": [
+  "lose weight",
+  "slim down",
+  "thin out",
+  "reduce body mass"
+ ],
+ "adelgazarse": [
+  "become thinner",
+  "lose flesh",
+  "get leaner",
+  "shrink in size"
+ ],
+ "adentro": [
+  "inside",
+  "within",
+  "interior",
+  "inward"
+ ],
+ "adinerado": [
+  "wealthy",
+  "rich",
+  "affluent",
+  "opulent"
+ ],
+ "adivinar": [
+  "guess",
+  "predict",
+  "foresee",
+  "conjecture"
+ ],
+ "adobe": [
+  "sun-dried brick",
+  "mud brick",
+  "baked earth block",
+  "clay tile"
+ ],
+ "adolescente": [
+  "teenager",
+  "adolescent",
+  "youth",
+  "young person"
+ ],
+ "adquirir": [
+  "acquire",
+  "obtain",
+  "get",
+  "purchase"
+ ],
+ "adrede": [
+  "abreast",
+  "abrevas",
+  "abrevas"
+ ],
+ "adulto": [
+  "adult",
+  "grown-up",
+  "mature person"
+ ],
+ "afecto": [
+  "feeling",
+  "emotion",
+  "affection"
+ ],
+ "afeitarse": [
+  "to shave",
+  "to razor oneself",
+  "to get a shave"
+ ],
+ "afianzar": [
+  "to guarantee",
+  "to secure",
+  "to pledge"
+ ],
+ "afilar": [
+  "to sharpen",
+  "to hone",
+  "to edge"
+ ],
+ "afligir": [
+  "to afflict",
+  "to distress",
+  "to grieve"
+ ],
+ "afligirse": [
+  "to be afflicted",
+  "to suffer",
+  "to mourn"
+ ],
+ "aflojar": [
+  "to loosen",
+  "to slacken",
+  "to relax"
+ ],
+ "afrecho": [
+  "hook",
+  "hookline",
+  "fish hook"
+ ],
+ "afuera": [
+  "out",
+  "outside",
+  "outward"
+ ],
+ "agacharse": [
+  "to crouch",
+  "to bend down",
+  "to stoop"
+ ],
+ "agarrar": [
+  "to grab",
+  "to seize",
+  "to hold"
+ ],
+ "agitar": [
+  "to stir",
+  "to shake",
+  "to agitate"
+ ],
+ "agonizar": [
+  "to agonize",
+  "to suffer agony",
+  "to writhe"
+ ],
+ "agradable": [
+  "pleasant",
+  "agreeable",
+  "nice"
+ ],
+ "agradar": [
+  "to please",
+  "to delight",
+  "to satisfy"
+ ],
+ "agregar": [
+  "to add",
+  "to include",
+  "to append"
+ ],
+ "agriarse": [
+  "to curdle",
+  "to sour",
+  "to spoil"
+ ],
+ "agrietarse": [
+  "to crack",
+  "to fissure",
+  "to split"
+ ],
+ "agrio": [
+  "sour",
+  "tart",
+  "acidic",
+  "pungent"
+ ],
+ "agruparse": [
+  "to group",
+  "to cluster",
+  "to assemble",
+  "to bunch up"
+ ],
+ "agua": [
+  "water",
+  "liquid",
+  "fluid",
+  "moisture"
+ ],
+ "aguado": [
+  "watery",
+  "diluted",
+  "thin",
+  "watered down"
+ ],
+ "aguantar": [
+  "to endure",
+  "to bear",
+  "to withstand",
+  "to hold out"
+ ],
+ "aguijonear": [
+  "to sting",
+  "to prickle",
+  "to poke",
+  "to irritate"
+ ],
+ "aguja": [
+  "needle",
+  "pin",
+  "awl",
+  "thorn"
+ ],
+ "agujero": [
+  "hole",
+  "gap",
+  "opening",
+  "breach"
+ ],
+ "agusanado": [
+  "hollowed out",
+  "excavated",
+  "dug out",
+  "cavernous"
+ ],
+ "agusanar": [
+  "to hollow out",
+  "to dig out",
+  "to excavate",
+  "to bore"
+ ],
+ "agüero": [
+  "omen",
+  "sign",
+  "portend",
+  "indication"
+ ],
+ "ahogarse": [
+  "to drown",
+  "to suffocate",
+  "to choke",
+  "to perish by drowning"
+ ],
+ "ahondar": [
+  "to deepen",
+  "to sink",
+  "to intensify",
+  "to increase"
+ ],
+ "ahora": [
+  "now",
+  "present",
+  "current",
+  "at this moment"
+ ],
+ "ahorcar": [
+  "to hang",
+  "to gallows",
+  "to execute by hanging",
+  "to suspend"
+ ],
+ "ahuyentar": [
+  "to drive away",
+  "to repel",
+  "to scare off",
+  "to banish"
+ ],
+ "ahí": [
+  "there",
+  "over there",
+  "that way",
+  "at that point"
+ ],
+ "ajeno": [
+  "foreign",
+  "alien",
+  "other",
+  "external"
+ ],
+ "aji": [
+  "chili",
+  "pepper",
+  "hot sauce",
+  "spice"
+ ],
+ "ala": [
+  "wing",
+  "arm",
+  "side",
+  "fin"
+ ],
+ "alabar": [
+  "praise",
+  "extol",
+  "commend",
+  "laud"
+ ],
+ "aldea": [
+  "village",
+  "hamlet",
+  "town"
+ ],
+ "alegrarse": [
+  "to rejoice",
+  "to be glad",
+  "to cheer up",
+  "to delight"
+ ],
+ "alegre": [
+  "happy",
+  "joyful",
+  "cheerful",
+  "merry"
+ ],
+ "alejar": [
+  "to distance",
+  "to remove",
+  "to separate",
+  "to estrange"
+ ],
+ "aletear": [
+  "to fish with a net",
+  "to trawl",
+  "to dredge"
+ ],
+ "alfalfa": [
+  "lucerne",
+  "alfalfa grass",
+  "clover"
+ ],
+ "alfiler": [
+  "pin",
+  "pushpin",
+  "thumbtack",
+  "tack"
+ ],
+ "algo": [
+  "something",
+  "anything",
+  "a bit",
+  "some"
+ ],
+ "algodón": [
+  "cotton",
+  "cotton wool",
+  "fluff"
+ ],
+ "alguien": [
+  "someone",
+  "anybody",
+  "anyone",
+  "one"
+ ],
+ "alguna": [
+  "some",
+  "any",
+  "certain",
+  "particular"
+ ],
+ "aliento": [
+  "breath",
+  "breathless",
+  "wind",
+  "puff"
+ ],
+ "alimentar": [
+  "to feed",
+  "to nourish",
+  "to supply food",
+  "to sustain"
+ ],
+ "alimento": [
+  "food",
+  "sustenance",
+  "nourishment",
+  "diet"
+ ],
+ "alinear": [
+  "to align",
+  "to straighten",
+  "to line up",
+  "to arrange"
+ ],
+ "aliso": [
+  "smooth",
+  "even",
+  "flat",
+  "level"
+ ],
+ "allá": [
+  "over there",
+  "yonder",
+  "beyond",
+  "across"
+ ],
+ "allí": [
+  "there",
+  "over there",
+  "at that place",
+  "thither"
+ ],
+ "almacenar": [
+  "to store",
+  "to keep",
+  "to put away",
+  "to warehouse"
+ ],
+ "almohada": [
+  "pillow",
+  "cushion",
+  "bolster"
+ ],
+ "almuerzo": [
+  "lunch",
+  "midday meal",
+  "noon repast"
+ ],
+ "alquiler": [
+  "rent",
+  "lease",
+  "hire"
+ ],
+ "altramuz": [
+  "nutmeg",
+  "mace"
+ ],
+ "altura": [
+  "height",
+  "altitude",
+  "elevation"
+ ],
+ "alud": [
+  "avalanche",
+  "flood",
+  "deluge"
+ ],
+ "alumbrar": [
+  "to light",
+  "to illuminate",
+  "to enlighten"
+ ],
+ "aluvión": [
+  "flood",
+  "deluge",
+  "surge"
+ ],
+ "alzar": [
+  "to lift",
+  "to raise",
+  "to hoist"
+ ],
+ "amable": [
+  "kind",
+  "gentle",
+  "friendly"
+ ],
+ "amado": [
+  "beloved",
+  "dear",
+  "fond"
+ ],
+ "amamantar": [
+  "to breastfeed",
+  "to nurse",
+  "to suckle"
+ ],
+ "amanecer": [
+  "dawn",
+  "sunrise",
+  "daybreak"
+ ],
+ "amante": [
+  "lover",
+  "sweetheart",
+  "paramour"
+ ],
+ "amar": [
+  "to love",
+  "to like",
+  "to adore"
+ ],
+ "amargo": [
+  "bitter",
+  "pungent",
+  "acrid"
+ ],
+ "amarillear": [
+  "to yellow",
+  "to turn yellow",
+  "to fade to yellow"
+ ],
+ "amarillo": [
+  "yellow",
+  "golden",
+  "ochre"
+ ],
+ "amarrar": [
+  "to tie",
+  "to fasten",
+  "to bind"
+ ],
+ "amasar": [
+  "to knead",
+  "to work dough",
+  "to mix"
+ ],
+ "ambos": [
+  "both",
+  "either",
+  "both of them"
+ ],
+ "amedrentar": [
+  "to bully",
+  "to intimidate",
+  "to threaten"
+ ],
+ "amigo": [
+  "friend",
+  "buddy",
+  "pal"
+ ],
+ "amontonar": [
+  "to pile up",
+  "to heap",
+  "to stack"
+ ],
+ "amor": [
+  "love",
+  "affection",
+  "fondness"
+ ],
+ "amoratado": [
+  "blushed",
+  "ruddy",
+  "crimson"
+ ],
+ "amparar": [
+  "to shelter",
+  "to protect",
+  "to support"
+ ],
+ "ampolla": [
+  "bubble",
+  "blister",
+  "ampoule"
+ ],
+ "amputar": [
+  "to amputate",
+  "to cut off",
+  "to remove"
+ ],
+ "amurallar": [
+  "to wall up",
+  "to fortify",
+  "to enclose"
+ ],
+ "analfabeto": [
+  "illiterate",
+  "uneducated",
+  "non-literate"
+ ],
+ "ancho": [
+  "wide",
+  "broad",
+  "wide-spaced"
+ ],
+ "anciana": [
+  "old woman",
+  "elderly lady",
+  "senior citizen"
+ ],
+ "anciano": [
+  "old man",
+  "elderly gentleman",
+  "senior citizen"
+ ],
+ "anda": [
+  "goes",
+  "walks",
+  "proceeds"
+ ],
+ "andar": [
+  "to walk",
+  "to go",
+  "to move"
+ ],
+ "anden": [
+  "goes",
+  "walks",
+  "proceeds"
+ ],
+ "andrajoso": [
+  "filthy",
+  "dirty",
+  "squalid"
+ ],
+ "angosto": [
+  "narrow",
+  "tight",
+  "constricted"
+ ],
+ "animal": [
+  "beast",
+  "creature",
+  "living thing"
+ ],
+ "animar": [
+  "encourage",
+  "incite",
+  "spur",
+  "rouse",
+  "excite"
+ ],
+ "ano": [
+  "year",
+  "annum",
+  "cycle",
+  "period",
+  "yearning"
+ ],
+ "anoche": [
+  "night",
+  "evening",
+  "dark",
+  "nightfall",
+  "dusk"
+ ],
+ "anochecer": [
+  "darken",
+  "darken down",
+  "get dark",
+  "go to bed",
+  "set in the evening"
+ ],
+ "anosear": [
+  "to be annoyed",
+  "to be vexed",
+  "to be irritated",
+  "to be bothered",
+  "to be disturbed"
+ ],
+ "ansiar": [
+  "long for",
+  "yearn for",
+  "crave",
+  "desire",
+  "wish"
+ ],
+ "antaño": [
+  "years ago",
+  "long ago",
+  "back then",
+  "formerly",
+  "in the old days"
+ ],
+ "anteayer": [
+  "day before yesterday",
+  "two days ago",
+  "yesterdays day",
+  "yesterday of yesterday",
+  "prior to yesterday"
+ ],
+ "antebrazo": [
+  "forearm",
+  "upper arm",
+  "forearm part",
+  "lower arm",
+  "arm segment"
+ ],
+ "anterior": [
+  "front",
+  "forward",
+  "preceding",
+  "earlier",
+  "anterior part"
+ ],
+ "antes": [
+  "before",
+  "previously",
+  "formerly",
+  "earlier",
+  "in the past"
+ ],
+ "antiguo": [
+  "old",
+  "ancient",
+  "former",
+  "vintage",
+  "antique"
+ ],
+ "antojar": [
+  "to crave",
+  "to desire",
+  "to want",
+  "to wish for",
+  "to long for"
+ ],
+ "antojo": [
+  "craving",
+  "impulse",
+  "urge",
+  "whimsy",
+  "sudden desire"
+ ],
+ "anublar": [
+  "to darken",
+  "to blacken",
+  "to obscure",
+  "to dim",
+  "to make dark"
+ ],
+ "anudar": [
+  "to tie",
+  "to knot",
+  "to bind",
+  "to fasten",
+  "to link"
+ ],
+ "anémico": [
+  "anemic",
+  "pale",
+  "weak",
+  "listless",
+  "lacking vitality"
+ ],
+ "apacentar": [
+  "to graze",
+  "to pasture",
+  "to feed on grass",
+  "to let roam",
+  "to keep grazing"
+ ],
+ "apartar": [
+  "to remove",
+  "to separate",
+  "to displace",
+  "to take away",
+  "to set aside"
+ ],
+ "apedrear": [
+  "to stone",
+  "to throw stones at",
+  "to pelt with stones",
+  "to bombard with rocks",
+  "to hurl stones"
+ ],
+ "apenarse": [
+  "to feel sorry",
+  "to pity",
+  "to sympathize",
+  "to regret"
+ ],
+ "apenas": [
+  "barely",
+  "scarcely",
+  "hardly",
+  "just"
+ ],
+ "apestar": [
+  "to stink",
+  "to smell bad",
+  "to foul",
+  "to reek"
+ ],
+ "apestoso": [
+  "stinking",
+  "foul-smelling",
+  "noxious",
+  "offensive"
+ ],
+ "apiadarse": [
+  "to pity",
+  "to have compassion",
+  "to feel sorry for",
+  "to sympathize"
+ ],
+ "apisonar": [
+  "to beat",
+  "to hit hard",
+  "to strike",
+  "to batter"
+ ],
+ "apiñar": [
+  "to gather",
+  "to collect",
+  "to pick up",
+  "to assemble"
+ ],
+ "aplanar": [
+  "to flatten",
+  "to smooth",
+  "to level",
+  "to straighten"
+ ],
+ "aplastar": [
+  "to crush",
+  "to smash",
+  "to break flat",
+  "to compress"
+ ],
+ "aplaudir": [
+  "to applaud",
+  "to cheer",
+  "to praise",
+  "to acclaim"
+ ],
+ "apolillado": [
+  "infested",
+  "infested with insects",
+  "spotted",
+  "damaged by pests"
+ ],
+ "apoyar": [
+  "to support",
+  "to back",
+  "to uphold",
+  "to sustain"
+ ],
+ "aprender": [
+  "to learn",
+  "to study",
+  "to acquire",
+  "to master"
+ ],
+ "aprendiz": [
+  "apprentice",
+  "trainee",
+  "pupil",
+  "novice"
+ ],
+ "apresar": [
+  "to arrest",
+  "to capture",
+  "to seize",
+  "to detain"
+ ],
+ "apresuradamente": [
+  "hastily",
+  "hurriedly",
+  "quickly",
+  "in a rush"
+ ],
+ "apretado": [
+  "tight",
+  "cramped",
+  "close",
+  "constricted"
+ ],
+ "apretar": [
+  "to squeeze",
+  "to press",
+  "to tighten",
+  "to grip"
+ ],
+ "apuntalar": [
+  "to prop up",
+  "to brace",
+  "to support",
+  "to reinforce"
+ ],
+ "apurar": [
+  "to exhaust",
+  "to drain",
+  "to finish",
+  "to use up"
+ ],
+ "aquel": [
+  "that",
+  "that one",
+  "the former"
+ ],
+ "aquí": [
+  "here",
+  "this place",
+  "hereabouts"
+ ],
+ "arado": [
+  "plow",
+  "plough",
+  "harrow"
+ ],
+ "arar": [
+  "to plow",
+  "to plough",
+  "to till"
+ ],
+ "araña": [
+  "spider",
+  "arachnid",
+  "web"
+ ],
+ "arañar": [
+  "to scratch",
+  "to annoy",
+  "to irritate"
+ ],
+ "arcilla": [
+  "clay",
+  "earth",
+  "mud"
+ ],
+ "arena": [
+  "sand",
+  "grit",
+  "beach"
+ ],
+ "arenilla": [
+  "fine sand",
+  "sifted sand",
+  "granule"
+ ],
+ "armario": [
+  "cupboard",
+  "closet",
+  "wardrobe"
+ ],
+ "arrastrar": [
+  "to drag",
+  "to haul",
+  "to pull"
+ ],
+ "arrear": [
+  "to rear",
+  "to breed",
+  "to raise"
+ ],
+ "arreglar": [
+  "to fix",
+  "to repair",
+  "to tidy"
+ ],
+ "arremangar": [
+  "to roll up sleeves",
+  "to cuff",
+  "to tuck in"
+ ],
+ "arrepentirse": [
+  "to repent",
+  "to regret",
+  "to be sorry"
+ ],
+ "arriba": [
+  "up",
+  "above",
+  "higher"
+ ],
+ "arrimar": [
+  "to lean",
+  "to incline",
+  "to press close"
+ ],
+ "arrimarse": [
+  "to lean against",
+  "to rest on",
+  "to hug"
+ ],
+ "arroba": [
+  "pound",
+  "hundredweight",
+  "unit of weight"
+ ],
+ "arrodillado": [
+  "kneeling",
+  "knee-bent",
+  "on knees"
+ ],
+ "arrojar": [
+  "throw",
+  "cast",
+  "hurl",
+  "toss",
+  "launch"
+ ],
+ "arrugado": [
+  "wrinkled",
+  "crumpled",
+  "creased",
+  "wrinkly"
+ ],
+ "arrugar": [
+  "wrinkle",
+  "crumple",
+  "crease",
+  "wrinkle up"
+ ],
+ "arveja": [
+  "pea",
+  "bean",
+  "legume",
+  "pulse"
+ ],
+ "asa": [
+  "ash",
+  "charcoal",
+  "coke",
+  "coal dust"
+ ],
+ "asado": [
+  "roasted",
+  "baked",
+  "grilled",
+  "fried"
+ ],
+ "asar": [
+  "roast",
+  "bake",
+  "grill",
+  "fry"
+ ],
+ "ascender": [
+  "climb",
+  "ascend",
+  "rise",
+  "go up"
+ ],
+ "asco": [
+  "disgust",
+  "revulsion",
+  "loathing",
+  "nausea"
+ ],
+ "ascua": [
+  "steam",
+  "vapor",
+  "mist",
+  "fume"
+ ],
+ "asentar": [
+  "settle",
+  "place",
+  "put",
+  "install"
+ ],
+ "asfixiar": [
+  "strangle",
+  "smother",
+  "choke",
+  "suffocate"
+ ],
+ "asiento": [
+  "seat",
+  "chair",
+  "bench",
+  "stool"
+ ],
+ "asistente": [
+  "assistant",
+  "helper",
+  "aide",
+  "support staff"
+ ],
+ "aspirar": [
+  "breathe",
+  "inhale",
+  "suck",
+  "draw in"
+ ],
+ "asquear": [
+  "disgust",
+  "repel",
+  "turn off",
+  "make sick"
+ ],
+ "asqueroso": [
+  "disgusting",
+  "repulsive",
+  "foul",
+  "smelly"
+ ],
+ "astilla": [
+  "splinter",
+  "chip",
+  "shard",
+  "fragment"
+ ],
+ "astillar": [
+  "splinter",
+  "chip",
+  "break into pieces",
+  "crack"
+ ],
+ "asustar": [
+  "frighten",
+  "scare",
+  "alarm",
+  "terrify"
+ ],
+ "así": [
+  "thus",
+  "so",
+  "like this",
+  "accordingly"
+ ],
+ "atajar": [
+  "cut short",
+  "interrupt",
+  "stop",
+  "halt"
+ ],
+ "atalaya": [
+  "watchtower",
+  "lookout tower",
+  "fortified tower"
+ ],
+ "atar": [
+  "tie",
+  "bind",
+  "fasten",
+  "knot"
+ ],
+ "ataviarse": [
+  "dress oneself",
+  "adorn",
+  "get dressed",
+  "array"
+ ],
+ "ataúd": [
+  "coffin",
+  "chest",
+  "box",
+  "container"
+ ],
+ "atemorizar": [
+  "frighten",
+  "scare",
+  "alarm",
+  "terrify"
+ ],
+ "aterrizar": [
+  "land",
+  "touch down",
+  "alight",
+  "set down"
+ ],
+ "atisbar": [
+  "marinate",
+  "cure in brine",
+  "pickle",
+  "soak"
+ ],
+ "atorarse": [
+  "stumble",
+  "trip",
+  "fall",
+  "stumble over"
+ ],
+ "atractivo": [
+  "attractive",
+  "appealing",
+  "charming",
+  "seductive"
+ ],
+ "atrapar": [
+  "catch",
+  "capture",
+  "seize",
+  "snare"
+ ],
+ "atrasarse": [
+  "be late",
+  "delay",
+  "lag behind",
+  "miss"
+ ],
+ "atravesar": [
+  "cross",
+  "traverse",
+  "pierce",
+  "go through"
+ ],
+ "atrevido": [
+  "bold",
+  "daring",
+  "audacious",
+  "impudent"
+ ],
+ "atropellar": [
+  "plow down",
+  "crush",
+  "run over",
+  "trample"
+ ],
+ "atrás": [
+  "behind",
+  "back",
+  "rear",
+  "posterior"
+ ],
+ "aullar": [
+  "howl",
+  "bark",
+  "yelp",
+  "cry out"
+ ],
+ "aumentar": [
+  "increase",
+  "grow",
+  "rise",
+  "augment"
+ ],
+ "aunque": [
+  "although",
+  "even though",
+  "despite",
+  "though"
+ ],
+ "aurora": [
+  "dawn",
+  "morning light",
+  "auroral glow",
+  "first light"
+ ],
+ "ausentarse": [
+  "to be absent",
+  "to miss",
+  "to fail to attend",
+  "to be away"
+ ],
+ "avalancha": [
+  "snowslide",
+  "avalanche",
+  "rush",
+  "surge"
+ ],
+ "aventar": [
+  "to throw out",
+  "to discard",
+  "to get rid of",
+  "to cast aside"
+ ],
+ "avergonzado": [
+  "ashamed",
+  "embarrassed",
+  "humiliated",
+  "mortified"
+ ],
+ "avergonzar": [
+  "to shame",
+  "to embarrass",
+  "to disgrace",
+  "to humiliate"
+ ],
+ "avergonzarse": [
+  "to be ashamed",
+  "to feel embarrassed",
+  "to blush",
+  "to be humiliated"
+ ],
+ "averiguar": [
+  "to find out",
+  "to discover",
+  "to ascertain",
+  "to investigate"
+ ],
+ "avinagrado": [
+  "sour",
+  "tart",
+  "acidic",
+  "sharp-tasting"
+ ],
+ "avisar": [
+  "to warn",
+  "to notify",
+  "to inform",
+  "to alert"
+ ],
+ "aviso": [
+  "warning",
+  "notice",
+  "alert",
+  "signal"
+ ],
+ "ayer": [
+  "yesterday",
+  "the day before yesterday",
+  "prior day"
+ ],
+ "ayudante": [
+  "assistant",
+  "helper",
+  "aide",
+  "runner"
+ ],
+ "ayudar": [
+  "to help",
+  "to assist",
+  "to support",
+  "to aid"
+ ],
+ "azotar": [
+  "to whip",
+  "to lash",
+  "to beat",
+  "to scourge"
+ ],
+ "azuela": [
+  "spatula",
+  "scraper",
+  "turner",
+  "cooking tool"
+ ],
+ "azúcar": [
+  "sugar",
+  "sweetener",
+  "cane sugar",
+  "refined sugar"
+ ],
+ "añadir": [
+  "to add",
+  "to include",
+  "to insert",
+  "to append"
+ ],
+ "año": [
+  "year",
+  "annum",
+  "calendar year",
+  "fiscal year"
+ ],
+ "aún": [
+  "still",
+  "yet",
+  "even",
+  "moreover"
+ ],
+ "baba": [
+  "saliva",
+  "spit",
+  "drool"
+ ],
+ "babear": [
+  "to salivate",
+  "to drool",
+  "to spew"
+ ],
+ "babosa": [
+  "slime",
+  "mucus",
+  "slimeball"
+ ],
+ "baboso": [
+  "slimy",
+  "slimy",
+  "mucous"
+ ],
+ "bailar": [
+  "to dance",
+  "to move",
+  "to twirl"
+ ],
+ "baile": [
+  "dance",
+  "ball",
+  "jig"
+ ],
+ "bajada": [
+  "descent",
+  "drop",
+  "decline"
+ ],
+ "bajar": [
+  "to lower",
+  "to descend",
+  "to go down"
+ ],
+ "balbuciente": [
+  "stutterer",
+  "stammerer",
+  "stutter"
+ ],
+ "balcón": [
+  "balcony",
+  "landing",
+  "gallery"
+ ],
+ "banco": [
+  "bench",
+  "bank",
+  "dock"
+ ],
+ "barba": [
+  "beard",
+  "whiskers",
+  "moustache"
+ ],
+ "barbechado": [
+  "bearded",
+  "whiskered",
+  "mustachioed"
+ ],
+ "barbeckar": [
+  "to beard",
+  "to whisker",
+  "to mustache"
+ ],
+ "barrer": [
+  "to sweep",
+  "to rake",
+  "to clear"
+ ],
+ "barriga": [
+  "belly",
+  "stomach",
+  "gut"
+ ],
+ "barrigón": [
+  "puffy",
+  "bloated",
+  "pot-bellied"
+ ],
+ "barro": [
+  "clay",
+  "mud",
+  "dirt"
+ ],
+ "base": [
+  "base",
+  "foundation",
+  "bottom"
+ ],
+ "bastante": [
+  "plenty",
+  "enough",
+  "ample"
+ ],
+ "bastardo": [
+  "bastard",
+  "illegitimate son",
+  "half-breed",
+  "mixed blood"
+ ],
+ "bastón": [
+  "stick",
+  "staff",
+  "rod",
+  "baton"
+ ],
+ "basura": [
+  "garbage",
+  "trash",
+  "refuse",
+  "rubbish"
+ ],
+ "batir": [
+  "beat",
+  "whisk",
+  "stir",
+  "mix"
+ ],
+ "batán": [
+  "stone mill",
+  "grinder",
+  "crusher"
+ ],
+ "bautismo": [
+  "baptism",
+  "christening",
+  "sacrament of initiation"
+ ],
+ "bautizar": [
+  "to baptize",
+  "to christen",
+  "to dedicate"
+ ],
+ "bañar": [
+  "to bathe",
+  "to wash",
+  "to soak",
+  "to immerse"
+ ],
+ "bañarse": [
+  "to bathe",
+  "to wash oneself",
+  "to shower",
+  "to swim"
+ ],
+ "bebé": [
+  "baby",
+  "infant",
+  "toddler",
+  "young child"
+ ],
+ "becerro": [
+  "calve",
+  "young bull",
+  "heifer",
+  "calf"
+ ],
+ "besar": [
+  "to kiss",
+  "to suckle",
+  "to peck",
+  "to nuzzle"
+ ],
+ "beso": [
+  "kiss",
+  "caress",
+  "embrace",
+  "affection"
+ ],
+ "bifurcado": [
+  "forked",
+  "branched",
+  "split",
+  "y-shaped"
+ ],
+ "bifurcar": [
+  "to fork",
+  "to branch",
+  "to divide",
+  "to split"
+ ],
+ "bigotes": [
+  "moustache",
+  "whiskers",
+  "beard",
+  "facial hair"
+ ],
+ "bizco": [
+  "cake",
+  "biscuit",
+  "sweet bread",
+  "pastry"
+ ],
+ "blanco": [
+  "white",
+  "pale",
+  "blank",
+  "colorless"
+ ],
+ "blanquear": [
+  "to bleach",
+  "to whiten",
+  "to lighten",
+  "to decolorize"
+ ],
+ "boca": [
+  "mouth",
+  "opening",
+  "aperture",
+  "orifice"
+ ],
+ "bocado": [
+  "bite",
+  "mouthful",
+  "gulp",
+  "swallow"
+ ],
+ "bocio": [
+  "goiter",
+  "swelling",
+  "lump"
+ ],
+ "boda": [
+  "wedding",
+  "marriage",
+  "ceremony",
+  "nuptials"
+ ],
+ "bolsa": [
+  "bag",
+  "sack",
+  "pouch",
+  "purse"
+ ],
+ "bolsillo": [
+  "pocket",
+  "pocketbook",
+  "slipper"
+ ],
+ "bonito": [
+  "pretty",
+  "nice",
+  "handsome",
+  "lovely"
+ ],
+ "borde": [
+  "edge",
+  "border",
+  "rim",
+  "margin"
+ ],
+ "borracho": [
+  "drunk",
+  "tipsy",
+  "intoxicated",
+  "drunkard"
+ ],
+ "bostezar": [
+  "yawn",
+  "belch",
+  "burp",
+  "sigh"
+ ],
+ "botar": [
+  "throw",
+  "toss",
+  "cast",
+  "dump"
+ ],
+ "brasa": [
+  "ember",
+  "coal",
+  "spark",
+  "glow"
+ ],
+ "bravo": [
+  "bold",
+  "daring",
+  "fierce",
+  "courageous"
+ ],
+ "brazo": [
+  "arm",
+  "limb",
+  "shoulder",
+  "elbow"
+ ],
+ "brida": [
+  "brake",
+  "curb",
+  "rein",
+  "restraint"
+ ],
+ "brillar": [
+  "shine",
+  "gleam",
+  "glimmer",
+  "sparkle"
+ ],
+ "brincar": [
+  "jump",
+  "leap",
+  "hop",
+  "spring"
+ ],
+ "brizna": [
+  "sheaf",
+  "ear",
+  "stalk",
+  "bundle"
+ ],
+ "bruñir": [
+  "polish",
+  "shine",
+  "gloss",
+  "varnish"
+ ],
+ "buche": [
+  "stomach",
+  "belly",
+  "guts",
+  "midriff"
+ ],
+ "bueno": [
+  "good",
+  "fine",
+  "nice",
+  "excellent"
+ ],
+ "buho": [
+  "owl",
+  "nightjar",
+  "nocturnal bird"
+ ],
+ "bulla": [
+  "bubble",
+  "blather",
+  "nonsense"
+ ],
+ "bulto": [
+  "bulk",
+  "lump",
+  "hump",
+  "mass"
+ ],
+ "burbujear": [
+  "to bubble",
+  "to fizz",
+  "to effervesce"
+ ],
+ "burlarse": [
+  "to mock",
+  "to jest",
+  "to ridicule",
+  "to tease"
+ ],
+ "buscar": [
+  "to seek",
+  "to look for",
+  "to hunt",
+  "to search"
+ ],
+ "caballero": [
+  "knight",
+  "gentleman",
+  "cavalier",
+  "squire"
+ ],
+ "caballo": [
+  "horse",
+  "steed",
+  "pony",
+  "colt"
+ ],
+ "cabecera": [
+  "header",
+  "top",
+  "head",
+  "beginning"
+ ],
+ "cabello": [
+  "hair",
+  "locks",
+  "tresses",
+  "mane"
+ ],
+ "cabeza": [
+  "head",
+  "skull",
+  "brain",
+  "forehead"
+ ],
+ "cabezón": [
+  "big-headed",
+  "bulky",
+  "stout",
+  "large"
+ ],
+ "cabizbajo": [
+  "downcast",
+  "drooping",
+  "depressed",
+  "bowed"
+ ],
+ "cabra": [
+  "goat",
+  "kid",
+  "does",
+  "buck"
+ ],
+ "cacho": [
+  "knob",
+  "bump",
+  "lump",
+  "protuberance"
+ ],
+ "cachorro": [
+  "puppy",
+  "kit",
+  "cub",
+  "whelp"
+ ],
+ "cadáver": [
+  "corpse",
+  "body",
+  "dead",
+  "carcass"
+ ],
+ "caer": [
+  "to fall",
+  "to drop",
+  "to tumble",
+  "to sink"
+ ],
+ "calavera": [
+  "skull",
+  "cranium",
+  "bone",
+  "head"
+ ],
+ "calcular": [
+  "to calculate",
+  "to compute",
+  "to figure",
+  "to reckon"
+ ],
+ "calentado": [
+  "heated",
+  "warmed",
+  "hot"
+ ],
+ "calentar": [
+  "heat",
+  "warm",
+  "cook"
+ ],
+ "caliente": [
+  "hot",
+  "warm",
+  "heated"
+ ],
+ "callar": [
+  "silence",
+  "hush",
+  "quiet"
+ ],
+ "callarse": [
+  "shut up",
+  "be silent",
+  "hold one's tongue"
+ ],
+ "calor": [
+  "heat",
+  "warmth",
+  "temperature"
+ ],
+ "calumniador": [
+  "slanderer",
+  "libeler",
+  "calumniator"
+ ],
+ "calumniar": [
+  "slander",
+  "libel",
+  "malign"
+ ],
+ "caluroso": [
+  "hot",
+  "warm",
+  "fiery"
+ ],
+ "calvo": [
+  "bald",
+  "bald-headed",
+  "shaven"
+ ],
+ "cama": [
+  "bed",
+  "couch",
+  "mattress"
+ ],
+ "camarada": [
+  "comrade",
+  "friend",
+  "buddy"
+ ],
+ "cambiar": [
+  "change",
+  "swap",
+  "alter"
+ ],
+ "camilla": [
+  "cradle",
+  "cot",
+  "bassinet"
+ ],
+ "caminar": [
+  "walk",
+  "tread",
+  "pace"
+ ],
+ "camino": [
+  "road",
+  "path",
+  "way"
+ ],
+ "camisa": [
+  "shirt",
+  "blouse",
+  "tunic"
+ ],
+ "campo": [
+  "field",
+  "plain",
+  "countryside"
+ ],
+ "cana": [
+  "reed",
+  "cane",
+  "rush"
+ ],
+ "canasta": [
+  "basket",
+  "hamper",
+  "wickerwork"
+ ],
+ "cancha": [
+  "field",
+  "pitch",
+  "court",
+  "ground",
+  "arena"
+ ],
+ "canción": [
+  "song",
+  "tune",
+  "melody",
+  "ballad",
+  "hymn"
+ ],
+ "candado": [
+  "lock",
+  "padlock",
+  "hasp",
+  "clasp",
+  "fastener"
+ ],
+ "candela": [
+  "candle",
+  "taper",
+  "tallow candle",
+  "wax light",
+  "lamp"
+ ],
+ "canoso": [
+  "gray",
+  "grayish",
+  "hoary",
+  "sallow",
+  "pale"
+ ],
+ "cansado": [
+  "tired",
+  "weary",
+  "exhausted",
+  "fatigued",
+  "worn out"
+ ],
+ "cansar": [
+  "to tire",
+  "to weary",
+  "to exhaust",
+  "to fatigue",
+  "to drain"
+ ],
+ "cansarse": [
+  "to tire oneself",
+  "to get tired",
+  "to become weary",
+  "to grow exhausted",
+  "to wear out"
+ ],
+ "cantar": [
+  "to sing",
+  "to chant",
+  "to recite",
+  "to croon",
+  "to hum"
+ ],
+ "canto": [
+  "song",
+  "verse",
+  "refrain",
+  "melody",
+  "ballad"
+ ],
+ "cantor": [
+  "singer",
+  "vocalist",
+  "bard",
+  "chanter",
+  "performer"
+ ],
+ "cantuta": [
+  "canary",
+  "canary bird",
+  "yellow finch",
+  "songbird",
+  "small bird"
+ ],
+ "capturar": [
+  "to capture",
+  "to catch",
+  "to seize",
+  "to arrest",
+  "to take hold of"
+ ],
+ "capucha": [
+  "hood",
+  "cowl",
+  "cap",
+  "headgear",
+  "covering"
+ ],
+ "capullo": [
+  "bud",
+  "flower bud",
+  "blossom",
+  "sprout",
+  "immature fruit"
+ ],
+ "capulí": [
+  "corn husk",
+  "corn cob",
+  "maize shell",
+  "grain",
+  "dried corn"
+ ],
+ "cara": [
+  "face",
+  "cheek",
+  "visage",
+  "countenance",
+  "front"
+ ],
+ "caramelo": [
+  "caramel",
+  "candy",
+  "sugar candy",
+  "toffee",
+  "hard candy"
+ ],
+ "carbón": [
+  "coal",
+  "coke",
+  "charcoal",
+  "carbon",
+  "black rock"
+ ],
+ "carga": [
+  "load",
+  "burden",
+  "cargo",
+  "freight",
+  "weight"
+ ],
+ "cargar": [
+  "load",
+  "charge",
+  "load up",
+  "pack"
+ ],
+ "cariñoso": [
+  "affectionate",
+  "loving",
+  "doting",
+  "tender"
+ ],
+ "carminar": [
+  "relieve flatulence",
+  "expel gas",
+  "pass wind"
+ ],
+ "carne": [
+  "meat",
+  "flesh",
+  "meat product",
+  "red meat"
+ ],
+ "carnero": [
+  "ram",
+  "mutton",
+  "lamb",
+  "ewe"
+ ],
+ "carnicero": [
+  "butcher",
+  "meat seller",
+  "butcher shop owner"
+ ],
+ "carnoso": [
+  "fleshy",
+  "meaty",
+  "muscular",
+  "succulent"
+ ],
+ "caro": [
+  "expensive",
+  "dear",
+  "costly",
+  "pricey"
+ ],
+ "carrizo": [
+  "reed",
+  "rush",
+  "cane",
+  "bulrush"
+ ],
+ "carta": [
+  "letter",
+  "paper",
+  "menu",
+  "bill of lading"
+ ],
+ "cartilaginoso": [
+  "cartilaginous",
+  "cartilage-like",
+  "chondroid"
+ ],
+ "casa": [
+  "house",
+  "home",
+  "house",
+  "dwelling"
+ ],
+ "casado": [
+  "married",
+  "wedded",
+  "married man",
+  "husband"
+ ],
+ "casarse": [
+  "to marry",
+  "to get married",
+  "to wed",
+  "to tie the knot"
+ ],
+ "cascada": [
+  "waterfall",
+  "cascade",
+  "falls",
+  "cataract"
+ ],
+ "cascajo": [
+  "husk",
+  "shell",
+  "chaff",
+  "husked grain"
+ ],
+ "casi": [
+  "almost",
+  "nearly",
+  "almost",
+  "very nearly"
+ ],
+ "castañetear": [
+  "to clack fingers",
+  "to tap fingers together",
+  "to click fingers"
+ ],
+ "castellano": [
+  "spanish",
+  "castilian",
+  "spanish language",
+  "castilian language"
+ ],
+ "castrar": [
+  "to castrate",
+  "to neuter",
+  "to geld",
+  "to sterilize"
+ ],
+ "catarata": [
+  "waterfall",
+  "cascade",
+  "falls",
+  "precipice"
+ ],
+ "catarro": [
+  "cold",
+  "sniffle",
+  "runny nose",
+  "congestion"
+ ],
+ "cautivo": [
+  "prisoner",
+  "captive",
+  "hostage",
+  "detainee"
+ ],
+ "cavar": [
+  "dig",
+  "dig up",
+  "excavate",
+  "bore"
+ ],
+ "caverna": [
+  "cave",
+  "cavern",
+  "grotto",
+  "den"
+ ],
+ "cazar": [
+  "hunt",
+  "hunt down",
+  "pursue",
+  "stalk"
+ ],
+ "caña": [
+  "reed",
+  "cane",
+  "stalk",
+  "bamboo"
+ ],
+ "cebada": [
+  "barley",
+  "grain",
+  "crop",
+  "seed"
+ ],
+ "cebolla": [
+  "onion",
+  "bulb",
+  "shallot",
+  "leek"
+ ],
+ "cedazo": [
+  "strainer",
+  "colander",
+  "sieve",
+  "skimmer"
+ ],
+ "ceja": [
+  "eyebrow",
+  "eyelid",
+  "brow",
+  "eye"
+ ],
+ "celebrar": [
+  "celebrate",
+  "observe",
+  "mark",
+  "commemorate"
+ ],
+ "cementerio": [
+  "cemetery",
+  "graveyard",
+  "burial ground",
+  "mortuary"
+ ],
+ "cenagoso": [
+  "marshy",
+  "boggy",
+  "swampy",
+  "muddy"
+ ],
+ "ceniza": [
+  "ash",
+  "cinder",
+  "embers",
+  "dust"
+ ],
+ "centro": [
+  "center",
+  "middle",
+  "core",
+  "heart"
+ ],
+ "cerca": [
+  "near",
+  "close",
+  "nearby",
+  "adjacent"
+ ],
+ "cercar": [
+  "enclose",
+  "surround",
+  "fence",
+  "ring"
+ ],
+ "cerdo": [
+  "pig",
+  "swine",
+  "boar",
+  "sow"
+ ],
+ "cerebro": [
+  "brain",
+  "mind",
+  "skull",
+  "cranium"
+ ],
+ "cernidor": [
+  "sifter",
+  "screen",
+  "sieve"
+ ],
+ "cerrar": [
+  "close",
+  "shut",
+  "seal"
+ ],
+ "cerro": [
+  "mountain",
+  "hill",
+  "peak"
+ ],
+ "chacra": [
+  "farm",
+  "plot",
+  "field"
+ ],
+ "champa": [
+  "meadow",
+  "pasture",
+  "plain"
+ ],
+ "chamuscar": [
+  "to peel",
+  "to husk",
+  "to shell"
+ ],
+ "chancho": [
+  "pig",
+  "hog",
+  "swine"
+ ],
+ "chapar": [
+  "to endure",
+  "to bear",
+  "to withstand"
+ ],
+ "chato": [
+  "flat",
+  "short",
+  "blunt"
+ ],
+ "chicha": [
+  "fermented corn drink",
+  "beer",
+  "ale"
+ ],
+ "chichón": [
+  "chicken",
+  "fowl",
+  "bird"
+ ],
+ "chismear": [
+  "to gossip",
+  "to talk",
+  "to chatter"
+ ],
+ "chismoso": [
+  "gossiper",
+  "tattler",
+  "talker"
+ ],
+ "chistoso": [
+  "funny",
+  "humorous",
+  "witty"
+ ],
+ "chivo": [
+  "goat",
+  "kid",
+  "sheep"
+ ],
+ "choclo": [
+  "corn",
+  "maize",
+  "cornmeal"
+ ],
+ "chocolate": [
+  "cocoa",
+  "cacao",
+  "chocolate drink"
+ ],
+ "chorrear": [
+  "to flow",
+  "to stream",
+  "to pour"
+ ],
+ "choza": [
+  "hut",
+  "cabin",
+  "shack"
+ ],
+ "chueco": [
+  "crooked",
+  "bent",
+  "curved"
+ ],
+ "cicatriz": [
+  "scar",
+  "mark",
+  "wound",
+  "blemish"
+ ],
+ "ciego": [
+  "blind",
+  "blindfolded",
+  "sightless",
+  "eyeless"
+ ],
+ "cielo": [
+  "sky",
+  "heavens",
+  "firmament",
+  "azure"
+ ],
+ "ciempiés": [
+  "centipede",
+  "many-legged creature",
+  "arachnid"
+ ],
+ "cien": [
+  "hundred",
+  "one hundred",
+  "centum"
+ ],
+ "ciertamente": [
+  "certainly",
+  "surely",
+  "indeed",
+  "positively"
+ ],
+ "cierto": [
+  "certain",
+  "sure",
+  "definite",
+  "assured"
+ ],
+ "cigarrillo": [
+  "cigarette",
+  "little cigar",
+  "small cigarette"
+ ],
+ "cimiento": [
+  "foundation",
+  "base",
+  "footing",
+  "ground-floor"
+ ],
+ "cinco": [
+  "five",
+  "quint",
+  "quinque"
+ ],
+ "cinta": [
+  "ribbon",
+  "tape",
+  "strip",
+  "band"
+ ],
+ "cintura": [
+  "waist",
+  "girdle",
+  "belt",
+  "loins"
+ ],
+ "ciudad": [
+  "city",
+  "town",
+  "metropolis",
+  "municipality"
+ ],
+ "ciénaga": [
+  "marsh",
+  "swamp",
+  "fen",
+  "bog"
+ ],
+ "claro": [
+  "clear",
+  "bright",
+  "light",
+  "plain"
+ ],
+ "clasificar": [
+  "classify",
+  "categorize",
+  "sort",
+  "arrange"
+ ],
+ "cloquear": [
+  "to cloche",
+  "to cover with a cloche",
+  "to cap"
+ ],
+ "cobarde": [
+  "coward",
+  "craven",
+  "timorous",
+  "pusillanimous"
+ ],
+ "cobrar": [
+  "collect",
+  "demand",
+  "claim",
+  "receive"
+ ],
+ "coca": [
+  "cocaine",
+  "coca leaf",
+  "euphorbia",
+  "drug"
+ ],
+ "cochino": [
+  "pig",
+  "swine",
+  "hog",
+  "boar"
+ ],
+ "cocido": [
+  "boiled",
+  "cooked",
+  "stewed",
+  "simmered"
+ ],
+ "cocina": [
+  "kitchen",
+  "cooking",
+  "cuisine",
+  "cookery"
+ ],
+ "cocinar": [
+  "cook",
+  "prepare",
+  "stew",
+  "simmer"
+ ],
+ "codiciar": [
+  "envy",
+  "desire",
+  "crave",
+  "long for"
+ ],
+ "codicioso": [
+  "greedy",
+  "covetous",
+  "avaricious",
+  "stingy"
+ ],
+ "codo": [
+  "elbow",
+  "forearm",
+  "joint"
+ ],
+ "coger": [
+  "grab",
+  "seize",
+  "pick up",
+  "take hold of"
+ ],
+ "cohabitar": [
+  "live together",
+  "dwell together",
+  "reside jointly"
+ ],
+ "cojear": [
+  "climb",
+  "scale",
+  "ascend",
+  "mount"
+ ],
+ "cojo": [
+  "limping",
+  "lame",
+  "crippled",
+  "disabled"
+ ],
+ "cola": [
+  "tail",
+  "queue",
+  "line",
+  "string"
+ ],
+ "colaborar": [
+  "collaborate",
+  "cooperate",
+  "work together",
+  "assist"
+ ],
+ "colador": [
+  "strainer",
+  "sieve",
+  "filter",
+  "colander"
+ ],
+ "colar": [
+  "filter",
+  "strain",
+  "pass through",
+  "drip"
+ ],
+ "colega": [
+  "colleague",
+  "partner",
+  "associate",
+  "comrade"
+ ],
+ "colgador": [
+  "hanger",
+  "suspender",
+  "hangman",
+  "gallows"
+ ],
+ "colgar": [
+  "hang",
+  "suspend",
+  "dangle",
+  "hoist"
+ ],
+ "collar": [
+  "necklace",
+  "collarbone",
+  "neckband",
+  "yoke"
+ ],
+ "colocar": [
+  "place",
+  "put",
+  "set",
+  "position"
+ ],
+ "color": [
+  "colour",
+  "hue",
+  "tint",
+  "shade",
+  "pigmentation"
+ ],
+ "comadreja": [
+  "weasel",
+  "ferret",
+  "mustela",
+  "weasels"
+ ],
+ "comarca": [
+  "region",
+  "district",
+  "area",
+  "locality",
+  "territory"
+ ],
+ "combinar": [
+  "combine",
+  "mix",
+  "blend",
+  "merge",
+  "join"
+ ],
+ "comenzar": [
+  "begin",
+  "start",
+  "commence",
+  "initiate",
+  "open"
+ ],
+ "comer": [
+  "eat",
+  "consume",
+  "devour",
+  "ingest",
+  "munch"
+ ],
+ "comezón": [
+  "itch",
+  "tickle",
+  "irritation",
+  "pruritus",
+  "scratchiness"
+ ],
+ "comida": [
+  "food",
+  "meal",
+  "dish",
+  "sustenance",
+  "nourishment"
+ ],
+ "comienzo": [
+  "beginning",
+  "start",
+  "opening",
+  "inception",
+  "commencement"
+ ],
+ "comijn": [
+  "hominy",
+  "boiled corn",
+  "grits",
+  "cornmeal",
+  "processed maize"
+ ],
+ "compadecerse": [
+  "sympathize",
+  "pity",
+  "feel compassion for",
+  "mourn with",
+  "share sorrow"
+ ],
+ "comparación": [
+  "comparison",
+  "contrast",
+  "likeness",
+  "resemblance",
+  "juxtaposition"
+ ],
+ "comparar": [
+  "compare",
+  "contrast",
+  "liken",
+  "equate",
+  "set against"
+ ],
+ "compasión": [
+  "compassion",
+  "sympathy",
+  "pity",
+  "empathy",
+  "tenderheartedness"
+ ],
+ "completamente": [
+  "completely",
+  "entirely",
+  "wholly",
+  "utterly",
+  "absolutely"
+ ],
+ "componer": [
+  "compose",
+  "make up",
+  "constitute",
+  "form",
+  "assemble"
+ ],
+ "comportarse": [
+  "behave",
+  "act",
+  "conduct oneself",
+  "carry on",
+  "perform"
+ ],
+ "compra": [
+  "purchase",
+  "buying",
+  "shopping",
+  "acquisition",
+  "transaction"
+ ],
+ "comprar": [
+  "buy",
+  "purchase",
+  "acquire",
+  "obtain",
+  "spend money on"
+ ],
+ "comprender": [
+  "understand",
+  "comprehend",
+  "grasp",
+  "realize",
+  "get"
+ ],
+ "comulgar": [
+  "commune",
+  "share in the sacrament",
+  "celebrate together"
+ ],
+ "comunicación": [
+  "communication",
+  "contact",
+  "correspondence",
+  "exchange"
+ ],
+ "comunicar": [
+  "communicate",
+  "inform",
+  "notify",
+  "signal"
+ ],
+ "concentrase": [
+  "concentrate",
+  "focus",
+  "gather attention",
+  "concentrate oneself"
+ ],
+ "conducir": [
+  "drive",
+  "steer",
+  "guide",
+  "conduct"
+ ],
+ "conductor": [
+  "driver",
+  "conductor",
+  "steersman",
+  "guide"
+ ],
+ "conejo": [
+  "rabbit",
+  "hare",
+  "jackrabbit",
+  "cottontail"
+ ],
+ "confesar": [
+  "confess",
+  "avow",
+  "acknowledge",
+  "admit"
+ ],
+ "confesarse": [
+  "confess",
+  "confess one's sins",
+  "make a confession",
+  "disclose"
+ ],
+ "confianzudo": [
+  "trustful",
+  "credulous",
+  "gullible",
+  "trusting"
+ ],
+ "confiar": [
+  "trust",
+  "rely on",
+  "confide in",
+  "depend upon"
+ ],
+ "confijndirse": [
+  "fixate",
+  "stare fixedly",
+  "gaze intently",
+  "lock eyes"
+ ],
+ "conforme": [
+  "agreeable",
+  "satisfactory",
+  "content",
+  "compliant"
+ ],
+ "confundido": [
+  "confused",
+  "perplexed",
+  "bewildered",
+  "at a loss"
+ ],
+ "confundir": [
+  "confuse",
+  "mix up",
+  "mistake for",
+  "misidentify"
+ ],
+ "congelado": [
+  "frozen",
+  "iced",
+  "solidified",
+  "frozen over"
+ ],
+ "congelar": [
+  "freeze",
+  "ice over",
+  "solidify",
+  "congeal"
+ ],
+ "congregar": [
+  "gather",
+  "assemble",
+  "collect",
+  "bring together"
+ ],
+ "congregarse": [
+  "assemble",
+  "gather",
+  "meet",
+  "come together"
+ ],
+ "conocer": [
+  "know",
+  "recognize",
+  "be acquainted with",
+  "perceive"
+ ],
+ "consentir": [
+  "agree",
+  "assent",
+  "acquiesce",
+  "yield"
+ ],
+ "consolar": [
+  "comfort",
+  "console",
+  "soothe",
+  "cheer up"
+ ],
+ "construir": [
+  "build",
+  "construct",
+  "erect",
+  "fabricate"
+ ],
+ "consultar": [
+  "consult",
+  "inquire",
+  "ask",
+  "check"
+ ],
+ "contagiar": [
+  "infect",
+  "contaminate",
+  "pollute",
+  "taint"
+ ],
+ "contar": [
+  "count",
+  "number",
+  "tally",
+  "enumerate"
+ ],
+ "contemporaneo": [
+  "contemporary",
+  "contemporary person",
+  "peer",
+  "coeval"
+ ],
+ "contener": [
+  "contain",
+  "hold",
+  "keep",
+  "enclose"
+ ],
+ "contento": [
+  "happy",
+  "pleased",
+  "glad",
+  "delighted"
+ ],
+ "contestar": [
+  "answer",
+  "reply",
+  "respond",
+  "answer back"
+ ],
+ "contigo": [
+  "with you",
+  "by your side",
+  "alongside you"
+ ],
+ "contiguo": [
+  "adjacent",
+  "neighboring",
+  "contiguous",
+  "next to"
+ ],
+ "continuar": [
+  "continue",
+  "proceed",
+  "carry on",
+  "persist"
+ ],
+ "contraer": [
+  "contract",
+  "incur",
+  "suffer",
+  "acquire"
+ ],
+ "contraparte": [
+  "counterpart",
+  "opposite party",
+  "equivalent",
+  "match"
+ ],
+ "contratar": [
+  "contract",
+  "hire",
+  "employ",
+  "engage"
+ ],
+ "contusión": [
+  "bruise",
+  "contusion",
+  "bump",
+  "blowout"
+ ],
+ "conversar": [
+  "talk",
+  "converse",
+  "chat",
+  "speak"
+ ],
+ "convertir": [
+  "convert",
+  "transform",
+  "change",
+  "alter"
+ ],
+ "convidar": [
+  "invite",
+  "bid",
+  "summon",
+  "call"
+ ],
+ "conviviente": [
+  "cohabitant",
+  "roommate",
+  "companion",
+  "fellow dweller"
+ ],
+ "copular": [
+  "mate",
+  "join",
+  "unite",
+  "couple"
+ ],
+ "corazón": [
+  "heart",
+  "core",
+  "center",
+  "middle"
+ ],
+ "corcovado": [
+  "hunched",
+  "bent",
+  "stooped",
+  "curved"
+ ],
+ "cordel": [
+  "rope",
+  "string",
+  "twine",
+  "cord"
+ ],
+ "cordero": [
+  "lamb",
+  "young sheep",
+  "agnello",
+  "lambskin"
+ ],
+ "cornear": [
+  "to horn",
+  "to antler",
+  "to have horns",
+  "to be horned"
+ ],
+ "cornearse": [
+  "to horn oneself",
+  "to grow horns",
+  "to become horned",
+  "to antler"
+ ],
+ "cornudo": [
+  "horned",
+  "hornlike",
+  "horn-bearing",
+  "horned"
+ ],
+ "coronta": [
+  "crown",
+  "topknot",
+  "tuft",
+  "crest"
+ ],
+ "corpulento": [
+  "plump",
+  "fat",
+  "bulky",
+  "corpulent"
+ ],
+ "corral": [
+  "pen",
+  "corral",
+  "yard",
+  "enclosure"
+ ],
+ "correa": [
+  "strap",
+  "girth",
+  "band",
+  "belt"
+ ],
+ "corregir": [
+  "correct",
+  "amend",
+  "fix",
+  "rectify"
+ ],
+ "corregirse": [
+  "to correct oneself",
+  "to mend one's ways",
+  "to reform",
+  "to straighten out"
+ ],
+ "correoso": [
+  "courteous",
+  "polite",
+  "civil",
+  "respectful"
+ ],
+ "correr": [
+  "run",
+  "go",
+  "move",
+  "travel"
+ ],
+ "corromperse": [
+  "to rot",
+  "to spoil",
+  "to corrupt",
+  "to decay"
+ ],
+ "cortapelo": [
+  "hairpin",
+  "hair clip",
+  "hairnet",
+  "hair tie"
+ ],
+ "cortes": [
+  "cuts",
+  "slices",
+  "sections",
+  "portions"
+ ],
+ "corteza": [
+  "bark",
+  "rind",
+  "covering",
+  "outer layer"
+ ],
+ "corto": [
+  "short",
+  "brief",
+  "little",
+  "compact"
+ ],
+ "cosecha": [
+  "harvest",
+  "crop",
+  "yield",
+  "gathering"
+ ],
+ "coser": [
+  "sew",
+  "stitch",
+  "needlework",
+  "mend"
+ ],
+ "cosquillar": [
+  "tickle",
+  "prickle",
+  "itch",
+  "poke"
+ ],
+ "costado": [
+  "side",
+  "flank",
+  "rib side",
+  "lateral part"
+ ],
+ "costalillo": [
+  "rib",
+  "costal bone",
+  "thoracic segment",
+  "small rib"
+ ],
+ "costilla": [
+  "rib",
+  "rib bone",
+  "costal cartilage",
+  "vertebrae"
+ ],
+ "costillar": [
+  "ribbed",
+  "striated",
+  "muscular",
+  "fibrous"
+ ],
+ "costura": [
+  "seam",
+  "stitch",
+  "suture",
+  "joining"
+ ],
+ "coyuntura": [
+  "joint",
+  "junction",
+  "meeting point",
+  "connection"
+ ],
+ "creador": [
+  "creator",
+  "maker",
+  "originator",
+  "producer"
+ ],
+ "crear": [
+  "create",
+  "make",
+  "produce",
+  "invent"
+ ],
+ "crecer": [
+  "grow",
+  "increase",
+  "expand",
+  "develop"
+ ],
+ "crecido": [
+  "grown",
+  "mature",
+  "adult",
+  "full-grown"
+ ],
+ "creer": [
+  "believe",
+  "trust",
+  "think",
+  "hold"
+ ],
+ "crepúsculo": [
+  "dusk",
+  "twilight",
+  "evening",
+  "darkening"
+ ],
+ "crespo": [
+  "curly",
+  "frizzy",
+  "wavy",
+  "ringlet"
+ ],
+ "criar": [
+  "raise",
+  "breed",
+  "rear",
+  "nurture"
+ ],
+ "criatura": [
+  "creature",
+  "being",
+  "entity",
+  "living thing"
+ ],
+ "cribar": [
+  "sieve",
+  "screen",
+  "filter",
+  "sift",
+  "separate"
+ ],
+ "crimen": [
+  "crime",
+  "offense",
+  "transgression",
+  "wrong",
+  "fault"
+ ],
+ "criminal": [
+  "criminal",
+  "lawbreaker",
+  "offender",
+  "delinquent",
+  "rascal"
+ ],
+ "cristalino": [
+  "crystal",
+  "glassy",
+  "transparent",
+  "clear",
+  "lucid"
+ ],
+ "criticar": [
+  "criticize",
+  "criticize",
+  "censure",
+  "condemn",
+  "denounce"
+ ],
+ "crudo": [
+  "raw",
+  "uncooked",
+  "fresh",
+  "crude",
+  "unripe"
+ ],
+ "cruel": [
+  "cruel",
+  "inhuman",
+  "merciless",
+  "barbarous",
+  "savage"
+ ],
+ "cruzar": [
+  "cross",
+  "cross over",
+  "intersect",
+  "meet",
+  "traverse"
+ ],
+ "cráneo": [
+  "skull",
+  "cranium",
+  "head",
+  "skullcap",
+  "calvarium"
+ ],
+ "cualquiera": [
+  "anyone",
+  "anybody",
+  "whoever",
+  "whomever",
+  "anyone"
+ ],
+ "cuantioso": [
+  "numerous",
+  "many",
+  "great",
+  "abundant",
+  "plentiful"
+ ],
+ "cuanto": [
+  "how much",
+  "how many",
+  "as much",
+  "so much",
+  "whatever"
+ ],
+ "cuarenta": [
+  "forty",
+  "forty",
+  "four score",
+  "40",
+  "forty"
+ ],
+ "cuatro": [
+  "four",
+  "four",
+  "quater",
+  "4",
+  "four"
+ ],
+ "cuatrocientos": [
+  "four hundred",
+  "four hundred",
+  "400",
+  "four hundreds"
+ ],
+ "cubrir": [
+  "cover",
+  "cover up",
+  "shield",
+  "conceal",
+  "roof"
+ ],
+ "cubrirse": [
+  "to cover oneself",
+  "to clothe",
+  "to dress",
+  "to wrap",
+  "to shroud"
+ ],
+ "cuchara": [
+  "spoon",
+  "ladle",
+  "scoop",
+  "serving spoon",
+  "tablespoon"
+ ],
+ "cucharon": [
+  "ladle",
+  "soup spoon",
+  "serving spoon",
+  "large spoon",
+  "scoop"
+ ],
+ "cuchillo": [
+  "knife",
+  "dagger",
+  "blade",
+  "stiletto",
+  "cutlass"
+ ],
+ "cuellilargo": [
+  "long neck",
+  "long-necked",
+  "elongated neck"
+ ],
+ "cuello": [
+  "neck",
+  "throat",
+  "nape"
+ ],
+ "cuenta": [
+  "count",
+  "tally",
+  "account",
+  "reckoning"
+ ],
+ "cuento": [
+  "short story",
+  "tale",
+  "fable",
+  "narrative"
+ ],
+ "cuerno": [
+  "horn",
+  "hornlike projection",
+  "antler"
+ ],
+ "cuero": [
+  "leather",
+  "hide",
+  "skin",
+  "pelt"
+ ],
+ "cuerpo": [
+  "body",
+  "torso",
+  "trunk",
+  "frame"
+ ],
+ "cuesta": [
+  "slope",
+  "incline",
+  "grade",
+  "ascent"
+ ],
+ "cueva": [
+  "den",
+  "cave",
+  "hole",
+  "cavern"
+ ],
+ "cuidar": [
+  "care for",
+  "watch over",
+  "tend",
+  "protect"
+ ],
+ "culebra": [
+  "snake",
+  "serpent",
+  "viper",
+  "asp"
+ ],
+ "culebrear": [
+  "to slither",
+  "to creep",
+  "to crawl",
+  "to wriggle"
+ ],
+ "culo": [
+  "anus",
+  "rear end",
+  "backside",
+  "hindquarters"
+ ],
+ "culpa": [
+  "guilt",
+  "fault",
+  "sin",
+  "blame"
+ ],
+ "culpar": [
+  "blame",
+  "accuse",
+  "charge",
+  "implicate"
+ ],
+ "cultivar": [
+  "cultivate",
+  "farm",
+  "grow",
+  "tend"
+ ],
+ "cumpleaños": [
+  "birthday",
+  "birthday party",
+  "bday",
+  "birthdate"
+ ],
+ "cumplir": [
+  "fulfill",
+  "complete",
+  "perform",
+  "accomplish"
+ ],
+ "curandero": [
+  "healer",
+  "shaman",
+  "doctor",
+  "cure"
+ ],
+ "curar": [
+  "cure",
+  "heal",
+  "remedy",
+  "treat"
+ ],
+ "curiosear": [
+  "to wonder",
+  "to inquire",
+  "to ask about",
+  "to investigate",
+  "to probe"
+ ],
+ "curioso": [
+  "curious",
+  "odd",
+  "strange",
+  "peculiar",
+  "unusual"
+ ],
+ "curvar": [
+  "to bend",
+  "to curve",
+  "to arc",
+  "to flex",
+  "to twist"
+ ],
+ "cuy": [
+  "whose",
+  "of whom",
+  "of which",
+  "belonging to"
+ ],
+ "cuál": [
+  "which",
+  "what",
+  "who",
+  "whom",
+  "whose"
+ ],
+ "cuñada": [
+  "sister-in-law",
+  "brother's wife",
+  "sister's husband"
+ ],
+ "cuñado": [
+  "brother-in-law",
+  "sister's husband",
+  "wife's brother"
+ ],
+ "cálido": [
+  "warm",
+  "hot",
+  "heated",
+  "tepid",
+  "warm-weathered"
+ ],
+ "cántaro": [
+  "jug",
+  "bucket",
+  "cask",
+  "vessel",
+  "container"
+ ],
+ "cárcel": [
+  "prison",
+  "jail",
+  "penitentiary",
+  "lock-up",
+  "gaol"
+ ],
+ "cáscara": [
+  "shell",
+  "husk",
+  "rind",
+  "skin",
+  "covering"
+ ],
+ "césped": [
+  "grass",
+  "lawn",
+  "turf",
+  "green",
+  "sward"
+ ],
+ "cólera": [
+  "rage",
+  "fury",
+  "anger",
+  "wrath",
+  "indignation"
+ ],
+ "cóncavo": [
+  "concave",
+  "hollow",
+  "sunken",
+  "indented",
+  "inward-curving"
+ ],
+ "dar": [
+  "to give",
+  "to yield",
+  "to grant",
+  "to provide",
+  "to bestow"
+ ],
+ "de": [
+  "of",
+  "from",
+  "by",
+  "with",
+  "in"
+ ],
+ "decapitar": [
+  "to behead",
+  "to chop off the head",
+  "to cut down",
+  "to decapitate"
+ ],
+ "decrecer": [
+  "to decrease",
+  "to diminish",
+  "to shrink",
+  "to decline",
+  "to fall"
+ ],
+ "defecar": [
+  "to defecate",
+  "to shit",
+  "to poop",
+  "to excrete",
+  "to eliminate waste"
+ ],
+ "defender": [
+  "to defend",
+  "to protect",
+  "to shield",
+  "to support",
+  "to uphold"
+ ],
+ "defensor": [
+  "advocate",
+  "defender",
+  "champion",
+  "supporter"
+ ],
+ "deforme": [
+  "deformed",
+  "misshapen",
+  "crooked",
+  "twisted"
+ ],
+ "delantero": [
+  "front",
+  "forward",
+  "frontal",
+  "ahead"
+ ],
+ "delatar": [
+  "snitch",
+  "expose",
+  "betray",
+  "inform"
+ ],
+ "delegado": [
+  "delegate",
+  "agent",
+  "representative",
+  "deputy"
+ ],
+ "delgado": [
+  "thin",
+  "slender",
+  "skinny",
+  "lean"
+ ],
+ "deliberadamente": [
+  "intentionally",
+  "on purpose",
+  "deliberately",
+  "willfully"
+ ],
+ "delicioso": [
+  "delicious",
+  "tasty",
+  "scrumptious",
+  "delectable"
+ ],
+ "delirar": [
+  "delirium",
+  "hallucinate",
+  "rave",
+  "go mad"
+ ],
+ "delito": [
+  "crime",
+  "offense",
+  "felony",
+  "misdemeanor"
+ ],
+ "demasiado": [
+  "too much",
+  "excessive",
+  "overmuch",
+  "too many"
+ ],
+ "demonio": [
+  "devil",
+  "demon",
+  "fiend",
+  "satan"
+ ],
+ "demorar": [
+  "delay",
+  "postpone",
+  "hold up",
+  "wait"
+ ],
+ "denguear": [
+  "mottle",
+  "speckle",
+  "blotch",
+  "stain"
+ ],
+ "dentro": [
+  "inside",
+  "within",
+  "interior",
+  "inner"
+ ],
+ "denunciar": [
+  "report",
+  "accuse",
+  "denounce",
+  "complain"
+ ],
+ "depilar": [
+  "shave",
+  "pluck",
+  "remove hair",
+  "depilate"
+ ],
+ "deposito": [
+  "depository",
+  "vault",
+  "safe",
+  "storage"
+ ],
+ "derramar": [
+  "spill",
+  "pour",
+  "overflow",
+  "leak"
+ ],
+ "derretir": [
+  "melt",
+  "thaw",
+  "liquefy",
+  "fuse"
+ ],
+ "derribar": [
+  "pull down",
+  "tear down",
+  "demolish",
+  "overthrow"
+ ],
+ "derrumbar": [
+  "collapse",
+  "bring down",
+  "topple",
+  "ruin"
+ ],
+ "derrumbarse": [
+  "collapse",
+  "fall down",
+  "crumble",
+  "give way"
+ ],
+ "desacreditar": [
+  "discredit",
+  "discredit",
+  "tarnish",
+  "disown"
+ ],
+ "desafilado": [
+  "blunt",
+  "dull",
+  "worn",
+  "unsheathed"
+ ],
+ "desafilarse": [
+  "blunt",
+  "dull",
+  "wear down",
+  "lose edge"
+ ],
+ "desagradable": [
+  "unpleasant",
+  "disagreeable",
+  "distasteful",
+  "offensive"
+ ],
+ "desajustado": [
+  "loose",
+  "ill-fitting",
+  "out of order",
+  "misaligned"
+ ],
+ "desajustarse": [
+  "go loose",
+  "become ill-fitted",
+  "slip",
+  "come undone"
+ ],
+ "desamarrar": [
+  "untie",
+  "undo",
+  "loosen",
+  "unfasten"
+ ],
+ "desamorarse": [
+  "fall in love with",
+  "take to",
+  "be smitten by",
+  "fall for"
+ ],
+ "desaparecer": [
+  "disappear",
+  "vanish",
+  "fade away",
+  "go missing"
+ ],
+ "desaparecido": [
+  "missing",
+  "gone",
+  "absent",
+  "vanished"
+ ],
+ "desaseado": [
+  "unseemly",
+  "indecent",
+  "improper",
+  "untidy"
+ ],
+ "desatar": [
+  "untie",
+  "undo",
+  "loosen",
+  "unfasten"
+ ],
+ "desbaratar": [
+  "destroy",
+  "wreck",
+  "ruin",
+  "demolish"
+ ],
+ "desbastar": [
+  "clear",
+  "slash",
+  "cut down",
+  "strip"
+ ],
+ "descalzo": [
+  "barefoot",
+  "bare",
+  "shoeless",
+  "naked-footed"
+ ],
+ "descansar": [
+  "rest",
+  "relax",
+  "take a break",
+  "sleep off"
+ ],
+ "descanso": [
+  "rest",
+  "relaxation",
+  "repose",
+  "recuperation"
+ ],
+ "descartar": [
+  "discard",
+  "throw away",
+  "reject",
+  "get rid of"
+ ],
+ "descascarar": [
+  "peel",
+  "skin",
+  "husk",
+  "shell"
+ ],
+ "descender": [
+  "go down",
+  "descend",
+  "fall",
+  "drop"
+ ],
+ "descolorarse": [
+  "fade",
+  "turn pale",
+  "lose color",
+  "bleach"
+ ],
+ "descolorido": [
+  "pale",
+  "faded",
+  "washed out",
+  "colorless"
+ ],
+ "descomponerse": [
+  "decompose",
+  "rot",
+  "break down",
+  "decay"
+ ],
+ "descompuesto": [
+  "unbalanced",
+  "disordered",
+  "disturbed",
+  "unsettled"
+ ],
+ "descoser": [
+  "undress",
+  "undo",
+  "unravel",
+  "untie"
+ ],
+ "descubierto": [
+  "discovered",
+  "uncovered",
+  "exposed",
+  "open"
+ ],
+ "descubrir": [
+  "discover",
+  "find out",
+  "uncover",
+  "reveal"
+ ],
+ "desdentado": [
+  "toothless",
+  "edentate",
+  "toothed-out",
+  "bare-toothed"
+ ],
+ "desear": [
+  "wish",
+  "want",
+  "desire",
+  "crave"
+ ],
+ "deseo": [
+  "wish",
+  "desire",
+  "longing",
+  "craving"
+ ],
+ "desgajar": [
+  "tear off",
+  "rip out",
+  "pull away",
+  "sever"
+ ],
+ "desgarrar": [
+  "tear",
+  "rip",
+  "slash",
+  "rend"
+ ],
+ "desgastado": [
+  "worn",
+  "worn-out",
+  "battered",
+  "eroded"
+ ],
+ "desgranar": [
+  "ungrain",
+  "separate grains",
+  "sift",
+  "winnow"
+ ],
+ "desgreñado": [
+  "frizzy",
+  "unruly",
+  "matted",
+  "tangled"
+ ],
+ "deshierbar": [
+  "weed-like",
+  "herbaceous",
+  "grassy",
+  "weedy"
+ ],
+ "deshojar": [
+  "dehoed",
+  "stripped of leaves",
+  "leafless",
+  "bare"
+ ],
+ "deshonrar": [
+  "dishonor",
+  "disgrace",
+  "insult",
+  "shame"
+ ],
+ "desigual": [
+  "unequal",
+  "uneven",
+  "disparate",
+  "asymmetrical"
+ ],
+ "desinflado": [
+  "deflated",
+  "uninflated",
+  "empty",
+  "hollow"
+ ],
+ "desinflar": [
+  "deflate",
+  "uninflate",
+  "depress",
+  "empty"
+ ],
+ "desistir": [
+  "quit",
+  "give up",
+  "abandon",
+  "cease"
+ ],
+ "deslizarse": [
+  "slide",
+  "slip",
+  "skid",
+  "drift"
+ ],
+ "desmayarse": [
+  "faint",
+  "swoon",
+  "lose consciousness",
+  "pass out"
+ ],
+ "desmenuzar": [
+  "mince",
+  "chop finely",
+  "shred",
+  "grate"
+ ],
+ "desmolado": [
+  "scoured",
+  "cleaned",
+  "polished",
+  "washed"
+ ],
+ "desnudar": [
+  "unlace",
+  "unlatch",
+  "undo",
+  "open"
+ ],
+ "desnudo": [
+  "bare",
+  "naked",
+  "exposed",
+  "uncovered"
+ ],
+ "desocupar": [
+  "vacate",
+  "empty",
+  "clear",
+  "free up"
+ ],
+ "desollar": [
+  "skin",
+  "strip",
+  "peel",
+  "remove skin"
+ ],
+ "desordenar": [
+  "disorder",
+  "mess up",
+  "clutter",
+  "untidy"
+ ],
+ "despachar": [
+  "dispatch",
+  "send off",
+  "deliver",
+  "mail"
+ ],
+ "despacio": [
+  "slowly",
+  "leisurely",
+  "at a pace",
+  "gradually"
+ ],
+ "despancar": [
+  "unpin",
+  "unhook",
+  "undo",
+  "release"
+ ],
+ "desparramar": [
+  "spread out",
+  "scatter",
+  "disperse",
+  "unfold"
+ ],
+ "despedazar": [
+  "chop up",
+  "mince",
+  "cut into pieces",
+  "shred"
+ ],
+ "despegar": [
+  "detach",
+  "lift off",
+  "take off",
+  "separate"
+ ],
+ "despeinado": [
+  "unruly",
+  "untamed",
+  "wild",
+  "disheveled"
+ ],
+ "despejado": [
+  "clear",
+  "open",
+  "unobstructed",
+  "bare"
+ ],
+ "despellejar": [
+  "to skin",
+  "to peel",
+  "to strip",
+  "to remove the skin from"
+ ],
+ "despepitar": [
+  "to depepper",
+  "to take away the pepper from",
+  "to desiccate"
+ ],
+ "desperdiciar": [
+  "to waste",
+  "to squander",
+  "to throw away",
+  "to lose"
+ ],
+ "despertar": [
+  "to wake",
+  "to rouse",
+  "to awaken",
+  "to startle"
+ ],
+ "despertarse": [
+  "to wake up",
+  "to get up",
+  "to arise",
+  "to become alert"
+ ],
+ "despiojar": [
+  "to unpeel",
+  "to remove the skin from",
+  "to strip off"
+ ],
+ "desplomarse": [
+  "to collapse",
+  "to fall down",
+  "to give way",
+  "to crumple"
+ ],
+ "desplumar": [
+  "to pluck",
+  "to feather",
+  "to clean of feathers",
+  "to remove the plumage from"
+ ],
+ "desportillar": [
+  "to splinter",
+  "to chip",
+  "to crack",
+  "to break into pieces"
+ ],
+ "después": [
+  "after",
+  "later",
+  "subsequently",
+  "afterwards"
+ ],
+ "destapado": [
+  "unstopped",
+  "uncorked",
+  "open",
+  "unsealed"
+ ],
+ "destapar": [
+  "to uncork",
+  "to unstop",
+  "to clear",
+  "to remove the stopper from"
+ ],
+ "destellar": [
+  "to shatter",
+  "to break into pieces",
+  "to explode",
+  "to crack"
+ ],
+ "destetar": [
+  "to dehydrate",
+  "to dry out",
+  "to desiccate",
+  "to remove the water from"
+ ],
+ "desteñir": [
+  "bleach",
+  "dye out",
+  "color out",
+  "tint"
+ ],
+ "destilar": [
+  "to distill",
+  "to extract by distillation",
+  "to concentrate",
+  "to purify"
+ ],
+ "destruir": [
+  "to destroy",
+  "to ruin",
+  "to wreck",
+  "to demolish"
+ ],
+ "desvainillar": [
+  "to husk",
+  "to shuck",
+  "to remove the husk from",
+  "to dehusk"
+ ],
+ "desvestir": [
+  "undress",
+  "strip",
+  "divest",
+  "bare"
+ ],
+ "detener": [
+  "stop",
+  "halt",
+  "arrest",
+  "detain",
+  "brake"
+ ],
+ "detestar": [
+  "dislike",
+  "hate",
+  "detest",
+  "abhor",
+  "loathe"
+ ],
+ "detonar": [
+  "explode",
+  "detonate",
+  "blow up",
+  "burst",
+  "ignite"
+ ],
+ "detractar": [
+  "diminish",
+  "detract from",
+  "impair",
+  "weaken",
+  "degrade"
+ ],
+ "deuda": [
+  "debt",
+  "liability",
+  "obligation",
+  "arrears",
+  "account"
+ ],
+ "deudor": [
+  "debtor",
+  "obligee",
+  "borrower",
+  "payer",
+  "debtor"
+ ],
+ "devastar": [
+  "devastate",
+  "destroy",
+  "ravage",
+  "wreck",
+  "demolish"
+ ],
+ "devolver": [
+  "return",
+  "refund",
+  "give back",
+  "repay",
+  "restore"
+ ],
+ "devorar": [
+  "devour",
+  "devouring",
+  "eat up",
+  "consume",
+  "swallow"
+ ],
+ "diablo": [
+  "devil",
+  "demon",
+  "fiend",
+  "satan",
+  "diabolical"
+ ],
+ "diarrea": [
+  "diarrhea",
+  "dysentery",
+  "loose motion",
+  "bowel action",
+  "stool"
+ ],
+ "diciembre": [
+  "december",
+  "decemberth",
+  "twelfth month",
+  "winter month"
+ ],
+ "diente": [
+  "tooth",
+  "molar",
+  "incisor",
+  "canine",
+  "dental"
+ ],
+ "diez": [
+  "ten",
+  "tenness",
+  "tenth",
+  "decillion",
+  "number ten"
+ ],
+ "difamar": [
+  "defame",
+  "slander",
+  "libel",
+  "blacken",
+  "smear"
+ ],
+ "diferente": [
+  "different",
+  "distinct",
+  "diverse",
+  "separate",
+  "unlike"
+ ],
+ "dificultar": [
+  "hinder",
+  "impede",
+  "obstruct",
+  "complicate",
+  "make difficult"
+ ],
+ "difunto": [
+  "deceased",
+  "dead",
+  "departed",
+  "dead man",
+  "corpse"
+ ],
+ "difícil": [
+  "difficult",
+  "hard",
+  "tough",
+  "arduous",
+  "challenging"
+ ],
+ "difícilmente": [
+  "hardly",
+  "scarcely",
+  "rarely",
+  "seldom"
+ ],
+ "diluido": [
+  "diluted",
+  "thinned",
+  "weakened",
+  "diluted"
+ ],
+ "diluir": [
+  "dilute",
+  "thin",
+  "weaken",
+  "dissolve"
+ ],
+ "dinero": [
+  "money",
+  "cash",
+  "funds",
+  "coin"
+ ],
+ "dintel": [
+  "lintel",
+  "header",
+  "crossbeam",
+  "beam"
+ ],
+ "directo": [
+  "direct",
+  "straight",
+  "immediate",
+  "straightforward"
+ ],
+ "dirigir": [
+  "guide",
+  "lead",
+  "direct",
+  "steer"
+ ],
+ "disfraz": [
+  "costume",
+  "disguise",
+  "mask",
+  "attire"
+ ],
+ "dislocarse": [
+  "dislocate",
+  "luxate",
+  "sprain",
+  "injure"
+ ],
+ "disminuir": [
+  "decrease",
+  "reduce",
+  "diminish",
+  "lower"
+ ],
+ "disolver": [
+  "dissolve",
+  "melt",
+  "dissolve away",
+  "liquefy"
+ ],
+ "disponer": [
+  "dispose",
+  "arrange",
+  "prepare",
+  "set"
+ ],
+ "distante": [
+  "distant",
+  "remote",
+  "far-off",
+  "afar"
+ ],
+ "distinto": [
+  "different",
+  "distinct",
+  "separate",
+  "unlike"
+ ],
+ "distribuir": [
+  "distribute",
+  "disperse",
+  "spread",
+  "allot"
+ ],
+ "disímil": [
+  "unlike",
+  "dissimilar",
+  "different",
+  "unlike"
+ ],
+ "diversión": [
+  "fun",
+  "amusement",
+  "entertainment",
+  "diversion"
+ ],
+ "dividir": [
+  "divide",
+  "split",
+  "partition",
+  "separate"
+ ],
+ "divieso": [
+  "scanty",
+  "meager",
+  "thin",
+  "poor"
+ ],
+ "divorciarse": [
+  "divorce",
+  "divorce oneself from",
+  "break up with",
+  "separate"
+ ],
+ "divulgar": [
+  "publish",
+  "make public",
+  "broadcast",
+  "reveal",
+  "expose"
+ ],
+ "doblar": [
+  "fold",
+  "double",
+  "turn",
+  "bend",
+  "crease"
+ ],
+ "doble": [
+  "double",
+  "pair",
+  "twin",
+  "two-fold",
+  "duplicated"
+ ],
+ "doler": [
+  "hurt",
+  "pain",
+  "ache",
+  "sting",
+  "bother"
+ ],
+ "dolor": [
+  "pain",
+  "hurt",
+  "agony",
+  "soreness",
+  "discomfort"
+ ],
+ "doloroso": [
+  "painful",
+  "hurting",
+  "aching",
+  "painful",
+  "grievous"
+ ],
+ "domingo": [
+  "sunday",
+  "sun day",
+  "saturday night",
+  "rest day",
+  "seventh day"
+ ],
+ "doncella": [
+  "maiden",
+  "virgin",
+  "maidenhead",
+  "young woman",
+  "unmarried girl"
+ ],
+ "dondequiera": [
+  "anywhere",
+  "wherever",
+  "wheresoever",
+  "everywhere",
+  "anywhere at all"
+ ],
+ "dormilón": [
+  "sleepyhead",
+  "drowsy",
+  "slacker",
+  "nap-slinger",
+  "dozer"
+ ],
+ "dormir": [
+  "sleep",
+  "rest",
+  "nap",
+  "slumber",
+  "take a nap"
+ ],
+ "dos": [
+  "two",
+  "double",
+  "pair",
+  "couple",
+  "twain"
+ ],
+ "doscientos": [
+  "two hundred",
+  "two hundreds",
+  "200",
+  "two-hundred",
+  "twohundred"
+ ],
+ "dueño": [
+  "owner",
+  "master",
+  "proprietor",
+  "landlord",
+  "possessor"
+ ],
+ "dulce": [
+  "sweet",
+  "sugary",
+  "honeyed",
+  "cloying",
+  "sweetish"
+ ],
+ "duro": [
+  "hard",
+  "tough",
+  "stiff",
+  "rigid",
+  "solid"
+ ],
+ "débil": [
+  "weak",
+  "frail",
+  "feeble",
+  "powerless",
+  "infirm"
+ ],
+ "día": [
+  "day",
+  "daylight",
+  "daytime",
+  "sun day",
+  "24 hours"
+ ],
+ "dócil": [
+  "docile",
+  "obedient",
+  "tractable",
+  "pliable",
+  "submissive"
+ ],
+ "dónde": [
+  "where",
+  "where to",
+  "whither",
+  "wherein",
+  "what place"
+ ],
+ "eclipse": [
+  "darken",
+  "obscure",
+  "cover up",
+  "shadow"
+ ],
+ "eczema": [
+  "psoriasis",
+  "dermatitis",
+  "skin rash"
+ ],
+ "edificar": [
+  "build",
+  "construct",
+  "erect",
+  "create"
+ ],
+ "egoísta": [
+  "selfish",
+  "selfishness",
+  "self-centered"
+ ],
+ "embarazada": [
+  "pregnant",
+  "expectant",
+  "with child"
+ ],
+ "embarrar": [
+  "mess up",
+  "spoil",
+  "ruin",
+  "embarrass"
+ ],
+ "emborrachar": [
+  "intoxicate",
+  "drown",
+  "stupefy",
+  "knock out"
+ ],
+ "emborracharse": [
+  "get drunk",
+  "get tipsy",
+  "go berserk",
+  "lose control"
+ ],
+ "embridar": [
+  "lace",
+  "embroider",
+  "stitch",
+  "sew"
+ ],
+ "embustero": [
+  "fraudster",
+  "swindler",
+  "cheat",
+  "impostor"
+ ],
+ "empaparse": [
+  "soak",
+  "drench",
+  "saturate",
+  "wet through"
+ ],
+ "empaquetar": [
+  "pack",
+  "box",
+  "wrap",
+  "bundle"
+ ],
+ "emparedar": [
+  "wall off",
+  "barricade",
+  "fortify",
+  "block in"
+ ],
+ "empezar": [
+  "begin",
+  "start",
+  "commence",
+  "initiate"
+ ],
+ "emplastar": [
+  "plaster",
+  "bandage",
+  "dress",
+  "apply plaster"
+ ],
+ "empobrecerse": [
+  "poor off",
+  "go bankrupt",
+  "lose wealth",
+  "become destitute"
+ ],
+ "empollar": [
+  "hatch",
+  "brood",
+  "incubate",
+  "lay eggs"
+ ],
+ "emprender": [
+  "undertake",
+  "embark on",
+  "set out",
+  "begin"
+ ],
+ "empuñar": [
+  "grasp",
+  "seize",
+  "hold",
+  "clutch"
+ ],
+ "enamorado": [
+  "infatuated",
+  "smitten",
+  "besotted",
+  "in love"
+ ],
+ "enano": [
+  "dwarf",
+  "gnome",
+  "dwarfling",
+  "pygmy"
+ ],
+ "encargar": [
+  "to entrust",
+  "to commit",
+  "to assign",
+  "to charge"
+ ],
+ "encargo": [
+  "commission",
+  "task",
+  "assignment",
+  "errand"
+ ],
+ "encañada": [
+  "scalloped",
+  "fluted",
+  "ridged",
+  "grooved"
+ ],
+ "encender": [
+  "to light",
+  "to ignite",
+  "to kindle",
+  "to set alight"
+ ],
+ "encerrar": [
+  "to enclose",
+  "to shut in",
+  "to confine",
+  "to imprison"
+ ],
+ "encima": [
+  "above",
+  "over",
+  "on top of",
+  "overhead"
+ ],
+ "encinta": [
+  "pregnant",
+  "with child",
+  "expectant",
+  "gravid"
+ ],
+ "encoger": [
+  "to shrink",
+  "to curl up",
+  "to contract",
+  "to hunch"
+ ],
+ "encogerse": [
+  "to shrug",
+  "to shiver",
+  "to curl",
+  "to hunch oneself"
+ ],
+ "encolar": [
+  "to glue",
+  "to varnish",
+  "to coat with glue",
+  "to paste"
+ ],
+ "encolerizar": [
+  "to incense",
+  "to provoke",
+  "to anger",
+  "to irritate"
+ ],
+ "encolerizarse": [
+  "to get angry",
+  "to become enraged",
+  "to be provoked",
+  "to lose one's temper"
+ ],
+ "encomienda": [
+  "commission",
+  "order",
+  "mandate",
+  "assignment"
+ ],
+ "encontrar": [
+  "to find",
+  "to discover",
+  "to locate",
+  "to meet"
+ ],
+ "encontrarse": [
+  "to meet",
+  "to encounter",
+  "to be found",
+  "to come together"
+ ],
+ "encorralar": [
+  "to corral",
+  "to herd in",
+  "to confine",
+  "to trap"
+ ],
+ "enderezar": [
+  "to straighten",
+  "to align",
+  "to correct",
+  "to set right"
+ ],
+ "endurecer": [
+  "to harden",
+  "to toughen",
+  "to stiffen",
+  "to make firm"
+ ],
+ "endurecerse": [
+  "to become hard",
+  "to grow stiff",
+  "to toughen up",
+  "to solidify"
+ ],
+ "enero": [
+  "january",
+  "jan",
+  "jn"
+ ],
+ "enfermarse": [
+  "to fall ill",
+  "to get sick",
+  "to become ill",
+  "to catch a cold"
+ ],
+ "enfermo": [
+  "sick",
+  "ill",
+  "unwell",
+  "infirm"
+ ],
+ "enfrente": [
+  "in front",
+  "ahead",
+  "forward",
+  "facing"
+ ],
+ "enfriado": [
+  "cooled",
+  "chilled",
+  "frozen",
+  "refrigerated"
+ ],
+ "enfriar": [
+  "to cool",
+  "to chill",
+  "to freeze",
+  "to refrigerate"
+ ],
+ "engañar": [
+  "to deceive",
+  "to trick",
+  "to mislead",
+  "to fool"
+ ],
+ "engendrar": [
+  "to generate",
+  "to produce",
+  "to create",
+  "to beget"
+ ],
+ "engordar": [
+  "to fatten",
+  "to bulk up",
+  "to gain weight",
+  "to plump"
+ ],
+ "engrasar": [
+  "to grease",
+  "to lubricate",
+  "to oil",
+  "to butter"
+ ],
+ "engullir": [
+  "to swallow",
+  "to gulp",
+  "to down",
+  "to devour"
+ ],
+ "enhebrar": [
+  "to thread",
+  "to needle",
+  "to string",
+  "to sew on"
+ ],
+ "enjuagar": [
+  "to rinse",
+  "to wash off",
+  "to clean",
+  "to scour"
+ ],
+ "enjugarse": [
+  "to dry",
+  "to air out",
+  "to wring out",
+  "to become dry"
+ ],
+ "enlazar": [
+  "to link",
+  "to connect",
+  "to tie",
+  "to join"
+ ],
+ "enmadejar": [
+  "to make up",
+  "to mend",
+  "to repair",
+  "to patch"
+ ],
+ "enmarañado": [
+  "tangled",
+  "knotted",
+  "confused",
+  "entangled"
+ ],
+ "enmendarse": [
+  "to mend",
+  "to repair",
+  "to fix",
+  "to correct"
+ ],
+ "enmohecerse": [
+  "to mold",
+  "to rot",
+  "to decay",
+  "to spoil"
+ ],
+ "ennegrecer": [
+  "to darken",
+  "to blacken",
+  "to soot",
+  "to turn dark"
+ ],
+ "enojado": [
+  "angry",
+  "irritated",
+  "vexed",
+  "annoyed",
+  "upset"
+ ],
+ "enojar": [
+  "to anger",
+  "to irritate",
+  "to vex",
+  "to annoy",
+  "to upset"
+ ],
+ "enorme": [
+  "huge",
+  "gigantic",
+  "enormous",
+  "vast",
+  "colossal"
+ ],
+ "enredar": [
+  "to tangle",
+  "to knot",
+  "to entangle",
+  "to complicate",
+  "to confuse"
+ ],
+ "enredarse": [
+  "to get tangled",
+  "to become knotted",
+  "to be confused",
+  "to be perplexed",
+  "to be entangled"
+ ],
+ "enrojecerse": [
+  "to turn red",
+  "to blush",
+  "to redden",
+  "to flush",
+  "to glow"
+ ],
+ "enrojecido": [
+  "red",
+  "reddish",
+  "flushed",
+  "ruddy",
+  "crimson"
+ ],
+ "ensangrentar": [
+  "to blood",
+  "to stain with blood",
+  "to gore",
+  "to splatter",
+  "to drench in blood"
+ ],
+ "ensangrentarse": [
+  "to get bloody",
+  "to become stained with blood",
+  "to be gored",
+  "to be splattered",
+  "to be drenched in blood"
+ ],
+ "ensartar": [
+  "to pierce",
+  "to impale",
+  "to skewer",
+  "to thread",
+  "to prick"
+ ],
+ "enseñar": [
+  "to teach",
+  "to show",
+  "to demonstrate",
+  "to instruct",
+  "to display"
+ ],
+ "ensuciar": [
+  "to dirty",
+  "to soil",
+  "to stain",
+  "to filth",
+  "to defile"
+ ],
+ "ensuciarse": [
+  "to get dirty",
+  "to become soiled",
+  "to be stained",
+  "to be filthy",
+  "to be defiled"
+ ],
+ "entablillar": [
+  "to brace",
+  "to support with a brace",
+  "to strengthen",
+  "to prop up",
+  "to buttress"
+ ],
+ "entender": [
+  "to understand",
+  "to comprehend",
+  "to grasp",
+  "to know",
+  "to realize"
+ ],
+ "enteramente": [
+  "completely",
+  "wholly",
+  "entirely",
+  "fully",
+  "utterly"
+ ],
+ "enterarse": [
+  "to find out",
+  "to learn",
+  "to discover",
+  "to become aware",
+  "to get informed"
+ ],
+ "enterrado": [
+  "buried",
+  "interred",
+  "underground",
+  "covered with earth",
+  "sunk"
+ ],
+ "enterrar": [
+  "to bury",
+  "to inter",
+  "to ground",
+  "to sink",
+  "to cover with earth"
+ ],
+ "entierro": [
+  "burial",
+  "interment",
+  "grave",
+  "coffin",
+  "sepulture"
+ ],
+ "entonces": [
+  "then",
+  "now",
+  "at that time",
+  "subsequently",
+  "henceforth"
+ ],
+ "entrada": [
+  "entry",
+  "admission",
+  "entrance",
+  "ticket",
+  "access"
+ ],
+ "entregar": [
+  "deliver",
+  "give",
+  "hand over",
+  "present",
+  "submit"
+ ],
+ "entremezclado": [
+  "mixed",
+  "blended",
+  "combined",
+  "intermingled",
+  "assorted"
+ ],
+ "entremezclar": [
+  "mix",
+  "blend",
+  "combine",
+  "intermingle",
+  "stir together"
+ ],
+ "entremezclarse": [
+  "to mix",
+  "to blend",
+  "to combine",
+  "to intermingle",
+  "to get mixed up"
+ ],
+ "entreverar": [
+  "perceive",
+  "discern",
+  "spy out",
+  "guess",
+  "make out"
+ ],
+ "entristecer": [
+  "sadness",
+  "depress",
+  "sadden",
+  "gloom",
+  "dishearten"
+ ],
+ "entrétejer": [
+  "to weave in and out",
+  "to interweave",
+  "to entwine",
+  "to knot together",
+  "to braid"
+ ],
+ "enumerar": [
+  "list",
+  "enumerate",
+  "count",
+  "itemize",
+  "catalogue"
+ ],
+ "enviar": [
+  "send",
+  "mail",
+  "dispatch",
+  "transmit",
+  "post"
+ ],
+ "envolver": [
+  "wrap",
+  "wrap up",
+  "enclose",
+  "cover",
+  "shroud"
+ ],
+ "equivocación": [
+  "mistake",
+  "error",
+  "blunder",
+  "misstep",
+  "slip-up"
+ ],
+ "equivocadamente": [
+  "incorrectly",
+  "wrongly",
+  "mistakenly",
+  "erroneously",
+  "falsely"
+ ],
+ "equivocarse": [
+  "to make a mistake",
+  "to err",
+  "to go wrong",
+  "to slip up",
+  "to miscarry"
+ ],
+ "erizado": [
+  "hairy",
+  "bristled",
+  "tufted",
+  "shaggy",
+  "furred"
+ ],
+ "erosionar": [
+  "erode",
+  "wear away",
+  "corrode",
+  "dissolve",
+  "disintegrate"
+ ],
+ "eructar": [
+  "belch",
+  "burp",
+  "belch up",
+  "gurgling",
+  "huff"
+ ],
+ "escabroso": [
+  "rough",
+  "rugged",
+  "bumpy",
+  "uneven",
+  "jagged"
+ ],
+ "escalar": [
+  "climb",
+  "ascend",
+  "scale",
+  "mount",
+  "go up"
+ ],
+ "escalera": [
+  "stair",
+  "step",
+  "flight of stairs",
+  "ladder"
+ ],
+ "escalofrío": [
+  "shiver",
+  "chill",
+  "cold shiver",
+  "goosebump"
+ ],
+ "escampar": [
+  "to clear",
+  "to remove",
+  "to sweep away",
+  "to dislodge"
+ ],
+ "escapar": [
+  "escape",
+  "flee",
+  "get away",
+  "break out"
+ ],
+ "escaparse": [
+  "to escape",
+  "to run away",
+  "to get off",
+  "to slip away"
+ ],
+ "escarmenar": [
+  "to deter",
+  "to warn",
+  "to discourage",
+  "to frighten back"
+ ],
+ "escaso": [
+  "scarce",
+  "short",
+  "meager",
+  "insufficient"
+ ],
+ "esclavo": [
+  "slave",
+  "bondman",
+  "serf",
+  "captive"
+ ],
+ "escobilla": [
+  "brush",
+  "broom",
+  "scrubbing brush",
+  "duster"
+ ],
+ "escocer": [
+  "to itch",
+  "to prickle",
+  "to sting",
+  "to tickle"
+ ],
+ "escoger": [
+  "to choose",
+  "pick",
+  "select",
+  "opt for"
+ ],
+ "esconder": [
+  "hide",
+  "conceal",
+  "bury",
+  "stow away"
+ ],
+ "esconderse": [
+  "to hide oneself",
+  "to take refuge",
+  "to disappear",
+  "to vanish"
+ ],
+ "escondite": [
+  "hideout",
+  "hiding place",
+  "sanctuary",
+  "secret spot"
+ ],
+ "escorbuto": [
+  "scurvy",
+  "scurvy disease",
+  "scorbutic sickness",
+  "vitamin c deficiency"
+ ],
+ "escorpión": [
+  "scorpion",
+  "scorp",
+  "venomous arachnid"
+ ],
+ "escribir": [
+  "write",
+  "pen",
+  "compose",
+  "draft"
+ ],
+ "escuchar": [
+  "listen",
+  "hear",
+  "attend to",
+  "pay attention"
+ ],
+ "escudrinar": [
+  "to search thoroughly",
+  "to investigate",
+  "to examine closely",
+  "to scour"
+ ],
+ "escupir": [
+  "spit",
+  "spew",
+  "eject saliva",
+  "vomit"
+ ],
+ "escurrir": [
+  "squeezed",
+  "drained",
+  "wrung out"
+ ],
+ "ese": [
+  "that",
+  "that one",
+  "said one"
+ ],
+ "esfuerzo": [
+  "effort",
+  "exertion",
+  "strain",
+  "push"
+ ],
+ "esférico": [
+  "spherical",
+  "round",
+  "globular",
+  "orb-shaped"
+ ],
+ "espalda": [
+  "back",
+  "rear",
+  "dorsum",
+  "backside"
+ ],
+ "espantar": [
+  "to frighten",
+  "scare",
+  "terrify",
+  "alarm"
+ ],
+ "espanto": [
+  "terror",
+  "fear",
+  "fright",
+  "panic"
+ ],
+ "espantoso": [
+  "terrifying",
+  "frightening",
+  "shocking",
+  "awful"
+ ],
+ "esparcir": [
+  "scatter",
+  "spread",
+  "disperse",
+  "distribute"
+ ],
+ "esperar": [
+  "hope",
+  "expect",
+  "wait",
+  "anticipate"
+ ],
+ "espesar": [
+  "to thicken",
+  "densify",
+  "concentrate",
+  "bulk up"
+ ],
+ "espeso": [
+  "thick",
+  "dense",
+  "heavy",
+  "compact"
+ ],
+ "espiar": [
+  "spy",
+  "eavesdrop",
+  "peep",
+  "scout"
+ ],
+ "espiga": [
+  "ear of corn",
+  "spike",
+  "awn",
+  "cluster"
+ ],
+ "espigar": [
+  "to harvest ears",
+  "gather spikes",
+  "pick corn",
+  "reap"
+ ],
+ "espina": [
+  "thorn",
+  "spine",
+  "prick",
+  "needle"
+ ],
+ "espinilla": [
+  "knuckle",
+  "joint",
+  "crease",
+  "bump"
+ ],
+ "espinoso": [
+  "thorny",
+  "prickly",
+  "sharp",
+  "spiny"
+ ],
+ "esposa": [
+  "wife",
+  "spouse",
+  "partner",
+  "lady"
+ ],
+ "esposo": [
+  "husband",
+  "spouse",
+  "partner",
+  "gentleman"
+ ],
+ "espuma": [
+  "foam",
+  "froth",
+  "suds",
+  "bubbles"
+ ],
+ "espía": [
+  "spy",
+  "agent",
+  "mole",
+  "infiltrator"
+ ],
+ "esqueleto": [
+  "skeleton",
+  "frame",
+  "structure",
+  "framework"
+ ],
+ "esquilar": [
+  "shear",
+  "fleece",
+  "clip",
+  "shave"
+ ],
+ "esquina": [
+  "corner",
+  "angle",
+  "bend",
+  "turn"
+ ],
+ "establecerse": [
+  "settle",
+  "establish",
+  "root",
+  "plant"
+ ],
+ "estafar": [
+  "swindle",
+  "cheat",
+  "defraud",
+  "rip-off"
+ ],
+ "estallar": [
+  "explode",
+  "burst",
+  "blow up",
+  "detonate"
+ ],
+ "estancia": [
+  "stay",
+  "lodging",
+  "residence",
+  "sojourn"
+ ],
+ "estanque": [
+  "pond",
+  "pool",
+  "basin",
+  "tank"
+ ],
+ "estante": [
+  "shelf",
+  "rack",
+  "cubby",
+  "tier"
+ ],
+ "estimular": [
+  "stimulate",
+  "incite",
+  "provoke",
+  "spur"
+ ],
+ "estirado": [
+  "stretched",
+  "elongated",
+  "extended",
+  "drawn-out"
+ ],
+ "estirar": [
+  "stretch",
+  "pull",
+  "extend",
+  "draw"
+ ],
+ "estirarse": [
+  "stretch",
+  "lengthen",
+  "expand",
+  "extend"
+ ],
+ "estiércol": [
+  "manure",
+  "dung",
+  "droppings",
+  "fertilizer"
+ ],
+ "estornudar": [
+  "sneeze",
+  "sneeze off",
+  "blow nose",
+  "snort"
+ ],
+ "estrangular": [
+  "strangle",
+  "choke",
+  "suffocate",
+  "strait-lace"
+ ],
+ "estrecho": [
+  "narrow",
+  "tight",
+  "constricted",
+  "slim"
+ ],
+ "estregar": [
+  "rub",
+  "wipe",
+  "polish",
+  "buff"
+ ],
+ "estrella": [
+  "star",
+  "celestial body",
+  "constellation",
+  "asterism"
+ ],
+ "estrellar": [
+  "to star",
+  "to pierce",
+  "to impale",
+  "to shoot"
+ ],
+ "estudiante": [
+  "student",
+  "pupil",
+  "scholar",
+  "learner"
+ ],
+ "estéril": [
+  "sterile",
+  "barren",
+  "infertile",
+  "sterile"
+ ],
+ "estómago": [
+  "stomach",
+  "belly",
+  "viscus",
+  "stomach"
+ ],
+ "esófago": [
+  "esophagus",
+  "gullet",
+  "food pipe",
+  "esophagus"
+ ],
+ "evaporar": [
+  "to evaporate",
+  "to vaporize",
+  "to distill",
+  "to boil off"
+ ],
+ "excavar": [
+  "to dig",
+  "to excavate",
+  "to bore",
+  "to unearth"
+ ],
+ "excesivamente": [
+  "excessively",
+  "too much",
+  "overly",
+  "excessively"
+ ],
+ "excremento": [
+  "excrement",
+  "waste",
+  "droppings",
+  "refuse"
+ ],
+ "exhalación": [
+  "exhalation",
+  "breath",
+  "puff",
+  "exhale"
+ ],
+ "exhalar": [
+  "to exhale",
+  "to breathe out",
+  "to blow",
+  "to emit"
+ ],
+ "exigir": [
+  "to demand",
+  "to require",
+  "to ask for",
+  "to insist on"
+ ],
+ "existir": [
+  "to exist",
+  "to be present",
+  "to live",
+  "to occur"
+ ],
+ "expirar": [
+  "to expire",
+  "to breathe out",
+  "to pass away",
+  "to finish"
+ ],
+ "explicar": [
+  "to explain",
+  "to clarify",
+  "to illustrate",
+  "to set forth"
+ ],
+ "explosionar": [
+  "to explode",
+  "to burst",
+  "to detonate",
+  "to shatter"
+ ],
+ "exprimir": [
+  "to squeeze",
+  "to press",
+  "to extract",
+  "to wring out"
+ ],
+ "extender": [
+  "to extend",
+  "to stretch",
+  "to lengthen",
+  "to spread"
+ ],
+ "exterior": [
+  "exterior",
+  "outside",
+  "outer",
+  "exterior"
+ ],
+ "exterminarse": [
+  "kill oneself",
+  "commit suicide",
+  "end one's life"
+ ],
+ "extinguir": [
+  "put out",
+  "extinguish",
+  "blow out",
+  "snuff out"
+ ],
+ "extraer": [
+  "extract",
+  "pull out",
+  "take out",
+  "remove"
+ ],
+ "extraviarse": [
+  "get lost",
+  "wander off",
+  "stray",
+  "go astray"
+ ],
+ "extrañar": [
+  "miss",
+  "long for",
+  "yearn for",
+  "be missing"
+ ],
+ "extraño": [
+  "strange",
+  "odd",
+  "peculiar",
+  "unusual",
+  "weird"
+ ],
+ "faja": [
+  "girdle",
+  "sash",
+  "belt",
+  "corset",
+  "band"
+ ],
+ "fajarse": [
+  "get angry",
+  "get upset",
+  "lose one's temper",
+  "snap"
+ ],
+ "falda": [
+  "skirt",
+  "petticoat",
+  "apron",
+  "drape",
+  "fold"
+ ],
+ "fallar": [
+  "fail",
+  "malfunction",
+  "break down",
+  "err",
+  "slip up"
+ ],
+ "fallecer": [
+  "die",
+  "pass away",
+  "perish",
+  "expire",
+  "die of"
+ ],
+ "falso": [
+  "false",
+  "fake",
+  "counterfeit",
+  "untrue",
+  "spurious"
+ ],
+ "faltar": [
+  "be missing",
+  "lack",
+  "be short of",
+  "omit",
+  "fail to appear"
+ ],
+ "familia": [
+  "family",
+  "kin",
+  "clan",
+  "household",
+  "relatives"
+ ],
+ "familiar": [
+  "familiar",
+  "intimate",
+  "well-known",
+  "domestic",
+  "customary"
+ ],
+ "fanfarronear": [
+  "brag",
+  "boast",
+  "puff oneself up",
+  "talk big",
+  "show off"
+ ],
+ "fanfarrón": [
+  "boaster",
+  "bluffer",
+  "braggart",
+  "pretender",
+  "show-off"
+ ],
+ "fangal": [
+  "mud",
+  "mire",
+  "sludge",
+  "boggy ground",
+  "muck"
+ ],
+ "fango": [
+  "mud",
+  "slime",
+  "mire",
+  "slush",
+  "damp earth"
+ ],
+ "fantasma": [
+  "ghost",
+  "specter",
+  "phantom",
+  "apparition",
+  "spirit"
+ ],
+ "fastidiar": [
+  "annoy",
+  "bother",
+  "irritate",
+  "vex",
+  "trouble"
+ ],
+ "fatigar": [
+  "tire",
+  "exhaust",
+  "weary",
+  "fatigue",
+  "strain"
+ ],
+ "febrero": [
+  "february"
+ ],
+ "feliz": [
+  "happy",
+  "joyful",
+  "glad",
+  "content",
+  "pleased"
+ ],
+ "fermentado": [
+  "fermented",
+  "sour",
+  "yeasty",
+  "sprouted",
+  "leavened"
+ ],
+ "fertilizante": [
+  "fertilizer",
+  "manure",
+  "compost",
+  "feed",
+  "nutrient"
+ ],
+ "fertilizar": [
+  "fertilize",
+  "enrich",
+  "nourish",
+  "feed",
+  "boost"
+ ],
+ "festejar": [
+  "celebrate",
+  "party",
+  "honor",
+  "mark",
+  "observe"
+ ],
+ "feto": [
+  "fetus",
+  "embryo",
+  "unborn",
+  "young",
+  "foal"
+ ],
+ "fiambre": [
+  "cured ham",
+  "salami",
+  "dry sausage",
+  "charcuterie",
+  "cured meat"
+ ],
+ "fiebre": [
+  "fever",
+  "hot",
+  "sick",
+  "ill",
+  "temperature"
+ ],
+ "fierro": [
+  "iron",
+  "metal",
+  "steel",
+  "ore",
+  "alloy"
+ ],
+ "fila": [
+  "row",
+  "line",
+  "queue",
+  "file",
+  "rank"
+ ],
+ "filudo": [
+  "sharp",
+  "keen",
+  "acute",
+  "quick",
+  "clever"
+ ],
+ "finado": [
+  "dying",
+  "near death",
+  "last",
+  "final",
+  "end"
+ ],
+ "fino": [
+  "fine",
+  "thin",
+  "delicate",
+  "light",
+  "slender"
+ ],
+ "fisgonear": [
+  "fiddle",
+  "fuss",
+  "bother",
+  "nag",
+  "annoy"
+ ],
+ "flamear": [
+  "burn",
+  "blaze",
+  "flare",
+  "ignite",
+  "scorch"
+ ],
+ "flauta": [
+  "flute",
+  "pipe",
+  "reed",
+  "wind instrument",
+  "flute-like"
+ ],
+ "flojera": [
+  "laziness",
+  "sloth",
+  "lethargy",
+  "drowsiness",
+  "slackness"
+ ],
+ "flojo": [
+  "weak",
+  "feeble",
+  "frail",
+  "languid",
+  "listless"
+ ],
+ "flor": [
+  "flower",
+  "blossom",
+  "bloom",
+  "petal",
+  "bud"
+ ],
+ "florecer": [
+  "to flower",
+  "to bloom",
+  "to blossom",
+  "to open",
+  "to sprout"
+ ],
+ "flotar": [
+  "to float",
+  "to drift",
+  "to bob",
+  "to swim",
+  "to hover"
+ ],
+ "fluir": [
+  "to flow",
+  "to stream",
+  "to run",
+  "to glide",
+  "to cascade"
+ ],
+ "fomentar": [
+  "to foster",
+  "to encourage",
+  "to promote",
+  "to incite",
+  "to stimulate"
+ ],
+ "fondo": [
+  "bottom",
+  "base",
+  "depth",
+  "floor",
+  "foundation"
+ ],
+ "forastero": [
+  "stranger",
+  "foreigner",
+  "alien",
+  "outsider",
+  "non-native"
+ ],
+ "formón": [
+  "beaver",
+  "otter",
+  "muskrat",
+  "coypu",
+  "nutria"
+ ],
+ "forraje": [
+  "hay",
+  "fodder",
+  "feed",
+  "pasture",
+  "silage"
+ ],
+ "forúnculo": [
+  "boil",
+  "carbuncle",
+  "pimple",
+  "pustule",
+  "abscess"
+ ],
+ "fosa": [
+  "hole",
+  "pit",
+  "cavern",
+  "ditch",
+  "trench"
+ ],
+ "frazada": [
+  "sow",
+  "litter",
+  "brood",
+  "batch",
+  "clutch"
+ ],
+ "frecuentemente": [
+  "often",
+  "frequently",
+  "usually",
+  "commonly",
+  "regularly"
+ ],
+ "frejol": [
+  "bean",
+  "pea",
+  "lentil",
+  "legume",
+  "pulse"
+ ],
+ "freno": [
+  "brake",
+  "stop",
+  "check",
+  "arrest",
+  "retarder"
+ ],
+ "frente": [
+  "front",
+  "face",
+  "visage",
+  "forehead",
+  "frontage"
+ ],
+ "fresco": [
+  "fresh",
+  "cool",
+  "crisp",
+  "cold",
+  "raw"
+ ],
+ "freír": [
+  "to fry",
+  "to brown",
+  "to sear",
+  "to roast",
+  "to saute"
+ ],
+ "frotar": [
+  "to rub",
+  "to wipe",
+  "to scrub",
+  "to polish",
+  "to grind"
+ ],
+ "fruta": [
+  "fruit",
+  "produce",
+  "harvest",
+  "crop"
+ ],
+ "frágil": [
+  "fragile",
+  "delicate",
+  "weak",
+  "brittle"
+ ],
+ "frío": [
+  "cold",
+  "chill",
+  "frost",
+  "cool"
+ ],
+ "fuente": [
+  "source",
+  "origin",
+  "spring",
+  "fountain"
+ ],
+ "fuera": [
+  "out",
+  "outside",
+  "outwards",
+  "exterior"
+ ],
+ "fuerte": [
+  "strong",
+  "powerful",
+  "tough",
+  "robust"
+ ],
+ "fuerza": [
+  "strength",
+  "power",
+  "force",
+  "energy"
+ ],
+ "fugarse": [
+  "to flee",
+  "to escape",
+  "to run away",
+  "to slip away"
+ ],
+ "fulgurar": [
+  "to shine",
+  "to sparkle",
+  "to glitter",
+  "to gleam"
+ ],
+ "fumar": [
+  "to smoke",
+  "to puff",
+  "to burn",
+  "to inhale smoke"
+ ],
+ "fundador": [
+  "founder",
+  "creator",
+  "initiator",
+  "originator"
+ ],
+ "fundar": [
+  "to found",
+  "to establish",
+  "to set up",
+  "to create"
+ ],
+ "fácil": [
+  "easy",
+  "simple",
+  "convenient",
+  "straightforward"
+ ],
+ "fósforo": [
+  "phosphorus",
+  "match",
+  "lighter",
+  "spark"
+ ],
+ "gallina": [
+  "hen",
+  "chicken",
+  "pullet",
+  "broiler"
+ ],
+ "gallinazo": [
+  "chicken",
+  "fowl",
+  "bird",
+  "poultry"
+ ],
+ "ganar": [
+  "to win",
+  "to earn",
+  "to gain",
+  "to acquire"
+ ],
+ "gancho": [
+  "hook",
+  "hookfish",
+  "lure",
+  "snag"
+ ],
+ "gangoso": [
+  "greedy",
+  "gluttonous",
+  "ravenous",
+  "voracious"
+ ],
+ "garganta": [
+  "throat",
+  "gullet",
+  "pharynx",
+  "neck"
+ ],
+ "garra": [
+  "claw",
+  "talon",
+  "nail",
+  "spur"
+ ],
+ "garrapata": [
+  "tick",
+  "louse",
+  "bloodsucker",
+  "ectoparasite"
+ ],
+ "garuar": [
+  "to rain heavily",
+  "to pour",
+  "to deluge",
+  "to downpour"
+ ],
+ "garúa": [
+  "misty drizzle",
+  "light rain",
+  "damp foggy rain"
+ ],
+ "gastado": [
+  "worn",
+  "used up",
+  "tired",
+  "exhausted",
+  "spent"
+ ],
+ "gastar": [
+  "to spend",
+  "to waste",
+  "to use up",
+  "to consume"
+ ],
+ "gastarse": [
+  "to get worn out",
+  "to be used up",
+  "to tire oneself",
+  "to exhaust"
+ ],
+ "gasto": [
+  "expense",
+  "cost",
+  "expenditure",
+  "spending",
+  "outlay"
+ ],
+ "gateando": [
+  "drizzling",
+  "misting",
+  "raining lightly",
+  "showering"
+ ],
+ "gatear": [
+  "to drizzle",
+  "to mist",
+  "to rain lightly",
+  "to shower"
+ ],
+ "gato": [
+  "cat",
+  "feline",
+  "kitty",
+  "tabby"
+ ],
+ "gavilla": [
+  "bundle",
+  "sheaf",
+  "fascicle",
+  "bunch"
+ ],
+ "gavilán": [
+  "falcon",
+  "hawk",
+  "bird of prey",
+  "raptor"
+ ],
+ "gemelo": [
+  "twin",
+  "identical pair",
+  "double",
+  "match"
+ ],
+ "generoso": [
+  "generous",
+  "liberal",
+  "magnanimous",
+  "benevolent",
+  "giving"
+ ],
+ "gestionar": [
+  "to manage",
+  "to administer",
+  "to handle",
+  "to conduct",
+  "to oversee"
+ ],
+ "girar": [
+  "to turn",
+  "to rotate",
+  "to spin",
+  "to revolve",
+  "to circle"
+ ],
+ "glaciar": [
+  "to freeze",
+  "to ice over",
+  "to frost",
+  "to solidify",
+  "to harden"
+ ],
+ "glotón": [
+  "glutton",
+  "eater",
+  "devourer",
+  "ravenous one",
+  "glouton"
+ ],
+ "golosina": [
+  "sweet",
+  "candy",
+  "treat",
+  "confection",
+  "sugary delight"
+ ],
+ "golpe": [
+  "blow",
+  "hit",
+  "strike",
+  "impact"
+ ],
+ "golpear": [
+  "hit",
+  "strike",
+  "blow",
+  "knock"
+ ],
+ "goma": [
+  "rubber",
+  "gum",
+  "elastic",
+  "latex"
+ ],
+ "gomar": [
+  "rubberize",
+  "gummify",
+  "toughen",
+  "stiffen"
+ ],
+ "gordo": [
+  "fat",
+  "plump",
+  "bulky",
+  "overweight"
+ ],
+ "gorjear": [
+  "quack",
+  "croak",
+  "cackle",
+  "honk"
+ ],
+ "gorrión": [
+  "sparrow",
+  "finch",
+  "canary",
+  "small bird"
+ ],
+ "gota": [
+  "drop",
+  "drip",
+  "splutter",
+  "spur"
+ ],
+ "gotear": [
+  "drip",
+  "drop",
+  "leak",
+  "trickle"
+ ],
+ "gotera": [
+  "leak",
+  "drip",
+  "hole",
+  "puncture"
+ ],
+ "gracias": [
+  "thanks",
+  "thank you",
+  "gratitude",
+  "appreciation"
+ ],
+ "gracioso": [
+  "funny",
+  "humorous",
+  "witty",
+  "amusing"
+ ],
+ "grada": [
+  "step",
+  "stair",
+  "tier",
+  "platform"
+ ],
+ "gradualmente": [
+  "gradually",
+  "slowly",
+  "incrementally",
+  "progressively"
+ ],
+ "grande": [
+  "big",
+  "large",
+  "huge",
+  "enormous"
+ ],
+ "granizar": [
+  "to hail",
+  "to snow",
+  "to rain",
+  "to fall as precipitation"
+ ],
+ "granizo": [
+  "hail",
+  "ice pellets",
+  "frozen rain",
+  "hard balls"
+ ],
+ "grano": [
+  "grain",
+  "seed",
+  "kernel",
+  "particle"
+ ],
+ "grasa": [
+  "fat",
+  "grease",
+  "oil",
+  "lard"
+ ],
+ "grasiento": [
+  "greasy",
+  "oily",
+  "slick",
+  "fatty"
+ ],
+ "gratificación": [
+  "reward",
+  "gratification",
+  "bonus",
+  "incentive",
+  "gift"
+ ],
+ "grieta": [
+  "crack",
+  "fissure",
+  "crevice",
+  "rift",
+  "gap"
+ ],
+ "grillo": [
+  "cricket",
+  "grasshopper",
+  "locust",
+  "katydid",
+  "field cricket"
+ ],
+ "gris": [
+  "grey",
+  "gray",
+  "silver",
+  "ashen",
+  "slate"
+ ],
+ "grueso": [
+  "thick",
+  "heavy",
+  "bulky",
+  "substantial",
+  "fat"
+ ],
+ "gruñir": [
+  "growl",
+  "grunt",
+  "snarl",
+  "rumble",
+  "grumble"
+ ],
+ "guano": [
+  "guano",
+  "droppings",
+  "excrement",
+  "manure",
+  "waste"
+ ],
+ "guardar": [
+  "store",
+  "keep",
+  "save",
+  "preserve",
+  "hold"
+ ],
+ "guiar": [
+  "guide",
+  "steer",
+  "direct",
+  "lead",
+  "pilot"
+ ],
+ "gustar": [
+  "to please",
+  "to taste good",
+  "to be liked",
+  "to favor",
+  "to suit"
+ ],
+ "gusto": [
+  "taste",
+  "flavor",
+  "relish",
+  "palate",
+  "zest"
+ ],
+ "guía": [
+  "guide",
+  "manual",
+  "direction",
+  "map",
+  "itinerary"
+ ],
+ "habas": [
+  "peas",
+  "beans",
+  "haricot",
+  "legumes",
+  "green peas"
+ ],
+ "haber": [
+  "to be",
+  "to exist",
+  "to happen",
+  "occur",
+  "take place"
+ ],
+ "habla": [
+  "speech",
+  "talk",
+  "language",
+  "conversation",
+  "dialogue"
+ ],
+ "hablar": [
+  "to speak",
+  "to talk",
+  "converse",
+  "utter",
+  "say"
+ ],
+ "hacha": [
+  "axe",
+  "hatchet",
+  "billhook",
+  "adze",
+  "machete"
+ ],
+ "hacinar": [
+  "to chop",
+  "to hack",
+  "to cleave",
+  "to split",
+  "to saw"
+ ],
+ "halcón": [
+  "falcon",
+  "peregrine",
+  "bird of prey",
+  "hawk",
+  "falconry"
+ ],
+ "hallar": [
+  "to find",
+  "discover",
+  "locate",
+  "encounter",
+  "come across"
+ ],
+ "hambre": [
+  "thirst",
+  "hunger",
+  "craving",
+  "appetite",
+  "need"
+ ],
+ "hambriento": [
+  "hungry",
+  "famished",
+  "starving",
+  "ravenous",
+  "peckish"
+ ],
+ "haraganear": [
+  "slack off",
+  "loaf",
+  "shirk",
+  "dawdle",
+  "procrastinate"
+ ],
+ "haragán": [
+  "lazy",
+  "idle",
+  "slovenly",
+  "sluggish",
+  "indolent"
+ ],
+ "harina": [
+  "flour",
+  "meal",
+  "powder",
+  "sifted grain",
+  "starch"
+ ],
+ "harinoso": [
+  "floury",
+  "powdery",
+  "starchy",
+  "flour-like",
+  "dusty"
+ ],
+ "hartarse": [
+  "to be full",
+  "to grow tired",
+  "to get fed up",
+  "to tire out",
+  "to exhaust oneself"
+ ],
+ "harto": [
+  "full",
+  "tired",
+  "weary",
+  "done with",
+  "exhausted"
+ ],
+ "hasta": [
+  "until",
+  "till",
+  "up to",
+  "as far as",
+  "until now"
+ ],
+ "hastiar": [
+  "to bore",
+  "to tire",
+  "to annoy",
+  "to disgust",
+  "to wear out"
+ ],
+ "heder": [
+  "harvest",
+  "reaping",
+  "gathering",
+  "crop",
+  "yield"
+ ],
+ "helada": [
+  "freeze",
+  "frost",
+  "cold spell",
+  "icing",
+  "freezing"
+ ],
+ "helar": [
+  "to freeze",
+  "to ice over",
+  "to chill",
+  "to solidify",
+  "to turn to ice"
+ ],
+ "hembra": [
+  "female",
+  "mare",
+  "hen",
+  "cow",
+  "bitch"
+ ],
+ "herencia": [
+  "inheritance",
+  "legacy",
+  "heirloom",
+  "estate",
+  "bequest"
+ ],
+ "herida": [
+  "wound",
+  "injury",
+  "cut",
+  "bruise",
+  "sore"
+ ],
+ "herir": [
+  "to wound",
+  "to injure",
+  "to hurt",
+  "to damage",
+  "to harm"
+ ],
+ "hermana": [
+  "sister",
+  "elder sister",
+  "younger sister",
+  "sibling",
+  "aunt"
+ ],
+ "hermano": [
+  "brother",
+  "older brother",
+  "younger brother",
+  "sibling",
+  "uncle"
+ ],
+ "hervir": [
+  "boil",
+  "bubble",
+  "simmer",
+  "cook",
+  "fry"
+ ],
+ "hez": [
+  "heze",
+  "hez",
+  "buzz",
+  "hum"
+ ],
+ "hiel": [
+  "ice",
+  "frozen water",
+  "solid water",
+  "congelated water"
+ ],
+ "hielo": [
+  "ice",
+  "ice cube",
+  "glacial ice",
+  "frozen water"
+ ],
+ "hierba": [
+  "grass",
+  "herb",
+  "plant",
+  "vegetation"
+ ],
+ "hija": [
+  "daughter",
+  "daughter of",
+  "female child",
+  "offspring"
+ ],
+ "hijo": [
+  "son",
+  "son of",
+  "male child",
+  "offspring"
+ ],
+ "hilar": [
+  "to wind",
+  "to thread",
+  "to spin",
+  "to weave"
+ ],
+ "hilo": [
+  "thread",
+  "string",
+  "line",
+  "strand"
+ ],
+ "hincar": [
+  "to drive in",
+  "to hammer down",
+  "to sink",
+  "to wedge"
+ ],
+ "hinchado": [
+  "swollen",
+  "puffed up",
+  "distended",
+  "engorged"
+ ],
+ "hincharse": [
+  "to swell",
+  "to puff up",
+  "to inflate",
+  "to become swollen"
+ ],
+ "hinchazón": [
+  "swelling",
+  "puffiness",
+  "distension",
+  "edema"
+ ],
+ "hipar": [
+  "to breathe",
+  "to inhale",
+  "to take breath",
+  "to gasp"
+ ],
+ "hipo": [
+  "hiccup",
+  "hiccups",
+  "hic",
+  "spasm"
+ ],
+ "hirviente": [
+  "frosty",
+  "icy",
+  "freezing",
+  "cold"
+ ],
+ "historia": [
+  "history",
+  "story",
+  "tale",
+  "narrative"
+ ],
+ "hito": [
+  "milestone",
+  "landmark",
+  "benchmark",
+  "key point"
+ ],
+ "hocico": [
+  "beak",
+  "bill",
+  "snout",
+  "jaw"
+ ],
+ "hoja": [
+  "leaf",
+  "page",
+  "sheet",
+  "blade"
+ ],
+ "holgazan": [
+  "lazy",
+  "idle",
+  "slack",
+  "slothful"
+ ],
+ "holgazanear": [
+  "loaf",
+  "idle",
+  "slack off"
+ ],
+ "hollín": [
+  "soot",
+  "smoke",
+  "carbon"
+ ],
+ "hombre": [
+  "man",
+  "male",
+  "person"
+ ],
+ "hombro": [
+  "shoulder",
+  "shoulder blade"
+ ],
+ "homenajear": [
+  "tip",
+  "honor",
+  "pay respect"
+ ],
+ "honda": [
+  "deep",
+  "long",
+  "deep-sea"
+ ],
+ "hondo": [
+  "deep",
+  "profound",
+  "bottomless"
+ ],
+ "hongo": [
+  "mushroom",
+  "fungus",
+  "mold"
+ ],
+ "hormiga": [
+  "ant",
+  "ant hill"
+ ],
+ "hormiguear": [
+  "buzz",
+  "stir",
+  "twitch"
+ ],
+ "horno": [
+  "oven",
+  "kiln",
+  "furnace"
+ ],
+ "horqueta": [
+  "fork",
+  "prong",
+  "tongs"
+ ],
+ "horquilla": [
+  "clasp",
+  "clip",
+  "hairpin"
+ ],
+ "horrible": [
+  "awful",
+  "terrible",
+  "dreadful"
+ ],
+ "hoy": [
+  "today",
+  "now",
+  "this day"
+ ],
+ "hoz": [
+  "root cellar",
+  "root cell"
+ ],
+ "hozar": [
+  "dive",
+  "plunge",
+  "jump in"
+ ],
+ "huayco": [
+  "hominy",
+  "boiled corn"
+ ],
+ "hueco": [
+  "hole",
+  "hollow",
+  "empty space"
+ ],
+ "huella": [
+  "footprint",
+  "track",
+  "impression"
+ ],
+ "hueso": [
+  "bone",
+  "bone marrow",
+  "femur",
+  "rib"
+ ],
+ "huevo": [
+  "egg",
+  "egg white",
+  "yolk",
+  "ovum"
+ ],
+ "huincha": [
+  "towel",
+  "rag",
+  "cloth",
+  "napkin"
+ ],
+ "huir": [
+  "flee",
+  "escape",
+  "run away",
+  "flee from"
+ ],
+ "humear": [
+  "smell",
+  "smell of",
+  "odor",
+  "scent"
+ ],
+ "humedecer": [
+  "moisten",
+  "dampen",
+  "wet",
+  "saturate"
+ ],
+ "humilde": [
+  "humble",
+  "modest",
+  "lowly",
+  "meek"
+ ],
+ "humita": [
+  "dewdrop",
+  "drop",
+  "bead",
+  "globule"
+ ],
+ "humo": [
+  "smoke",
+  "fume",
+  "vapor",
+  "mist"
+ ],
+ "hurtar": [
+  "steal",
+  "rob",
+  "pilfer",
+  "swindle"
+ ],
+ "huérfano": [
+  "orphan",
+  "widower",
+  "widow",
+  "fatherless"
+ ],
+ "hígado": [
+  "liver",
+  "liver function",
+  "hepatic",
+  "gall bladder"
+ ],
+ "húmedo": [
+  "damp",
+  "moist",
+  "wet",
+  "humid"
+ ],
+ "iglesia": [
+  "church",
+  "chapel",
+  "temple",
+  "sanctuary"
+ ],
+ "igual": [
+  "equal",
+  "same",
+  "equal to",
+  "identical"
+ ],
+ "igualar": [
+  "equalize",
+  "equate",
+  "balance",
+  "match"
+ ],
+ "ilegítimo": [
+  "illegitimate",
+  "unlawful",
+  "illegal",
+  "void"
+ ],
+ "iluminar": [
+  "illuminate",
+  "light up",
+  "brighten",
+  "enlighten"
+ ],
+ "imitar": [
+  "imitate",
+  "mimic",
+  "copy",
+  "emulate"
+ ],
+ "impar": [
+  "odd",
+  "uneven",
+  "unpaired",
+  "irregular"
+ ],
+ "impedir": [
+  "prevent",
+  "stop",
+  "hinder",
+  "block",
+  "restrain"
+ ],
+ "imperdible": [
+  "indestructible",
+  "unbreakable",
+  "indecomposable",
+  "permanent"
+ ],
+ "importar": [
+  "import",
+  "bring in",
+  "carry in",
+  "introduce",
+  "fetch"
+ ],
+ "improductivo": [
+  "unproductive",
+  "barren",
+  "sterile",
+  "fruitless",
+  "useless"
+ ],
+ "incinerar": [
+  "burn",
+  "incinerate",
+  "cremate",
+  "consume by fire",
+  "torch"
+ ],
+ "incitar": [
+  "incite",
+  "provoke",
+  "stir up",
+  "urge",
+  "rouse"
+ ],
+ "inclinado": [
+  "inclined",
+  "biased",
+  "slanted",
+  "leaning",
+  "predisposed"
+ ],
+ "inclinar": [
+  "lean",
+  "tilt",
+  "incline",
+  "slope",
+  "angulate"
+ ],
+ "incubar": [
+  "hatch",
+  "incubate",
+  "brood",
+  "nurture",
+  "foster"
+ ],
+ "inculto": [
+  "uncultured",
+  "ignorant",
+  "uneducated",
+  "unschooled",
+  "rustic"
+ ],
+ "indicar": [
+  "indicate",
+  "show",
+  "signal",
+  "point out",
+  "suggest"
+ ],
+ "indigente": [
+  "poor",
+  "destitute",
+  "needy",
+  "impoverished",
+  "beggarly"
+ ],
+ "infectado": [
+  "infected",
+  "contaminated",
+  "diseased",
+  "tainted",
+  "polluted"
+ ],
+ "infectarse": [
+  "infect",
+  "get infected",
+  "contract disease",
+  "become contaminated",
+  "catch infection"
+ ],
+ "inferior": [
+  "inferior",
+  "lower",
+  "beneath",
+  "subordinate",
+  "lesser"
+ ],
+ "infestar": [
+  "infest",
+  "plague",
+  "overrun",
+  "swarm with",
+  "beset"
+ ],
+ "informar": [
+  "inform",
+  "notify",
+  "report",
+  "tell",
+  "advise"
+ ],
+ "ingle": [
+  "ingle",
+  "sing",
+  "chant",
+  "melodize",
+  "tune"
+ ],
+ "inhalar": [
+  "inhale",
+  "breathe in",
+  "draw in",
+  "suck in",
+  "take in"
+ ],
+ "iniciar": [
+  "initiate",
+  "start",
+  "begin",
+  "commence",
+  "launch"
+ ],
+ "inicio": [
+  "beginning",
+  "start",
+  "commencement"
+ ],
+ "inmaduro": [
+  "immature",
+  "unripe",
+  "green",
+  "undeveloped"
+ ],
+ "inmenso": [
+  "enormous",
+  "huge",
+  "vast",
+  "immense"
+ ],
+ "insertar": [
+  "insert",
+  "put in",
+  "place inside"
+ ],
+ "inservible": [
+  "useless",
+  "worthless",
+  "unfit",
+  "unserviceable"
+ ],
+ "insistir": [
+  "persist",
+  "insist",
+  "press on",
+  "keep up"
+ ],
+ "insolente": [
+  "impudent",
+  "insolent",
+  "rude",
+  "disrespectful"
+ ],
+ "insomnio": [
+  "insomnia",
+  "sleeplessness",
+  "lack of sleep"
+ ],
+ "inspeccionar": [
+  "inspect",
+  "examine",
+  "survey",
+  "check"
+ ],
+ "instalar": [
+  "install",
+  "set up",
+  "fit in",
+  "mount"
+ ],
+ "instructor": [
+  "instructor",
+  "teacher",
+  "trainer",
+  "guide"
+ ],
+ "instruir": [
+  "instruct",
+  "teach",
+  "inform",
+  "advise"
+ ],
+ "insuficiente": [
+  "insufficient",
+  "inadequate",
+  "lacking",
+  "not enough"
+ ],
+ "insultar": [
+  "insult",
+  "abuse",
+  "offend",
+  "revile"
+ ],
+ "insípido": [
+  "insipid",
+  "tasteless",
+  "bland",
+  "flavorless"
+ ],
+ "intencionalmente": [
+  "intentionally",
+  "deliberately",
+  "on purpose",
+  "willfully"
+ ],
+ "intercalado": [
+  "intercalated",
+  "interspersed",
+  "mixed in",
+  "inserted"
+ ],
+ "intercalar": [
+  "intercalate",
+  "insert between",
+  "mix in",
+  "place among"
+ ],
+ "interior": [
+  "interior",
+  "inside",
+  "inner",
+  "central"
+ ],
+ "interés": [
+  "interest",
+  "interest",
+  "concern",
+  "stake"
+ ],
+ "intestino": [
+  "intestine",
+  "gut",
+  "bowels",
+  "colon"
+ ],
+ "intimidar": [
+  "scare",
+  "frighten",
+  "intimidate",
+  "terrify"
+ ],
+ "introducir": [
+  "insert",
+  "introduce",
+  "put in",
+  "bring in"
+ ],
+ "intrépido": [
+  "brave",
+  "bold",
+  "fearless",
+  "daring"
+ ],
+ "investigar": [
+  "investigate",
+  "research",
+  "examine",
+  "study"
+ ],
+ "invitar": [
+  "invite",
+  "ask to come",
+  "beckon",
+  "summon"
+ ],
+ "inválido": [
+  "invalid",
+  "useless",
+  "worthless",
+  "nonfunctional"
+ ],
+ "ir": [
+  "go",
+  "walk",
+  "travel",
+  "move"
+ ],
+ "iris": [
+  "iris",
+  "rainbow",
+  "colored ring",
+  "spectrum"
+ ],
+ "irse": [
+  "leave",
+  "depart",
+  "go away",
+  "exit"
+ ],
+ "isla": [
+  "island",
+  "landmass",
+  "rock",
+  "atoll"
+ ],
+ "izquierdo": [
+  "left",
+  "left-handed",
+  "left side",
+  "western"
+ ],
+ "jactancioso": [
+  "proud",
+  "boastful",
+  "conceited",
+  "arrogant"
+ ],
+ "jactarse": [
+  "boast",
+  "brag",
+  "puff oneself up",
+  "show off"
+ ],
+ "jadear": [
+  "gasping",
+  "panting",
+  "wheezing",
+  "out of breath"
+ ],
+ "jalar": [
+  "pull",
+  "drag",
+  "haul",
+  "tow"
+ ],
+ "jilguero": [
+  "thrush",
+  "songbird",
+  "robin",
+  "warbler"
+ ],
+ "joroba": [
+  "hump",
+  "protuberance",
+  "bulge",
+  "swelling"
+ ],
+ "jorobado": [
+  "humped",
+  "humpbacked",
+  "protuberant",
+  "swollen"
+ ],
+ "joven": [
+  "young",
+  "youthful",
+  "adolescent",
+  "immature"
+ ],
+ "jovial": [
+  "cheerful",
+  "merry",
+  "jovial",
+  "good-humored"
+ ],
+ "juego": [
+  "game",
+  "play",
+  "sport",
+  "amusement"
+ ],
+ "jueves": [
+  "thursday"
+ ],
+ "jugar": [
+  "play",
+  "game",
+  "act",
+  "perform"
+ ],
+ "juguete": [
+  "toy",
+  "doll",
+  "gadget",
+  "trinket"
+ ],
+ "juguetón": [
+  "playful",
+  "mischievous",
+  "silly",
+  "clownish"
+ ],
+ "juicio": [
+  "judgment",
+  "opinion",
+  "verdict",
+  "discernment"
+ ],
+ "julio": [
+  "july"
+ ],
+ "junio": [
+  "june"
+ ],
+ "juntamente": [
+  "together",
+  "jointly",
+  "concurrently",
+  "in unison"
+ ],
+ "juntar": [
+  "gather",
+  "collect",
+  "assemble",
+  "unite"
+ ],
+ "juntarse": [
+  "to get together",
+  "to meet",
+  "to join",
+  "to assemble"
+ ],
+ "junto": [
+  "next",
+  "adjacent",
+  "nearby",
+  "close-by"
+ ],
+ "la": [
+  "the"
+ ],
+ "labio": [
+  "lip",
+  "mouthpart",
+  "commissure",
+  "edge"
+ ],
+ "labor": [
+  "work",
+  "labor",
+  "toil",
+  "effort"
+ ],
+ "laborar": [
+  "to work",
+  "to labor",
+  "to toil",
+  "to exert oneself"
+ ],
+ "labrar": [
+  "to plow",
+  "to till",
+  "to cultivate",
+  "to farm"
+ ],
+ "lactar": [
+  "to milk",
+  "to lactate",
+  "to produce milk",
+  "to secrete"
+ ],
+ "ladeado": [
+  "slanted",
+  "inclined",
+  "sloping"
+ ],
+ "ladear": [
+  "to slant",
+  "to incline",
+  "to turn aside"
+ ],
+ "ladera": [
+  "slope",
+  "side",
+  "bank"
+ ],
+ "lado": [
+  "side",
+  "aspect",
+  "flank"
+ ],
+ "ladrar": [
+  "to bark",
+  "to howl",
+  "to yelp"
+ ],
+ "ladrón": [
+  "thief",
+  "robber",
+  "burglar"
+ ],
+ "lagartija": [
+  "lizard",
+  "lizard",
+  "reptile"
+ ],
+ "lagrimear": [
+  "to weep",
+  "to shed tears",
+  "to cry"
+ ],
+ "laguna": [
+  "lake",
+  "pond",
+  "marsh"
+ ],
+ "lamer": [
+  "to lick",
+  "to lap",
+  "to moisten"
+ ],
+ "lampa": [
+  "lamp",
+  "light",
+  "bulb"
+ ],
+ "lana": [
+  "wool",
+  "fleece",
+  "yarn"
+ ],
+ "lanudo": [
+  "woolly",
+  "hairy",
+  "shaggy"
+ ],
+ "lanzadera": [
+  "launching pad",
+  "rocket",
+  "vehicle"
+ ],
+ "lanzar": [
+  "to throw",
+  "to cast",
+  "to hurl"
+ ],
+ "largo": [
+  "long",
+  "length",
+  "distance"
+ ],
+ "lastimar": [
+  "to hurt",
+  "to injure",
+  "to wound"
+ ],
+ "latiguear": [
+  "to tire",
+  "to exhaust",
+  "to weary"
+ ],
+ "latir": [
+  "to beat",
+  "to throb",
+  "to pulse"
+ ],
+ "lavandera": [
+  "laundry",
+  "washhouse",
+  "laundromat"
+ ],
+ "lavar": [
+  "wash",
+  "clean",
+  "scrub",
+  "launder"
+ ],
+ "lazo": [
+  "loop",
+  "noose",
+  "knot",
+  "circle"
+ ],
+ "lecho": [
+  "bed",
+  "mattress",
+  "sheet",
+  "cot"
+ ],
+ "lechuza": [
+  "owl",
+  "nightjar",
+  "nocturnal bird",
+  "hoot"
+ ],
+ "leer": [
+  "read",
+  "scan",
+  "peruse",
+  "browse"
+ ],
+ "legaña": [
+  "stain",
+  "spot",
+  "blemish",
+  "mark"
+ ],
+ "legumbre": [
+  "bean",
+  "pea",
+  "pulse",
+  "legume"
+ ],
+ "lejano": [
+  "distant",
+  "remote",
+  "far-off",
+  "afar"
+ ],
+ "lejos": [
+  "far",
+  "distant",
+  "remote",
+  "off"
+ ],
+ "lengua": [
+  "tongue",
+  "language",
+  "speech",
+  "tongue"
+ ],
+ "lenguaje": [
+  "language",
+  "tongue",
+  "dialect",
+  "lexicon"
+ ],
+ "lentamente": [
+  "slowly",
+  "gradually",
+  "slowly",
+  "ad libitum"
+ ],
+ "levantar": [
+  "lift",
+  "raise",
+  "hoist",
+  "elevate"
+ ],
+ "levantarse": [
+  "get up",
+  "rise",
+  "stand up",
+  "get out of bed"
+ ],
+ "leña": [
+  "wood",
+  "timber",
+  "firewood",
+  "log"
+ ],
+ "lia": [
+  "link",
+  "connection",
+  "bond",
+  "tie"
+ ],
+ "libertar": [
+  "free",
+  "liberate",
+  "release",
+  "emancipate"
+ ],
+ "ligeramente": [
+  "lightly",
+  "slightly",
+  "gently",
+  "softly"
+ ],
+ "lijar": [
+  "grind",
+  "sharpen",
+  "whet",
+  "file"
+ ],
+ "limar": [
+  "grind",
+  "sharpen",
+  "whet",
+  "smooth"
+ ],
+ "limitado": [
+  "restricted",
+  "confined",
+  "bounded"
+ ],
+ "limosnear": [
+  "beg",
+  "beg for alms",
+  "ask for charity"
+ ],
+ "limpiar": [
+  "clean",
+  "wash",
+  "scrub",
+  "purify"
+ ],
+ "limpio": [
+  "clean",
+  "clear",
+  "pure",
+  "uncluttered"
+ ],
+ "lindero": [
+  "boundary",
+  "border",
+  "edge",
+  "limit"
+ ],
+ "lindo": [
+  "pretty",
+  "nice",
+  "beautiful",
+  "charming"
+ ],
+ "linterna": [
+  "lantern",
+  "torch",
+  "candlestick"
+ ],
+ "lisiado": [
+  "swollen",
+  "puffy",
+  "distended",
+  "bloated"
+ ],
+ "liso": [
+  "smooth",
+  "plain",
+  "level",
+  "even"
+ ],
+ "lisonjero": [
+  "flattering",
+  "fawning",
+  "complimentary",
+  "praising"
+ ],
+ "listo": [
+  "ready",
+  "prepared",
+  "quick",
+  "nimble"
+ ],
+ "liviano": [
+  "light",
+  "airy",
+  "buoyant",
+  "insubstantial"
+ ],
+ "llano": [
+  "plain",
+  "flat",
+  "open",
+  "level"
+ ],
+ "llanto": [
+  "sorrow",
+  "grief",
+  "lamentation",
+  "mourning"
+ ],
+ "llanura": [
+  "plains",
+  "flatlands",
+  "lowlands",
+  "steppe"
+ ],
+ "llegar": [
+  "arrive",
+  "reach",
+  "get to",
+  "come to"
+ ],
+ "llenar": [
+  "fill",
+  "pack",
+  "crowd",
+  "saturate"
+ ],
+ "lleno": [
+  "full",
+  "complete",
+  "stuffed",
+  "packed"
+ ],
+ "llevar": [
+  "carry",
+  "take",
+  "bear",
+  "transport"
+ ],
+ "llorar": [
+  "weep",
+  "cry",
+  "weep bitterly",
+  "shed tears"
+ ],
+ "llorón": [
+  "tearful",
+  "weeper",
+  "wretch",
+  "crybaby"
+ ],
+ "llover": [
+  "rain",
+  "shower",
+  "drizzle",
+  "precipitation"
+ ],
+ "llovizna": [
+  "drizzle",
+  "mist",
+  "light rain",
+  "sprinkle"
+ ],
+ "lloviznar": [
+  "to drizzle",
+  "to sprinkle",
+  "to mist",
+  "to shower lightly"
+ ],
+ "lluvia": [
+  "rain",
+  "shower",
+  "downpour",
+  "precipitation"
+ ],
+ "loco": [
+  "mad",
+  "crazy",
+  "insane",
+  "madman"
+ ],
+ "lodo": [
+  "mud",
+  "sludge",
+  "mire",
+  "bog"
+ ],
+ "lombriz": [
+  "worm",
+  "earthworm",
+  "nematode",
+  "vermin"
+ ],
+ "lomo": [
+  "loin",
+  "backside",
+  "flank",
+  "rump"
+ ],
+ "lucero": [
+  "morning star",
+  "venus",
+  "bright one",
+  "star"
+ ],
+ "luchar": [
+  "fight",
+  "struggle",
+  "contend",
+  "battle"
+ ],
+ "luciérnaga": [
+  "firefly",
+  "glowworm",
+  "lantern fly",
+  "light bug"
+ ],
+ "luego": [
+  "then",
+  "after",
+  "afterwards",
+  "subsequently"
+ ],
+ "luna": [
+  "moon",
+  "lunar",
+  "satellite",
+  "night sky"
+ ],
+ "lunar": [
+  "to moon",
+  "to orbit",
+  "to revolve",
+  "to cycle"
+ ],
+ "luz": [
+  "light",
+  "ray",
+  "beam",
+  "illumination"
+ ],
+ "lágrima": [
+  "tear",
+  "drop",
+  "fluid",
+  "moisture"
+ ],
+ "lámpara": [
+  "lamp",
+  "light",
+  "bulb",
+  "lantern"
+ ],
+ "lástima": [
+  "pity",
+  "regret",
+  "shame",
+  "sorrow"
+ ],
+ "látigo": [
+  "whip",
+  "scourge",
+  "lash",
+  "rod"
+ ],
+ "lío": [
+  "confusion",
+  "disorder",
+  "chaos"
+ ],
+ "lóbulo": [
+  "lobe"
+ ],
+ "lúcuma": [
+  "lucuma",
+  "choque",
+  "mountain apple"
+ ],
+ "madera": [
+  "wood",
+  "timber",
+  "lumber"
+ ],
+ "madre": [
+  "mother",
+  "dam",
+  "parent"
+ ],
+ "madrina": [
+  "godmother",
+  "sponsor",
+  "godparent"
+ ],
+ "madurar": [
+  "ripen",
+  "mature",
+  "cook through"
+ ],
+ "maestro": [
+  "master",
+  "teacher",
+  "expert"
+ ],
+ "magro": [
+  "lean",
+  "thin",
+  "skinny"
+ ],
+ "maguey": [
+  "agave",
+  "maguey plant",
+  "succulent"
+ ],
+ "mal": [
+  "bad",
+  "evil",
+  "wrong"
+ ],
+ "malaria": [
+  "malaria",
+  "febrile disease",
+  "tropical fever"
+ ],
+ "malcriado": [
+  "ill-bred",
+  "badly brought up",
+  "misbehaved"
+ ],
+ "malo": [
+  "bad",
+  "wicked",
+  "evil"
+ ],
+ "malogrado": [
+  "spoiled",
+  "ruined",
+  "failed"
+ ],
+ "malograr": [
+  "to spoil",
+  "to ruin",
+  "to fail"
+ ],
+ "malvado": [
+  "wicked",
+  "villainous",
+  "evil"
+ ],
+ "mamar": [
+  "to suckle",
+  "to nurse",
+  "to drink milk"
+ ],
+ "manantial": [
+  "spring",
+  "fountain",
+  "source"
+ ],
+ "mancha": [
+  "stain",
+  "spot",
+  "blemish"
+ ],
+ "manchado": [
+  "stained",
+  "spotted",
+  "dirty",
+  "soiled"
+ ],
+ "manchar": [
+  "to stain",
+  "to spot",
+  "to soil",
+  "to dirty"
+ ],
+ "manco": [
+  "one-handed",
+  "left-handed",
+  "missing a finger",
+  "amputee"
+ ],
+ "mandamiento": [
+  "commandment",
+  "decree",
+  "order",
+  "edict"
+ ],
+ "mandar": [
+  "to send",
+  "to order",
+  "to dispatch",
+  "to command"
+ ],
+ "mandato": [
+  "mandate",
+  "term",
+  "appointment",
+  "authorization"
+ ],
+ "mandíbula": [
+  "jaw",
+  "jawbone",
+  "mandible",
+  "chin"
+ ],
+ "manejar": [
+  "to handle",
+  "to drive",
+  "to manage",
+  "to steer"
+ ],
+ "mango": [
+  "mango",
+  "mango fruit",
+  "mangifera",
+  "sapodilla"
+ ],
+ "manifestar": [
+  "to manifest",
+  "to show",
+  "to display",
+  "to demonstrate"
+ ],
+ "mano": [
+  "hand",
+  "palm",
+  "fist",
+  "handkerchief"
+ ],
+ "manta": [
+  "blanket",
+  "quilt",
+  "sheet",
+  "coverlet"
+ ],
+ "manteca": [
+  "butter",
+  "lard",
+  "margarine",
+  "fat"
+ ],
+ "marcar": [
+  "to mark",
+  "to score",
+  "to label",
+  "to indicate"
+ ],
+ "marchitarsé": [
+  "marked",
+  "marked down",
+  "discounted",
+  "flagged"
+ ],
+ "marchito": [
+  "marked",
+  "marked off",
+  "tagged",
+  "noted"
+ ],
+ "marido": [
+  "husband",
+  "spouse",
+  "mate",
+  "partner"
+ ],
+ "mariposa": [
+  "butterfly",
+  "moth",
+  "fly",
+  "insect"
+ ],
+ "martillo": [
+  "hammer",
+  "mallet",
+  "pecker",
+  "pounder"
+ ],
+ "marzo": [
+  "march",
+  "march month",
+  "third month",
+  "marchtime"
+ ],
+ "mascar": [
+  "mask",
+  "mask",
+  "face-covering"
+ ],
+ "mata": [
+  "kill",
+  "kill",
+  "destroy"
+ ],
+ "matar": [
+  "kill",
+  "kill",
+  "murder"
+ ],
+ "mate": [
+  "match",
+  "match",
+  "pair"
+ ],
+ "matrimonio": [
+  "marriage",
+  "marriage",
+  "wedlock"
+ ],
+ "mazamorra": [
+  "thick porridge",
+  "thick porridge",
+  "mushy cornmeal soup"
+ ],
+ "mazo": [
+  "hammer",
+  "hammer",
+  "mallet"
+ ],
+ "mazorca": [
+  "ear of corn",
+  "ear of corn",
+  "maize cob"
+ ],
+ "mañana": [
+  "morning",
+  "morning",
+  "dawn"
+ ],
+ "medalla": [
+  "medal",
+  "medal",
+  "token"
+ ],
+ "mediano": [
+  "medium",
+  "medium",
+  "middle-sized"
+ ],
+ "medianoche": [
+  "midnight",
+  "midnight",
+  "twelve o'clock at night"
+ ],
+ "medicina": [
+  "medicine",
+  "medicine",
+  "drug"
+ ],
+ "medida": [
+  "measure",
+  "measure",
+  "measurement"
+ ],
+ "medio": [
+  "half",
+  "half",
+  "midpoint"
+ ],
+ "mediodía": [
+  "noon",
+  "noon",
+  "midday"
+ ],
+ "medir": [
+  "measure",
+  "measure",
+  "gauge"
+ ],
+ "mellizo": [
+  "twin",
+  "twin",
+  "identical sibling"
+ ],
+ "menear": [
+  "dance",
+  "dance",
+  "jig"
+ ],
+ "menesteroso": [
+  "needy",
+  "needy",
+  "poor"
+ ],
+ "mensaje": [
+  "message",
+  "note",
+  "text",
+  "communication",
+  "word"
+ ],
+ "menstruar": [
+  "to menstruate",
+  "to have a period",
+  "to bleed",
+  "to flow"
+ ],
+ "mentir": [
+  "to lie",
+  "to deceive",
+  "to falsify",
+  "to fabricate",
+  "to mislead"
+ ],
+ "mentira": [
+  "lie",
+  "falsehood",
+  "deception",
+  "fabrication",
+  "untruth"
+ ],
+ "mentiroso": [
+  "liar",
+  "deceiver",
+  "false",
+  "fraudulent",
+  "dishonest"
+ ],
+ "menudo": [
+  "often",
+  "frequently",
+  "many times",
+  "regularly",
+  "usually"
+ ],
+ "mercader": [
+  "merchant",
+  "trader",
+  "dealer",
+  "seller",
+  "shopkeeper"
+ ],
+ "mercadería": [
+  "goods",
+  "merchandise",
+  "wares",
+  "stock",
+  "commodities"
+ ],
+ "mercado": [
+  "market",
+  "marketplace",
+  "bazaar",
+  "trading place",
+  "fair"
+ ],
+ "merienda": [
+  "snack",
+  "afternoon meal",
+  "midday meal",
+  "light lunch",
+  "refreshment"
+ ],
+ "mes": [
+  "month",
+  "lunar month",
+  "period of thirty days",
+  "calendar month",
+  "interval"
+ ],
+ "mestizo": [
+  "mixed race",
+  "mulatto",
+  "mestiza",
+  "hybrid",
+  "mixed blood"
+ ],
+ "meter": [
+  "to put",
+  "to insert",
+  "to place",
+  "to introduce",
+  "to load"
+ ],
+ "mezclado": [
+  "mixed",
+  "blended",
+  "combined",
+  "concocted",
+  "compounded"
+ ],
+ "mezclar": [
+  "to mix",
+  "to blend",
+  "to combine",
+  "to stir",
+  "to mingle"
+ ],
+ "mezquinar": [
+  "to mix",
+  "to blend",
+  "to conflate",
+  "to confuse",
+  "to intermingle"
+ ],
+ "mezquino": [
+  "mixed",
+  "blended",
+  "composite",
+  "concocted",
+  "compounded"
+ ],
+ "miedo": [
+  "fear",
+  "terror",
+  "fright",
+  "dread",
+  "apprehension"
+ ],
+ "miedoso": [
+  "afraid",
+  "fearful",
+  "frightened",
+  "timid",
+  "scared"
+ ],
+ "miel": [
+  "honey",
+  "sweet nectar",
+  "sugar",
+  "syrup",
+  "golden liquid"
+ ],
+ "migaja": [
+  "crumb",
+  "fragment",
+  "piece"
+ ],
+ "mirar": [
+  "look",
+  "gaze",
+  "stare",
+  "watch"
+ ],
+ "misa": [
+  "mass",
+  "service",
+  "liturgy"
+ ],
+ "miserable": [
+  "wretched",
+  "miserable",
+  "pitiful",
+  "wretched"
+ ],
+ "mismo": [
+  "same",
+  "identical",
+  "equal",
+  "alike"
+ ],
+ "mocho": [
+  "hairy",
+  "hairy",
+  "furry",
+  "shaggy"
+ ],
+ "moco": [
+  "mucus",
+  "phlegm",
+  "spit",
+  "snot"
+ ],
+ "mocoso": [
+  "snotty",
+  "mucous",
+  "slimy",
+  "sticky"
+ ],
+ "moho": [
+  "mold",
+  "mould",
+  "fungus",
+  "mildew"
+ ],
+ "mohoso": [
+  "moldy",
+  "moldier",
+  "fungal",
+  "musty"
+ ],
+ "mojado": [
+  "wet",
+  "damp",
+  "soaked",
+  "moist"
+ ],
+ "moler": [
+  "grind",
+  "crush",
+  "pulverize",
+  "grind"
+ ],
+ "molestar": [
+  "bother",
+  "annoy",
+  "disturb",
+  "harass"
+ ],
+ "molesto": [
+  "annoyed",
+  "bothered",
+  "irritated",
+  "vexed"
+ ],
+ "molido": [
+  "ground",
+  "powdered",
+  "crushed",
+  "milled"
+ ],
+ "molinero": [
+  "miller",
+  "miller",
+  "gristler",
+  "miller"
+ ],
+ "molino": [
+  "mill",
+  "millstone",
+  "grinder",
+  "mill"
+ ],
+ "molle": [
+  "soft",
+  "tender",
+  "yielding",
+  "pliable"
+ ],
+ "molleja": [
+  "tender",
+  "soft",
+  "succulent",
+  "juicy"
+ ],
+ "momento": [
+  "moment",
+  "instant",
+  "time",
+  "occasion"
+ ],
+ "montar": [
+  "climb",
+  "ascend",
+  "mount",
+  "hoist"
+ ],
+ "montaña": [
+  "mountain",
+  "hill",
+  "peak",
+  "range"
+ ],
+ "morada": [
+  "dwelling",
+  "residence",
+  "home",
+  "abode"
+ ],
+ "morar": [
+  "live",
+  "dwell",
+  "reside",
+  "inhabit"
+ ],
+ "morcilla": [
+  "blood sausage",
+  "blood pudding",
+  "offal",
+  "liverwurst"
+ ],
+ "morder": [
+  "bite",
+  "chew",
+  "gnaw",
+  "nip"
+ ],
+ "mordisquear": [
+  "chew slowly",
+  "nibble",
+  "gnaw",
+  "crunch"
+ ],
+ "moribundo": [
+  "dying",
+  "near death",
+  "last moments",
+  "terminal"
+ ],
+ "morir": [
+  "die",
+  "perish",
+  "pass away",
+  "expire"
+ ],
+ "morro": [
+  "beak",
+  "bill",
+  "snout",
+  "rostrum"
+ ],
+ "mortero": [
+  "mortar",
+  "pestle",
+  "mixing bowl",
+  "grinder"
+ ],
+ "mosca": [
+  "fly",
+  "insect",
+  "buzzing bug",
+  "gnat"
+ ],
+ "mostrar": [
+  "show",
+  "display",
+  "exhibit",
+  "demonstrate"
+ ],
+ "mote": [
+  "hominy",
+  "boiled corn",
+  "grits",
+  "popcorn"
+ ],
+ "moteado": [
+  "hominy-like",
+  "boiled corn",
+  "popped corn",
+  "grits"
+ ],
+ "motearse": [
+  "to make hominy",
+  "to boil corn",
+  "to pop corn",
+  "to process corn"
+ ],
+ "muca": [
+  "mucus",
+  "slime",
+  "phlegm",
+  "snot"
+ ],
+ "mucama": [
+  "maid",
+  "servant",
+  "housekeeper",
+  "domestic"
+ ],
+ "muchacha": [
+  "girl",
+  "young woman",
+  "maiden",
+  "daughter"
+ ],
+ "muchacho": [
+  "boy",
+  "young man",
+  "lad",
+  "son"
+ ],
+ "mucho": [
+  "many",
+  "much",
+  "lots of"
+ ],
+ "mudo": [
+  "mute",
+  "silent",
+  "speechless"
+ ],
+ "muela": [
+  "molar tooth",
+  "grinding tooth"
+ ],
+ "muerte": [
+  "death",
+  "dying",
+  "demise"
+ ],
+ "muerto": [
+  "dead",
+  "deceased",
+  "dead man"
+ ],
+ "mugir": [
+  "bellow",
+  "bray",
+  "low"
+ ],
+ "mugriento": [
+  "filthy",
+  "dirty",
+  "greasy"
+ ],
+ "mujer": [
+  "woman",
+  "female",
+  "lady"
+ ],
+ "mullido": [
+  "well-milled",
+  "ground",
+  "powdered"
+ ],
+ "multicolor": [
+  "polychrome",
+  "rainbow-colored",
+  "multi-hued"
+ ],
+ "multiplicar": [
+  "multiply",
+  "increase",
+  "breed"
+ ],
+ "multiplicarse": [
+  "multiply",
+  "increase",
+  "reproduce"
+ ],
+ "mundo": [
+  "world",
+  "globe",
+  "sphere"
+ ],
+ "murciélago": [
+  "bat",
+  "flying mammal"
+ ],
+ "muro": [
+  "wall",
+  "barrier",
+  "fence"
+ ],
+ "muy": [
+  "very",
+  "extremely",
+  "quite"
+ ],
+ "muñeca": [
+  "doll",
+  "puppet",
+  "toy"
+ ],
+ "más": [
+  "more",
+  "most",
+  "greater"
+ ],
+ "mío": [
+  "mine",
+  "my own",
+  "belonging to me"
+ ],
+ "nacer": [
+  "be born",
+  "birth",
+  "come into being"
+ ],
+ "nacido": [
+  "born",
+  "born",
+  "born"
+ ],
+ "nacimiento": [
+  "birth",
+  "birth",
+  "birth"
+ ],
+ "nada": [
+  "nothing",
+  "nothing",
+  "nothing"
+ ],
+ "nadie": [
+  "no one",
+  "no one",
+  "no one"
+ ],
+ "nalga": [
+  "hip",
+  "hip",
+  "hip"
+ ],
+ "narigudo": [
+  "hook-nosed",
+  "hooked-nosed",
+  "hook-nosed"
+ ],
+ "nariz": [
+  "nose",
+  "nose",
+  "nose"
+ ],
+ "nata": [
+  "scum",
+  "scum",
+  "scum"
+ ],
+ "neblina": [
+  "fog",
+  "mist",
+  "haze"
+ ],
+ "necesitado": [
+  "needy",
+  "needy",
+  "needy"
+ ],
+ "necesitar": [
+  "need",
+  "need",
+  "need"
+ ],
+ "necio": [
+  "fool",
+  "simpleton",
+  "dunce"
+ ],
+ "negligente": [
+  "careless",
+  "careless",
+  "negligent"
+ ],
+ "negociante": [
+  "merchant",
+  "trader",
+  "dealer"
+ ],
+ "negociar": [
+  "deal",
+  "bargain",
+  "trade"
+ ],
+ "negro": [
+  "black",
+  "black",
+  "black"
+ ],
+ "nervio": [
+  "nerve",
+  "nerve",
+  "nerve"
+ ],
+ "nervudo": [
+  "sinewy",
+  "muscular",
+  "wiry"
+ ],
+ "nevado": [
+  "snow-covered",
+  "snowed-over",
+  "snowy"
+ ],
+ "nevar": [
+  "to snow",
+  "to snow",
+  "to snow"
+ ],
+ "nido": [
+  "nest",
+  "brood",
+  "hatching place",
+  "den"
+ ],
+ "nieta": [
+  "grandchild",
+  "granddaughter",
+  "grandson"
+ ],
+ "nieve": [
+  "snow",
+  "white snow",
+  "fresh snow"
+ ],
+ "nigua": [
+  "cornmeal",
+  "hominy grits",
+  "boiled corn flour"
+ ],
+ "nivelar": [
+  "level",
+  "flatten",
+  "smooth",
+  "make even"
+ ],
+ "niña": [
+  "girl",
+  "little girl",
+  "maiden",
+  "daughter"
+ ],
+ "niño": [
+  "boy",
+  "little boy",
+  "lad",
+  "son"
+ ],
+ "no": [
+  "no",
+  "not",
+  "negative",
+  "nay"
+ ],
+ "nombrar": [
+  "name",
+  "call",
+  "title",
+  "designate"
+ ],
+ "nombre": [
+  "name",
+  "title",
+  "designation",
+  "appellation"
+ ],
+ "nosotros": [
+  "we",
+  "us",
+  "ourselves",
+  "we two or more"
+ ],
+ "noticia": [
+  "news",
+  "information",
+  "report",
+  "intelligence"
+ ],
+ "notificar": [
+  "notify",
+  "inform",
+  "announce",
+  "declare"
+ ],
+ "novecientos": [
+  "nine hundred",
+  "900",
+  "nine hundreds"
+ ],
+ "noventa": [
+  "ninety",
+  "90",
+  "ninety units"
+ ],
+ "noviembre": [
+  "november",
+  "eleventh month",
+  "novembris"
+ ],
+ "nube": [
+  "cloud",
+  "vapor",
+  "mist",
+  "cumulus"
+ ],
+ "nublado": [
+  "cloudy",
+  "overcast",
+  "gloomy",
+  "misty"
+ ],
+ "nublarse": [
+  "to cloud",
+  "to overcast",
+  "to become cloudy",
+  "to fog up"
+ ],
+ "nuca": [
+  "back of the neck",
+  "nape",
+  "occiput",
+  "back"
+ ],
+ "nudo": [
+  "knot",
+  "tie",
+  "lasso",
+  "ligature",
+  "bond"
+ ],
+ "nudoso": [
+  "knotty",
+  "knotted",
+  "tangled",
+  "entangled",
+  "twisted"
+ ],
+ "nuera": [
+  "daughter-in-law",
+  "son's wife",
+  "daughter's husband"
+ ],
+ "nuevo": [
+  "new",
+  "fresh",
+  "recent",
+  "modern",
+  "latest"
+ ],
+ "numeroso": [
+  "numerous",
+  "many",
+  "numerous",
+  "abundant",
+  "plentiful"
+ ],
+ "nunca": [
+  "never",
+  "not ever",
+  "at no time",
+  "never again"
+ ],
+ "náusea": [
+  "nausea",
+  "sickness",
+  "queasiness",
+  "vertigo",
+  "giddiness"
+ ],
+ "nódulo": [
+  "node",
+  "nodule",
+  "lump",
+  "swelling",
+  "knot"
+ ],
+ "número": [
+  "number",
+  "figure",
+  "count",
+  "numeral",
+  "digit"
+ ],
+ "obedecer": [
+  "to obey",
+  "to comply",
+  "to follow",
+  "to submit",
+  "to yield"
+ ],
+ "obediente": [
+  "obedient",
+  "compliant",
+  "submissive",
+  "dutiful",
+  "docile"
+ ],
+ "obeso": [
+  "obese",
+  "fat",
+  "overweight",
+  "corpulent",
+  "plump"
+ ],
+ "obrero": [
+  "worker",
+  "laborer",
+  "manual worker",
+  "operative",
+  "employee"
+ ],
+ "observar": [
+  "to observe",
+  "to watch",
+  "to look at",
+  "to monitor",
+  "to inspect"
+ ],
+ "obstruir": [
+  "to obstruct",
+  "to block",
+  "to hinder",
+  "to impede",
+  "to choke"
+ ],
+ "oca": [
+  "hen",
+  "female chicken",
+  "pullet",
+  "henhouse",
+  "coop"
+ ],
+ "ocasión": [
+  "occasion",
+  "opportunity",
+  "chance",
+  "event",
+  "instance"
+ ],
+ "ochenta": [
+  "eighty",
+  "80",
+  "eighty percent",
+  "eightieth"
+ ],
+ "ocho": [
+  "eight",
+  "8",
+  "eighth",
+  "eightfold",
+  "octuple"
+ ],
+ "ocioso": [
+  "idle",
+  "lazy",
+  "idle",
+  "slack",
+  "unoccupied"
+ ],
+ "ocultamente": [
+  "secretly",
+  "surreptitiously",
+  "covertly",
+  "in secret"
+ ],
+ "ocultar": [
+  "hide",
+  "conceal",
+  "cover up",
+  "keep secret"
+ ],
+ "ocultarse": [
+  "hide oneself",
+  "conceal oneself",
+  "disappear",
+  "vanish"
+ ],
+ "océano": [
+  "ocean",
+  "sea",
+  "water",
+  "deep blue"
+ ],
+ "odiar": [
+  "hate",
+  "detest",
+  "loathe",
+  "abhor"
+ ],
+ "odioso": [
+  "hateful",
+  "detestable",
+  "odious",
+  "abhorrent"
+ ],
+ "ofender": [
+  "offend",
+  "insult",
+  "annoy",
+  "provoke"
+ ],
+ "ojo": [
+  "eye",
+  "eyeball",
+  "pupil",
+  "vision"
+ ],
+ "oler": [
+  "smell",
+  "scent",
+  "smell out",
+  "detect by smell"
+ ],
+ "olisquear": [
+  "smell",
+  "sniff",
+  "detect odor",
+  "perceive scent"
+ ],
+ "olla": [
+  "pot",
+  "pan",
+  "cauldron",
+  "cooking vessel"
+ ],
+ "olluco": [
+  "oca",
+  "oca root",
+  "sweet potato",
+  "ground yam"
+ ],
+ "olor": [
+  "smell",
+  "scent",
+  "odor",
+  "fragrance"
+ ],
+ "olvidadizo": [
+  "forgetful",
+  "forgetful of things",
+  "prone to forget",
+  "easily forgotten"
+ ],
+ "olvido": [
+  "forgetfulness",
+  "oblivion",
+  "neglect",
+  "loss of memory"
+ ],
+ "ombligo": [
+  "navel",
+  "belly button",
+  "umbilicus",
+  "navel ring"
+ ],
+ "omóplato": [
+  "shoulder blade",
+  "scapula",
+  "shoulder bone",
+  "back flap"
+ ],
+ "opuesto": [
+  "opposite",
+  "contrary",
+  "opposing",
+  "antithetical"
+ ],
+ "ordenanza": [
+  "ordinance",
+  "regulation",
+  "statute",
+  "bylaw"
+ ],
+ "ordenar": [
+  "order",
+  "arrange",
+  "organize",
+  "sequence"
+ ],
+ "ordeñar": [
+  "milking",
+  "shearing",
+  "tending"
+ ],
+ "oreja": [
+  "ear",
+  "auditory canal"
+ ],
+ "organizador": [
+  "organizer",
+  "coordinator",
+  "arranger"
+ ],
+ "original": [
+  "original",
+  "authentic",
+  "genuine"
+ ],
+ "orilla": [
+  "shore",
+  "bank",
+  "edge"
+ ],
+ "orina": [
+  "urine",
+  "urine stream"
+ ],
+ "oro": [
+  "gold",
+  "yellow metal"
+ ],
+ "ortiga": [
+  "hemp",
+  "nettle",
+  "poison plant"
+ ],
+ "osado": [
+  "bold",
+  "daring",
+  "audacious"
+ ],
+ "oscurecer": [
+  "darken",
+  "dim",
+  "blacken"
+ ],
+ "oscuridad": [
+  "darkness",
+  "gloom",
+  "shadow"
+ ],
+ "oscuro": [
+  "dark",
+  "dark-colored",
+  "dim"
+ ],
+ "oveja": [
+  "sheep",
+  "ewe",
+  "ram"
+ ],
+ "oído": [
+  "ear",
+  "hearing",
+  "ear drum"
+ ],
+ "pachamanca": [
+  "pachamaca",
+  "earth oven",
+  "underground cookery"
+ ],
+ "padecer": [
+  "suffer",
+  "endure",
+  "experience"
+ ],
+ "padrino": [
+  "godfather",
+  "sponsor",
+  "godparent"
+ ],
+ "pagar": [
+  "pay",
+  "settle",
+  "reimburse"
+ ],
+ "paisano": [
+  "countryman",
+  "fellow villager",
+  "local"
+ ],
+ "paja": [
+  "straw",
+  "stalk",
+  "hay"
+ ],
+ "palabra": [
+  "word",
+  "term",
+  "notion",
+  "concept",
+  "idea"
+ ],
+ "palanquear": [
+  "to lever",
+  "to pry",
+  "to prance",
+  "to strut",
+  "to show off"
+ ],
+ "palidecer": [
+  "to pale",
+  "to fade",
+  "to whiten",
+  "to lose color",
+  "to become sickly"
+ ],
+ "palmada": [
+  "slap",
+  "cuff",
+  "palm",
+  "blow",
+  "swipe"
+ ],
+ "palmear": [
+  "to flap",
+  "to flutter",
+  "to wave",
+  "to beat",
+  "to move rapidly"
+ ],
+ "palo": [
+  "stick",
+  "pole",
+  "rod",
+  "staff",
+  "baton"
+ ],
+ "paloma": [
+  "dove",
+  "pigeon",
+  "squab",
+  "coo",
+  "homing bird"
+ ],
+ "palpar": [
+  "to feel",
+  "to touch",
+  "to grope",
+  "to sense",
+  "to perceive"
+ ],
+ "palpitar": [
+  "to throb",
+  "to beat",
+  "to pulse",
+  "to flutter",
+  "to tremble"
+ ],
+ "palta": [
+  "olive",
+  "oil",
+  "fruit",
+  "berry",
+  "green seed"
+ ],
+ "paludismo": [
+  "malaria",
+  "fevers",
+  "disease",
+  "illness",
+  "tropical fever"
+ ],
+ "panca": [
+  "plank",
+  "board",
+  "slab",
+  "timber",
+  "flat piece of wood"
+ ],
+ "pantano": [
+  "swamp",
+  "marsh",
+  "bog",
+  "fen",
+  "wetland"
+ ],
+ "pantanoso": [
+  "marshy",
+  "swampy",
+  "boggy",
+  "muddy",
+  "waterlogged"
+ ],
+ "papa": [
+  "potato",
+  "spud",
+  "yam",
+  "sweet potato",
+  "tuber"
+ ],
+ "papada": [
+  "neck",
+  "throat",
+  "jowl",
+  "bump",
+  "flesh on neck"
+ ],
+ "papera": [
+  "fisherman",
+  "fisherwoman",
+  "angler",
+  "trawler",
+  "boatman"
+ ],
+ "paquete": [
+  "package",
+  "parcel",
+  "bundle",
+  "box",
+  "carton"
+ ],
+ "par": [
+  "pair",
+  "couple",
+  "set",
+  "duo",
+  "match"
+ ],
+ "para": [
+  "for",
+  "toward",
+  "towards",
+  "until",
+  "in order to"
+ ],
+ "parchado": [
+  "patched",
+  "mottled",
+  "speckled",
+  "variegated"
+ ],
+ "parentesco": [
+  "kinship",
+  "relationship",
+  "connection",
+  "affinity"
+ ],
+ "pariente": [
+  "relative",
+  "kinsman",
+  "kin",
+  "family member"
+ ],
+ "parihuela": [
+  "small boat",
+  "skiff",
+  "dinghy",
+  "launch"
+ ],
+ "parir": [
+  "give birth",
+  "bear",
+  "deliver",
+  "parturition"
+ ],
+ "parpadear": [
+  "blink",
+  "twinkle",
+  "flicker",
+  "flash"
+ ],
+ "parto": [
+  "birth",
+  "delivery",
+  "childbirth",
+  "giving birth"
+ ],
+ "pasado": [
+  "past",
+  "past tense",
+  "gone by",
+  "history"
+ ],
+ "pasar": [
+  "pass",
+  "go through",
+  "proceed",
+  "transpire"
+ ],
+ "pasatiempo": [
+  "pastime",
+  "hobby",
+  "amusement",
+  "diversion"
+ ],
+ "pasear": [
+  "walk",
+  "stroll",
+  "take a walk",
+  "ramble"
+ ],
+ "pastar": [
+  "graze",
+  "feed on grass",
+  "pasture",
+  "browse"
+ ],
+ "pasto": [
+  "grass",
+  "hay",
+  "fodder",
+  "forage"
+ ],
+ "pastor": [
+  "shepherd",
+  "pastor",
+  "herdsman",
+  "shepherdess"
+ ],
+ "pata": [
+  "leg",
+  "foot",
+  "hoof",
+  "paw"
+ ],
+ "patear": [
+  "kick",
+  "strike with foot",
+  "stomp",
+  "boot"
+ ],
+ "patiabierto": [
+  "open-faced",
+  "open-mouthed",
+  "gaping",
+  "unshut"
+ ],
+ "patizambo": [
+  "water lily",
+  "nat",
+  "water plantain",
+  "aquatic herb"
+ ],
+ "pañuelo": [
+  "handkerchief",
+  "scarf",
+  "kerchief",
+  "pocket square"
+ ],
+ "pecado": [
+  "sin",
+  "offense",
+  "transgression",
+  "fault"
+ ],
+ "pecador": [
+  "sinner",
+  "criminal",
+  "offender",
+  "transgressor"
+ ],
+ "pecho": [
+  "chest",
+  "breast",
+  "bosom",
+  "torso"
+ ],
+ "pedar": [
+  "to fart",
+  "to belch",
+  "to burp",
+  "to pass gas"
+ ],
+ "pedazo": [
+  "piece",
+  "chunk",
+  "fragment",
+  "portion"
+ ],
+ "pedir": [
+  "to ask",
+  "to request",
+  "to beg",
+  "to call for"
+ ],
+ "pedo": [
+  "fart",
+  "flatulence",
+  "wind",
+  "gas"
+ ],
+ "pedregoso": [
+  "pebbly",
+  "stony",
+  "rocky",
+  "gravelly"
+ ],
+ "pegajoso": [
+  "sticky",
+  "adhesive",
+  "tacky",
+  "gummy"
+ ],
+ "peinar": [
+  "to comb",
+  "to brush",
+  "to detangle",
+  "to style"
+ ],
+ "peinarse": [
+  "to comb oneself",
+  "to brush one's hair",
+  "to groom",
+  "to tidy up"
+ ],
+ "peine": [
+  "comb",
+  "brush",
+  "parting",
+  "divider"
+ ],
+ "pelado": [
+  "shaved",
+  "bald",
+  "stripped",
+  "bare"
+ ],
+ "pelea": [
+  "fight",
+  "brawl",
+  "quarrel",
+  "dispute"
+ ],
+ "pelear": [
+  "to fight",
+  "to brawling",
+  "to argue",
+  "to contend"
+ ],
+ "pellejo": [
+  "skin",
+  "hide",
+  "layer",
+  "covering"
+ ],
+ "pellizcar": [
+  "to pinch",
+  "to grab",
+  "to tug",
+  "to pull"
+ ],
+ "pelo": [
+  "hair",
+  "fur",
+  "mane",
+  "down"
+ ],
+ "pelusa": [
+  "fluff",
+  "fuzz",
+  "down",
+  "lint"
+ ],
+ "pena": [
+  "pain",
+  "sorrow",
+  "regret",
+  "grief"
+ ],
+ "penca": [
+  "fin",
+  "tail",
+  "appendage",
+  "flap"
+ ],
+ "pene": [
+  "penis",
+  "phallus",
+  "member"
+ ],
+ "penetrar": [
+  "enter",
+  "penetrate",
+  "pierce",
+  "go through"
+ ],
+ "pensar": [
+  "think",
+  "consider",
+  "ponder",
+  "reflect"
+ ],
+ "peor": [
+  "worse",
+  "worst",
+  "inferior",
+  "bad"
+ ],
+ "pequeño": [
+  "small",
+  "little",
+  "tiny",
+  "short"
+ ],
+ "perder": [
+  "lose",
+  "miss",
+  "fail",
+  "forfeit"
+ ],
+ "perdonar": [
+  "forgive",
+  "pardon",
+  "excuse",
+  "let go"
+ ],
+ "perezoso": [
+  "lazy",
+  "sluggish",
+  "idle",
+  "slow"
+ ],
+ "perforar": [
+  "puncture",
+  "bore",
+  "drill",
+  "pierce"
+ ],
+ "pericote": [
+  "corn cob",
+  "ear of corn",
+  "maize stalk"
+ ],
+ "permanecer": [
+  "remain",
+  "stay",
+  "abide",
+  "continue"
+ ],
+ "perro": [
+  "dog",
+  "hound",
+  "mastiff",
+  "canine"
+ ],
+ "perseguir": [
+  "chase",
+  "pursue",
+  "hunt",
+  "follow"
+ ],
+ "persona": [
+  "person",
+  "human",
+  "individual",
+  "being"
+ ],
+ "pesado": [
+  "heavy",
+  "weighty",
+  "cumbersome",
+  "thick"
+ ],
+ "pesar": [
+  "weight",
+  "heaviness",
+  "burden",
+  "gravity"
+ ],
+ "pescar": [
+  "catch",
+  "fish",
+  "net",
+  "harvest"
+ ],
+ "pescuezo": [
+  "neck",
+  "nape",
+  "throat",
+  "collarbone"
+ ],
+ "peso": [
+  "weight",
+  "mass",
+  "load",
+  "burden"
+ ],
+ "pestaña": [
+  "eyelash",
+  "lid",
+  "tab",
+  "fringe"
+ ],
+ "pestañear": [
+  "blink",
+  "blinking",
+  "flicker",
+  "wink",
+  "twitch"
+ ],
+ "peste": [
+  "plague",
+  "epidemic",
+  "disease",
+  "infection",
+  "pandemic"
+ ],
+ "pezuña": [
+  "claw",
+  "nail",
+  "horn",
+  "hoof",
+  "unguicle"
+ ],
+ "pezón": [
+  "tusk",
+  "protuberance",
+  "spur",
+  "projection",
+  "bump"
+ ],
+ "peña": [
+  "rock",
+  "cliff",
+  "formation",
+  "stone",
+  "mountain"
+ ],
+ "picaflor": [
+  "hummingbird",
+  "sucker",
+  "bee",
+  "eater",
+  "drinker"
+ ],
+ "picante": [
+  "spicy",
+  "hot",
+  "pungent",
+  "zesty",
+  "sharp"
+ ],
+ "picazón": [
+  "itch",
+  "tickling",
+  "pruritus",
+  "stinging",
+  "burning"
+ ],
+ "picotear": [
+  "peck",
+  "peckle",
+  "peckish",
+  "pecking",
+  "peckering"
+ ],
+ "piedra": [
+  "stone",
+  "lithos",
+  "rock",
+  "gem",
+  "aggregate"
+ ],
+ "piel": [
+  "skin",
+  "flesh",
+  "cuticle",
+  "dermis",
+  "hide"
+ ],
+ "pierna": [
+  "leg",
+  "limb",
+  "thigh",
+  "lower limb",
+  "shank"
+ ],
+ "pintar": [
+  "paint",
+  "paintbrush",
+  "picture",
+  "color",
+  "depict"
+ ],
+ "piojo": [
+  "lice",
+  "louse",
+  "nit",
+  "bug",
+  "insect"
+ ],
+ "piojoso": [
+  "lice-infested",
+  "infested",
+  "plagued",
+  "swarmed",
+  "covered"
+ ],
+ "pisar": [
+  "step",
+  "tread",
+  "walk",
+  "press",
+  "stamp"
+ ],
+ "piso": [
+  "floor",
+  "ground",
+  "level",
+  "surface",
+  "earth"
+ ],
+ "pisotear": [
+  "trample",
+  "stomp",
+  "crush",
+  "bruise",
+  "step-on"
+ ],
+ "pita": [
+  "flatbread",
+  "pita bread",
+  "lemonade",
+  "pastry",
+  "dough"
+ ],
+ "pito": [
+  "whistle",
+  "hoot",
+  "cry",
+  "call",
+  "blow"
+ ],
+ "placenta": [
+  "fetal membrane",
+  "placenta",
+  "afterbirth"
+ ],
+ "planicie": [
+  "plain",
+  "flatland",
+  "plateau"
+ ],
+ "plano": [
+  "flat",
+  "plain",
+  "horizontal"
+ ],
+ "planta": [
+  "plant",
+  "stem",
+  "root"
+ ],
+ "plantar": [
+  "to plant",
+  "to set out",
+  "to sow"
+ ],
+ "plato": [
+  "plate",
+  "dish",
+  "platter"
+ ],
+ "pluma": [
+  "feather",
+  "quill",
+  "pen"
+ ],
+ "pobre": [
+  "poor",
+  "needy",
+  "destitute"
+ ],
+ "poco": [
+  "little",
+  "small",
+  "scant"
+ ],
+ "podar": [
+  "to prune",
+  "to trim",
+  "to cut back"
+ ],
+ "poderoso": [
+  "powerful",
+  "mighty",
+  "strong"
+ ],
+ "podrido": [
+  "rotten",
+  "decayed",
+  "putrid"
+ ],
+ "polilla": [
+  "moth",
+  "caterpillar",
+  "larva"
+ ],
+ "pollera": [
+  "feather boa",
+  "ostrich plume",
+  "feather duster"
+ ],
+ "pollo": [
+  "chicken",
+  "fowl",
+  "broiler"
+ ],
+ "polvo": [
+  "dust",
+  "powder",
+  "flour"
+ ],
+ "poncho": [
+  "cloak",
+  "shawl",
+  "poncho garment"
+ ],
+ "ponedora": [
+  "egg-laying",
+  "hen",
+  "layer"
+ ],
+ "poner": [
+  "to put",
+  "to place",
+  "to set"
+ ],
+ "porongo": [
+  "pork pie",
+  "pork roll",
+  "sausage"
+ ],
+ "portarse": [
+  "act",
+  "behave",
+  "conduct",
+  "carry oneself"
+ ],
+ "posee": [
+  "has",
+  "owns",
+  "possesses",
+  "holds"
+ ],
+ "poseedor": [
+  "owner",
+  "possessor",
+  "holder",
+  "proprietor"
+ ],
+ "posiblemente": [
+  "possibly",
+  "perhaps",
+  "maybe",
+  "likely"
+ ],
+ "posterior": [
+  "later",
+  "back",
+  "rear",
+  "following"
+ ],
+ "postre": [
+  "dessert",
+  "sweetmeat",
+  "confection",
+  "sweet"
+ ],
+ "potente": [
+  "powerful",
+  "mighty",
+  "strong",
+  "potent"
+ ],
+ "pozo": [
+  "well",
+  "pit",
+  "hole",
+  "shaft"
+ ],
+ "precio": [
+  "price",
+  "cost",
+  "value",
+  "worth"
+ ],
+ "preguntar": [
+  "ask",
+  "inquire",
+  "question",
+  "query"
+ ],
+ "premio": [
+  "prize",
+  "award",
+  "reward",
+  "bonus"
+ ],
+ "prendedor": [
+  "sparkling",
+  "glistening",
+  "shining",
+  "glittering"
+ ],
+ "preocupar": [
+  "worry",
+  "concern",
+  "trouble",
+  "disturb"
+ ],
+ "preparar": [
+  "prepare",
+  "get ready",
+  "arrange",
+  "set up"
+ ],
+ "presionar": [
+  "press",
+  "squeeze",
+  "push",
+  "force"
+ ],
+ "preso": [
+  "prisoner",
+  "captive",
+  "detainee",
+  "convict"
+ ],
+ "preñada": [
+  "pregnant",
+  "with child",
+  "expectant",
+  "gravid"
+ ],
+ "primero": [
+  "first",
+  "foremost",
+  "initial",
+  "prime"
+ ],
+ "primitivo": [
+  "primitive",
+  "original",
+  "basic",
+  "ancestral"
+ ],
+ "primogénito": [
+  "eldest",
+  "eldest son",
+  "firstborn",
+  "oldest"
+ ],
+ "principio": [
+  "beginning",
+  "start",
+  "commencement",
+  "outset"
+ ],
+ "prisa": [
+  "haste",
+  "urgency",
+  "rush",
+  "speed"
+ ],
+ "privadamente": [
+  "privately",
+  "privately",
+  "in private",
+  "secretly"
+ ],
+ "probar": [
+  "try",
+  "test",
+  "sample",
+  "check"
+ ],
+ "procrear": [
+  "breed",
+  "reproduce",
+  "propagate",
+  "multiply"
+ ],
+ "producir": [
+  "produce",
+  "make",
+  "create",
+  "generate"
+ ],
+ "profesor": [
+  "teacher",
+  "instructor",
+  "lecturer",
+  "tutor"
+ ],
+ "profundo": [
+  "deep",
+  "profound",
+  "intense",
+  "thorough"
+ ],
+ "prohibir": [
+  "forbid",
+  "ban",
+  "prohibit",
+  "restrict"
+ ],
+ "propagarse": [
+  "spread",
+  "propagate",
+  "disseminate",
+  "spread"
+ ],
+ "prostituta": [
+  "prostitute",
+  "courtesan",
+  "harlot",
+  "brothel-keeper"
+ ],
+ "protector": [
+  "protector",
+  "guardian",
+  "defender",
+  "shield"
+ ],
+ "proteger": [
+  "protect",
+  "defend",
+  "safeguard",
+  "preserve"
+ ],
+ "provocar": [
+  "provoke",
+  "incite",
+  "cause",
+  "trigger"
+ ],
+ "próximo": [
+  "next",
+  "upcoming",
+  "following",
+  "immediate"
+ ],
+ "pueblo": [
+  "people",
+  "nation",
+  "community",
+  "populace"
+ ],
+ "puerta": [
+  "door",
+  "gate",
+  "entrance",
+  "doorway"
+ ],
+ "pulga": [
+  "flea",
+  "louse",
+  "bug",
+  "insect"
+ ],
+ "pulgar": [
+  "thumb",
+  "forefinger",
+  "big finger",
+  "index finger"
+ ],
+ "pulido": [
+  "polished",
+  "smooth",
+  "refined",
+  "sleek"
+ ],
+ "pulir": [
+  "polish",
+  "smooth",
+  "abrade"
+ ],
+ "pulsar": [
+  "press",
+  "tap",
+  "click"
+ ],
+ "puma": [
+  "puma",
+  "cougar",
+  "mountain lion"
+ ],
+ "puna": [
+  "highland",
+  "plateau",
+  "steppe"
+ ],
+ "punzar": [
+  "prick",
+  "pierce",
+  "puncture"
+ ],
+ "puñado": [
+  "handful",
+  "handful",
+  "clasp"
+ ],
+ "puñetazo": [
+  "fist",
+  "punch",
+  "blow"
+ ],
+ "pájaro": [
+  "bird",
+  "fowl",
+  "avian"
+ ],
+ "pómulo": [
+  "cheek",
+  "cheekbone",
+  "face"
+ ],
+ "pústula": [
+  "pustule",
+  "boil",
+  "abscess"
+ ],
+ "q": [
+  "q",
+  "qu",
+  "quire"
+ ],
+ "quebrada": [
+  "broken",
+  "ravine",
+  "gorge"
+ ],
+ "quebrar": [
+  "break",
+  "shatter",
+  "snap"
+ ],
+ "quechua": [
+  "quechua",
+  "aymara",
+  "andean"
+ ],
+ "quedar": [
+  "remain",
+  "stay",
+  "be left"
+ ],
+ "quemado": [
+  "burnt",
+  "scorched",
+  "charred"
+ ],
+ "querer": [
+  "want",
+  "wish",
+  "desire"
+ ],
+ "querido": [
+  "dear",
+  "beloved",
+  "darling"
+ ],
+ "queso": [
+  "cheese",
+  "curd",
+  "whey"
+ ],
+ "quienquiera": [
+  "anyone",
+  "whoever",
+  "whomever"
+ ],
+ "quiera": [
+  "wish",
+  "desire",
+  "want",
+  "crave"
+ ],
+ "quijada": [
+  "jaw",
+  "mandible",
+  "chin"
+ ],
+ "quinua": [
+  "quinoa",
+  "grain",
+  "seed"
+ ],
+ "quizás": [
+  "maybe",
+  "perhaps",
+  "possibly",
+  "maybe"
+ ],
+ "rabo": [
+  "tail",
+  "caudal",
+  "appendage"
+ ],
+ "rajado": [
+  "torn",
+  "ripped",
+  "split",
+  "torn"
+ ],
+ "rajadura": [
+  "tear",
+  "rip",
+  "slit",
+  "tear"
+ ],
+ "rajar": [
+  "to tear",
+  "to rip",
+  "to split",
+  "to rend"
+ ],
+ "rama": [
+  "branch",
+  "limb",
+  "branch"
+ ],
+ "rana": [
+  "frog",
+  "toad",
+  "amphibian"
+ ],
+ "rapado": [
+  "shaved",
+  "bald",
+  "smooth",
+  "clean-shaven"
+ ],
+ "raptar": [
+  "to snatch",
+  "to seize",
+  "to grab",
+  "to pluck"
+ ],
+ "raro": [
+  "rare",
+  "uncommon",
+  "scarce",
+  "unusual"
+ ],
+ "rasgar": [
+  "to tear",
+  "to rip",
+  "to shred",
+  "to rend"
+ ],
+ "raspar": [
+  "to scrape",
+  "to rub",
+  "to file",
+  "to scratch"
+ ],
+ "rastro": [
+  "track",
+  "trail",
+  "footprint",
+  "trace"
+ ],
+ "rato": [
+  "hour",
+  "period",
+  "while",
+  "span"
+ ],
+ "rayar": [
+  "to streak",
+  "to dash",
+  "to speckle",
+  "to fleck"
+ ],
+ "rayo": [
+  "lightning",
+  "beam",
+  "flash",
+  "bolt"
+ ],
+ "reavivar": [
+  "to revive",
+  "to rekindle",
+  "to renew",
+  "to restore"
+ ],
+ "rebalsar": [
+  "splash",
+  "scatter",
+  "fling"
+ ],
+ "rebanar": [
+  "slice",
+  "cut",
+  "chop"
+ ],
+ "rebuscar": [
+  "search again",
+  "rummage",
+  "dig for"
+ ],
+ "rebuznar": [
+  "snort",
+  "sneeze",
+  "grunt"
+ ],
+ "recalcarse": [
+  "calibrate",
+  "adjust",
+  "fine-tune"
+ ],
+ "recalco": [
+  "reminder",
+  "alert",
+  "notice"
+ ],
+ "recaída": [
+  "relapse",
+  "setback",
+  "decline"
+ ],
+ "recibir": [
+  "receive",
+  "get",
+  "accept"
+ ],
+ "recoger": [
+  "gather",
+  "collect",
+  "pick up"
+ ],
+ "reconocer": [
+  "recognize",
+  "admit",
+  "acknowledge"
+ ],
+ "recordar": [
+  "remember",
+  "recall",
+  "think of"
+ ],
+ "recuerdo": [
+  "memory",
+  "recollection",
+  "remembrance"
+ ],
+ "redondo": [
+  "round",
+  "circular",
+  "spherical"
+ ],
+ "reemplazar": [
+  "replace",
+  "substitute",
+  "swap"
+ ],
+ "reflexionar": [
+  "reflect",
+  "ponder",
+  "consider"
+ ],
+ "reformarse": [
+  "reform",
+  "correct",
+  "improve"
+ ],
+ "regar": [
+  "water",
+  "irrigate",
+  "moisten"
+ ],
+ "regazo": [
+  "lap",
+  "bosom",
+  "chest"
+ ],
+ "región": [
+  "region",
+  "area",
+  "district"
+ ],
+ "regocijarse": [
+  "rejoice",
+  "delight",
+  "cheer"
+ ],
+ "regoldar": [
+  "gild",
+  "replate",
+  "cover with gold"
+ ],
+ "regresar": [
+  "return",
+  "come back",
+  "go back"
+ ],
+ "reir": [
+  "laugh",
+  "chuckle",
+  "guffaw"
+ ],
+ "relación": [
+  "relation",
+  "connection",
+  "link"
+ ],
+ "relampaguear": [
+  "flash",
+  "flare",
+  "spark"
+ ],
+ "relatar": [
+  "narrate",
+  "tell",
+  "recount"
+ ],
+ "relato": [
+  "story",
+  "tale",
+  "narrative"
+ ],
+ "rellenar": [
+  "fill",
+  "pack",
+  "stuff"
+ ],
+ "relucir": [
+  "shine",
+  "gleam",
+  "glimmer"
+ ],
+ "relámpago": [
+  "lightning flash",
+  "bolt of lightning",
+  "spark"
+ ],
+ "remedar": [
+  "imitate",
+  "mimic",
+  "copy"
+ ],
+ "remedio": [
+  "cure",
+  "remedy",
+  "treatment"
+ ],
+ "remendado": [
+  "patched",
+  "mended",
+  "repaired"
+ ],
+ "remojar": [
+  "soak",
+  "wet",
+  "dampen"
+ ],
+ "remolino": [
+  "whirlpool",
+  "eddy",
+  "vortex"
+ ],
+ "remover": [
+  "remove",
+  "take away",
+  "clear"
+ ],
+ "rencor": [
+  "grudge",
+  "resentment",
+  "bitterness"
+ ],
+ "renovar": [
+  "renew",
+  "refresh",
+  "update"
+ ],
+ "repartir": [
+  "divide",
+  "distribute",
+  "share"
+ ],
+ "repetir": [
+  "repeat",
+  "restate",
+  "say again"
+ ],
+ "repisa": [
+  "ledge",
+  "shelf",
+  "mantelpiece"
+ ],
+ "repleto": [
+  "full",
+  "stuffed",
+  "packed"
+ ],
+ "replicar": [
+  "copy",
+  "repeat",
+  "imitate"
+ ],
+ "repollo": [
+  "cabbage",
+  "cole",
+  "brassica"
+ ],
+ "reprender": [
+  "scold",
+  "rebuke",
+  "chide"
+ ],
+ "represar": [
+  "resist",
+  "oppose",
+  "check"
+ ],
+ "repugnancia": [
+  "disgust",
+  "aversion",
+  "repugnance"
+ ],
+ "repugnante": [
+  "repugnant",
+  "disgusting",
+  "nauseating"
+ ],
+ "resbaloso": [
+  "slippery",
+  "slick",
+  "treacherous"
+ ],
+ "rescoldo": [
+  "brand",
+  "ember",
+  "coal"
+ ],
+ "reservar": [
+  "reserve",
+  "save",
+  "keep"
+ ],
+ "resfriado": [
+  "cold",
+  "chill",
+  "flu"
+ ],
+ "resfrío": [
+  "chill",
+  "cold spell",
+  "nip"
+ ],
+ "residencia": [
+  "dwelling",
+  "abode",
+  "residence"
+ ],
+ "residuo": [
+  "waste",
+  "residue",
+  "remnant"
+ ],
+ "resonar": [
+  "ring",
+  "echo",
+  "sound"
+ ],
+ "respirar": [
+  "breathe",
+  "breathe in",
+  "inhale"
+ ],
+ "respiro": [
+  "breath",
+  "puff",
+  "gasp"
+ ],
+ "resplandecer": [
+  "glow",
+  "shine",
+  "sparkle"
+ ],
+ "responder": [
+  "reply",
+  "answer",
+  "respond"
+ ],
+ "resquemar": [
+  "burn",
+  "scorch",
+  "singe"
+ ],
+ "resquemor": [
+  "burning",
+  "heat",
+  "discomfort"
+ ],
+ "restituir": [
+  "restore",
+  "return",
+  "refund"
+ ],
+ "resto": [
+  "remainder",
+  "residue",
+  "leftover"
+ ],
+ "restregar": [
+  "rub",
+  "scrape",
+  "scratch"
+ ],
+ "resucitar": [
+  "revive",
+  "resurrect",
+  "bring back"
+ ],
+ "retirar": [
+  "remove",
+  "withdraw",
+  "take away"
+ ],
+ "retocar": [
+  "touch up",
+  "retouch",
+  "revise"
+ ],
+ "retozar": [
+  "play around",
+  "frolic",
+  "romp"
+ ],
+ "retoñar": [
+  "bud",
+  "sprout",
+  "shoot forth"
+ ],
+ "retoño": [
+  "sprout",
+  "budling",
+  "young plant"
+ ],
+ "reunir": [
+  "gather",
+  "collect",
+  "assemble"
+ ],
+ "revelar": [
+  "reveal",
+  "uncover",
+  "disclose"
+ ],
+ "reventar": [
+  "burst",
+  "explode",
+  "pop"
+ ],
+ "revisar": [
+  "review",
+  "revise",
+  "check"
+ ],
+ "revivir": [
+  "live again",
+  "revive",
+  "come back to life"
+ ],
+ "revolcarse": [
+  "roll over",
+  "tumble",
+  "flip"
+ ],
+ "revés": [
+  "reverse",
+  "upside down",
+  "backward"
+ ],
+ "rezagarse": [
+  "lag behind",
+  "be late",
+  "trail"
+ ],
+ "ribera": [
+  "bank",
+  "shore",
+  "verge",
+  "margin",
+  "edge"
+ ],
+ "ridículo": [
+  "ridiculous",
+  "laughable",
+  "absurd",
+  "ridiculous",
+  "contemptible"
+ ],
+ "rina": [
+  "runny nose",
+  "rhinitis",
+  "catarrh",
+  "sneezing",
+  "nasal discharge"
+ ],
+ "rincón": [
+  "corner",
+  "nook",
+  "recess",
+  "alcove",
+  "corner of a room"
+ ],
+ "ripio": [
+  "scrap",
+  "scrap metal",
+  "junk",
+  "waste",
+  "debris"
+ ],
+ "risa": [
+  "laugh",
+  "chuckle",
+  "guffaw",
+  "mirth",
+  "hilarity"
+ ],
+ "risible": [
+  "ridiculous",
+  "laughable",
+  "absurd",
+  "ridiculous",
+  "comical"
+ ],
+ "risueño": [
+  "smiling",
+  "cheerful",
+  "happy",
+  "joyful",
+  "beaming"
+ ],
+ "robar": [
+  "steal",
+  "rob",
+  "pilfer",
+  "snatch",
+  "burglarize"
+ ],
+ "robusto": [
+  "sturdy",
+  "robust",
+  "strong",
+  "healthy",
+  "vigorous"
+ ],
+ "roca": [
+  "rock",
+  "stone",
+  "cliff",
+  "crag",
+  "bedrock"
+ ],
+ "rociar": [
+  "sprinkle",
+  "mist",
+  "shower",
+  "drench",
+  "sprinkle over"
+ ],
+ "rocoto": [
+  "poblano pepper",
+  "rocote",
+  "hot chili",
+  "habanero",
+  "spicy pepper"
+ ],
+ "rodar": [
+  "roll",
+  "spin",
+  "turn",
+  "revolve",
+  "rotate"
+ ],
+ "rodilla": [
+  "knee",
+  "knee joint",
+  "leg",
+  "shin",
+  "ankle"
+ ],
+ "roer": [
+  "gnaw",
+  "chew",
+  "bite",
+  "nibble",
+  "munch"
+ ],
+ "rogar": [
+  "pray",
+  "beg",
+  "implore",
+  "petition",
+  "supplicate"
+ ],
+ "rojizo": [
+  "rosy",
+  "ruddy",
+  "red",
+  "flushed",
+  "crimson"
+ ],
+ "rojo": [
+  "red",
+  "scarlet",
+  "crimson",
+  "blood-red",
+  "vermilion"
+ ],
+ "romo": [
+  "remnant",
+  "scrap",
+  "offcut",
+  "leftover",
+  "fragment"
+ ],
+ "romper": [
+  "break",
+  "burst",
+  "shatter",
+  "snap",
+  "tear"
+ ],
+ "rompible": [
+  "breakable",
+  "fragile",
+  "brittle",
+  "crackable"
+ ],
+ "roncar": [
+  "snore",
+  "snore loudly",
+  "snooze",
+  "groan"
+ ],
+ "ronco": [
+  "hoarse",
+  "raspy",
+  "rough-voiced",
+  "croaky"
+ ],
+ "ropa": [
+  "clothes",
+  "garments",
+  "apparel",
+  "dress",
+  "clothing"
+ ],
+ "rostro": [
+  "face",
+  "visage",
+  "countenance",
+  "forehead",
+  "front"
+ ],
+ "roto": [
+  "broken",
+  "shattered",
+  "cracked",
+  "split",
+  "fractured"
+ ],
+ "rotoso": [
+  "crumbly",
+  "crumb-like",
+  "powdery",
+  "friable"
+ ],
+ "ruborizarse": [
+  "blush",
+  "turn red",
+  "flush",
+  "redden",
+  "color"
+ ],
+ "rueca": [
+  "twist",
+  "coil",
+  "curl",
+  "spiral",
+  "wind"
+ ],
+ "rugido": [
+  "roar",
+  "bellow",
+  "howl",
+  "shout",
+  "cry"
+ ],
+ "rugoso": [
+  "rough",
+  "rough-textured",
+  "coarse",
+  "uneven",
+  "rugged"
+ ],
+ "ruina": [
+  "ruin",
+  "destruction",
+  "collapse",
+  "wreck",
+  "ruinous state"
+ ],
+ "rumiar": [
+  "ruminate",
+  "chew thoughtfully",
+  "ponder",
+  "mull over",
+  "reflect"
+ ],
+ "rápido": [
+  "fast",
+  "quick",
+  "swift",
+  "rapid",
+  "hasty"
+ ],
+ "río": [
+  "river",
+  "stream",
+  "brook",
+  "watercourse",
+  "creek"
+ ],
+ "saborear": [
+  "taste",
+  "savor",
+  "relish",
+  "sample",
+  "flavor"
+ ],
+ "sacar": [
+  "take out",
+  "pull out",
+  "extract",
+  "remove",
+  "fetch"
+ ],
+ "saciado": [
+  "full",
+  "satisfied",
+  "stuffed",
+  "fed up",
+  "contented"
+ ],
+ "saciarse": [
+  "satisfy oneself",
+  "fill up",
+  "get full",
+  "satisfy",
+  "quench"
+ ],
+ "sacudir": [
+  "shake",
+  "toss",
+  "agitate",
+  "flap"
+ ],
+ "sal": [
+  "salt"
+ ],
+ "salado": [
+  "salty",
+  "salted",
+  "briny"
+ ],
+ "salar": [
+  "salt",
+  "season with salt"
+ ],
+ "salchicha": [
+  "sausage",
+  "salami",
+  "hot dog"
+ ],
+ "salero": [
+  "salt cellar",
+  "salt shaker",
+  "salt cellarer"
+ ],
+ "salir": [
+  "leave",
+  "exit",
+  "go out",
+  "depart"
+ ],
+ "salpicar": [
+  "splash",
+  "spatter",
+  "spray",
+  "drip"
+ ],
+ "saltamontes": [
+  "cricket",
+  "grasshopper",
+  "locust"
+ ],
+ "saltar": [
+  "jump",
+  "leap",
+  "hop",
+  "skip"
+ ],
+ "salud": [
+  "health",
+  "wellness",
+  "good health"
+ ],
+ "saludar": [
+  "greet",
+  "say hello",
+  "wave",
+  "salute"
+ ],
+ "salvador": [
+  "savior",
+  "deliverer",
+  "rescuer"
+ ],
+ "salvaje": [
+  "wild",
+  "savage",
+  "untamed",
+  "feral"
+ ],
+ "salvar": [
+  "save",
+  "rescue",
+  "preserve",
+  "deliver"
+ ],
+ "sanar": [
+  "heal",
+  "cure",
+  "mend",
+  "recover"
+ ],
+ "sancocrar": [
+  "sanctify",
+  "consecrate",
+  "bless"
+ ],
+ "sangre": [
+  "blood",
+  "red blood cells"
+ ],
+ "santo": [
+  "holy",
+  "saintly",
+  "blessed",
+  "sacred"
+ ],
+ "sapo": [
+  "toad",
+  "frog",
+  "poison frog"
+ ],
+ "sarna": [
+  "scabies",
+  "ringworm",
+  "itch",
+  "eczema"
+ ],
+ "sartén": [
+  "frying pan",
+  "skillet",
+  "saute pan"
+ ],
+ "sastre": [
+  "tailor",
+  "cobbler",
+  "menderman"
+ ],
+ "satisfecho": [
+  "content",
+  "satisfied",
+  "pleased",
+  "happy"
+ ],
+ "sauce": [
+  "sauce",
+  "gravy",
+  "dressing",
+  "topping"
+ ],
+ "savia": [
+  "sap",
+  "juice",
+  "nectar",
+  "essence"
+ ],
+ "secar": [
+  "dry",
+  "dehydrate",
+  "cure",
+  "parch"
+ ],
+ "seco": [
+  "dry",
+  "arid",
+  "barren",
+  "parched"
+ ],
+ "secreto": [
+  "secret",
+  "secretory",
+  "confidential",
+  "private"
+ ],
+ "sed": [
+  "thirst",
+  "longing",
+  "craving",
+  "desire"
+ ],
+ "sediento": [
+  "thirsty",
+  "parched",
+  "aching",
+  "dry"
+ ],
+ "sedimentarse": [
+  "settle",
+  "sediment",
+  "deposit",
+  "sink"
+ ],
+ "segar": [
+  "mow",
+  "cut",
+  "reap",
+  "harvest"
+ ],
+ "segregar": [
+  "segregate",
+  "separate",
+  "segregate",
+  "isolate"
+ ],
+ "seguir": [
+  "follow",
+  "pursue",
+  "chase",
+  "attend"
+ ],
+ "seguramente": [
+  "surely",
+  "certainly",
+  "undoubtedly",
+  "surely"
+ ],
+ "seguro": [
+  "safe",
+  "secure",
+  "certain",
+  "sure"
+ ],
+ "según": [
+  "according to",
+  "per",
+  "as per",
+  "in accordance with"
+ ],
+ "seis": [
+  "six",
+  "sixes",
+  "sextet",
+  "sixth"
+ ],
+ "seiscientos": [
+  "six hundred",
+  "six-hundred",
+  "600"
+ ],
+ "seleccionar": [
+  "choose",
+  "pick",
+  "select"
+ ],
+ "sembrar": [
+  "sow",
+  "plant",
+  "scatter"
+ ],
+ "sementera": [
+  "seedbed",
+  "nursery",
+  "sowing"
+ ],
+ "semilla": [
+  "seed",
+  "grain",
+  "germ"
+ ],
+ "sendero": [
+  "path",
+  "trail",
+  "way"
+ ],
+ "seno": [
+  "bosom",
+  "breast",
+  "fold"
+ ],
+ "sentir": [
+  "feel",
+  "sense",
+  "perceive"
+ ],
+ "separar": [
+  "separate",
+  "divide",
+  "split"
+ ],
+ "sepulturero": [
+  "grave-digger",
+  "grave-maker",
+  "intermenter"
+ ],
+ "ser": [
+  "be",
+  "exist",
+  "become"
+ ],
+ "serpentear": [
+  "serpentize",
+  "snake-like",
+  "serpentify"
+ ],
+ "servilleta": [
+  "napkin",
+  "serviette",
+  "cloth"
+ ],
+ "sesenta": [
+  "sixty"
+ ],
+ "seso": [
+  "silly",
+  "foolish",
+  "dim-witted"
+ ],
+ "setenta": [
+  "seventy"
+ ],
+ "setiembre": [
+  "september",
+  "september"
+ ],
+ "señalar": [
+  "point out",
+  "mark",
+  "indicate"
+ ],
+ "señor": [
+  "mister",
+  "sir",
+  "gentleman"
+ ],
+ "señora": [
+  "madam",
+  "miss",
+  "lady"
+ ],
+ "señorita": [
+  "miss",
+  "young lady",
+  "maiden"
+ ],
+ "siguiente": [
+  "next",
+  "following",
+  "subsequent",
+  "next"
+ ],
+ "silbar": [
+  "whistle",
+  "whistle up",
+  "whistling"
+ ],
+ "silencio": [
+  "silence",
+  "quiet",
+  "hush",
+  "stillness"
+ ],
+ "silencioso": [
+  "silent",
+  "quiet",
+  "taciturn",
+  "unobtrusive"
+ ],
+ "silla": [
+  "chair",
+  "seat",
+  "stool",
+  "bench"
+ ],
+ "silvestre": [
+  "wild",
+  "native",
+  "untamed",
+  "natural"
+ ],
+ "sin": [
+  "without",
+  "without",
+  "lacking",
+  "minus"
+ ],
+ "sitio": [
+  "place",
+  "site",
+  "spot",
+  "location"
+ ],
+ "sobaco": [
+  "shoulder",
+  "shoulder blade",
+  "upper arm",
+  "deltoid"
+ ],
+ "sobar": [
+  "to grease",
+  "to lubricate",
+  "to butter up",
+  "to slick"
+ ],
+ "sobra": [
+  "surplus",
+  "excess",
+  "remainder",
+  "leftover"
+ ],
+ "sobrar": [
+  "to have surplus",
+  "to be left over",
+  "to remain",
+  "to exceed"
+ ],
+ "socavar": [
+  "to undermine",
+  "to subvert",
+  "to sap",
+  "to weaken from below"
+ ],
+ "socio": [
+  "partner",
+  "associate",
+  "colleague",
+  "fellow"
+ ],
+ "soga": [
+  "rope",
+  "cord",
+  "string",
+  "twine"
+ ],
+ "sol": [
+  "sun",
+  "sun",
+  "solar",
+  "sunshine"
+ ],
+ "soledad": [
+  "loneliness",
+  "solitude",
+  "isolation",
+  "aloneness"
+ ],
+ "solicitar": [
+  "to request",
+  "to ask for",
+  "to apply for",
+  "to petition"
+ ],
+ "solitario": [
+  "lonely",
+  "solitary",
+  "alone",
+  "isolated"
+ ],
+ "sollozar": [
+  "to weep",
+  "to cry",
+  "to sob",
+  "to wail"
+ ],
+ "solo": [
+  "alone",
+  "single",
+  "solitary",
+  "lone"
+ ],
+ "soltar": [
+  "let go",
+  "release",
+  "loose",
+  "throw away"
+ ],
+ "soltera": [
+  "single",
+  "unmarried",
+  "maiden",
+  "widow"
+ ],
+ "soltero": [
+  "single",
+  "bachelor",
+  "unmarried",
+  "male only"
+ ],
+ "sombra": [
+  "shadow",
+  "shade",
+  "silhouette",
+  "dark spot"
+ ],
+ "sombrero": [
+  "hat",
+  "cap",
+  "helmet",
+  "headwear"
+ ],
+ "sonar": [
+  "sound",
+  "ring",
+  "beep",
+  "make noise"
+ ],
+ "sonreir": [
+  "smile",
+  "grin",
+  "chuckle",
+  "smile broadly"
+ ],
+ "sonrojarse": [
+  "blush",
+  "turn red",
+  "flush",
+  "redden"
+ ],
+ "sopa": [
+  "soup",
+  "broth",
+  "stew",
+  "porridge"
+ ],
+ "soplar": [
+  "blow",
+  "breathe",
+  "puff",
+  "exhale"
+ ],
+ "sorber": [
+  "swallow",
+  "gulp",
+  "drink down",
+  "swallow hard"
+ ],
+ "sordo": [
+  "deaf",
+  "muffled",
+  "dull",
+  "not hearing well"
+ ],
+ "sorpresivamente": [
+  "surprisingly",
+  "unexpectedly",
+  "by surprise",
+  "astonishingly"
+ ],
+ "soso": [
+  "bland",
+  "tasteless",
+  "flat",
+  "uninteresting"
+ ],
+ "sospechar": [
+  "suspect",
+  "doubt",
+  "wonder",
+  "question"
+ ],
+ "sostener": [
+  "hold",
+  "keep",
+  "support",
+  "maintain"
+ ],
+ "soterrar": [
+  "bury",
+  "inter",
+  "entomb",
+  "hide underground"
+ ],
+ "soñoliento": [
+  "drowsy",
+  "sleepy",
+  "lethargic",
+  "dozing"
+ ],
+ "su": [
+  "his",
+  "her",
+  "its",
+  "their",
+  "his or hers"
+ ],
+ "suave": [
+  "soft",
+  "gentle",
+  "mild",
+  "tender"
+ ],
+ "suavizar": [
+  "smooth",
+  "soften",
+  "mellify",
+  "make smooth"
+ ],
+ "subida": [
+  "rise",
+  "ascent",
+  "climb",
+  "upward movement"
+ ],
+ "subir": [
+  "go up",
+  "rise",
+  "ascend",
+  "climb"
+ ],
+ "suciedad": [
+  "dirt",
+  "filth",
+  "grime",
+  "mess"
+ ],
+ "sucio": [
+  "dirty",
+  "filthy",
+  "soiled",
+  "unclean"
+ ],
+ "sudor": [
+  "sweat",
+  "perspiration",
+  "moisture",
+  "fluid"
+ ],
+ "sueldo": [
+  "salary",
+  "wage",
+  "pay",
+  "income"
+ ],
+ "suelo": [
+  "ground",
+  "floor",
+  "earth",
+  "surface"
+ ],
+ "suero": [
+  "serum",
+  "plasma",
+  "extract",
+  "solution"
+ ],
+ "sueño": [
+  "sleep",
+  "dream",
+  "slumber",
+  "rest"
+ ],
+ "sufrir": [
+  "suffer",
+  "endure",
+  "bear",
+  "experience"
+ ],
+ "superior": [
+  "higher",
+  "upper",
+  "senior",
+  "best"
+ ],
+ "suplicar": [
+  "beg",
+  "plead",
+  "implore",
+  "entreat"
+ ],
+ "surco": [
+  "furrow",
+  "groove",
+  "trench",
+  "channel"
+ ],
+ "susto": [
+  "fear",
+  "fright",
+  "shock",
+  "scare"
+ ],
+ "sábado": [
+  "saturday",
+  "saturday",
+  "sat"
+ ],
+ "sífilis": [
+  "syphilis",
+  "syphilitic disease",
+  "venereal disease"
+ ],
+ "súbitamente": [
+  "suddenly",
+  "abruptly",
+  "unexpectedly",
+  "instantaneously"
+ ],
+ "tacaño": [
+  "stingy",
+  "miserly",
+  "parsimonious",
+  "cheap"
+ ],
+ "tajar": [
+  "cut",
+  "chop",
+  "slice",
+  "sever"
+ ],
+ "talón": [
+  "heel",
+  "back of the foot",
+  "heel bone"
+ ],
+ "tamal": [
+  "doughnut",
+  "tamale",
+  "corn cake"
+ ],
+ "tambalear": [
+  "sway",
+  "rock",
+  "tremble",
+  "shake"
+ ],
+ "también": [
+  "also",
+  "too",
+  "as well",
+  "likewise"
+ ],
+ "tambor": [
+  "drum",
+  "drumhead",
+  "bass drum"
+ ],
+ "tampoco": [
+  "neither",
+  "nor",
+  "not either",
+  "neither...nor"
+ ],
+ "tantear": [
+  "probe",
+  "test",
+  "gauge",
+  "estimate"
+ ],
+ "tapa": [
+  "lid",
+  "cover",
+  "cap",
+  "top"
+ ],
+ "tapia": [
+  "wall",
+  "fence",
+  "barrier",
+  "partition"
+ ],
+ "tardar": [
+  "take",
+  "need",
+  "require",
+  "spend"
+ ],
+ "tarde": [
+  "late",
+  "afternoon",
+  "evening",
+  "late afternoon"
+ ],
+ "tardío": [
+  "late",
+  "slow",
+  "sluggish",
+  "delayed"
+ ],
+ "tartamudo": [
+  "stutterer",
+  "stammerer",
+  "stutter",
+  "stammer"
+ ],
+ "techar": [
+  "roof",
+  "thatch",
+  "roof over",
+  "ceiling"
+ ],
+ "teja": [
+  "tile",
+  "tile roof",
+  "roofing tile",
+  "shingle"
+ ],
+ "tejedor": [
+  "weaver",
+  "loom",
+  "weaver's shuttle",
+  "textile maker"
+ ],
+ "tejer": [
+  "weave",
+  "knit",
+  "stitch",
+  "braid"
+ ],
+ "telarana": [
+  "net",
+  "fishing net",
+  "mesh",
+  "screen"
+ ],
+ "temblar": [
+  "shake",
+  "tremble",
+  "quiver",
+  "quake"
+ ],
+ "temblor": [
+  "shake",
+  "tremble",
+  "quake",
+  "vibration",
+  "tremor"
+ ],
+ "temer": [
+  "fear",
+  "dread",
+  "be afraid of",
+  "have fear of",
+  "shudder at"
+ ],
+ "temerario": [
+  "rash",
+  "reckless",
+  "impudent",
+  "bold",
+  "audacious"
+ ],
+ "temeroso": [
+  "afraid",
+  "fearful",
+  "timid",
+  "apprehensive",
+  "scared"
+ ],
+ "temible": [
+  "dreadful",
+  "terrible",
+  "awful",
+  "horrible",
+  "frightful"
+ ],
+ "temor": [
+  "fear",
+  "dread",
+  "terror",
+  "anxiety",
+  "apprehension"
+ ],
+ "templar": [
+  "to temper",
+  "to moderate",
+  "to adjust",
+  "to balance",
+  "to cool"
+ ],
+ "temprano": [
+  "early",
+  "early morning",
+  "dawn",
+  "forenoon",
+  "morning"
+ ],
+ "tender": [
+  "soft",
+  "gentle",
+  "tender love",
+  "delicate",
+  "mild"
+ ],
+ "tendón": [
+  "tendon",
+  "ligament",
+  "cord",
+  "band",
+  "sinew"
+ ],
+ "tenedor": [
+  "fork",
+  "spoon",
+  "knife",
+  "cutlery",
+  "utensil"
+ ],
+ "terminar": [
+  "finish",
+  "end",
+  "conclude",
+  "complete",
+  "stop"
+ ],
+ "terremoto": [
+  "earthquake",
+  "tremor",
+  "quake",
+  "seismic event",
+  "quakes"
+ ],
+ "terreno": [
+  "ground",
+  "soil",
+  "land",
+  "earth",
+  "terrain"
+ ],
+ "terrible": [
+  "awful",
+  "dreadful",
+  "horrible",
+  "frightful",
+  "shocking"
+ ],
+ "terror": [
+  "fear",
+  "dread",
+  "panic",
+  "horror",
+  "fright"
+ ],
+ "terrón": [
+  "clod",
+  "lump",
+  "chunk",
+  "mass",
+  "piece"
+ ],
+ "testículo": [
+  "testicle",
+  "testis",
+  "gonad",
+  "organ",
+  "seed vessel"
+ ],
+ "teta": [
+  "breast",
+  "nipple",
+  "udder",
+  "teat",
+  "mammary gland"
+ ],
+ "teñir": [
+  "dye",
+  "color",
+  "stain",
+  "tint",
+  "pig"
+ ],
+ "tia": [
+  "aunt",
+  "auntie",
+  "elder sister",
+  "older woman"
+ ],
+ "tibia": [
+  "shin",
+  "lower leg",
+  "tibia bone"
+ ],
+ "tibio": [
+  "loose",
+  "lax",
+  "slack",
+  "flexible"
+ ],
+ "tiempo": [
+  "time",
+  "weather",
+  "season",
+  "duration"
+ ],
+ "tierno": [
+  "tender",
+  "soft",
+  "gentle",
+  "delicate"
+ ],
+ "tierra": [
+  "earth",
+  "ground",
+  "soil",
+  "land"
+ ],
+ "tiesto": [
+  "stink",
+  "odor",
+  "smell",
+  "scent"
+ ],
+ "tincar": [
+  "to stir",
+  "to mix",
+  "to agitate",
+  "to beat"
+ ],
+ "tiritar": [
+  "to shiver",
+  "to tremble",
+  "to shake",
+  "to quiver"
+ ],
+ "tobillo": [
+  "ankle",
+  "ankle joint",
+  "lower leg"
+ ],
+ "tocar": [
+  "to touch",
+  "to hit",
+  "to play",
+  "to strike"
+ ],
+ "todo": [
+  "all",
+  "everything",
+  "whole",
+  "entire"
+ ],
+ "toldo": [
+  "awning",
+  "tarpaulin",
+  "shelter",
+  "cover"
+ ],
+ "tonto": [
+  "fool",
+  "silly",
+  "stupid",
+  "dimwit"
+ ],
+ "torcer": [
+  "to twist",
+  "to turn",
+  "to bend",
+  "to warp"
+ ],
+ "torcido": [
+  "twisted",
+  "crooked",
+  "bent",
+  "warped"
+ ],
+ "torear": [
+  "to burn",
+  "to scorch",
+  "to char",
+  "to ignite"
+ ],
+ "tormenta": [
+  "storm",
+  "tempest",
+  "gale",
+  "squall"
+ ],
+ "torpe": [
+  "clumsy",
+  "awkward",
+  "clumsy",
+  "inept"
+ ],
+ "torrentada": [
+  "downpour",
+  "deluge",
+  "flood",
+  "shower"
+ ],
+ "tosco": [
+  "rough",
+  "coarse",
+  "unpolished",
+  "shoddy"
+ ],
+ "tostadora": [
+  "toaster",
+  "broiler",
+  "oven"
+ ],
+ "tostar": [
+  "toast",
+  "brown",
+  "fry",
+  "scorch"
+ ],
+ "totora": [
+  "cattail",
+  "bulrush",
+  "rush"
+ ],
+ "trabajador": [
+  "worker",
+  "employee",
+  "laborer",
+  "doer"
+ ],
+ "trabajar": [
+  "work",
+  "labor",
+  "toil",
+  "employ"
+ ],
+ "trabajo": [
+  "job",
+  "work",
+  "task",
+  "duty"
+ ],
+ "trabajoso": [
+  "busy",
+  "hardworking",
+  "diligent",
+  "industrious"
+ ],
+ "traer": [
+  "bring",
+  "carry",
+  "fetch",
+  "take"
+ ],
+ "tragar": [
+  "swallow",
+  "gulp",
+  "swallow down",
+  "ingest"
+ ],
+ "trampa": [
+  "trap",
+  "snare",
+  "pitfall",
+  "trapdoor"
+ ],
+ "tranquilo": [
+  "calm",
+  "peaceful",
+  "serene",
+  "quiet"
+ ],
+ "transformar": [
+  "transform",
+  "change",
+  "convert",
+  "alter"
+ ],
+ "trapo": [
+  "rag",
+  "scrap",
+  "cloth",
+  "rags"
+ ],
+ "trasero": [
+  "rear",
+  "backside",
+  "hindquarters",
+  "rearward"
+ ],
+ "trasladar": [
+  "move",
+  "transfer",
+  "relocate",
+  "shift"
+ ],
+ "trasquilar": [
+  "scratch",
+  "scuff",
+  "rub",
+  "scrape"
+ ],
+ "trastornado": [
+  "confused",
+  "disordered",
+  "jumbled",
+  "scrambled"
+ ],
+ "travesaño": [
+  "crossbar",
+  "transom",
+  "beam",
+  "bar"
+ ],
+ "travieso": [
+  "naughty",
+  "mischievous",
+  "rascal",
+  "prankish"
+ ],
+ "treinta": [
+  "thirty",
+  "thirty-one"
+ ],
+ "trenza": [
+  "plait",
+  "braid",
+  "twist"
+ ],
+ "trenzar": [
+  "to plait",
+  "to braid",
+  "to twist"
+ ],
+ "tres": [
+  "three"
+ ],
+ "trescientos": [
+  "three hundred",
+  "three-hundred"
+ ],
+ "trillar": [
+  "to thresh",
+  "to winnow"
+ ],
+ "tripa": [
+  "intestine",
+  "guts",
+  "belly"
+ ],
+ "triunfar": [
+  "to triumph",
+  "to prevail",
+  "to succeed"
+ ],
+ "tronco": [
+  "trunk",
+  "stem",
+  "bole"
+ ],
+ "tropezar": [
+  "to trip",
+  "to stumble",
+  "to fall"
+ ],
+ "tuera": [
+  "hole",
+  "hole-in-one"
+ ],
+ "tuerto": [
+  "blind",
+  "blind-man",
+  "one-eyed"
+ ],
+ "tullido": [
+  "crippled",
+  "lame",
+  "disabled"
+ ],
+ "tumbar": [
+  "to bury",
+  "to lay down",
+  "to topple"
+ ],
+ "tuna": [
+  "tuna fish",
+  "tuna can"
+ ],
+ "tupir": [
+  "to plait",
+  "to braid",
+  "to twist"
+ ],
+ "turbio": [
+  "turbid",
+  "muddy",
+  "cloudy"
+ ],
+ "tusa": [
+  "drunkard",
+  "drunk",
+  "tipsy"
+ ],
+ "tuétano": [
+  "gangrene",
+  "gangrenous"
+ ],
+ "tímido": [
+  "timid",
+  "shy",
+  "bashful"
+ ],
+ "tío": [
+  "uncle",
+  "brother-in-law",
+  "cousin",
+  "elder brother"
+ ],
+ "ufanarse": [
+  "to be proud",
+  "to boast",
+  "to puff oneself up",
+  "to take pride in"
+ ],
+ "una": [
+  "a",
+  "one",
+  "a female",
+  "single"
+ ],
+ "unir": [
+  "to unite",
+  "to join",
+  "to connect",
+  "to link",
+  "to combine"
+ ],
+ "uno": [
+  "one",
+  "a man",
+  "one of",
+  "single"
+ ],
+ "untar": [
+  "to smear",
+  "to spread",
+  "to grease",
+  "to anoint",
+  "to coat"
+ ],
+ "urdimbre": [
+  "warp",
+  "warp thread",
+  "lengthwise thread",
+  "main thread",
+  "weft"
+ ],
+ "urinario": [
+  "urinal",
+  "urination",
+  "toilet",
+  "bathroom",
+  "latrine"
+ ],
+ "usado": [
+  "used",
+  "worn",
+  "secondhand",
+  "antique",
+  "old-fashioned"
+ ],
+ "usted": [
+  "you",
+  "sir",
+  "madam",
+  "you (formal)",
+  "your honor"
+ ],
+ "va": [
+  "goes",
+  "is going",
+  "travels",
+  "moves",
+  "proceeds"
+ ],
+ "vaca": [
+  "cow",
+  "ox",
+  "bull",
+  "cattle",
+  "bovine"
+ ],
+ "vaciar": [
+  "to empty",
+  "to drain",
+  "to clear out",
+  "to unload",
+  "to void"
+ ],
+ "vacío": [
+  "empty",
+  "void",
+  "vacant",
+  "bare",
+  "hollow"
+ ],
+ "vagabundo": [
+  "vagabond",
+  "truant",
+  "homeless",
+  "wanderer",
+  "drifter"
+ ],
+ "vagar": [
+  "to wander",
+  "to drift",
+  "to roam",
+  "to pace",
+  "to stroll"
+ ],
+ "vagina": [
+  "vagina",
+  "birth canal",
+  "female reproductive organ",
+  "womb",
+  "pudendum"
+ ],
+ "vago": [
+  "lazy",
+  "idle",
+  "vacant",
+  "empty",
+  "loose"
+ ],
+ "vaho": [
+  "breeze",
+  "gale",
+  "wind",
+  "gust",
+  "air current"
+ ],
+ "valiente": [
+  "brave",
+  "bold",
+  "courageous",
+  "daring",
+  "gallant"
+ ],
+ "valientemente": [
+  "bravely",
+  "boldly",
+  "courageously"
+ ],
+ "vapor": [
+  "steam",
+  "vapour",
+  "gas"
+ ],
+ "varios": [
+  "several",
+  "various",
+  "multiple"
+ ],
+ "varón": [
+  "man",
+  "male",
+  "guy"
+ ],
+ "vaso": [
+  "glass",
+  "cup",
+  "vessel"
+ ],
+ "vejiga": [
+  "bladder",
+  "urinary bladder"
+ ],
+ "vello": [
+  "down",
+  "downy hair"
+ ],
+ "vellón": [
+  "down",
+  "fluff",
+  "fuzz"
+ ],
+ "velorio": [
+  "wake",
+  "vigil",
+  "wakefulness"
+ ],
+ "velozmente": [
+  "swiftly",
+  "quickly",
+  "rapidly"
+ ],
+ "venado": [
+  "deer",
+  "stag",
+  "buck"
+ ],
+ "venda": [
+  "bandage",
+  "dressing",
+  "plaster"
+ ],
+ "vender": [
+  "sell",
+  "sell off",
+  "dispose of"
+ ],
+ "veneno": [
+  "poison",
+  "toxin",
+  "venom"
+ ],
+ "venir": [
+  "come",
+  "arrive",
+  "reach"
+ ],
+ "ventosear": [
+  "to ventose",
+  "to ventose up"
+ ],
+ "venus": [
+  "venus",
+  "morning star"
+ ],
+ "ver": [
+  "see",
+  "look at",
+  "perceive"
+ ],
+ "verano": [
+  "summer",
+  "hot season"
+ ],
+ "vergonzoso": [
+  "ashamed",
+  "embarrassed",
+  "shy"
+ ],
+ "vergüenza": [
+  "shame",
+  "disgrace",
+  "humiliation",
+  "embarrassment",
+  "shamelessness"
+ ],
+ "verruga": [
+  "wart",
+  "mole",
+  "nevus",
+  "growth",
+  "blemish"
+ ],
+ "verrugijiento": [
+  "warted",
+  "verrucous",
+  "pitted",
+  "rough",
+  "scarred"
+ ],
+ "vertebral": [
+  "spinal",
+  "vertebrae",
+  "backbone",
+  "dorsal",
+  "spinal cord"
+ ],
+ "vestido": [
+  "clothing",
+  "attire",
+  "outfit",
+  "garments",
+  "dress"
+ ],
+ "vestir": [
+  "to clothe",
+  "to wear",
+  "to dress",
+  "to adorn",
+  "to cover"
+ ],
+ "vestirse": [
+  "to dress oneself",
+  "to put on clothes",
+  "to get dressed",
+  "to attire oneself",
+  "to don"
+ ],
+ "vez": [
+  "time",
+  "occasion",
+  "instance",
+  "turn",
+  "frequency"
+ ],
+ "vibrar": [
+  "to vibrate",
+  "to shake",
+  "to oscillate",
+  "to tremble",
+  "to quiver"
+ ],
+ "vidrio": [
+  "glass",
+  "window pane",
+  "glaze",
+  "crystal",
+  "transparent material"
+ ],
+ "vieja": [
+  "old woman",
+  "elderly female",
+  "aged lady",
+  "senior citizen",
+  "grandmother"
+ ],
+ "viejo": [
+  "old man",
+  "elderly male",
+  "aged gentleman",
+  "senior citizen",
+  "grandfather"
+ ],
+ "vientre": [
+  "belly",
+  "stomach",
+  "abdomen",
+  "belly button",
+  "midriff"
+ ],
+ "viga": [
+  "beam",
+  "joist",
+  "plank",
+  "timber",
+  "support structure"
+ ],
+ "vinagrera": [
+  "vinegar maker",
+  "vinegar producer",
+  "distiller",
+  "acetic acid factory",
+  "vinegar house"
+ ],
+ "viruela": [
+  "smallpox",
+  "variola",
+  "pox",
+  "disease",
+  "infection"
+ ],
+ "visitar": [
+  "to visit",
+  "to call on",
+  "to tour",
+  "to pay a visit",
+  "to see"
+ ],
+ "viuda": [
+  "widow",
+  "widower",
+  "bereaved wife",
+  "single mother",
+  "orphaned woman"
+ ],
+ "viudo": [
+  "widower",
+  "widowed man",
+  "bereaved husband",
+  "single father",
+  "orphaned man"
+ ],
+ "vivienda": [
+  "house",
+  "home",
+  "dwelling",
+  "residence",
+  "property"
+ ],
+ "vivir": [
+  "live",
+  "exist",
+  "dwell",
+  "reside"
+ ],
+ "vizcacha": [
+  "viscacha",
+  "chinchilla",
+  "rodent"
+ ],
+ "volar": [
+  "fly",
+  "soar",
+  "glide",
+  "hover"
+ ],
+ "voltear": [
+  "turn",
+  "flip",
+  "rotate",
+  "overturn"
+ ],
+ "voluntariamente": [
+  "voluntarily",
+  "willingly",
+  "freely",
+  "of one's own accord"
+ ],
+ "volver": [
+  "return",
+  "come back",
+  "go back",
+  "turn again"
+ ],
+ "vomitar": [
+  "vomit",
+  "vomit up",
+  "heave",
+  "spew"
+ ],
+ "vuelta": [
+  "turn",
+  "rotation",
+  "circle",
+  "revolution"
+ ],
+ "vértigo": [
+  "vertigo",
+  "dizziness",
+  "giddiness",
+  "lightheadedness"
+ ],
+ "y- y": [
+  "and",
+  "and",
+  "and",
+  "plus"
+ ],
+ "ya": [
+  "already",
+  "yet",
+  "now",
+  "soon"
+ ],
+ "yerno": [
+  "son-in-law",
+  "daughter-in-law's husband",
+  "son of a wife"
+ ],
+ "yo": [
+  "i",
+  "me",
+  "myself",
+  "self"
+ ],
+ "yuca": [
+  "cassava",
+  "manioc",
+  "yucca",
+  "tapioca"
+ ],
+ "yugo": [
+  "yoke",
+  "harness",
+  "burden",
+  "load"
+ ],
+ "yuyo": [
+  "weed",
+  "gorse",
+  "broom",
+  "scrub"
+ ],
+ "zafarse": [
+  "get away",
+  "escape",
+  "flee",
+  "withdraw"
+ ],
+ "zanja": [
+  "ditch",
+  "trench",
+  "furrow",
+  "cut"
+ ],
+ "zapatear": [
+  "tap dance",
+  "tap",
+  "stomp",
+  "step"
+ ],
+ "zapato": [
+  "shoe",
+  "boot",
+  "slipper",
+  "footwear"
+ ],
+ "zarza": [
+  "bramble",
+  "bush",
+  "shrub"
+ ],
+ "zigzaguear": [
+  "zigzag",
+  "meander",
+  "wind"
+ ],
+ "zonzo": [
+  "dull",
+  "lazy",
+  "sluggish"
+ ],
+ "zorrillo": [
+  "weasel",
+  "ferret",
+  "marten"
+ ],
+ "zorro": [
+  "fox",
+  "jackal",
+  "coyote"
+ ],
+ "zorzal": [
+  "thrush",
+  "blackbird",
+  "songbird"
+ ],
+ "zumbar": [
+  "buzz",
+  "hum",
+  "drone"
+ ],
+ "zurcir": [
+  "stitch",
+  "sew",
+  "mend"
+ ],
+ "ácido": [
+  "acid",
+  "sour",
+  "corrosive"
+ ],
+ "árbol": [
+  "tree",
+  "timber",
+  "wood"
+ ],
+ "áspero": [
+  "rough",
+  "harsh",
+  "gritty"
+ ],
+ "época": [
+  "epoch",
+  "age",
+  "period"
+ ],
+ "ésta": [
+  "this",
+  "this one",
+  "the former"
+ ],
+ "óbolo": [
+  "coin",
+  "token",
+  "medallion"
+ ],
+ "último": [
+  "last",
+  "final",
+  "ultimate"
+ ],
+ "únicamente": [
+  "only",
+  "solely",
+  "exclusively"
+ ],
+ "único": [
+  "unique",
+  "single",
+  "sole"
+ ]
+}

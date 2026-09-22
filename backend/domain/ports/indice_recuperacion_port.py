@@ -19,3 +19,11 @@ class IndiceRecuperacionPort(ABC):
     @abstractmethod
     def total_indexado(self) -> int:
         ...
+
+    @abstractmethod
+    def es_lema(self, termino: str) -> bool:
+        """El termino encabeza alguna entrada lexicografica del corpus.
+
+        Permite distinguir una palabra espanola documentada de una inglesa suelta sin
+        recurrir a la heuristica de palabras funcionales, que sobre un termino aislado
+        no tiene ninguna marca que contar."""

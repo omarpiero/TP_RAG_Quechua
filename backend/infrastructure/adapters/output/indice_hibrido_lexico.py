@@ -96,3 +96,6 @@ class IndiceHibridoLexico(IndiceRecuperacionPort):
 
     def total_indexado(self) -> int:
         return len(self._fragmentos)
+
+    def es_lema(self, termino: str) -> bool:
+        return self._depurador.depurar(termino) in self._lemario

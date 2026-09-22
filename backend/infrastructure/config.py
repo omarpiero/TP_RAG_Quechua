@@ -16,6 +16,7 @@ class Configuracion(BaseSettings):
     postgres_user: str = "postgres"
     postgres_password: str = ""
 
+    ruta_tabla_traduccion: Path = RAIZ / "data" / "traduccion_en_es.json"
     ollama_url: str = "http://localhost:11434"
     ollama_modelo: str = "qwen3.5:4b"
 

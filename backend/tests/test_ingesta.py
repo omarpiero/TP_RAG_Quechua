@@ -67,6 +67,9 @@ class IndiceFalso(IndiceRecuperacionPort):
     def total_indexado(self):
         return self._total
 
+    def es_lema(self, termino):
+        return termino in getattr(self, 'lemas', set())
+
 
 def test_el_material_lexicografico_se_segmenta_por_entrada():
     fragmentos = Segmentador().segmentar(

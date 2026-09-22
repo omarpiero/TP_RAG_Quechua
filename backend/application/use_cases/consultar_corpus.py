@@ -69,16 +69,41 @@ class ConsultarCorpusUseCase:
                 ),
             )
 
-        if idioma is Idioma.INGLES and self._traductor is not None:
+        if self._traductor is not None:
             # Se traduce la consulta ya depurada, es decir el termino solo y no la pregunta
             # completa. Traducir la frase entera devuelve el fraseo en espanol ("como se
             # dice X en quechua de Wanka"), que reintroduce en la consulta las palabras que
             # la depuracion existe para eliminar y hunde la similitud del fragmento.
-            consulta.texto_traducido = self._traductor.traducir_al_espanol(
-                self._depurador.depurar(consulta.texto)
+            termino = self._depurador.depurar(consulta.texto)
+            candidatas = self._traductor.candidatas(
+                termino, aproximar=idioma is Idioma.INGLES
             )
 
-        recuperados = self._recuperar_con_variantes(consulta)
+            # Una palabra inglesa suelta ("love") no trae ninguna marca funcional que
+            # contar, de modo que el detector la asume espanola y nunca se traducia. Si el
+            # termino no encabeza ninguna entrada del corpus pero si figura en la tabla
+            # como palabra inglesa, la evidencia lexica pesa mas que la heuristica.
+            if (
+                candidatas
+                and idioma is Idioma.ESPANOL
+                and termino not in candidatas
+                and not self._indice.es_lema(termino)
+            ):
+                idioma = Idioma.INGLES
+                consulta.idioma = idioma
+                candidatas = self._traductor.candidatas(termino, aproximar=True)
+
+            consulta.variantes = candidatas
+
+        recuperados, origen = self._recuperar_con_variantes(consulta)
+        if recuperados and consulta.variantes:
+            # Se informa de la variante que realmente sostiene la respuesta, no de la
+            # primera de la lista: las candidatas salen en orden alfabetico, de modo que
+            # "boiled corn" anunciaba haber buscado "comijn" cuando el fragmento que
+            # respondia lo habia encontrado "mote".
+            ganadora = origen.get(recuperados[0].id)
+            if ganadora and ganadora != consulta.texto:
+                consulta.texto_traducido = ganadora
         veredicto = self._evaluador.evaluar(recuperados)
 
         if not veredicto.responder:
@@ -114,24 +139,33 @@ class ConsultarCorpusUseCase:
             ),
         )
 
-    def _recuperar_con_variantes(self, consulta: Consulta) -> list[FragmentoRecuperado]:
-        """Recupera con la consulta original y, si la hay, con su traduccion, conservando
-        para cada fragmento la mejor de las dos puntuaciones.
+    def _recuperar_con_variantes(
+        self, consulta: Consulta
+    ) -> tuple[list[FragmentoRecuperado], dict[str, str]]:
+        """Recupera con la consulta original y con cada lectura espanola plausible,
+        conservando para cada fragmento la mejor puntuacion obtenida.
 
-        Buscar con ambas es lo que impide que una traduccion defectuosa anule el resultado:
-        en el peor caso degrada al comportamiento que ya se tenia sin traducir."""
+        Buscar con todas es lo que impide que una traduccion defectuosa anule el resultado:
+        en el peor caso degrada al comportamiento que ya se tenia sin traducir.
+
+        Devuelve tambien, por fragmento, la variante que logro esa mejor puntuacion, para
+        poder decir al usuario con que termino se encontro lo que se le muestra."""
         variantes = [consulta.texto]
-        if consulta.texto_traducido and consulta.texto_traducido != consulta.texto:
-            variantes.append(consulta.texto_traducido)
+        for candidata in consulta.variantes:
+            if candidata and candidata not in variantes:
+                variantes.append(candidata)
 
         mejores: dict[str, FragmentoRecuperado] = {}
+        origen: dict[str, str] = {}
         for variante in variantes:
             for recuperado in self._indice.recuperar(variante, k=self._k):
                 previo = mejores.get(recuperado.id)
                 if previo is None or self._orden(recuperado) > self._orden(previo):
                     mejores[recuperado.id] = recuperado
+                    origen[recuperado.id] = variante
 
-        return sorted(mejores.values(), key=self._orden, reverse=True)[: self._k]
+        ordenados = sorted(mejores.values(), key=self._orden, reverse=True)[: self._k]
+        return ordenados, origen
 
     @staticmethod
     def _orden(recuperado: FragmentoRecuperado) -> tuple[bool, float]:

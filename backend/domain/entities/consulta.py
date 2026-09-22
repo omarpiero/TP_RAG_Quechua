@@ -12,6 +12,7 @@ class Consulta:
     id: str = field(default_factory=lambda: str(uuid4()))
     momento: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
     texto_traducido: str | None = None
+    variantes: list[str] = field(default_factory=list)
 
     def __post_init__(self):
         self.texto = self.texto.strip()
