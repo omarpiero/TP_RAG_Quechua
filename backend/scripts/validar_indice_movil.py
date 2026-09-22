@@ -16,6 +16,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
+CORPUS = "fragmentos_v3.jsonl"
+
 import numpy as np
 
 from infrastructure.adapters.output.corpus_jsonl import cargar_fragmentos
@@ -127,7 +129,7 @@ def main() -> int:
     carpeta = Path(sys.argv[1]) if len(sys.argv) > 1 else raiz / "artefactos_movil"
 
     referencia = IndiceHibridoLexico()
-    referencia.indexar(cargar_fragmentos(raiz / "data" / "fragmentos_v2.jsonl"))
+    referencia.indexar(cargar_fragmentos(raiz / "data" / CORPUS))
     motor = MotorPortable(carpeta)
 
     evaluacion = json.loads((raiz / "data" / "evaluacion_v2.json").read_text("utf-8"))

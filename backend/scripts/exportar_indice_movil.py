@@ -16,6 +16,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
+CORPUS = "fragmentos_v3.jsonl"
+
 import numpy as np
 from scipy.sparse import csc_matrix
 
@@ -136,7 +138,7 @@ def exportar(ruta_corpus: Path, destino: Path, umbral: float) -> dict:
 if __name__ == "__main__":
     raiz = Path(__file__).resolve().parents[1]
     salida = Path(sys.argv[1]) if len(sys.argv) > 1 else raiz / "artefactos_movil"
-    m = exportar(raiz / "data" / "fragmentos_v2.jsonl", salida, umbral=0.48)
+    m = exportar(raiz / "data" / CORPUS, salida, umbral=0.48)
     total = sum(v["bytes"] for v in m.values() if isinstance(v, dict) and "bytes" in v)
     print(f"Exportado a {salida}")
     for clave, valor in m.items():
