@@ -6,6 +6,12 @@ recuperación sobre el corpus documental publicado del quechua wanka de Junín.
 Toda respuesta cita el documento y la página que la sustentan, y el sistema declara
 explícitamente la ausencia de información en lugar de proponer una forma no documentada.
 
+Este repositorio contiene la **versión de escritorio**: servicio, interfaz web, base de
+datos e ingesta documental. La aplicación móvil, que resuelve la consulta en el propio
+dispositivo y sin red, vive en
+[quechua-wanka-movil](https://github.com/DalgomXD-byte/quechua-wanka-movil) y empaqueta
+los artefactos que aquí se generan con `scripts/exportar_indice_movil.py`.
+
 ## Arquitectura
 
 Arquitectura hexagonal (puertos y adaptadores). La correspondencia con la estructura
