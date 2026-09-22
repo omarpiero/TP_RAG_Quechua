@@ -1,0 +1,644 @@
+[
+ {
+  "id": "N001",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo se conjugan los verbos en la forma negativa del presente?",
+  "tema": "la conjugacion de los verbos en japones"
+ },
+ {
+  "id": "N002",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cuál es el sufijo utilizado para negar los verbos en la forma teinal?",
+  "tema": "la conjugacion de los verbos en japones"
+ },
+ {
+  "id": "N003",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué cambio ocurre al final de los verbos cuando se usa el honorífico?",
+  "tema": "la conjugacion de los verbos en japones"
+ },
+ {
+  "id": "N004",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo se transforma un verbo en su forma pasiva?",
+  "tema": "la conjugacion de los verbos en japones"
+ },
+ {
+  "id": "N005",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿En qué situaciones se utiliza el auxiliar masu para indicar obligación?",
+  "tema": "la conjugacion de los verbos en japones"
+ },
+ {
+  "id": "N006",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cuál es la estructura gramatical para expresar capacidad o posibilidad?",
+  "tema": "la conjugacion de los verbos en japones"
+ },
+ {
+  "id": "N007",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo se conjugan los verbos en la forma condicional futura?",
+  "tema": "la conjugacion de los verbos en japones"
+ },
+ {
+  "id": "N008",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cuáles son los casos gramaticales del latín?",
+  "tema": "las declinaciones del latin"
+ },
+ {
+  "id": "N009",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo se declinan las palabras masculinas en primera y segunda declinación?",
+  "tema": "las declinaciones del latin"
+ },
+ {
+  "id": "N010",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué terminaciones indican la declinación de los sustantivos femeninos?",
+  "tema": "las declinaciones del latin"
+ },
+ {
+  "id": "N011",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cuál es el género de los adjetivos que coinciden con el sustantivo al que modifican?",
+  "tema": "las declinaciones del latin"
+ },
+ {
+  "id": "N012",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo se forman los plurales de los sustantivos neutros?",
+  "tema": "las declinaciones del latin"
+ },
+ {
+  "id": "N013",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué función cumple el caso acusativo en la oración latina?",
+  "tema": "las declinaciones del latin"
+ },
+ {
+  "id": "N014",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿En qué casos se utiliza el caso genitivo?",
+  "tema": "las declinaciones del latin"
+ },
+ {
+  "id": "N015",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué significa la expresión verbal get up?",
+  "tema": "los verbos frasales del ingles"
+ },
+ {
+  "id": "N016",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cuál es la traducción correcta de catch a cold en inglés?",
+  "tema": "los verbos frasales del ingles"
+ },
+ {
+  "id": "N017",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo se dice en español la frase make your bed?",
+  "tema": "los verbos frasales del ingles"
+ },
+ {
+  "id": "N018",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué implica el verbo短语 look after?",
+  "tema": "los verbos frasales del ingles"
+ },
+ {
+  "id": "N019",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cuál es la definición de give up en este contexto?",
+  "tema": "los verbos frasales del ingles"
+ },
+ {
+  "id": "N020",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué significa turn down una invitación?",
+  "tema": "los verbos frasales del ingles"
+ },
+ {
+  "id": "N021",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo se expresa call it off oficialmente?",
+  "tema": "los verbos frasales del ingles"
+ },
+ {
+  "id": "N022",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué indica put off como verbo frasal?",
+  "tema": "los verbos frasales del ingles"
+ },
+ {
+  "id": "N023",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cuál es la traducción de run out of algo?",
+  "tema": "los verbos frasales del ingles"
+ },
+ {
+  "id": "N024",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué significa get over un problema emocional?",
+  "tema": "los verbos frasales del ingles"
+ },
+ {
+  "id": "N025",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cuál es la diferencia entre el caso nominativo y el caso acusativo en alemán?",
+  "tema": "los casos gramaticales del aleman"
+ },
+ {
+  "id": "N026",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo se marca el caso dativo en los sustantivos masculinos?",
+  "tema": "los casos gramaticales del aleman"
+ },
+ {
+  "id": "N027",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué función cumple el caso acusativo en una oración alemana?",
+  "tema": "los casos gramaticales del aleman"
+ },
+ {
+  "id": "N028",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿En qué casos se utiliza el artículo determinado con un tilde diacrítica?",
+  "tema": "los casos gramaticales del aleman"
+ },
+ {
+  "id": "N029",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo se determina la terminación del adjetivo en el caso genitivo?",
+  "tema": "los casos gramaticales del aleman"
+ },
+ {
+  "id": "N030",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cuál es la regla principal para formar el caso dativo de los sustantivos neutros?",
+  "tema": "los casos gramaticales del aleman"
+ },
+ {
+  "id": "N031",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué indica gramaticalmente el caso acusativo femenino?",
+  "tema": "los casos gramaticales del aleman"
+ },
+ {
+  "id": "N032",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo se escriben los números arábigos en español?",
+  "tema": "la escritura del arabe"
+ },
+ {
+  "id": "N033",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cuál es la diferencia entre la escritura árabe y la española?",
+  "tema": "la escritura del arabe"
+ },
+ {
+  "id": "N034",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Se utilizan mayúsculas en el idioma árabe?",
+  "tema": "la escritura del arabe"
+ },
+ {
+  "id": "N035",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué reglas de acentuación existen en el alfabeto árabe?",
+  "tema": "la escritura del arabe"
+ },
+ {
+  "id": "N036",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo se representan las vocales en la escritura árabe?",
+  "tema": "la escritura del arabe"
+ },
+ {
+  "id": "N037",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Existe un sistema de puntuación similar al español en árabe?",
+  "tema": "la escritura del arabe"
+ },
+ {
+  "id": "N038",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo se escriben los nombres propios en árabe?",
+  "tema": "la escritura del arabe"
+ },
+ {
+  "id": "N039",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Se utiliza el orden inverso de las palabras en árabe?",
+  "tema": "la escritura del arabe"
+ },
+ {
+  "id": "N040",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cuál es la diferencia entre tonos altos y bajos en mandarín?",
+  "tema": "los tonos del chino mandarin"
+ },
+ {
+  "id": "N041",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo se pronuncia la palabra ma con un tono medio alto?",
+  "tema": "los tonos del chino mandarin"
+ },
+ {
+  "id": "N042",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué significa el carácter shang cuando se lee con un tono bajo?",
+  "tema": "los tonos del chino mandarin"
+ },
+ {
+  "id": "N043",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Por qué los tonos medios son difíciles de distinguir para los no nativos?",
+  "tema": "los tonos del chino mandarin"
+ },
+ {
+  "id": "N044",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cuál es el ejemplo clásico de pronunciación del cuarto tono?",
+  "tema": "los tonos del chino mandarin"
+ },
+ {
+  "id": "N045",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo afecta el contexto a la interpretación de los tres primeros tonos?",
+  "tema": "los tonos del chino mandarin"
+ },
+ {
+  "id": "N046",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué ocurre cuando dos palabras de diferentes tones se combinan en una frase?",
+  "tema": "los tonos del chino mandarin"
+ },
+ {
+  "id": "N047",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo se forma la primera persona del plural del presente en ruso?",
+  "tema": "el aspecto verbal en ruso"
+ },
+ {
+  "id": "N048",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cuál es la diferencia entre las formas verbales -u y -em en el presente?",
+  "tema": "el aspecto verbal en ruso"
+ },
+ {
+  "id": "N049",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué sufijo se añade al infinitivo para formar el futuro simple?",
+  "tema": "el aspecto verbal en ruso"
+ },
+ {
+  "id": "N050",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo se conjugan los verbos terminados en -ir en el pasado?",
+  "tema": "el aspecto verbal en ruso"
+ },
+ {
+  "id": "N051",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué indica el sufijo -av- en la forma del pasado?",
+  "tema": "el aspecto verbal en ruso"
+ },
+ {
+  "id": "N052",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cuál es la regla de formación del perfecto compuesto con el verbo auxiliar?",
+  "tema": "el aspecto verbal en ruso"
+ },
+ {
+  "id": "N053",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo se construye el condicional en ruso?",
+  "tema": "el aspecto verbal en ruso"
+ },
+ {
+  "id": "N054",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "Quel est le titre de l'article ?",
+  "tema": "los articulos en frances"
+ },
+ {
+  "id": "N055",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "Qui est l'auteur du texte ?",
+  "tema": "los articulos en frances"
+ },
+ {
+  "id": "N056",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "Quelle est la date de publication ?",
+  "tema": "los articulos en frances"
+ },
+ {
+  "id": "N057",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "Dans quel contexte historique s'inscrit cet article ?",
+  "tema": "los articulos en frances"
+ },
+ {
+  "id": "N058",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "Quels sont les principaux thèmes abordés ?",
+  "tema": "los articulos en frances"
+ },
+ {
+  "id": "N059",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "Où peut-on trouver cet article en ligne ?",
+  "tema": "los articulos en frances"
+ },
+ {
+  "id": "N060",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "Quelles sont les références bibliographiques citées ?",
+  "tema": "los articulos en frances"
+ },
+ {
+  "id": "N061",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "Comment accéder aux ressources complémentaires ?",
+  "tema": "los articulos en frances"
+ },
+ {
+  "id": "N062",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué sucede con la vocal final cuando termina una palabra en 'a' para formar su plural?",
+  "tema": "la formacion del plural en italiano"
+ },
+ {
+  "id": "N063",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo se transforma el plural de las palabras que terminan en consonante seguida de vocal?",
+  "tema": "la formacion del plural en italiano"
+ },
+ {
+  "id": "N064",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cuál es la regla general para agregar el sufijo al plural de los sustantivos italianos?",
+  "tema": "la formacion del plural en italiano"
+ },
+ {
+  "id": "N065",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué ocurre específicamente con las palabras que terminan en 'o' para crear su forma plural?",
+  "tema": "la formacion del plural en italiano"
+ },
+ {
+  "id": "N066",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Existe alguna excepción a la regla básica de añadir 'i' o 'e' para formar plurales en italiano?",
+  "tema": "la formacion del plural en italiano"
+ },
+ {
+  "id": "N067",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo se forma una oración básica con sujeto verbo objeto?",
+  "tema": "el orden de palabras en coreano"
+ },
+ {
+  "id": "N068",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cuál es la posición del verbo en relación con los otros elementos de la frase?",
+  "tema": "el orden de palabras en coreano"
+ },
+ {
+  "id": "N069",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué ocurre con la palabra que indica el tiempo pasado?",
+  "tema": "el orden de palabras en coreano"
+ },
+ {
+  "id": "N070",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo se expresa la posesión o pertenencia entre dos entidades?",
+  "tema": "el orden de palabras en coreano"
+ },
+ {
+  "id": "N071",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿De qué manera se indican las instrucciones o órdenes dirigidas a alguien?",
+  "tema": "el orden de palabras en coreano"
+ },
+ {
+  "id": "N072",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo se construye una pregunta sobre la existencia de algo?",
+  "tema": "el orden de palabras en coreano"
+ },
+ {
+  "id": "N073",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué función cumplen los marcadores de afirmación y negación al final de la frase?",
+  "tema": "el orden de palabras en coreano"
+ },
+ {
+  "id": "N074",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué establece la Ley General de Minas sobre la competencia del Estado para la gestión del subsuelo?",
+  "tema": "la legislacion minera peruana"
+ },
+ {
+  "id": "N075",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cuáles son los requisitos legales necesarios para obtener una concesión minera en Perú?",
+  "tema": "la legislacion minera peruana"
+ },
+ {
+  "id": "N076",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Quiénes pueden ser declarados responsables por actividades mineras ilegales bajo la normativa vigente?",
+  "tema": "la legislacion minera peruana"
+ },
+ {
+  "id": "N077",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo se regula el pago de impuestos y regalías a las autoridades locales en proyectos mineros?",
+  "tema": "la legislacion minera peruana"
+ },
+ {
+  "id": "N078",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué medidas de seguridad y salud ocupacional son obligatorias según la legislación minera peruana?",
+  "tema": "la legislacion minera peruana"
+ },
+ {
+  "id": "N079",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cuál es el procedimiento administrativo para solicitar un permiso ambiental en una zona minera?",
+  "tema": "la legislacion minera peruana"
+ },
+ {
+  "id": "N080",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo influye la posesión del balón en la construcción de ataques modernos?",
+  "tema": "las tacticas del futbol moderno"
+ },
+ {
+  "id": "N081",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué papel juega el contraataque rápido en las tácticas actuales?",
+  "tema": "las tacticas del futbol moderno"
+ },
+ {
+  "id": "N082",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Por qué es fundamental la transición defensiva ante un ataque adversario?",
+  "tema": "las tacticas del futbol moderno"
+ },
+ {
+  "id": "N083",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo se organiza el juego de área pequeña para desmarcar al portero?",
+  "tema": "las tacticas del futbol moderno"
+ },
+ {
+  "id": "N084",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cuál es la importancia del movimiento sin balón en la ruptura defensiva?",
+  "tema": "las tacticas del futbol moderno"
+ },
+ {
+  "id": "N085",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué estrategias utilizan los equipos para controlar el ritmo del partido?",
+  "tema": "las tacticas del futbol moderno"
+ },
+ {
+  "id": "N086",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Por qué es clave la presión alta o el pressing en las últimas líneas defensivas?",
+  "tema": "las tacticas del futbol moderno"
+ },
+ {
+  "id": "N087",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué es la altura crítica en el ciclo productivo de la quinua?",
+  "tema": "el cultivo de la quinua en altura"
+ },
+ {
+  "id": "N088",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cuándo se debe realizar la siembra para optimizar el rendimiento en zonas altas?",
+  "tema": "el cultivo de la quinua en altura"
+ },
+ {
+  "id": "N089",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo afecta la temperatura nocturna a la floración de la planta de quinua?",
+  "tema": "el cultivo de la quinua en altura"
+ },
+ {
+  "id": "N090",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué nivel de humedad del suelo es ideal durante las etapas vegetativas?",
+  "tema": "el cultivo de la quinua en altura"
+ },
+ {
+  "id": "N091",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cuál es la frecuencia recomendada para aplicar abonos verdes en el cultivo?",
+  "tema": "el cultivo de la quinua en altura"
+ },
+ {
+  "id": "N092",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo se debe manejar la poda para mejorar la calidad de los granos?",
+  "tema": "el cultivo de la quinua en altura"
+ },
+ {
+  "id": "N093",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué es la arquitectura de computadores?",
+  "tema": "la arquitectura de los computadores"
+ },
+ {
+  "id": "N094",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Quién diseñó la primera computadora digital electrónica programable?",
+  "tema": "la arquitectura de los computadores"
+ },
+ {
+  "id": "N095",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cuál es el propósito principal del conjunto de instrucciones o ISA?",
+  "tema": "la arquitectura de los computadores"
+ },
+ {
+  "id": "N096",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué componente se encarga de ejecutar las instrucciones y controlar el flujo de datos?",
+  "tema": "la arquitectura de los computadores"
+ },
+ {
+  "id": "N097",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo funciona el modelo de von Neumann en la gestión de memoria?",
+  "tema": "la arquitectura de los computadores"
+ },
+ {
+  "id": "N098",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué diferencia existe entre la arquitectura Harvard y la de von Neumann?",
+  "tema": "la arquitectura de los computadores"
+ },
+ {
+  "id": "N099",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué función cumple la unidad de control dentro del procesador?",
+  "tema": "la arquitectura de los computadores"
+ },
+ {
+  "id": "N100",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo opera la unidad de ejecución para realizar cálculos matemáticos?",
+  "tema": "la arquitectura de los computadores"
+ },
+ {
+  "id": "N101",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cuáles son los principales contaminantes que afectan al agua potable?",
+  "tema": "el tratamiento del agua potable"
+ },
+ {
+  "id": "N102",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo se realiza la desinfección del agua para eliminar patógenos?",
+  "tema": "el tratamiento del agua potable"
+ },
+ {
+  "id": "N103",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué papel juega el cloro en el tratamiento del agua potable?",
+  "tema": "el tratamiento del agua potable"
+ },
+ {
+  "id": "N104",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cuál es el proceso de coagulación y floculación en las plantas depuradoras?",
+  "tema": "el tratamiento del agua potable"
+ },
+ {
+  "id": "N105",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Por qué es importante filtrar el agua después de la desinfección?",
+  "tema": "el tratamiento del agua potable"
+ },
+ {
+  "id": "N106",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Cómo se controla la dureza del agua en los sistemas de distribución?",
+  "tema": "el tratamiento del agua potable"
+ },
+ {
+  "id": "N107",
+  "subconjunto": "F_prosa_fuera_de_cobertura",
+  "consulta": "¿Qué tecnologías modernas se utilizan para monitorizar la calidad del agua?",
+  "tema": "el tratamiento del agua potable"
+ }
+]

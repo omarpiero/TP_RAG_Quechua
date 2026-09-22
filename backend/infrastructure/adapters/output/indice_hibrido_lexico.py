@@ -97,5 +97,28 @@ class IndiceHibridoLexico(IndiceRecuperacionPort):
     def total_indexado(self) -> int:
         return len(self._fragmentos)
 
+    def recuperar_prosa(self, consulta: str, k: int = 3) -> list[FragmentoRecuperado]:
+        if self._matriz_palabras is None:
+            raise RuntimeError("El indice no ha sido construido; invoque indexar() primero")
+
+        posiciones = [
+            i
+            for i, f in enumerate(self._fragmentos)
+            if f.tipo is not TipoFragmento.LEXICOGRAFICO
+        ]
+        if not posiciones:
+            return []
+
+        puntuaciones = self.puntuar(consulta)
+        posiciones.sort(key=lambda i: -puntuaciones[i])
+        return [
+            FragmentoRecuperado(
+                fragmento=self._fragmentos[i],
+                puntuacion=PuntuacionSimilitud(float(puntuaciones[i])),
+                coincidencia_lema=False,
+            )
+            for i in posiciones[:k]
+        ]
+
     def es_lema(self, termino: str) -> bool:
         return self._depurador.depurar(termino) in self._lemario

@@ -10,6 +10,16 @@ from domain.ports.repositorio_consultas_port import RepositorioConsultasPort
 from domain.ports.traductor_port import TraductorPort
 from domain.value_objects.idioma import Idioma
 
+MENSAJE_CON_PASAJES = {
+    Idioma.ESPANOL: (
+        "No tengo una respuesta confirmada para esa consulta. Estos pasajes del corpus "
+        "podrían tratarla; léelos y juzga tú."
+    ),
+    Idioma.INGLES: (
+        "I have no confirmed answer for that query. These passages from the corpus may "
+        "deal with it; read them and judge for yourself."
+    ),
+}
 MENSAJE_SIN_RESPALDO = {
     Idioma.ESPANOL: (
         "No dispongo de respaldo documental para esa consulta en el corpus indexado. "
@@ -107,15 +117,27 @@ class ConsultarCorpusUseCase:
         veredicto = self._evaluador.evaluar(recuperados)
 
         if not veredicto.responder:
+            # Antes de abstenerse del todo se busca en la prosa, que se consulta aparte
+            # porque las entradas de diccionario, mucho mas cortas, copan siempre las
+            # primeras posiciones. Lo recuperado no se afirma: se entrega literal y citado.
+            pasajes = self._evaluador.ofrecer_pasajes(
+                self._indice.recuperar_prosa(consulta.texto_para_recuperar, k=3),
+                # El solapamiento se mide contra la consulta depurada, no contra la
+                # cruda: "en quechua wanka" acompana a casi toda consulta y a ningun
+                # pasaje distingue, de modo que sin depurar bastaba esa palabra para
+                # sacar el prologo del libro ante cualquier termino no cubierto.
+                consulta=self._depurador.depurar(consulta.texto_para_recuperar),
+            )
             return self._registrar(
                 consulta,
                 Respuesta(
                     consulta_id=consulta.id,
-                    texto=MENSAJE_SIN_RESPALDO[idioma],
+                    texto=(MENSAJE_CON_PASAJES if pasajes else MENSAJE_SIN_RESPALDO)[idioma],
                     abstenida=True,
                     idioma=idioma,
                     similitud_maxima=veredicto.similitud_maxima,
                     consulta_traducida=consulta.texto_traducido,
+                    pasajes=pasajes,
                 ),
             )
 

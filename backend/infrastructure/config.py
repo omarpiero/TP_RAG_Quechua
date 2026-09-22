@@ -22,7 +22,7 @@ class Configuracion(BaseSettings):
 
     umbral_abstencion: float = 0.48
     fragmentos_recuperados: int = 5
-    ruta_corpus: Path = RAIZ / "data" / "fragmentos_v2.jsonl"
+    ruta_corpus: Path = RAIZ / "data" / "fragmentos_v3.jsonl"
 
     cors_origenes: str = "http://localhost:5173"
 

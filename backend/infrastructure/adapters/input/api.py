@@ -60,6 +60,18 @@ def consultar(entrada: ConsultaEntrada, request: Request):
             )
             for r in respuesta.respaldo
         ],
+        pasajes=[
+            RespaldoSalida(
+                fragmento_id=r.id,
+                texto=r.texto,
+                documento=r.procedencia.documento,
+                pagina=r.procedencia.pagina,
+                puntuacion=round(r.puntuacion.valor, 4),
+                derivado_ocr=r.procedencia.derivado_ocr,
+                coincidencia_lema=r.coincidencia_lema,
+            )
+            for r in respuesta.pasajes
+        ],
     )
 
 

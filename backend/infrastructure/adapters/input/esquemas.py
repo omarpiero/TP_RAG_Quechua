@@ -26,6 +26,8 @@ class RespuestaSalida(BaseModel):
     aviso: str
     respaldo: list[RespaldoSalida]
     consulta_traducida: str | None = None
+    # Pasajes de prosa ofrecidos sin afirmar que respondan. Llegan solo con abstenida=True.
+    pasajes: list[RespaldoSalida] = []
 
 
 class EntradaHistorial(BaseModel):

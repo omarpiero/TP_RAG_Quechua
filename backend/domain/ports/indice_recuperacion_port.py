@@ -27,3 +27,12 @@ class IndiceRecuperacionPort(ABC):
         Permite distinguir una palabra espanola documentada de una inglesa suelta sin
         recurrir a la heuristica de palabras funcionales, que sobre un termino aislado
         no tiene ninguna marca que contar."""
+
+    def recuperar_prosa(self, consulta: str, k: int = 3) -> list[FragmentoRecuperado]:
+        """Los k pasajes de prosa mas similares, al margen de las entradas de diccionario.
+
+        Se consulta por separado porque las entradas lexicograficas, al ser mucho mas
+        cortas, copan siempre las primeras posiciones y un pasaje de gramatica nunca
+        llegaria a mostrarse. No es abstracto: un indice que no distinga tipos puede no
+        ofrecer prosa sin dejar de cumplir el puerto."""
+        return []
