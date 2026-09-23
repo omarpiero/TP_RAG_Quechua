@@ -8,6 +8,37 @@ artificial y front-end— y los cuatro han de estar disponibles. La sección sig
 los comandos en el orden en que hay que ejecutarlos; las secciones numeradas explican qué
 hace cada uno y por qué, y añaden la verificación del entorno.
 
+## Vía breve: el ejecutable
+
+Para quien solo quiera **usar** el sistema y no trabajar sobre él. No sustituye a la
+instalación del entorno que el resto del documento describe, que es la que el proyecto
+emplea y la que hay que seguir para desarrollar o para evaluarlo.
+
+```powershell
+# 1. Ollama y el modelo generador. Son 3,4 GB: es lo unico que hay que instalar aparte.
+winget install Ollama.Ollama
+# Cerrar y volver a abrir la terminal para que el comando quede disponible.
+ollama pull qwen3.5:4b
+
+# 2. Ejecutar QuechuaWankaWeb.exe
+```
+
+El ejecutable lleva dentro el intérprete de Python, las dependencias, el corpus y la
+interfaz ya compilada; abre el navegador solo y avisa si no encuentra Ollama. Emplea
+**SQLite** en un archivo junto a él en lugar de PostgreSQL, que es lo que permite
+prescindir de instalar un servidor de base de datos. La sustitución del motor no requirió
+adaptador nuevo alguno —los modelos y el adaptador de persistencia son los mismos— sino
+un parámetro de configuración, conforme al desacoplamiento comprometido en RNF-07.
+
+Para construirlo desde el código:
+
+```powershell
+cd frontend && npm run build          # con VITE_API_URL vacio, para rutas relativas
+xcopy /E /I /Y dist ..\backend\interfaz
+cd ..\backend
+.venv\Scripts\python.exe -m PyInstaller QuechuaWankaWeb.spec --noconfirm
+```
+
 ## Instalación rápida
 
 Comandos para Windows. En Linux o macOS cambian `\` por `/`, `copy` por `cp` y

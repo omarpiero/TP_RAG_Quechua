@@ -76,7 +76,15 @@ class Contenedor:
 
     def _conectar_base_datos(self) -> bool:
         try:
-            motor = create_engine(configuracion.url_base_datos, pool_pre_ping=True)
+            # SQLite atiende desde varios hilos del servidor, de modo que hay que
+            # levantar la comprobacion de hilo que trae por defecto; PostgreSQL no la
+            # necesita ni la admite.
+            opciones = (
+                {"connect_args": {"check_same_thread": False}}
+                if configuracion.base_datos == "sqlite"
+                else {"pool_pre_ping": True}
+            )
+            motor = create_engine(configuracion.url_base_datos, **opciones)
             with motor.connect() as conexion:
                 conexion.execute(text("SELECT 1"))
             Base.metadata.create_all(motor)

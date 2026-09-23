@@ -21,3 +21,11 @@ Thumbs.db
 
 # Artefactos generados para el movil (se reconstruyen con scripts/exportar_indice_movil.py)
 backend/artefactos_movil/
+
+# Distribucion como ejecutable: se reconstruye con PyInstaller a partir del .spec
+backend/build/
+backend/dist/
+# Interfaz ya compilada que el servicio sirve; se genera con `npm run build`
+backend/interfaz/
+# Base de datos de SQLite que el ejecutable crea en su primer arranque
+backend/*.db
