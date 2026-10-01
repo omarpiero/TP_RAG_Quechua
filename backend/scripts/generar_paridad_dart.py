@@ -12,11 +12,11 @@ import json
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from application.services.depurador_consulta import DepuradorConsulta
-from infrastructure.adapters.output.corpus_jsonl import cargar_fragmentos
-from infrastructure.adapters.output.indice_hibrido_lexico import IndiceHibridoLexico
+from domain.services.depurador_consulta import DepuradorConsulta
+from adapters.out.documentos.corpus_jsonl import cargar_fragmentos
+from adapters.out.recuperacion.indice_hibrido_lexico import IndiceHibridoLexico
 
 CORPUS = "fragmentos_v3.jsonl"
 

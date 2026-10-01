@@ -19,18 +19,18 @@ import sys
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(RAIZ))
+sys.path.insert(0, str(RAIZ / "src"))
 
-from application.services.evaluador_confianza import EvaluadorConfianza  # noqa: E402
+from domain.services.evaluador_confianza import EvaluadorConfianza  # noqa: E402
 from application.use_cases.consultar_corpus import ConsultarCorpusUseCase  # noqa: E402
-from infrastructure.adapters.output.corpus_jsonl import cargar_fragmentos  # noqa: E402
-from infrastructure.adapters.output.detector_idioma_heuristico import (  # noqa: E402
+from adapters.out.documentos.corpus_jsonl import cargar_fragmentos  # noqa: E402
+from adapters.out.idioma.detector_idioma_heuristico import (  # noqa: E402
     DetectorIdiomaHeuristico,
 )
-from infrastructure.adapters.output.indice_hibrido_lexico import (  # noqa: E402
+from adapters.out.recuperacion.indice_hibrido_lexico import (  # noqa: E402
     IndiceHibridoLexico,
 )
-from infrastructure.adapters.output.traductor_tabla import TraductorTabla  # noqa: E402
+from adapters.out.traduccion.traductor_tabla import TraductorTabla  # noqa: E402
 from infrastructure.config import configuracion  # noqa: E402
 
 DATOS = RAIZ / "data"

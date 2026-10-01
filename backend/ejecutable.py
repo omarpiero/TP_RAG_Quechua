@@ -17,9 +17,13 @@ import sys
 import threading
 import time
 import webbrowser
+from pathlib import Path
 
 import httpx
 import uvicorn
+
+if not getattr(sys, "frozen", False):
+    sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
 
 PUERTO = 8000
 
@@ -84,7 +88,7 @@ def main() -> int:
 
     threading.Thread(target=abrir_navegador, args=(puerto,), daemon=True).start()
 
-    from main import app
+    from infrastructure.main import app
 
     uvicorn.run(app, host="127.0.0.1", port=puerto, log_level="warning")
     return 0

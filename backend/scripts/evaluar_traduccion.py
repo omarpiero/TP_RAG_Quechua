@@ -12,24 +12,24 @@ from pathlib import Path
 import numpy as np
 
 RAIZ = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(RAIZ))
+sys.path.insert(0, str(RAIZ / "src"))
 
-from application.services.depurador_consulta import DepuradorConsulta  # noqa: E402
-from application.services.evaluador_confianza import (  # noqa: E402
+from domain.services.depurador_consulta import DepuradorConsulta  # noqa: E402
+from domain.services.evaluador_confianza import (  # noqa: E402
     UMBRAL_CALIBRADO,
     EvaluadorConfianza,
 )
 from application.use_cases.consultar_corpus import ConsultarCorpusUseCase  # noqa: E402
 from domain.entities.consulta import Consulta  # noqa: E402
 from domain.value_objects.idioma import Idioma  # noqa: E402
-from infrastructure.adapters.output.corpus_jsonl import cargar_fragmentos  # noqa: E402
-from infrastructure.adapters.output.detector_idioma_heuristico import (  # noqa: E402
+from adapters.out.documentos.corpus_jsonl import cargar_fragmentos  # noqa: E402
+from adapters.out.idioma.detector_idioma_heuristico import (  # noqa: E402
     DetectorIdiomaHeuristico,
 )
-from infrastructure.adapters.output.indice_hibrido_lexico import (  # noqa: E402
+from adapters.out.recuperacion.indice_hibrido_lexico import (  # noqa: E402
     IndiceHibridoLexico,
 )
-from infrastructure.adapters.output.ollama_traductor import OllamaTraductor  # noqa: E402
+from adapters.out.traduccion.ollama_traductor import OllamaTraductor  # noqa: E402
 
 DATOS = RAIZ / "data"
 

@@ -1,0 +1,6 @@
+-r requirements.txt
+pytest>=8
+pytest-cov>=5
+pytest-bdd>=8,<9
+ruff>=0.6
+pip-audit>=2.7

@@ -12,10 +12,10 @@ from pathlib import Path
 import numpy as np
 
 RAIZ = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(RAIZ))
+sys.path.insert(0, str(RAIZ / "src"))
 
-from infrastructure.adapters.output.corpus_jsonl import cargar_fragmentos  # noqa: E402
-from infrastructure.adapters.output.indice_hibrido_lexico import (  # noqa: E402
+from adapters.out.documentos.corpus_jsonl import cargar_fragmentos  # noqa: E402
+from adapters.out.recuperacion.indice_hibrido_lexico import (  # noqa: E402
     IndiceHibridoLexico,
 )
 

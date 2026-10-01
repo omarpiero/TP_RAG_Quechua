@@ -11,14 +11,14 @@ import sys
 import unicodedata
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 import numpy as np
 
-from application.services.depurador_consulta import DepuradorConsulta
+from domain.services.depurador_consulta import DepuradorConsulta
 from domain.entities.fragmento import TipoFragmento
-from infrastructure.adapters.output.corpus_jsonl import cargar_fragmentos
-from infrastructure.adapters.output.indice_hibrido_lexico import IndiceHibridoLexico
+from adapters.out.documentos.corpus_jsonl import cargar_fragmentos
+from adapters.out.recuperacion.indice_hibrido_lexico import IndiceHibridoLexico
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from validar_tabla_ingles import TraductorTabla, normalizar  # noqa: E402
