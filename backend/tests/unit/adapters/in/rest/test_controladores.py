@@ -289,3 +289,12 @@ def test_delete_historial_devuelve_204_y_borra():
 
 def test_delete_historial_sin_base_de_datos_es_503():
     assert _cliente(con_base_datos=False).delete("/api/historial").status_code == 503
+
+
+@pytest.mark.parametrize(
+    ("texto", "codigo"),
+    [("", 422), ("   ", 422), ("a" * 300, 200), ("a" * 301, 422), (" " + "a" * 300 + " ", 200)],
+)
+def test_la_consulta_admite_de_1_a_300_caracteres_tras_strip(texto, codigo):
+    r = _cliente().post("/api/consultas", json={"texto": texto})
+    assert r.status_code == codigo

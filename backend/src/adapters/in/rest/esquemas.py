@@ -1,10 +1,17 @@
 from datetime import date, datetime
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 
 class ConsultaEntrada(BaseModel):
-    texto: str = Field(min_length=1, max_length=500)
+    # De 1 a 300 caracteres tras quitar los espacios de los extremos (la interfaz valida lo
+    # mismo; el backend no se fia del cliente).
+    texto: str = Field(min_length=1, max_length=300)
+
+    @field_validator("texto", mode="before")
+    @classmethod
+    def _sin_espacios_extremos(cls, valor):
+        return valor.strip() if isinstance(valor, str) else valor
 
 
 class RespaldoSalida(BaseModel):
