@@ -1,0 +1,37 @@
+{
+  "fecha": "2026-10-01T11:44:36-05:00",
+  "etiqueta": "base-integrante",
+  "commit_codigo": "9dbf650",
+  "commit_repo": "13dbafb",
+  "tau": 0.48,
+  "regla_lema": true,
+  "generador": "falso instrumentado (sin Ollama)",
+  "modelo_instalado": "qwen3.5:4b",
+  "cuantizacion": "Q4_K_M",
+  "maquina": {
+    "alias": "pc-rtx4060",
+    "cpu": "Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",
+    "gpu": "NVIDIA GeForce RTX 4060, 8188 MiB",
+    "so": "Windows-11-10.0.26200-SP0"
+  },
+  "versiones": {
+    "python": "3.12.14",
+    "node": "v22.16.0",
+    "ollama": "ollama version is 0.35.0",
+    "scikit_learn": "1.6.0",
+    "numpy": "2.2.1",
+    "fastapi": "0.115.6"
+  },
+  "sha256": {
+    "fragmentos_v3": "d6200ed9e992e7dc3bfc740ec69195606ffb8f022d044d202d43ce562e47470a",
+    "fragmentos_v2": "6c185f2803050ed7215f34146c5b63c23bd9aa6a69af06673b8b1022097cb4b1",
+    "evaluacion_v2": "ec2d85f78ced7c1e5db2a6e95fbefcfdf756e971a0040c3bc9ca33888251d929",
+    "tabla_en_es": "a9674051505428a6c807785c8b230d8506eb6ba52b292add954655c46d742549"
+  },
+  "archivos": {
+    "arnes_por_consulta.csv": "scripts/arnes_linea_base.py: caso de uso completo, fragmentos_v3, 248 consultas",
+    "barrido_umbral.csv": "scripts/arnes_linea_base.py: barrido sobre la similitud maxima del caso de uso (v3), con y sin regla de lema",
+    "calibrar_umbral_salida.txt": "scripts/calibrar_umbral.py tal cual (indice crudo sobre fragmentos_v2, como en la PoC/ADR-020)",
+    "junit.xml": "pytest sobre el codigo base"
+  }
+}

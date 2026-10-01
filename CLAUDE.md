@@ -48,8 +48,8 @@ alternativa; no la ejecutas en silencio.
    `293274822-diccionario-quechua-Wanka-docx.pdf`.
 2. **Ninguna respuesta sin documento y página.**
 3. **Sin respaldo no hay respuesta.** Hay respaldo si la similitud del mejor fragmento es ≥ τ **o** si el
-   término depurado coincide **exactamente** con el lema de una entrada del diccionario (ADR-021, en
-   propuesta: si el usuario la rechaza, se retira). Sin respaldo se declara la ausencia y **el generador no
+   término depurado coincide **exactamente** con el lema de una entrada del diccionario (ADR-021,
+   aceptada el 2026-10-01 con las 5 condiciones de `docs/13` §3). Sin respaldo se declara la ausencia y **el generador no
    se invoca**; los pasajes de prosa que se muestren entonces van rotulados «no es una respuesta» y cuentan
    como abstención (ADR-022). τ se fija por **ausencia de falsos positivos**, nunca por la mejor F1: vigente
    **0,48** (ADR-020; la PoC dio 0,41 con otra formulación). Si el arnés sobre el código nuevo da otro valor,
@@ -155,8 +155,8 @@ tabla de `CONSIDERACIONES.md` §0.1.
 | Recuperación base | Híbrido léxico: TF-IDF palabras (1–2 g) + caracteres (3–5 g, `char_wb`, `sublinear_tf`), 0,5/0,5 | ADR-005 |
 | Segmentación | Lexicográfico: una entrada por fragmento · Prosa: ~650 caracteres por párrafo | ADR-007 |
 | Depuración de la consulta | Quitar fraseo constante («cómo se dice», «en quechua wanka», «how do you say»…) | PoC |
-| τ vigente | **0,48** (formulación exacta del híbrido, promediado): 0 FP en C, 92,8 % de las consultas atendibles. Histórico: 0,41 en la PoC. Se remide en M3 con y sin regla de lema | ADR-020 (ADR-006) |
-| Regla de lema | Término depurado = lema exacto de una entrada → respaldo aunque S < τ; rotulado en la interfaz | ADR-021 (propuesta) |
+| τ vigente | **0,48** (formulación exacta del híbrido, promediado; confirmado el 2026-10-01 sobre `fragmentos_v3`): 0 FP en C; A+B respondidas 165/180 (91,7 %) sin regla de lema y 180/180 con ella. Primer τ sin FP en v3 = 0,47, no adoptado (margen 0,0002 sobre la C más alta, 0,4698). El 92,8 % es cifra de v2/PoC. Histórico: 0,41 en la PoC. Se remide en M3 | ADR-020 (ADR-006) |
+| Regla de lema | Término depurado = lema exacto de una entrada → respaldo aunque S < τ; rotulado en la interfaz; 5 condiciones (`docs/13` §3) | ADR-021 (aceptada 2026-10-01) |
 | Pasajes de prosa | Al abstenerse: pasajes literales citados si comparten ≥ 2 palabras de contenido; nunca afirman | ADR-022 |
 | Consulta en inglés | Tabla EN→ES de 2 257 lemas (principal) · Ollama (alternativa); se muestran todas las lecturas; D es **techo** | ADR-023 |
 | Índice móvil | Exportado en binario plano (CSC); paridad con escritorio < 1 × 10⁻⁶ (medido 2,5 × 10⁻⁸) | ADR-019, RN-10 |
@@ -243,8 +243,8 @@ espacios existen solo en `corpus/pdf/` y se tratan como datos.
 
 | Servidor | Para qué | Configuración |
 |---|---|---|
-| `sonarqube` | El auditor consulta incidencias, puntos críticos y la puerta de calidad de SonarQube Cloud | `.mcp.json` · requiere Docker y las variables `SONARQUBE_TOKEN`, `SONARQUBE_ORG` |
-| `sonarqube-local` | Igual, contra el Community local | `.mcp.json` · `SONARQUBE_TOKEN_LOCAL` (token de **usuario**) |
+| `sonarqube` | El auditor consulta incidencias, puntos críticos y la puerta de calidad de SonarQube Cloud | `.mcp.json` · JAR oficial sin Docker (`java -jar ${SONARQUBE_MCP_JAR}`, Java 21, `SONARQUBE_READ_ONLY=true`); requiere `SONARQUBE_TOKEN` y `SONARQUBE_ORG` (pendientes) |
+| `sonarqube-local` | Igual, contra el Community local | `.mcp.json` · mismo JAR, sin Docker · `SONARQUBE_TOKEN_LOCAL` (token de **usuario**) · proyecto `omarpiero_rag-quechua-wanka` |
 | `rag-quechua` | **Solo desarrollo.** Expone el sistema real como herramientas (`consultar`, `buscar_fragmentos`, `ejecutar_arnes`, `verificar_salvaguarda`, `estado_indice`) para que el programador y el auditor lo prueben | Se construye como adaptador de entrada (HT-08) y se registra entonces en `.mcp.json` (ADR-017) |
 
 **Advertencia sobre `rag-quechua`:** cuando un agente usa esas herramientas, los fragmentos del corpus
@@ -254,18 +254,11 @@ en el índice, en `config/` o en `corpus/`.
 
 ## 13. Estado actual (lo actualiza el archivista)
 
-- **Entrega de la Unidad II en la semana del 2026-09-28** (fecha exacta: preguntar al usuario al abrir).
-- **Línea base v2** adoptada el 2026-09-24 (`docs/09_LINEA_BASE_V2.md`).
-- Repositorio creado con `crear_repo.ps1` (`docs/10`): historial del integrante importado y etiqueta
-  `base-integrante`. **Siguiente paso:** pasos 1–4 de `PROMPT_CIERRE_PMV1.md` (entorno, línea base del arnés
-  congelada, preguntas al usuario) y después el PR 1.
-- Defectos conocidos del código base: D-1…D-5 (`PROMPT_CIERRE_PMV1.md` §6, `docs/11` §1).
-- Hecho verificado por el usuario: Qwen3.5-4B corre en una PC sin GPU dedicada (`ollama ps`: 100% CPU). La
-  latencia en CPU y en GPU se mide en M5.
-- Decisiones del usuario pendientes: **ADR-021** (regla de lema) · **ADR-027** (SQLite) · ADR-013 (registro
-  anónimo) · lista de fallos de la interfaz · nombres y roles del equipo · fecha exacta de la exposición.
-- Correcciones pendientes en los `.docx` de la revisión 2: L-1…L-9 (`docs/09` §2), a cargo del equipo.
-- Decisiones abiertas: ADR-012, ADR-014, ADR-016, ADR-026 (revisión en el PMV3).
+- **Línea base del arnés congelada** (2026-10-01, `docs/evidencias/2026-10-01_base-integrante_pc-rtx4060/`; 40/40 pruebas) y `docs/13_BRECHAS_RUBRICA.md` adoptado: su lista P0 (§7) rige el cierre. M16 preparado en `docs/evidencias/m16/`. Specs PR-01 y PR-02 en borrador, pendientes de aprobación. Siguiente: PR 1.
+- **ADR-021 aceptada** (5 condiciones, implementación en PR 3) · **τ = 0,48 confirmado** (ADR-020; sobre v3: 165/180 sin lema, 180/180 con lema, 0 FP en C; primer τ sin FP = 0,47, no adoptado). Cifras: solo `fragmentos_v3`.
+- Defectos del código base: D-1…D-5 y **D-6** (Ollama detenido → 500; se corrige en PR 3), en `docs/11` §1.
+- Entorno: Ollama 0.35 con `qwen3.5:4b` Q4_K_M en la PC RTX 4060 (en otra PC sin GPU corre al 100 % en CPU: latencias en M5); MCP de Sonar por JAR (sin Docker; clave local `omarpiero_rag-quechua-wanka`). **Historial de Git divergente local/remoto** (`docs/13` §1.1): lo decide el usuario; el agente no hace push forzado.
+- Pendientes del usuario: fecha de exposición · nombres y roles · lista de fallos de la interfaz · ADR-027 y ADR-013 (sin preferencia; antes del PR 8) · ejecutar `.github/projects/crear_projects.ps1` · medir M16 · `SONARQUBE_ORG` y token de Cloud. Abiertas: ADR-012, 014, 016, 026; correcciones L-1…L-9 de los `.docx`.
 - Última actualización: 2026-10-01.
 
 ## 14. Mapa de documentos
@@ -283,8 +276,9 @@ en el índice, en `config/` o en `corpus/`.
 | `docs/08_AUDITORIA_REPO_BASE.md` | Qué hay en el código base, cómo se midió y qué le falta frente a la línea base v2 |
 | `docs/09_LINEA_BASE_V2.md` | **Decisiones vigentes** de la revisión 2 frente a la versión 1, correcciones L-1…L-9, SQLite y modelo en el móvil |
 | `docs/10_REPOSITORIO.md` | Cómo se creó este repositorio (historial importado, datos fuera de Git) |
-| `docs/11_CASOS_VIDEO_Y_CAPTURAS.md` | Casos que se prueban a mano, guion del video E3 y capturas E1, con los defectos D-1…D-5 |
+| `docs/11_CASOS_VIDEO_Y_CAPTURAS.md` | Casos que se prueban a mano, guion del video E3 y capturas E1, con los defectos D-1…D-6 |
 | `docs/12_MEDICIONES_PARA_DIAPOSITIVAS.md` | Qué medición alimenta cada figura y diapositiva, y qué se entrega al asistente documental |
+| `docs/13_BRECHAS_RUBRICA.md` | **Brechas frente a S6/S7/S8**, condiciones de ADR-021, M16–M17 y la **lista P0 vigente** (§7) |
 | `PROMPT_CIERRE_PMV1.md` | Plan de cierre del PMV1: pasos, preguntas al usuario, prioridades P0/P1/P2 y defectos conocidos |
 | `CONSIDERACIONES.md` | Entrega de la Unidad II: jerarquía de fuentes, arquitectura objetivo, plan de PR, **endurecimiento de la interfaz**, **protocolo de mediciones M1–M15**, video, informe |
 | `docs/specs/` · `docs/auditorias/` | Especificaciones por historia · informes del auditor |

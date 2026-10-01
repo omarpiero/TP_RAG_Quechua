@@ -44,7 +44,13 @@ Unidad II, dejando además las mediciones y los casos del video listos.
    e) La lista de fallos de la interfaz que yo haya visto (se añade a CONSIDERACIONES §5.1).
    f) Nombres y roles de los cinco integrantes, y quién hará los commits de cada PR.
 
-5. PLAN DE PR. Sigue CONSIDERACIONES.md §5 con esta PRIORIDAD (si el tiempo no alcanza, se recorta desde
+5. PLAN DE PR. ** SUSTITUIDA por docs/13_BRECHAS_RUBRICA.md §7 (2026-10-01). Vigente: **
+   P0 — PR 1 · PR 2 · PR 3 (incluye D-1 y D-6) · PR 4 · PR 6 (truncado) · PR 7 (UI-01…05, 07, 08, 10, 13) ·
+     PR 8 · PR 9 · PR 10 reducido a SonarQube + cobertura + Newman (M8, M9, M10) · GitHub Projects ·
+     PR 11 (M1–M8, M13–M15, M3-bis, M16) · docs/11 §3 · un PR por integrante · arbol_src.txt + puertos.md.
+   P1 — M17 · M11 · M12 · PR 5 (D-2) · UI-06, 09, 11, 12.
+   P2 — G-09 (carga) · PostgreSQL como segundo adaptador · D-3.
+   (Lista histórica, ya no vigente:) Sigue CONSIDERACIONES.md §5 con esta PRIORIDAD (si el tiempo no alcanza, se recorta desde
    abajo y se declara lo no hecho; nunca se recorta P0):
    P0 — imprescindible para la entrega:
      PR 1 estructura hexagonal (git mv, historial conservado) · PR 2 puertos de entrada + CLI ·
@@ -76,6 +82,10 @@ Unidad II, dejando además las mediciones y los casos del video listos.
        («SOL: Inti. (rayo de sol) Intip shaplan. (época de»). PR 6 + rótulo de vía de respaldo (PR 3/7).
    D-5 Interfaz: un único botón «A+» que cicla tamaños, sin reducir ni restablecer; historial solo en
        estado local. PR 7.
+   D-6 Ollama detenido: OllamaGenerador.redactar deja escapar la excepción de httpx y /api/consultas
+       responde 500 (docs/13 §4.1, hallado por lectura del código). PR 3: el caso de uso captura el fallo
+       del puerto y devuelve el fragmento literal con el aviso «el servicio de redacción no está
+       disponible»; prueba @salvaguarda con un generador falso que lanza excepción. Caso C-10 del video.
 
 7. MODO DE TRABAJO para este cierre (CLAUDE.md §4, aligerado por plazo, sin saltar compuertas):
    - Una spec breve por PR (≤ 1 página, plantilla de docs/specs/). Puedes presentarme varias a la vez

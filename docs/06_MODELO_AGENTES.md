@@ -173,9 +173,15 @@ de si el plan gratuito permite personalizar la puerta de calidad. En el PMV3 se 
 de `flutter test --coverage`.
 
 **Servidores MCP.** Ya declarados en `.mcp.json`: `sonarqube` (Cloud, variables `SONARQUBE_TOKEN` y
-`SONARQUBE_ORG`) y `sonarqube-local` (`SONARQUBE_TOKEN_LOCAL`, apuntando a `host.docker.internal:9000`).
-Ambos usan la imagen oficial `sonarsource/sonarqube-mcp`, por lo que **requieren Docker Desktop**. Claude
+`SONARQUBE_ORG`) y `sonarqube-local` (`SONARQUBE_TOKEN_LOCAL`, contra `http://localhost:9000`). Desde el
+2026-10-01 **ya no requieren Docker**: se ejecutan con el JAR oficial (`java -jar ${SONARQUBE_MCP_JAR}`,
+Java 21), con las variables de usuario `SONARQUBE_MCP_HOME` y `SONARQUBE_MCP_JAR` y en modo de solo lectura
+(`SONARQUBE_READ_ONLY=true`). Proyecto local creado en el Community: clave `omarpiero_rag-quechua-wanka`. El
+servidor Cloud necesita aún `SONARQUBE_ORG` y un token de SonarQube Cloud (pendiente del usuario). Claude
 Code no lee `.env`: las variables deben existir en el entorno de Windows antes de abrirlo.
+
+*Registro:* 2026-10-01, párrafo «Servidores MCP» corregido (sin Docker; JAR oficial). Fuente: encargo del
+orquestador del 2026-10-01 y `.mcp.json`.
 
 ## 7. Convención de Git y GitHub
 

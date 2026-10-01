@@ -5,7 +5,7 @@
 > anota con fecha en ambos archivos.
 >
 > Mantenido por: **archivista** · Las fechas y los resultados solo se modifican con evidencia · Última
-> revisión: 2026-09-24 · Versión 1.0
+> revisión: 2026-10-01 · Versión 1.1
 
 ---
 
@@ -109,7 +109,7 @@ y declararlo.
 |---|---|---|
 | Fragmentos indexados | por registrar | salida del comando de indexación |
 | recall@5 A / B / D (línea base) | por registrar | informe del arnés |
-| Falsos positivos en C con τ vigente | por registrar | informe del arnés |
+| Falsos positivos en C con τ vigente | **0** de 28 con τ 0,48 (código base, `fragmentos_v3`, 2026-10-01) | `docs/evidencias/2026-10-01_base-integrante_pc-rtx4060/resumen_arnes.json` (`fp_en_C`) |
 | Documentos con manifiesto completo | por registrar | validación de la ingesta |
 
 ---
@@ -214,6 +214,12 @@ origen → destino, agente, evidencia (PR, informe, commit).
 | 2026-09-24 | DOC-00 Documentación SDD base | En curso → En revisión humana | Orquestador | `docs/` creado |
 | 2026-09-24 | DOC-01 CLAUDE.md, subagentes y configuración | En curso → En revisión humana | Orquestador | `CLAUDE.md`, `.claude/`, `.mcp.json` |
 | 2026-09-24 | ADR-009/010/011/015 | Listo → Hecho | Usuario | Respuestas del usuario del 2026-09-24 |
+| 2026-10-01 | CP-01 Línea base del arnés congelada | (nueva) → Hecho | Orquestador + programador | `docs/evidencias/2026-10-01_base-integrante_pc-rtx4060/` (`resumen_arnes.json`, `meta.json`, `junit.xml`; 40/40 pruebas, 248 consultas) |
+| 2026-10-01 | CP-02 M16 preparado: lista y hoja | (nueva) → Hecho | Orquestador | `docs/evidencias/m16/` (`lista_m16.csv`, `kpi_asis.csv`, `README.md`) |
+| 2026-10-01 | DEC-02 Decisiones del usuario (ADR-021 aceptada, τ 0,48 confirmado, D-6, docs/13 adoptado) | (nueva) → Hecho | Usuario | `07_DECISIONES.md` (ADR-020, ADR-021) · `13_BRECHAS_RUBRICA.md` |
+| 2026-10-01 | PR-01 Estructura hexagonal | (nueva) → Listo | Archivista | `docs/specs/PR-01-estructura-hexagonal/spec.md` (Borrador, pendiente de aprobación) |
+| 2026-10-01 | PR-02 Puertos de entrada y CLI | (nueva) → Listo | Archivista | `docs/specs/PR-02-puertos-entrada/spec.md` (Borrador, pendiente de aprobación) |
+| 2026-10-01 | PR-03, PR-04, PR-06, PR-07, PR-08, PR-09, PR-10r, PR-11, GH-PRJ, M16-MED, DOC-11-3, PR-INTEG, ARB-PTO | (nuevas) → Backlog | Archivista | `13_BRECHAS_RUBRICA.md` §7 (lista P0) · `05_KANBAN.md` |
 
 ---
 
@@ -223,3 +229,4 @@ origen → destino, agente, evidencia (PR, informe, commit).
 |---|---|---|---|
 | 2026-09-24 | Creación con fecha ancla supuesta 2026-09-28 | Calendario académico no confirmado | — |
 | 2026-09-24 | Fecha ancla corregida a 2026-09-21; la Iteración 0 se integra en la semana 1 del sprint 1 | El usuario confirmó que esta es la primera semana del PMV1 | Usuario |
+| 2026-10-01 | Cierre del PMV1: lista P0 de `13_BRECHAS_RUBRICA.md` §7 sustituye a la del prompt §5; fila de FP en C del §3 con la línea base; movimientos en §7 | Revisión de brechas frente a la rúbrica; línea base congelada | Usuario (vía orquestador) |
