@@ -1,23 +1,25 @@
 {
   "mcpServers": {
     "sonarqube": {
-      "command": "docker",
-      "args": ["run", "--init", "--pull=always", "-i", "--rm",
-               "-e", "SONARQUBE_TOKEN", "-e", "SONARQUBE_ORG",
-               "sonarsource/sonarqube-mcp"],
+      "command": "java",
+      "args": ["-Djdk.net.unixdomain.tmpdir=${SONARQUBE_MCP_HOME}/tmp",
+               "-jar", "${SONARQUBE_MCP_JAR}"],
       "env": {
         "SONARQUBE_TOKEN": "${SONARQUBE_TOKEN}",
-        "SONARQUBE_ORG": "${SONARQUBE_ORG}"
+        "SONARQUBE_ORG": "${SONARQUBE_ORG}",
+        "SONARQUBE_READ_ONLY": "true",
+        "STORAGE_PATH": "${SONARQUBE_MCP_HOME}/storage-cloud"
       }
     },
     "sonarqube-local": {
-      "command": "docker",
-      "args": ["run", "--init", "--pull=always", "-i", "--rm",
-               "-e", "SONARQUBE_TOKEN", "-e", "SONARQUBE_URL",
-               "sonarsource/sonarqube-mcp"],
+      "command": "java",
+      "args": ["-Djdk.net.unixdomain.tmpdir=${SONARQUBE_MCP_HOME}/tmp",
+               "-jar", "${SONARQUBE_MCP_JAR}"],
       "env": {
         "SONARQUBE_TOKEN": "${SONARQUBE_TOKEN_LOCAL}",
-        "SONARQUBE_URL": "http://host.docker.internal:9000"
+        "SONARQUBE_URL": "http://localhost:9000",
+        "SONARQUBE_READ_ONLY": "true",
+        "STORAGE_PATH": "${SONARQUBE_MCP_HOME}/storage"
       }
     }
   }
