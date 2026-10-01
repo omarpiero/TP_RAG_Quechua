@@ -24,6 +24,10 @@ frontend/.env
 !backend/.env.example
 !frontend/.env.example
 
+# --- Claude Code: configuración personal de cada integrante (no se comparte) ---
+.claude/settings.local.json
+CLAUDE.local.md
+
 # --- Python ---
 .venv/
 backend/.venv/
