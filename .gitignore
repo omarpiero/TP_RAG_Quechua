@@ -62,3 +62,13 @@ desktop.ini
 .idea/
 .vscode/*
 !.vscode/extensions.json
+
+# --- Entregables y especificaciones ---
+entregables/
+specs/
+docs/specs/
+**/specs/
+
+# --- Documentos en la raíz (solo se conserva README.md) ---
+/*.md
+!/README.md
