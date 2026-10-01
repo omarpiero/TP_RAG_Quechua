@@ -12,6 +12,8 @@ El proyecto entregado no usa esta via. Su modo por defecto es PostgreSQL con la 
 servida por su propio proceso de desarrollo, que es lo que la guia de instalacion describe.
 """
 
+import logging
+import os
 import socket
 import sys
 import threading
@@ -26,6 +28,14 @@ if not getattr(sys, "frozen", False):
     sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
 
 PUERTO = 8000
+MODELO = "qwen3.5:4b"
+
+# La consola es visible a proposito: ahi sale el log por capas ([REST], [PUERTO-IN],
+# [CASO-USO], [INDICE], [EVALUADOR], [GENERADOR], [REPOSITORIO]). Una consola de Windows
+# con codigo de pagina heredado no admite todos los caracteres: se fuerza UTF-8.
+for _flujo in (sys.stdout, sys.stderr):
+    if hasattr(_flujo, "reconfigure"):
+        _flujo.reconfigure(encoding="utf-8", errors="replace", line_buffering=True)
 
 
 def puerto_libre(puerto: int) -> bool:
@@ -43,25 +53,27 @@ def elegir_puerto() -> int:
 def comprobar_ollama(url: str) -> str | None:
     """Devuelve el aviso que corresponda, o None si el generador esta disponible."""
     try:
-        respuesta = httpx.get(f"{url}/api/tags", timeout=4.0)
+        respuesta = httpx.get(f"{url}/api/tags", timeout=2.0)
         respuesta.raise_for_status()
     except httpx.HTTPError:
         return (
-            "AVISO: no se encuentra Ollama en " + url + ".\n"
-            "  El sistema arrancara igual, pero no podra redactar respuestas.\n"
-            "  Instalalo con:  winget install Ollama.Ollama\n"
-            "  y descarga el modelo con:  ollama pull qwen3.5:4b"
+            "AVISO: Ollama no responde: las respuestas mostraran el fragmento literal sin\n"
+            "  redaccion. El sistema arranca igual y la salvaguarda no cambia.\n"
+            "  Para activar la redaccion:  winget install Ollama.Ollama  y  ollama pull " + MODELO
         )
     modelos = [m.get("name", "") for m in respuesta.json().get("models", [])]
-    if not any(m.startswith("qwen3.5:4b") for m in modelos):
+    if not any(m.startswith(MODELO) for m in modelos):
         return (
-            "AVISO: Ollama esta activo pero falta el modelo generador.\n"
-            "  Descargalo con:  ollama pull qwen3.5:4b"
+            f"AVISO: Ollama esta activo pero falta el modelo {MODELO}: las respuestas\n"
+            "  mostraran el fragmento literal sin redaccion.\n"
+            f"  Descargalo con:  ollama pull {MODELO}"
         )
     return None
 
 
 def abrir_navegador(puerto: int) -> None:
+    if os.environ.get("QW_SIN_NAVEGADOR") == "1":  # solo para pruebas automaticas
+        return
     for _ in range(60):
         if not puerto_libre(puerto):
             webbrowser.open(f"http://127.0.0.1:{puerto}")
@@ -83,6 +95,7 @@ def main() -> int:
         print("-" * 62)
     print(f"  Abriendo http://127.0.0.1:{puerto}")
     print("  El modelo tarda cerca de un minuto en quedar listo.")
+    print("  Abajo veras el log por capas de cada consulta.")
     print("  Para cerrar, cierra esta ventana.")
     print("=" * 62)
 
@@ -90,7 +103,10 @@ def main() -> int:
 
     from infrastructure.main import app
 
-    uvicorn.run(app, host="127.0.0.1", port=puerto, log_level="warning")
+    # log_level="info": uvicorn muestra cada peticion y el log por capas sale por el
+    # logging de la raiz (infrastructure/main.py lo configura a INFO).
+    logging.getLogger().setLevel(logging.INFO)
+    uvicorn.run(app, host="127.0.0.1", port=puerto, log_level="info")
     return 0
 
 

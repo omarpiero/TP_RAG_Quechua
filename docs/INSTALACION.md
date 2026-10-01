@@ -30,14 +30,17 @@ prescindir de instalar un servidor de base de datos. La sustitución del motor n
 adaptador nuevo alguno —los modelos y el adaptador de persistencia son los mismos— sino
 un parámetro de configuración, conforme al desacoplamiento comprometido en RNF-07.
 
-Para construirlo desde el código:
+### Construir el ejecutable
+
+Desde la raíz del repositorio, con el entorno de `backend/` instalado (`requirements-dev.txt` incluye PyInstaller):
 
 ```powershell
-cd frontend && npm run build          # con VITE_API_URL vacio, para rutas relativas
+cd frontend; npm run build            # con VITE_API_URL vacia, para rutas relativas
 xcopy /E /I /Y dist ..\backend\interfaz
-cd ..\backend
-.venv\Scripts\python.exe -m PyInstaller QuechuaWankaWeb.spec --noconfirm
+cd ..\backend; .venv\Scripts\python.exe -m PyInstaller QuechuaWankaWeb.spec --noconfirm
 ```
+
+El resultado queda en `backend\dist\QuechuaWankaWeb.exe` (consola visible, con el log por capas).
 
 ## Instalación rápida
 
