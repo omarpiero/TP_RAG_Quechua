@@ -25,8 +25,8 @@ from adapters.out.idioma.detector_idioma_heuristico import (
     DetectorIdiomaHeuristico,
 )
 from adapters.out.persistencia.modelos import Base
-from adapters.out.persistencia.repositorio_consultas_postgres import (
-    RepositorioConsultasPostgres,
+from adapters.out.persistencia.repositorio_consultas_sqlalchemy import (
+    RepositorioConsultasSqlAlchemy,
 )
 from adapters.out.persistencia.repositorio_fuentes_postgres import (
     RepositorioFuentesPostgres,
@@ -118,7 +118,7 @@ class Contenedor:
                 conexion.execute(text("SELECT 1"))
             Base.metadata.create_all(motor)
             sesion = sessionmaker(motor, expire_on_commit=False)
-            self.repositorio_consultas = RepositorioConsultasPostgres(sesion)
+            self.repositorio_consultas = RepositorioConsultasSqlAlchemy(sesion)
             self.repositorio_fuentes = RepositorioFuentesPostgres(sesion)
             self.gestionar_fuentes = GestionarFuentesUseCase(self.repositorio_fuentes)
             self.consultar_historial = ConsultarHistorialUseCase(self.repositorio_consultas)

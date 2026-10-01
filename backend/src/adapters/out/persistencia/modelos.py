@@ -34,6 +34,8 @@ class ConsultaORM(Base):
     respuesta_texto: Mapped[str] = mapped_column(Text, nullable=False)
     abstenida: Mapped[bool] = mapped_column(Boolean, nullable=False, index=True)
     similitud_maxima: Mapped[float] = mapped_column(Float, nullable=False)
+    # "similitud" | "lema"; NULL en una abstencion. Sin datos personales en este modelo.
+    via_respaldo: Mapped[str | None] = mapped_column(String(10), nullable=True)
 
     respaldos: Mapped[list["RespaldoORM"]] = relationship(
         back_populates="consulta", cascade="all, delete-orphan", lazy="selectin"

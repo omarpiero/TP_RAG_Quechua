@@ -17,3 +17,7 @@ class ConsultarHistorialUseCase(ConsultarHistorialPort):
     def ejecutar(self, limite: int = 50) -> list[tuple[Consulta, Respuesta]]:
         log.info("[CASO-USO] ConsultarHistorial: limite=%d", limite)
         return self._repositorio.historial(limite)
+
+    def borrar(self) -> int:
+        log.info("[CASO-USO] ConsultarHistorial: borrar")
+        return self._repositorio.borrar_todo()

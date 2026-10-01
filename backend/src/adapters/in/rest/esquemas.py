@@ -48,6 +48,7 @@ class EntradaHistorial(BaseModel):
     respuesta: str
     abstenida: bool
     similitud_maxima: float
+    via_respaldo: str | None = None
     momento: datetime
 
 

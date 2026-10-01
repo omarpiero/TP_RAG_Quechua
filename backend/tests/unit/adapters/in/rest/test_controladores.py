@@ -52,6 +52,13 @@ class ConsultarFake(ConsultarCorpusPort):
 
 
 class HistorialFake(ConsultarHistorialPort):
+    def __init__(self):
+        self.borrados = 0
+
+    def borrar(self):
+        self.borrados += 1
+        return 1
+
     def ejecutar(self, limite=50):
         r = Respuesta(consulta_id="c1", texto="ZORRO: Atuq.", respaldo=[_zorro()])
         return [(Consulta(texto="zorro"), r)]
@@ -272,3 +279,13 @@ def test_los_pasajes_de_prosa_llevan_el_rotulo_no_es_una_respuesta():
     r = cliente.post("/api/consultas", json={"texto": "pregunta"}).json()
     assert r["abstenida"] is True and r["via_respaldo"] is None
     assert r["pasajes"][0]["rotulo"] == "no es una respuesta"
+
+
+def test_delete_historial_devuelve_204_y_borra():
+    cliente = _cliente()
+    assert cliente.delete("/api/historial").status_code == 204
+    assert cliente.app.state.contenedor.consultar_historial.borrados == 1
+
+
+def test_delete_historial_sin_base_de_datos_es_503():
+    assert _cliente(con_base_datos=False).delete("/api/historial").status_code == 503

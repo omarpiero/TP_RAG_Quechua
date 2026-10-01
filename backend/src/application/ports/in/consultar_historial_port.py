@@ -9,3 +9,7 @@ class ConsultarHistorialPort(ABC):
 
     @abstractmethod
     def ejecutar(self, limite: int = 50) -> list[tuple[Consulta, Respuesta]]: ...
+
+    @abstractmethod
+    def borrar(self) -> int:
+        """Borra el historial y devuelve cuantas consultas se eliminaron."""

@@ -18,4 +18,8 @@ class RepositorioConsultasPort(ABC):
         entrenara los modelos de prediccion de cobertura y de demanda lexica."""
 
     @abstractmethod
+    def borrar_todo(self) -> int:
+        """Borra el historial completo y devuelve cuantas consultas se eliminaron."""
+
+    @abstractmethod
     def total_registradas(self) -> int: ...

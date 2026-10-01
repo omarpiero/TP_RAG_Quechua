@@ -21,13 +21,14 @@ class Configuracion(BaseSettings):
 
     # Motor de persistencia: "postgres" o "sqlite".
     #
-    # El proyecto entregado usa PostgreSQL, que es el motor que la consigna evalua. La
-    # distribucion como ejecutable emplea SQLite para no exigir la instalacion de un
-    # servidor de base de datos a quien solo quiere usar el sistema. Ambos recorren el
+    # SQLite no exige instalar un servidor de base de datos a quien solo quiere usar el
+    # sistema; PostgreSQL queda como segundo motor. Ambos recorren el
     # mismo adaptador y los mismos modelos, porque ninguno usa tipos ni sentencias
     # propias de un motor concreto: la sustitucion es un parametro, que es justo lo que
     # RNF-07 compromete.
-    base_datos: str = "sqlite" if EMPAQUETADO else "postgres"
+    # SQLite por defecto en todos los modos (ADR-027): sin servidor ni credenciales. PostgreSQL
+    # sigue seleccionable con BASE_DATOS=postgres (+ POSTGRES_*).
+    base_datos: str = "sqlite"
 
     postgres_host: str = "localhost"
     postgres_port: int = 5432

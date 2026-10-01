@@ -1,3 +1,5 @@
+import logging
+
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session, sessionmaker
 
@@ -10,8 +12,15 @@ from domain.value_objects.idioma import Idioma
 from domain.value_objects.procedencia import Procedencia
 from domain.value_objects.puntuacion_similitud import PuntuacionSimilitud
 
+log = logging.getLogger("rag.repositorio")
 
-class RepositorioConsultasPostgres(RepositorioConsultasPort):
+
+class RepositorioConsultasSqlAlchemy(RepositorioConsultasPort):
+    """Historial de consultas (RF-11) sobre SQLAlchemy: sirve a SQLite (defecto) y a PostgreSQL.
+
+    Guarda el texto de la consulta, la decision, la via de respaldo, la similitud, el
+    documento y la pagina, y la fecha. No guarda IP, usuario ni user-agent."""
+
     def __init__(self, sesion: sessionmaker[Session]):
         self._sesion = sesion
 
@@ -27,6 +36,7 @@ class RepositorioConsultasPostgres(RepositorioConsultasPort):
                     respuesta_texto=respuesta.texto,
                     abstenida=respuesta.abstenida,
                     similitud_maxima=respuesta.similitud_maxima,
+                    via_respaldo=respuesta.via_respaldo,
                     respaldos=[
                         RespaldoORM(
                             fragmento_id=r.id,
@@ -47,6 +57,15 @@ class RepositorioConsultasPostgres(RepositorioConsultasPort):
                 select(ConsultaORM).order_by(ConsultaORM.momento.desc()).limit(limite)
             ).all()
             return [self._a_dominio(r) for r in registros]
+
+    def borrar_todo(self) -> int:
+        with self._sesion() as s, s.begin():
+            registros = s.scalars(select(ConsultaORM)).all()
+            for registro in registros:
+                s.delete(registro)  # los respaldos caen en cascada
+            borradas = len(registros)
+        log.info("[REPOSITORIO] historial borrado (%d consultas)", borradas)
+        return borradas
 
     def no_cubiertas(self, limite: int = 500) -> list[Consulta]:
         with self._sesion() as s:
@@ -91,5 +110,6 @@ class RepositorioConsultasPostgres(RepositorioConsultasPort):
             idioma=Idioma(r.idioma),
             similitud_maxima=r.similitud_maxima,
             momento=r.momento,
+            via_respaldo=r.via_respaldo,
         )
         return consulta, respuesta

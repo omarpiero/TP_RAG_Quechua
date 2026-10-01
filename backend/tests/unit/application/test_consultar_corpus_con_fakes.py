@@ -92,6 +92,11 @@ class RepositorioFake(RepositorioConsultasPort):
     def no_cubiertas(self, limite=500):
         return [c for c, r in self.registros if r.abstenida]
 
+    def borrar_todo(self):
+        n = len(self.registros)
+        self.registros.clear()
+        return n
+
     def total_registradas(self):
         return len(self.registros)
 

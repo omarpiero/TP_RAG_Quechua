@@ -30,7 +30,7 @@ backend/src
 │   │   ├── persistencia/
 │   │   │   ├── __init__.py
 │   │   │   ├── modelos.py
-│   │   │   ├── repositorio_consultas_postgres.py
+│   │   │   ├── repositorio_consultas_sqlalchemy.py
 │   │   │   └── repositorio_fuentes_postgres.py
 │   │   ├── recuperacion/
 │   │   │   ├── __init__.py
@@ -79,6 +79,7 @@ backend/src
 │   │   └── respuesta.py
 │   ├── services/
 │   │   ├── __init__.py
+│   │   ├── clasificador_consulta.py
 │   │   ├── depurador_consulta.py
 │   │   ├── evaluador_confianza.py
 │   │   └── segmentador.py
