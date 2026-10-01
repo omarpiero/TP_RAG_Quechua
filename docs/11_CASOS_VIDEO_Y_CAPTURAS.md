@@ -70,14 +70,14 @@ Si un caso no da lo esperado, **no lo grabes**. Anótalo y pásaselo a Claude Co
 
 | Caso | Consulta exacta | Decisión | Vía | Similitud | Documento · página | Latencia total (ms) | ¿Generador? | Procesador (`ollama ps`) | Captura |
 |---|---|---|---|---:|---|---:|---|---|---|
-| C-01 | | | | por registrar | | por registrar | | | |
-| C-02 | | | | por registrar | | por registrar | | | |
-| C-03 | | | | por registrar | | por registrar | | | |
-| C-04 | | | | por registrar | | por registrar | | | |
-| C-05 | | | | por registrar | | por registrar | | | |
-| C-07 | | | | — | — | — | | | |
-| C-09 | | | | — | — | — | | | |
-| C-10 | | | | por registrar | | por registrar | | | |
+| C-01 | ¿cómo se dice zorro en quechua wanka? | Responde | similitud | 0,6095 | diccionario-quechua-Wanka · p. 37 | 2 475 | Sí | GPU (RTX 4060) | `E1-1_consulta_zorro.png` |
+| C-02 | ¿cómo se dice criptomoneda en quechua wanka? | Se abstiene | — | 0,0502 | — | 14 | No | — | `E1-2_abstencion.png` |
+| C-03 | how do you say fox in Wanka Quechua? | Responde | similitud | 0,6095 | diccionario-quechua-Wanka · p. 37 | 2 674 | Sí | GPU (RTX 4060) | `E1-3_consulta_ingles.png` |
+| C-04 | (pendiente: no ejecutado en este lote) | — | — | — | — | — | — | — | — |
+| C-05 | ¿Qué referencia temporal implica la acción expresada por el verbo nominalizado? | Se abstiene + 3 pasajes rotulados «no es una respuesta» | — | 0,3389 | (pasajes de Cerrón-Palomino) | 25 | No | — | `E1-5_pasajes_prosa.png` |
+| C-07 | (vacía) / (301 caracteres) | Rechazada 422 | — | — | — | — | — | — | `E1-8_validacion.png` |
+| C-09 | (3 consultas → reiniciar → recargar) | Historial preservado (4 entradas) | — | — | — | — | — | — | `E1-6_historial.png` |
+| C-10 | (Ollama detenido + C-01) | Fragmento literal + aviso «servicio de redacción no disponible», sin 500 | — | — | — | — | — | — | — |
 
 ## 4. Guion del video E3 (1,5–2 min, una sola toma)
 

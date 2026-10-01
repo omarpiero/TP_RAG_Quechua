@@ -1,0 +1,43 @@
+{
+  "fecha": "2026-10-01",
+  "commit": "ba74edb",
+  "pc": "rtx4060",
+  "pruebas": {
+    "total": 107,
+    "pasadas": 107,
+    "fallidas": 0,
+    "cobertura_total_pct": 77,
+    "cobertura_por_capa": {
+      "domain": "93%",
+      "application": "90%",
+      "adapters": "84%",
+      "infrastructure": "15%"
+    }
+  },
+  "arnes": {
+    "tau": 0.48,
+    "A": {"n": 120, "recall": 1.0, "por_similitud": 108, "por_lema": 12},
+    "B": {"n": 60, "recall": 1.0, "por_similitud": 57, "por_lema": 3},
+    "C": {"n": 28, "fp": 0, "especificidad": 1.0},
+    "D": {"n": 40, "recall": 1.0, "por_similitud": 37, "por_lema": 3},
+    "f1_con_lema": 1.0,
+    "f1_sin_lema": 0.9565,
+    "csv_identico_base": true
+  },
+  "m5_latencia": {
+    "modelo": "qwen3.5:4b",
+    "procesador": "100% GPU (RTX 4060)",
+    "n_consultas": 30,
+    "frio": {"p50_ms": 2755, "p95_ms": 3076},
+    "caliente": {"p50_ms": 2677, "p95_ms": 3088}
+  },
+  "humo": {
+    "C-01": "OK - similitud 0.6095, p.37, gen=Sí, 2475ms",
+    "C-02": "OK - abstención, sim 0.0502, gen=No, 14ms",
+    "C-03": "OK - similitud 0.6095, trad=zorro, gen=Sí, 2674ms",
+    "C-05": "OK - abstención + 3 pasajes «no es una respuesta», 25ms",
+    "C-07": "OK - 422 vacía y 422 >300 car.",
+    "C-09": "OK - historial preservado (4 entradas), 200",
+    "C-10": "OK - fragmento literal + aviso, sin 500"
+  }
+}
