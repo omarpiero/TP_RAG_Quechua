@@ -15,10 +15,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 import numpy as np
 
-from domain.services.depurador_consulta import DepuradorConsulta
-from domain.entities.fragmento import TipoFragmento
 from adapters.out.documentos.corpus_jsonl import cargar_fragmentos
 from adapters.out.recuperacion.indice_hibrido_lexico import IndiceHibridoLexico
+from domain.entities.fragmento import TipoFragmento
+from domain.services.depurador_consulta import DepuradorConsulta
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from validar_tabla_ingles import TraductorTabla, normalizar  # noqa: E402

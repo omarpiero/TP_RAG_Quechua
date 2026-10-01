@@ -4,13 +4,9 @@ from dataclasses import dataclass
 
 from domain.entities.fragmento import FragmentoRecuperado
 
-# Recalibrado sobre esta implementacion: 0,48 es el primer umbral sin falsos positivos y
-# conserva el 92,8 % de las consultas atendibles. La prueba de concepto reporto 0,41 con un
-# 85,6 %; la diferencia proviene de que el Documento 6 no fija la formula exacta de E2 y E3,
-# y aqui ambas se calculan como coseno sobre TF-IDF. El propio documento establece que el
-# umbral es un parametro calibrado sobre un corpus, una segmentacion y un conjunto de
-# consultas concretos, y que cualquier cambio en esos elementos obliga a recalibrarlo.
-UMBRAL_CALIBRADO = 0.48
+# El umbral tau NO se fija aqui: tiene un unico origen, la configuracion
+# (infrastructure/config.py, sobreescribible por variable de entorno), versionada junto con
+# el barrido que lo justifica (ADR-020). El evaluador lo recibe siempre explicito.
 
 # Piso por debajo del cual un pasaje de prosa ni siquiera se ofrece. No es un umbral de
 # confianza y no autoriza ninguna afirmacion: solo descarta lo degenerado.
@@ -35,12 +31,23 @@ LARGO_PALABRA_CONTENIDO = 5
 PALABRAS_COMPARTIDAS = 2
 
 
+VIA_SIMILITUD = "similitud"
+VIA_LEMA = "lema"
+
+
 @dataclass(frozen=True)
 class Veredicto:
     responder: bool
     similitud_maxima: float
     umbral: float
-    por_lema: bool = False
+    # Via por la que hay respaldo: "similitud" (sim_max >= tau), "lema" (sim_max < tau pero el
+    # termino depurado coincide exactamente con el lema de una entrada lexicografica; ADR-021)
+    # o None si no hay respaldo.
+    via_respaldo: str | None = None
+
+    @property
+    def por_lema(self) -> bool:
+        return self.via_respaldo == VIA_LEMA
 
     @property
     def motivo(self) -> str:
@@ -59,7 +66,7 @@ class EvaluadorConfianza:
     deja al usuario donde estaba, mientras que una forma inventada sobre una lengua
     seriamente en peligro entra en circulacion y no se retira."""
 
-    def __init__(self, umbral: float = UMBRAL_CALIBRADO):
+    def __init__(self, umbral: float):
         if not 0.0 <= umbral <= 1.0:
             raise ValueError(f"Umbral fuera del intervalo [0,1]: {umbral}")
         self._umbral = umbral
@@ -99,24 +106,27 @@ class EvaluadorConfianza:
             for c in unicodedata.normalize("NFD", texto.lower())
             if unicodedata.category(c) != "Mn"
         )
-        return {
-            p
-            for p in re.findall(r"[a-z]+", normalizado)
-            if len(p) >= LARGO_PALABRA_CONTENIDO
-        }
+        return {p for p in re.findall(r"[a-z]+", normalizado) if len(p) >= LARGO_PALABRA_CONTENIDO}
 
     def evaluar(self, recuperados: list[FragmentoRecuperado]) -> Veredicto:
         if not recuperados:
             return Veredicto(responder=False, similitud_maxima=0.0, umbral=self._umbral)
 
         maxima = max(r.puntuacion.valor for r in recuperados)
-        # La coincidencia de lema no puede producir un falso positivo: solo se activa cuando
-        # el termino consultado figura literalmente como entrada del corpus indexado.
-        por_lema = any(r.coincidencia_lema for r in recuperados)
+        # Regla de similitud: sim_max >= tau. Regla de lema (ADR-021): solo si la similitud no
+        # alcanza tau y alguna entrada coincide exactamente con el lema consultado. La
+        # coincidencia de lema no puede producir un falso positivo: el indice solo la marca
+        # cuando el termino depurado COMPLETO es el lema de una entrada lexicografica.
+        if maxima >= self._umbral:
+            via = VIA_SIMILITUD
+        elif any(r.coincidencia_lema for r in recuperados):
+            via = VIA_LEMA
+        else:
+            via = None
 
         return Veredicto(
-            responder=por_lema or maxima >= self._umbral,
+            responder=via is not None,
             similitud_maxima=maxima,
             umbral=self._umbral,
-            por_lema=por_lema,
+            via_respaldo=via,
         )

@@ -4,9 +4,9 @@ from collections import defaultdict
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-from domain.services.depurador_consulta import DepuradorConsulta
-from domain.entities.fragmento import Fragmento, FragmentoRecuperado, TipoFragmento
 from application.ports.out.indice_recuperacion_port import IndiceRecuperacionPort
+from domain.entities.fragmento import Fragmento, FragmentoRecuperado, TipoFragmento
+from domain.services.depurador_consulta import DepuradorConsulta
 from domain.value_objects.puntuacion_similitud import PuntuacionSimilitud
 
 # Lema de una entrada lexicografica: la parte en mayusculas que precede a los dos puntos,

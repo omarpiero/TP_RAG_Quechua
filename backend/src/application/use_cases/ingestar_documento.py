@@ -77,4 +77,5 @@ class IngestarDocumentoUseCase(IngestarDocumentoPort):
             total_indexado=self._indice.total_indexado(),
         )
 
+
 __all__ = ["IngestarDocumentoUseCase", "ResultadoIngesta"]

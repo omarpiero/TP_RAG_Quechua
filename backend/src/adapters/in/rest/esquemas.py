@@ -13,8 +13,12 @@ class RespaldoSalida(BaseModel):
     documento: str
     pagina: int
     puntuacion: float
+    # Misma cifra que `puntuacion`, con el nombre que usa la interfaz.
+    similitud: float
     derivado_ocr: bool
     coincidencia_lema: bool
+    # "no es una respuesta" en los pasajes de prosa; None en el respaldo.
+    rotulo: str | None = None
 
 
 class RespuestaSalida(BaseModel):
@@ -28,6 +32,15 @@ class RespuestaSalida(BaseModel):
     consulta_traducida: str | None = None
     # Pasajes de prosa ofrecidos sin afirmar que respondan. Llegan solo con abstenida=True.
     pasajes: list[RespaldoSalida] = []
+    # Via del respaldo ("similitud" | "lema"; None si el sistema se abstuvo) y tau vigente.
+    via_respaldo: str | None = None
+    umbral: float | None = None
+    latencia_ms: float = 0.0
+    # Todas las lecturas candidatas de la traduccion y la que sostuvo la respuesta.
+    lecturas_traduccion: list[str] = []
+    traduccion_usada: str | None = None
+    generador_invocado: bool = False
+    aviso_generacion: str | None = None
 
 
 class EntradaHistorial(BaseModel):

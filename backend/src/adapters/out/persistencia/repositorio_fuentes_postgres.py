@@ -1,9 +1,9 @@
 from sqlalchemy import select
 from sqlalchemy.orm import Session, sessionmaker
 
-from domain.entities.fuente import Fuente
-from application.ports.out.repositorio_fuentes_port import RepositorioFuentesPort
 from adapters.out.persistencia.modelos import FuenteORM
+from application.ports.out.repositorio_fuentes_port import RepositorioFuentesPort
+from domain.entities.fuente import Fuente
 
 
 class RepositorioFuentesPostgres(RepositorioFuentesPort):

@@ -21,8 +21,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 import httpx
 
-from domain.entities.fragmento import TipoFragmento
 from adapters.out.documentos.corpus_jsonl import cargar_fragmentos
+from domain.entities.fragmento import TipoFragmento
 
 CABECERA = re.compile(r"(?=\b[A-ZÁÉÍÓÚÜÑ][A-ZÁÉÍÓÚÜÑ\s\-]{1,30}:)")
 ENTRADA = re.compile(r"\s*([A-ZÁÉÍÓÚÜÑ][A-ZÁÉÍÓÚÜÑ\s\-]*?)\s*:\s*(.*)", re.S)

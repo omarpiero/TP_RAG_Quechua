@@ -32,6 +32,16 @@ class Respuesta:
     # simular una certeza que no existe, el material se entrega literal y citado para que
     # lo juzgue quien consulta, que es como se usa una gramatica en papel.
     pasajes: list[FragmentoRecuperado] = field(default_factory=list)
+    # Via del respaldo: "similitud" o "lema" (None en una abstencion). Nunca se presenta como
+    # respuesta por similitud la que se sostiene solo en la coincidencia exacta de lema.
+    via_respaldo: str | None = None
+    umbral: float | None = None
+    latencia_ms: float = 0.0
+    # Todas las lecturas candidatas de la traduccion de la consulta (EN->ES), no solo la usada.
+    lecturas_traduccion: list[str] = field(default_factory=list)
+    generador_invocado: bool = False
+    # Si la redaccion fallo (D-6) se muestra el fragmento literal y se avisa aqui.
+    aviso_generacion: str | None = None
 
     def __post_init__(self):
         # RNF-08: ninguna respuesta afirmativa puede emitirse sin fuente verificable.

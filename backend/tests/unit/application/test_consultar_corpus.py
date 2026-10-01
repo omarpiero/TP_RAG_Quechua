@@ -7,17 +7,18 @@ depender de que haya un modelo cargado.
 
 import pytest
 
-from domain.services.evaluador_confianza import EvaluadorConfianza
-from application.use_cases.consultar_corpus import ConsultarCorpusUseCase
-from domain.entities.fragmento import Fragmento, FragmentoRecuperado, TipoFragmento
 from application.ports.out.detector_idioma_port import DetectorIdiomaPort
 from application.ports.out.generador_texto_port import GeneradorTextoPort
 from application.ports.out.indice_recuperacion_port import IndiceRecuperacionPort
-from application.ports.out.traductor_port import TraductorPort
 from application.ports.out.repositorio_consultas_port import RepositorioConsultasPort
+from application.ports.out.traductor_port import TraductorPort
+from application.use_cases.consultar_corpus import ConsultarCorpusUseCase
+from domain.entities.fragmento import Fragmento, FragmentoRecuperado, TipoFragmento
+from domain.services.evaluador_confianza import EvaluadorConfianza
 from domain.value_objects.idioma import Idioma
 from domain.value_objects.procedencia import Procedencia
 from domain.value_objects.puntuacion_similitud import PuntuacionSimilitud
+from infrastructure.config import configuracion
 
 
 def _fragmento(texto="PERRO: Allqu.", pagina=27):
@@ -94,7 +95,7 @@ def _caso_uso(indice, generador, repositorio=None, idioma=Idioma.ESPANOL):
     return ConsultarCorpusUseCase(
         indice=indice,
         generador=generador,
-        evaluador=EvaluadorConfianza(),
+        evaluador=EvaluadorConfianza(configuracion.umbral_abstencion),
         detector_idioma=DetectorFalso(idioma),
         repositorio=repositorio,
     )
@@ -188,7 +189,7 @@ def test_la_traduccion_previa_rescata_la_consulta_en_ingles():
     caso_uso = ConsultarCorpusUseCase(
         indice=IndiceSensibleAlIdioma(),
         generador=generador,
-        evaluador=EvaluadorConfianza(),
+        evaluador=EvaluadorConfianza(configuracion.umbral_abstencion),
         detector_idioma=DetectorFalso(Idioma.INGLES),
         traductor=traductor,
     )
@@ -209,7 +210,7 @@ def test_una_traduccion_inutil_no_empeora_el_resultado():
     caso_uso = ConsultarCorpusUseCase(
         indice=IndiceSensibleAlIdioma(),
         generador=GeneradorFalso(),
-        evaluador=EvaluadorConfianza(),
+        evaluador=EvaluadorConfianza(configuracion.umbral_abstencion),
         detector_idioma=DetectorFalso(Idioma.INGLES),
         traductor=TraductorFalso("disparate"),
     )

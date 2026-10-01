@@ -1,14 +1,16 @@
 import logging
+import time
 
 from application.ports import ConsultarCorpusPort
 from application.ports.out.detector_idioma_port import DetectorIdiomaPort
-from application.ports.out.generador_texto_port import GeneradorTextoPort
+from application.ports.out.generador_texto_port import GeneradorNoDisponible, GeneradorTextoPort
 from application.ports.out.indice_recuperacion_port import IndiceRecuperacionPort
 from application.ports.out.repositorio_consultas_port import RepositorioConsultasPort
 from application.ports.out.traductor_port import TraductorPort
 from domain.entities.consulta import Consulta
 from domain.entities.fragmento import FragmentoRecuperado
 from domain.entities.respuesta import Respuesta
+from domain.services.clasificador_consulta import ClasificadorConsulta
 from domain.services.depurador_consulta import DepuradorConsulta
 from domain.services.evaluador_confianza import EvaluadorConfianza
 from domain.value_objects.idioma import Idioma
@@ -36,6 +38,8 @@ MENSAJE_SIN_RESPALDO = {
     ),
 }
 
+AVISO_GENERACION = "El servicio de redacción no está disponible; se muestra el fragmento literal."
+
 MENSAJE_IDIOMA = (
     "Solo se admiten consultas en español o en inglés. "
     "Only queries in Spanish or English are supported."
@@ -58,6 +62,7 @@ class ConsultarCorpusUseCase(ConsultarCorpusPort):
         repositorio: RepositorioConsultasPort | None = None,
         traductor: TraductorPort | None = None,
         depurador: DepuradorConsulta | None = None,
+        clasificador: ClasificadorConsulta | None = None,
         k: int = 5,
     ):
         self._indice = indice
@@ -67,9 +72,13 @@ class ConsultarCorpusUseCase(ConsultarCorpusPort):
         self._repositorio = repositorio
         self._traductor = traductor
         self._depurador = depurador or DepuradorConsulta()
+        self._clasificador = clasificador or ClasificadorConsulta(self._depurador)
         self._k = k
 
     def ejecutar(self, texto_consulta: str) -> Respuesta:
+        return self._resolver(texto_consulta, time.perf_counter())
+
+    def _resolver(self, texto_consulta: str, t0: float) -> Respuesta:
         idioma = self._detector.detectar(texto_consulta)
         consulta = Consulta(texto=texto_consulta, idioma=idioma)
         log.info("[CASO-USO] ConsultarCorpus: idioma=%s", idioma.value)
@@ -77,6 +86,7 @@ class ConsultarCorpusUseCase(ConsultarCorpusPort):
         if not idioma.soportado:
             log.info("[GENERADOR] NO invocado (idioma no soportado)")
             return self._registrar(
+                t0,
                 consulta,
                 Respuesta(
                     consulta_id=consulta.id,
@@ -92,9 +102,7 @@ class ConsultarCorpusUseCase(ConsultarCorpusPort):
             # dice X en quechua de Wanka"), que reintroduce en la consulta las palabras que
             # la depuracion existe para eliminar y hunde la similitud del fragmento.
             termino = self._depurador.depurar(consulta.texto)
-            candidatas = self._traductor.candidatas(
-                termino, aproximar=idioma is Idioma.INGLES
-            )
+            candidatas = self._traductor.candidatas(termino, aproximar=idioma is Idioma.INGLES)
 
             # Una palabra inglesa suelta ("love") no trae ninguna marca funcional que
             # contar, de modo que el detector la asume espanola y nunca se traducia. Si el
@@ -133,7 +141,7 @@ class ConsultarCorpusUseCase(ConsultarCorpusPort):
         log.info(
             "[EVALUADOR] responder=%s via=%s tau=%.2f",
             veredicto.responder,
-            "lema" if veredicto.por_lema else ("similitud" if veredicto.responder else "ninguna"),
+            veredicto.via_respaldo or "ninguna",
             veredicto.umbral,
         )
 
@@ -141,17 +149,26 @@ class ConsultarCorpusUseCase(ConsultarCorpusPort):
             # Antes de abstenerse del todo se busca en la prosa, que se consulta aparte
             # porque las entradas de diccionario, mucho mas cortas, copan siempre las
             # primeras posiciones. Lo recuperado no se afirma: se entrega literal y citado.
-            pasajes = self._evaluador.ofrecer_pasajes(
-                self._indice.recuperar_prosa(consulta.texto_para_recuperar, k=3),
-                # El solapamiento se mide contra la consulta depurada, no contra la
-                # cruda: "en quechua wanka" acompana a casi toda consulta y a ningun
-                # pasaje distingue, de modo que sin depurar bastaba esa palabra para
-                # sacar el prologo del libro ante cualquier termino no cubierto.
-                consulta=self._depurador.depurar(consulta.texto_para_recuperar),
+            lexica = self._clasificador.es_lexica(consulta.texto)
+            if lexica:
+                # D-1: ante una peticion de termino no se ofrecen parrafos de prosa.
+                log.info("[CASO-USO] consulta lexica: sin pasajes de prosa")
+            pasajes = (
+                []
+                if lexica
+                else self._evaluador.ofrecer_pasajes(
+                    self._indice.recuperar_prosa(consulta.texto_para_recuperar, k=3),
+                    # El solapamiento se mide contra la consulta depurada, no contra la
+                    # cruda: "en quechua wanka" acompana a casi toda consulta y a ningun
+                    # pasaje distingue, de modo que sin depurar bastaba esa palabra para
+                    # sacar el prologo del libro ante cualquier termino no cubierto.
+                    consulta=self._depurador.depurar(consulta.texto_para_recuperar),
+                )
             )
             log.info("[GENERADOR] NO invocado (sin respaldo)")
             log.info("[CASO-USO] pasajes de prosa ofrecidos=%d (no es una respuesta)", len(pasajes))
             return self._registrar(
+                t0,
                 consulta,
                 Respuesta(
                     consulta_id=consulta.id,
@@ -164,15 +181,30 @@ class ConsultarCorpusUseCase(ConsultarCorpusPort):
                 ),
             )
 
-        respaldo = [
-            r
-            for r in recuperados
-            if r.coincidencia_lema or r.puntuacion.valor >= self._evaluador.umbral
-        ]
+        if veredicto.por_lema:
+            # ADR-021, condicion 3: por la via de lema el generador recibe SOLO las entradas
+            # cuyo lema coincide con el termino consultado.
+            respaldo = [r for r in recuperados if r.coincidencia_lema]
+        else:
+            respaldo = [
+                r
+                for r in recuperados
+                if r.coincidencia_lema or r.puntuacion.valor >= self._evaluador.umbral
+            ]
         log.info("[GENERADOR] invocado (%d fragmentos de respaldo)", len(respaldo))
-        texto = self._generador.redactar(consulta.texto, respaldo, idioma)
+        aviso_generacion = None
+        try:
+            texto = self._generador.redactar(consulta.texto, respaldo, idioma)
+        except GeneradorNoDisponible as exc:
+            # D-6: sin redactor se muestra el fragmento literal con su cita; nunca un error
+            # del servicio ni una forma que no este en el corpus.
+            log.warning("[GENERADOR] fallo: %s -> plantilla literal", type(exc).__name__)
+            primero = respaldo[0]
+            texto = f"{primero.texto} ({primero.procedencia.citar()})"
+            aviso_generacion = AVISO_GENERACION
 
         return self._registrar(
+            t0,
             consulta,
             Respuesta(
                 consulta_id=consulta.id,
@@ -182,6 +214,9 @@ class ConsultarCorpusUseCase(ConsultarCorpusPort):
                 idioma=idioma,
                 similitud_maxima=veredicto.similitud_maxima,
                 consulta_traducida=consulta.texto_traducido,
+                via_respaldo=veredicto.via_respaldo,
+                generador_invocado=True,
+                aviso_generacion=aviso_generacion,
             ),
         )
 
@@ -224,7 +259,11 @@ class ConsultarCorpusUseCase(ConsultarCorpusPort):
         mejor = recuperados[0]
         return f" mejor={mejor.id} ({mejor.procedencia.documento}, p. {mejor.procedencia.pagina})"
 
-    def _registrar(self, consulta: Consulta, respuesta: Respuesta) -> Respuesta:
+    def _registrar(self, t0: float, consulta: Consulta, respuesta: Respuesta) -> Respuesta:
+        # Latencia extremo a extremo del caso de uso (incluye la redaccion, si la hubo).
+        respuesta.latencia_ms = round((time.perf_counter() - t0) * 1000, 1)
+        respuesta.umbral = self._evaluador.umbral
+        respuesta.lecturas_traduccion = list(consulta.variantes)
         if self._repositorio is not None:
             self._repositorio.registrar(consulta, respuesta)
             log.info(

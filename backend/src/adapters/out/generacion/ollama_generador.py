@@ -1,7 +1,7 @@
 import httpx
 
+from application.ports.out.generador_texto_port import GeneradorNoDisponible, GeneradorTextoPort
 from domain.entities.fragmento import FragmentoRecuperado
-from application.ports.out.generador_texto_port import GeneradorTextoPort
 from domain.value_objects.idioma import Idioma
 
 INSTRUCCION = {
@@ -107,20 +107,24 @@ class OllamaGenerador(GeneradorTextoPort):
         instruccion = INSTRUCCION.get(idioma, INSTRUCCION[Idioma.ESPANOL])
         prompt = f"{instruccion}\n\nFragmentos:\n{contexto}\n\nConsulta: {consulta}\n\nRespuesta:"
 
-        respuesta = httpx.post(
-            f"{self._url_base}/api/generate",
-            json={
-                "model": self._modelo,
-                "prompt": prompt,
-                "stream": False,
-                "think": False,
-                "keep_alive": self._permanencia,
-                "options": {"temperature": self._temperatura, "num_predict": 300},
-            },
-            timeout=self._timeout,
-        )
-        respuesta.raise_for_status()
-        return respuesta.json()["response"].strip()
+        try:
+            respuesta = httpx.post(
+                f"{self._url_base}/api/generate",
+                json={
+                    "model": self._modelo,
+                    "prompt": prompt,
+                    "stream": False,
+                    "think": False,
+                    "keep_alive": self._permanencia,
+                    "options": {"temperature": self._temperatura, "num_predict": 300},
+                },
+                timeout=self._timeout,
+            )
+            respuesta.raise_for_status()
+            return respuesta.json()["response"].strip()
+        except (httpx.HTTPError, KeyError, ValueError) as exc:
+            # Incluye tiempo agotado (httpx.TimeoutException) y respuesta malformada.
+            raise GeneradorNoDisponible(f"{type(exc).__name__}: {exc}") from exc
 
     def disponible(self) -> bool:
         try:

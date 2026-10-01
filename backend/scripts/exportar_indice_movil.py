@@ -21,10 +21,10 @@ CORPUS = "fragmentos_v3.jsonl"
 import numpy as np
 from scipy.sparse import csc_matrix
 
-from domain.services.depurador_consulta import DepuradorConsulta
-from domain.entities.fragmento import TipoFragmento
 from adapters.out.documentos.corpus_jsonl import cargar_fragmentos
 from adapters.out.recuperacion.indice_hibrido_lexico import IndiceHibridoLexico
+from domain.entities.fragmento import TipoFragmento
+from domain.services.depurador_consulta import DepuradorConsulta
 
 VERSION_FORMATO = 1
 

@@ -233,3 +233,42 @@ def test_los_controladores_solo_importan_puertos():
                 continue
             for nombre in nombres:
                 assert not nombre.startswith(prohibidos), (archivo.name, nombre)
+
+
+def test_el_dto_de_consulta_incluye_via_umbral_latencia_y_traduccion():
+    r = _cliente().post("/api/consultas", json={"texto": "zorro"}).json()
+    for campo in (
+        "via_respaldo",
+        "umbral",
+        "latencia_ms",
+        "lecturas_traduccion",
+        "traduccion_usada",
+        "generador_invocado",
+        "aviso_generacion",
+    ):
+        assert campo in r
+    assert r["respaldo"][0]["similitud"] == r["respaldo"][0]["puntuacion"]
+    assert r["respaldo"][0]["rotulo"] is None
+
+
+def test_los_pasajes_de_prosa_llevan_el_rotulo_no_es_una_respuesta():
+    class ConPasajes(ConsultarCorpusPort):
+        def ejecutar(self, texto_consulta):
+            pasaje = FragmentoRecuperado(
+                fragmento=Fragmento(
+                    id="p1",
+                    texto="Texto de prosa del corpus.",
+                    procedencia=Procedencia(DOCUMENTO, 12),
+                    tipo=TipoFragmento.PROSA,
+                ),
+                puntuacion=PuntuacionSimilitud(0.3),
+            )
+            return Respuesta(
+                consulta_id="c2", texto="Sin respuesta", abstenida=True, pasajes=[pasaje]
+            )
+
+    cliente = _cliente()
+    cliente.app.state.contenedor.consultar_corpus = ConPasajes()
+    r = cliente.post("/api/consultas", json={"texto": "pregunta"}).json()
+    assert r["abstenida"] is True and r["via_respaldo"] is None
+    assert r["pasajes"][0]["rotulo"] == "no es una respuesta"

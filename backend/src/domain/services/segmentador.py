@@ -1,8 +1,8 @@
 import hashlib
 import re
 
-from domain.entities.fragmento import Fragmento, TipoFragmento
 from domain.entities.documento_extraido import DocumentoExtraido
+from domain.entities.fragmento import Fragmento, TipoFragmento
 from domain.value_objects.procedencia import Procedencia
 
 # Inicio de una entrada de diccionario: lema en mayusculas seguido de dos puntos.

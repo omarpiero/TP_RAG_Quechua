@@ -43,7 +43,15 @@ class DepuradorConsulta:
     @staticmethod
     def normalizar(texto: str) -> str:
         """Minusculas y sin diacriticos. Se aplica por igual a la consulta y al corpus para
-        que la variacion ortografica entre fuentes (riesgo R-04) no impida la coincidencia."""
+        que la variacion ortografica entre fuentes (riesgo R-04) no impida la coincidencia.
+
+        Normalizacion declarada (ADR-021, condicion 2), tambien para la regla de lema:
+        - se ignoran las mayusculas: "Zorro", "ZORRO" y "zorro" son el mismo termino;
+        - se ignoran las tildes y demas diacriticos (descomposicion NFD sin marcas Mn):
+          "cuanto" y "cuanto con tilde" coinciden; la "n con tilde" pasa a "n";
+        - NO se toca la puntuacion ni los espacios (eso lo hace depurar()), ni se
+          transliteran otros caracteres.
+        Cambia que consultas activan la regla de lema, por eso esta cubierto por pruebas."""
         sin_tildes = "".join(
             c
             for c in unicodedata.normalize("NFD", texto.lower())

@@ -1,8 +1,5 @@
 import pytest
 
-from domain.services.segmentador import Segmentador
-from application.use_cases.ingestar_documento import IngestarDocumentoUseCase
-from domain.entities.fragmento import Fragmento, TipoFragmento
 from application.ports.out.extraccion_documental_port import (
     DocumentoExtraido,
     ExtraccionDocumentalPort,
@@ -10,6 +7,9 @@ from application.ports.out.extraccion_documental_port import (
 )
 from application.ports.out.indice_recuperacion_port import IndiceRecuperacionPort
 from application.ports.out.repositorio_corpus_port import RepositorioCorpusPort
+from application.use_cases.ingestar_documento import IngestarDocumentoUseCase
+from domain.entities.fragmento import Fragmento, TipoFragmento
+from domain.services.segmentador import Segmentador
 
 PAGINA_DICCIONARIO = (
     "ABAJO: Ulay, ulatraw.\n"

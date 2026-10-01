@@ -2,9 +2,9 @@ from datetime import date
 
 import pytest
 
+from application.ports.out.repositorio_fuentes_port import RepositorioFuentesPort
 from application.use_cases.gestionar_fuentes import GestionarFuentesUseCase
 from domain.entities.fuente import Fuente
-from application.ports.out.repositorio_fuentes_port import RepositorioFuentesPort
 
 
 class RepositorioFalso(RepositorioFuentesPort):

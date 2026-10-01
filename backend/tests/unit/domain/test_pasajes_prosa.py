@@ -6,11 +6,12 @@ de modo que el sistema no afirma nada sobre prosa: entrega el pasaje literal y c
 
 import pytest
 
-from domain.services.evaluador_confianza import PISO_PASAJES, EvaluadorConfianza
 from domain.entities.fragmento import Fragmento, FragmentoRecuperado, TipoFragmento
-from domain.value_objects.procedencia import Procedencia
 from domain.entities.respuesta import Respuesta
+from domain.services.evaluador_confianza import PISO_PASAJES, EvaluadorConfianza
+from domain.value_objects.procedencia import Procedencia
 from domain.value_objects.puntuacion_similitud import PuntuacionSimilitud
+from infrastructure.config import configuracion
 
 
 def _recuperado(puntuacion: float) -> FragmentoRecuperado:
@@ -26,12 +27,12 @@ def _recuperado(puntuacion: float) -> FragmentoRecuperado:
 
 
 def test_los_pasajes_por_debajo_del_piso_no_se_ofrecen():
-    evaluador = EvaluadorConfianza()
+    evaluador = EvaluadorConfianza(configuracion.umbral_abstencion)
     assert evaluador.ofrecer_pasajes([_recuperado(PISO_PASAJES - 0.01)]) == []
 
 
 def test_los_pasajes_por_encima_del_piso_se_ofrecen():
-    evaluador = EvaluadorConfianza()
+    evaluador = EvaluadorConfianza(configuracion.umbral_abstencion)
     assert len(evaluador.ofrecer_pasajes([_recuperado(PISO_PASAJES + 0.01)])) == 1
 
 
@@ -40,7 +41,7 @@ def test_el_piso_no_autoriza_a_responder():
 
     El piso solo evita mostrar ruido; la unica puerta que autoriza una afirmacion sigue
     siendo el umbral calibrado."""
-    evaluador = EvaluadorConfianza()
+    evaluador = EvaluadorConfianza(configuracion.umbral_abstencion)
     veredicto = evaluador.evaluar([_recuperado(PISO_PASAJES + 0.05)])
     assert not veredicto.responder
 
@@ -75,7 +76,7 @@ def test_hace_falta_compartir_dos_palabras_de_contenido():
     "cual es la capital de Francia" compartia *capital* con un pasaje de la gramatica y
     lo mostraba; exigir dos palabras lo descarta sin perder los casos legitimos, donde la
     consulta comparte tanto el termino como su categoria ("sufijo" y "ablativo")."""
-    evaluador = EvaluadorConfianza()
+    evaluador = EvaluadorConfianza(configuracion.umbral_abstencion)
     pasaje = _recuperado(0.30)
 
     assert evaluador.ofrecer_pasajes([pasaje], consulta="capital Francia") == []
@@ -83,5 +84,5 @@ def test_hace_falta_compartir_dos_palabras_de_contenido():
 
 
 def test_una_consulta_de_una_sola_palabra_no_puede_compartir_dos():
-    evaluador = EvaluadorConfianza()
+    evaluador = EvaluadorConfianza(configuracion.umbral_abstencion)
     assert len(evaluador.ofrecer_pasajes([_recuperado(0.30)], consulta="plurales")) == 1

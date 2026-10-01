@@ -21,8 +21,6 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(RAIZ / "src"))
 
-from domain.services.evaluador_confianza import EvaluadorConfianza  # noqa: E402
-from application.use_cases.consultar_corpus import ConsultarCorpusUseCase  # noqa: E402
 from adapters.out.documentos.corpus_jsonl import cargar_fragmentos  # noqa: E402
 from adapters.out.idioma.detector_idioma_heuristico import (  # noqa: E402
     DetectorIdiomaHeuristico,
@@ -31,6 +29,8 @@ from adapters.out.recuperacion.indice_hibrido_lexico import (  # noqa: E402
     IndiceHibridoLexico,
 )
 from adapters.out.traduccion.traductor_tabla import TraductorTabla  # noqa: E402
+from application.use_cases.consultar_corpus import ConsultarCorpusUseCase  # noqa: E402
+from domain.services.evaluador_confianza import EvaluadorConfianza  # noqa: E402
 from infrastructure.config import configuracion  # noqa: E402
 
 DATOS = RAIZ / "data"
@@ -98,14 +98,7 @@ def ejecutar(salida: Path) -> list[dict]:
         oro = set(item.get("oro", []))
         respaldo_ids = [r.id for r in respuesta.respaldo]
         por_lema = any(r.coincidencia_lema for r in respuesta.respaldo)
-        if respuesta.abstenida:
-            via = ""
-        elif respuesta.similitud_maxima >= umbral:
-            via = "similitud"
-        elif por_lema:
-            via = "lema"
-        else:
-            via = "desconocida"
+        via = respuesta.via_respaldo or ""
         filas.append(
             {
                 "id": item["id"],

@@ -14,9 +14,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from domain.services.depurador_consulta import DepuradorConsulta
 from adapters.out.documentos.corpus_jsonl import cargar_fragmentos
 from adapters.out.recuperacion.indice_hibrido_lexico import IndiceHibridoLexico
+from domain.services.depurador_consulta import DepuradorConsulta
 
 CORPUS = "fragmentos_v3.jsonl"
 

@@ -4,6 +4,13 @@ from domain.entities.fragmento import FragmentoRecuperado
 from domain.value_objects.idioma import Idioma
 
 
+class GeneradorNoDisponible(Exception):
+    """El servicio de redaccion no respondio (modelo caido, tiempo agotado, error de red).
+
+    El caso de uso la captura y responde con el fragmento literal citado: la falta del
+    generador nunca debe convertirse en un error del servicio ni en una forma inventada."""
+
+
 class GeneradorTextoPort(ABC):
     @abstractmethod
     def redactar(

@@ -5,7 +5,8 @@ ejecutar el experimento: recall@5 sobre las consultas con respaldo, ausencia tot
 falsos positivos y conservacion de al menos el 70 % de las consultas atendibles.
 """
 
-from domain.services.evaluador_confianza import UMBRAL_CALIBRADO, EvaluadorConfianza
+from domain.services.evaluador_confianza import EvaluadorConfianza
+from infrastructure.config import configuracion
 
 POSITIVOS = ("A_lexico_es", "B_independiente")
 
@@ -38,7 +39,7 @@ def test_recall_5_en_consultas_con_respaldo(indice, evaluacion):
 
 
 def test_sin_falsos_positivos_fuera_de_cobertura(indice, evaluacion):
-    evaluador = EvaluadorConfianza()
+    evaluador = EvaluadorConfianza(configuracion.umbral_abstencion)
     falsos_positivos = []
     for caso in _casos(evaluacion, "C_fuera_de_cobertura"):
         recuperados = indice.recuperar(caso["consulta"], k=5)
@@ -51,7 +52,7 @@ def test_sin_falsos_positivos_fuera_de_cobertura(indice, evaluacion):
 
 
 def test_recall_conservado_en_el_punto_de_operacion(indice, evaluacion):
-    evaluador = EvaluadorConfianza()
+    evaluador = EvaluadorConfianza(configuracion.umbral_abstencion)
     casos = _casos(evaluacion, *POSITIVOS)
     atendidas = sum(
         evaluador.evaluar(indice.recuperar(c["consulta"], k=5)).responder for c in casos
@@ -61,7 +62,7 @@ def test_recall_conservado_en_el_punto_de_operacion(indice, evaluacion):
     # da 100 %, de modo que el liston se fija ahi para que una regresion sea visible.
     assert conservado >= 1.0, (
         f"Solo se conserva el {conservado:.1%} de las consultas atendibles con umbral "
-        f"{UMBRAL_CALIBRADO}"
+        f"{configuracion.umbral_abstencion}"
     )
 
 
@@ -69,25 +70,27 @@ def test_termino_frecuente_del_corpus_se_atiende(indice):
     """Un termino muy repetido en el corpus recibe un IDF bajo y su propia entrada de
     diccionario puede quedar por debajo del umbral. La coincidencia de lema lo resuelve.
     'perro' es el ejemplo literal del criterio de aceptacion de HU-03 en el Documento 0."""
-    evaluador = EvaluadorConfianza()
+    evaluador = EvaluadorConfianza(configuracion.umbral_abstencion)
     for termino in ("perro", "casa", "agua"):
         veredicto = evaluador.evaluar(
             indice.recuperar(f"como se dice {termino} en quechua wanka", k=5)
         )
         assert veredicto.responder, f"El sistema se abstiene ante '{termino}'"
-        assert veredicto.por_lema
+        # La via se informa segun la similitud: "lema" solo si sim_max < tau (ADR-021).
+        esperada = "similitud" if veredicto.similitud_maxima >= veredicto.umbral else "lema"
+        assert veredicto.via_respaldo == esperada
 
 
 def test_la_coincidencia_de_lema_no_altera_la_similitud_medida(indice):
     # La senal determinista no debe falsear la metrica sobre la que se calibro el umbral.
     recuperados = indice.recuperar("como se dice perro en quechua wanka", k=5)
     assert recuperados[0].coincidencia_lema
-    assert recuperados[0].puntuacion.valor < UMBRAL_CALIBRADO
+    assert recuperados[0].puntuacion.valor < configuracion.umbral_abstencion
 
 
 def test_abstencion_ante_nocion_ausente_del_corpus(indice):
     # "criptomoneda" es el caso que la figura 3 del Documento 6 desarrolla paso a paso.
-    veredicto = EvaluadorConfianza().evaluar(
+    veredicto = EvaluadorConfianza(configuracion.umbral_abstencion).evaluar(
         indice.recuperar("como se dice criptomoneda en quechua wanka", k=5)
     )
     assert not veredicto.responder

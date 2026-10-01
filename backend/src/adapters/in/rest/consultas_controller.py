@@ -11,16 +11,20 @@ from .esquemas import ConsultaEntrada, RespaldoSalida, RespuestaSalida
 log = logging.getLogger("rag.rest")
 router = APIRouter(prefix="/api")
 
+ROTULO_PASAJES = "no es una respuesta"
 
-def _respaldo(r: FragmentoRecuperado) -> RespaldoSalida:
+
+def _respaldo(r: FragmentoRecuperado, rotulo: str | None = None) -> RespaldoSalida:
     return RespaldoSalida(
         fragmento_id=r.id,
         texto=r.texto,
         documento=r.procedencia.documento,
         pagina=r.procedencia.pagina,
         puntuacion=round(r.puntuacion.valor, 4),
+        similitud=round(r.puntuacion.valor, 4),
         derivado_ocr=r.procedencia.derivado_ocr,
         coincidencia_lema=r.coincidencia_lema,
+        rotulo=rotulo,
     )
 
 
@@ -43,5 +47,12 @@ def consultar(
         aviso=respuesta.aviso,
         consulta_traducida=respuesta.consulta_traducida,
         respaldo=[_respaldo(r) for r in respuesta.respaldo],
-        pasajes=[_respaldo(r) for r in respuesta.pasajes],
+        pasajes=[_respaldo(r, ROTULO_PASAJES) for r in respuesta.pasajes],
+        via_respaldo=respuesta.via_respaldo,
+        umbral=respuesta.umbral,
+        latencia_ms=respuesta.latencia_ms,
+        lecturas_traduccion=respuesta.lecturas_traduccion,
+        traduccion_usada=respuesta.consulta_traducida,
+        generador_invocado=respuesta.generador_invocado,
+        aviso_generacion=respuesta.aviso_generacion,
     )

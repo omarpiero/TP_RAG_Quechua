@@ -1,14 +1,14 @@
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session, sessionmaker
 
+from adapters.out.persistencia.modelos import ConsultaORM, RespaldoORM
+from application.ports.out.repositorio_consultas_port import RepositorioConsultasPort
 from domain.entities.consulta import Consulta
 from domain.entities.fragmento import Fragmento, FragmentoRecuperado, TipoFragmento
 from domain.entities.respuesta import Respuesta
-from application.ports.out.repositorio_consultas_port import RepositorioConsultasPort
 from domain.value_objects.idioma import Idioma
 from domain.value_objects.procedencia import Procedencia
 from domain.value_objects.puntuacion_similitud import PuntuacionSimilitud
-from adapters.out.persistencia.modelos import ConsultaORM, RespaldoORM
 
 
 class RepositorioConsultasPostgres(RepositorioConsultasPort):

@@ -1,8 +1,8 @@
 import json
 from pathlib import Path
 
-from domain.entities.fragmento import Fragmento, TipoFragmento
 from application.ports.out.repositorio_corpus_port import RepositorioCorpusPort
+from domain.entities.fragmento import Fragmento, TipoFragmento
 from domain.value_objects.procedencia import Procedencia
 
 
