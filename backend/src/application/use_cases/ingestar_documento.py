@@ -1,32 +1,19 @@
-from dataclasses import dataclass
+import logging
 from datetime import date
 
-from domain.services.segmentador import Segmentador
-from domain.entities.fragmento import TipoFragmento
-from domain.entities.fuente import Fuente
+from application.ports import IngestarDocumentoPort, ResultadoIngesta
 from application.ports.out.extraccion_documental_port import ExtraccionDocumentalPort
 from application.ports.out.indice_recuperacion_port import IndiceRecuperacionPort
 from application.ports.out.repositorio_corpus_port import RepositorioCorpusPort
 from application.ports.out.repositorio_fuentes_port import RepositorioFuentesPort
+from domain.entities.fragmento import TipoFragmento
+from domain.entities.fuente import Fuente
+from domain.services.segmentador import Segmentador
+
+log = logging.getLogger("rag.caso_uso")
 
 
-@dataclass(frozen=True)
-class ResultadoIngesta:
-    fuente: Fuente
-    paginas_totales: int
-    paginas_con_texto: int
-    fragmentos_generados: int
-    fragmentos_nuevos: int
-    total_indexado: int
-
-    @property
-    def requiere_ocr(self) -> bool:
-        """Si no se extrajo texto de ninguna pagina, el documento es una imagen escaneada y
-        necesitaria reconocimiento optico, que el proyecto mantiene como contingencia."""
-        return self.paginas_con_texto == 0
-
-
-class IngestarDocumentoUseCase:
+class IngestarDocumentoUseCase(IngestarDocumentoPort):
     """RF-01, RF-02 y RF-13: incorpora un documento al corpus, lo segmenta segun su tipo,
     registra su procedencia y reconstruye el indice.
 
@@ -57,6 +44,7 @@ class IngestarDocumentoUseCase:
         licenciamiento: str,
         derivado_ocr: bool = False,
     ) -> ResultadoIngesta:
+        log.info("[CASO-USO] IngestarDocumento: tipo=%s", tipo.value)
         documento = self._extractor.extraer(contenido, nombre_archivo)
 
         fuente = Fuente(
@@ -79,6 +67,7 @@ class IngestarDocumentoUseCase:
         if self._repositorio_fuentes is not None:
             self._repositorio_fuentes.crear(fuente)
 
+        log.info("[INDICE] fragmentos generados=%d nuevos=%d", len(fragmentos), nuevos)
         return ResultadoIngesta(
             fuente=fuente,
             paginas_totales=documento.paginas_totales,
@@ -88,6 +77,4 @@ class IngestarDocumentoUseCase:
             total_indexado=self._indice.total_indexado(),
         )
 
-    def reindexar(self) -> int:
-        """RF-13: reconstruye el indice desde el corpus persistido."""
-        return self._indice.indexar(self._corpus.cargar())
+__all__ = ["IngestarDocumentoUseCase", "ResultadoIngesta"]

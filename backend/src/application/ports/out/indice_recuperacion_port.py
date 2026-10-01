@@ -17,8 +17,7 @@ class IndiceRecuperacionPort(ABC):
         """Devuelve los k fragmentos mas similares, ordenados de mayor a menor puntuacion."""
 
     @abstractmethod
-    def total_indexado(self) -> int:
-        ...
+    def total_indexado(self) -> int: ...
 
     @abstractmethod
     def es_lema(self, termino: str) -> bool:

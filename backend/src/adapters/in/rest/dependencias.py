@@ -1,0 +1,49 @@
+"""Obtiene del contenedor el puerto de entrada que necesita cada controlador.
+
+El contenedor se cuelga de `app.state` al arrancar (infrastructure/main.py); aqui solo se
+lee, de modo que los controladores no importan la infraestructura.
+"""
+
+from fastapi import HTTPException, Request
+
+from application.ports import (
+    ConsultarCorpusPort,
+    ConsultarHistorialPort,
+    GestionarFuentesPort,
+    IngestarDocumentoPort,
+    ReindexarCorpusPort,
+)
+
+
+def _contenedor(request: Request):
+    return request.app.state.contenedor
+
+
+def consultar_corpus(request: Request) -> ConsultarCorpusPort:
+    return _contenedor(request).consultar_corpus
+
+
+def ingestar_documento(request: Request) -> IngestarDocumentoPort:
+    return _contenedor(request).ingestar_documento
+
+
+def reindexar_corpus(request: Request) -> ReindexarCorpusPort:
+    return _contenedor(request).reindexar_corpus
+
+
+def consultar_historial(request: Request) -> ConsultarHistorialPort:
+    puerto = _contenedor(request).consultar_historial
+    if puerto is None:
+        raise HTTPException(503, "El historial requiere la base de datos y no esta conectada")
+    return puerto
+
+
+def gestionar_fuentes(request: Request) -> GestionarFuentesPort:
+    puerto = _contenedor(request).gestionar_fuentes
+    if puerto is None:
+        raise HTTPException(503, "La gestion de fuentes requiere la base de datos")
+    return puerto
+
+
+def estado_sistema(request: Request) -> dict:
+    return _contenedor(request).estado()

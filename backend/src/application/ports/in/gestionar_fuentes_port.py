@@ -3,12 +3,11 @@ from abc import ABC, abstractmethod
 from domain.entities.fuente import Fuente
 
 
-class RepositorioFuentesPort(ABC):
-    """Persistencia de la gobernanza documental (RNF-11). Es el puerto que el adaptador de
-    PostgreSQL implementa en escritorio y que en el incremento movil implementaria SQLite."""
+class GestionarFuentesPort(ABC):
+    """Puerto de entrada de HU-01: procedencia y licenciamiento de cada documento."""
 
     @abstractmethod
-    def crear(self, fuente: Fuente) -> Fuente: ...
+    def registrar(self, fuente: Fuente) -> Fuente: ...
 
     @abstractmethod
     def obtener(self, fuente_id: str) -> Fuente | None: ...

@@ -1,14 +1,19 @@
-from domain.services.depurador_consulta import DepuradorConsulta
-from domain.services.evaluador_confianza import EvaluadorConfianza
-from domain.entities.consulta import Consulta
-from domain.entities.fragmento import FragmentoRecuperado
-from domain.entities.respuesta import Respuesta
+import logging
+
+from application.ports import ConsultarCorpusPort
 from application.ports.out.detector_idioma_port import DetectorIdiomaPort
 from application.ports.out.generador_texto_port import GeneradorTextoPort
 from application.ports.out.indice_recuperacion_port import IndiceRecuperacionPort
 from application.ports.out.repositorio_consultas_port import RepositorioConsultasPort
 from application.ports.out.traductor_port import TraductorPort
+from domain.entities.consulta import Consulta
+from domain.entities.fragmento import FragmentoRecuperado
+from domain.entities.respuesta import Respuesta
+from domain.services.depurador_consulta import DepuradorConsulta
+from domain.services.evaluador_confianza import EvaluadorConfianza
 from domain.value_objects.idioma import Idioma
+
+log = logging.getLogger("rag.caso_uso")
 
 MENSAJE_CON_PASAJES = {
     Idioma.ESPANOL: (
@@ -37,7 +42,7 @@ MENSAJE_IDIOMA = (
 )
 
 
-class ConsultarCorpusUseCase:
+class ConsultarCorpusUseCase(ConsultarCorpusPort):
     """HU-03 (consulta lexica), HU-06 (salvaguarda antialucinacion) y HU-07 (trazabilidad).
 
     El orden importa: la decision de abstenerse se toma ANTES de invocar al generador, de
@@ -67,8 +72,10 @@ class ConsultarCorpusUseCase:
     def ejecutar(self, texto_consulta: str) -> Respuesta:
         idioma = self._detector.detectar(texto_consulta)
         consulta = Consulta(texto=texto_consulta, idioma=idioma)
+        log.info("[CASO-USO] ConsultarCorpus: idioma=%s", idioma.value)
 
         if not idioma.soportado:
+            log.info("[GENERADOR] NO invocado (idioma no soportado)")
             return self._registrar(
                 consulta,
                 Respuesta(
@@ -104,6 +111,7 @@ class ConsultarCorpusUseCase:
                 candidatas = self._traductor.candidatas(termino, aproximar=True)
 
             consulta.variantes = candidatas
+            log.info("[TRADUCTOR] lecturas candidatas=%d", len(candidatas))
 
         recuperados, origen = self._recuperar_con_variantes(consulta)
         if recuperados and consulta.variantes:
@@ -114,7 +122,20 @@ class ConsultarCorpusUseCase:
             ganadora = origen.get(recuperados[0].id)
             if ganadora and ganadora != consulta.texto:
                 consulta.texto_traducido = ganadora
+        log.info(
+            "[INDICE] k=%d recuperados=%d sim_max=%.3f%s",
+            self._k,
+            len(recuperados),
+            max((r.puntuacion.valor for r in recuperados), default=0.0),
+            self._cita_mejor(recuperados),
+        )
         veredicto = self._evaluador.evaluar(recuperados)
+        log.info(
+            "[EVALUADOR] responder=%s via=%s tau=%.2f",
+            veredicto.responder,
+            "lema" if veredicto.por_lema else ("similitud" if veredicto.responder else "ninguna"),
+            veredicto.umbral,
+        )
 
         if not veredicto.responder:
             # Antes de abstenerse del todo se busca en la prosa, que se consulta aparte
@@ -128,6 +149,8 @@ class ConsultarCorpusUseCase:
                 # sacar el prologo del libro ante cualquier termino no cubierto.
                 consulta=self._depurador.depurar(consulta.texto_para_recuperar),
             )
+            log.info("[GENERADOR] NO invocado (sin respaldo)")
+            log.info("[CASO-USO] pasajes de prosa ofrecidos=%d (no es una respuesta)", len(pasajes))
             return self._registrar(
                 consulta,
                 Respuesta(
@@ -146,6 +169,7 @@ class ConsultarCorpusUseCase:
             for r in recuperados
             if r.coincidencia_lema or r.puntuacion.valor >= self._evaluador.umbral
         ]
+        log.info("[GENERADOR] invocado (%d fragmentos de respaldo)", len(respaldo))
         texto = self._generador.redactar(consulta.texto, respaldo, idioma)
 
         return self._registrar(
@@ -193,7 +217,21 @@ class ConsultarCorpusUseCase:
     def _orden(recuperado: FragmentoRecuperado) -> tuple[bool, float]:
         return (recuperado.coincidencia_lema, recuperado.puntuacion.valor)
 
+    @staticmethod
+    def _cita_mejor(recuperados: list[FragmentoRecuperado]) -> str:
+        if not recuperados:
+            return ""
+        mejor = recuperados[0]
+        return f" mejor={mejor.id} ({mejor.procedencia.documento}, p. {mejor.procedencia.pagina})"
+
     def _registrar(self, consulta: Consulta, respuesta: Respuesta) -> Respuesta:
         if self._repositorio is not None:
             self._repositorio.registrar(consulta, respuesta)
+            log.info(
+                "[REPOSITORIO] registrada consulta_id=%s abstenida=%s",
+                consulta.id,
+                respuesta.abstenida,
+            )
+        else:
+            log.info("[REPOSITORIO] omitido (sin base de datos)")
         return respuesta

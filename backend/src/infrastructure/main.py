@@ -1,7 +1,7 @@
 import logging
 import threading
-from importlib import import_module
 from contextlib import asynccontextmanager
+from importlib import import_module
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -12,9 +12,9 @@ from infrastructure.config import configuracion
 from infrastructure.contenedor import Contenedor
 
 # `in` es palabra reservada de Python: el paquete adapters/in solo se importa por cadena.
-router = import_module("adapters.in.rest.api").router
+routers = import_module("adapters.in.rest").routers
 
-logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%H:%M:%S")
 
 
 @asynccontextmanager
@@ -46,7 +46,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(router)
+for router in routers:
+    app.include_router(router)
 
 
 if configuracion.sirve_interfaz:

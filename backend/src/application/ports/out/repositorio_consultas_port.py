@@ -6,8 +6,7 @@ from domain.entities.respuesta import Respuesta
 
 class RepositorioConsultasPort(ABC):
     @abstractmethod
-    def registrar(self, consulta: Consulta, respuesta: Respuesta) -> None:
-        ...
+    def registrar(self, consulta: Consulta, respuesta: Respuesta) -> None: ...
 
     @abstractmethod
     def historial(self, limite: int = 50) -> list[tuple[Consulta, Respuesta]]:
@@ -19,5 +18,4 @@ class RepositorioConsultasPort(ABC):
         entrenara los modelos de prediccion de cobertura y de demanda lexica."""
 
     @abstractmethod
-    def total_registradas(self) -> int:
-        ...
+    def total_registradas(self) -> int: ...

@@ -19,5 +19,4 @@ class GeneradorTextoPort(ABC):
         invocarse sin fragmentos."""
 
     @abstractmethod
-    def disponible(self) -> bool:
-        ...
+    def disponible(self) -> bool: ...

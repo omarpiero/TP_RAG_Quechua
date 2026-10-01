@@ -6,8 +6,7 @@ class TraductorPort(ABC):
     prueba de concepto): la forma quechua sale siempre literal del fragmento recuperado."""
 
     @abstractmethod
-    def traducir_al_espanol(self, texto: str) -> str:
-        ...
+    def traducir_al_espanol(self, texto: str) -> str: ...
 
     def candidatas(self, texto: str, aproximar: bool = False) -> list[str]:
         """Todas las lecturas espanolas plausibles del termino, no solo la mejor.

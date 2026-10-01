@@ -1,8 +1,9 @@
-from domain.entities.fuente import Fuente
+from application.ports import GestionarFuentesPort
 from application.ports.out.repositorio_fuentes_port import RepositorioFuentesPort
+from domain.entities.fuente import Fuente
 
 
-class GestionarFuentesUseCase:
+class GestionarFuentesUseCase(GestionarFuentesPort):
     """HU-01: registro de la procedencia y el licenciamiento de cada documento del corpus.
 
     La entidad no admite una fuente sin licenciamiento declarado, de modo que la obligacion

@@ -11,8 +11,7 @@ class RepositorioCorpusPort(ABC):
     momento (RF-13)."""
 
     @abstractmethod
-    def cargar(self) -> list[Fragmento]:
-        ...
+    def cargar(self) -> list[Fragmento]: ...
 
     @abstractmethod
     def agregar(self, fragmentos: list[Fragmento]) -> int:
@@ -20,5 +19,4 @@ class RepositorioCorpusPort(ABC):
         se anadieron efectivamente."""
 
     @abstractmethod
-    def documentos(self) -> list[str]:
-        ...
+    def documentos(self) -> list[str]: ...
