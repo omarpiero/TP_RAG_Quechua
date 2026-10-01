@@ -1,0 +1,41 @@
+@startuml
+skinparam dpi 170
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam ArrowColor #333333
+skinparam node {
+  BorderColor #444444
+}
+left to right direction
+node "PC local · Windows · x86-64 · 32 GB RAM" as PC #F7F7F7 {
+  node "Navegador web" as NAV #FFF6E5 {
+    artifact "interfaz\n(localhost:8501)" as FE
+  }
+  node "Proceso Python · Streamlit\nui/app.py · sin telemetría" as ST #FFF6E5 {
+    component "cliente HTTP\nde la API" as CL
+  }
+  node "Proceso Python 3.12 · Uvicorn\n127.0.0.1:8000" as PY #EAF3FB {
+    component "adapters/in/rest\n(FastAPI)" as REST
+    component "application + domain\nτ = 0,41" as CORE
+    component "IndiceHibridoLexico\n(scikit-learn, en memoria)" as IDX
+    component "Historial de sesión\n(en memoria, RF-11)" as SES
+    artifact "fragmentos.jsonl\nMANIFIESTO.yaml" as DATA
+  }
+  node "Servicio Ollama\n127.0.0.1:11434" as OLL #E8F5E9 {
+    artifact "Qwen3.5-4B\n(generación y traducción\nde la consulta)" as QW
+  }
+  node "GPU RTX 4060 8 GB (PC del proyecto)\no CPU (verificado: 100% CPU)" as GPU #E8F5E9
+}
+cloud "GitHub\n(repositorio privado · Actions · Projects)" as GH #FFFFFF
+cloud "SonarQube Cloud" as SQ #FFFFFF
+FE --> CL : HTTP
+CL --> REST : HTTP/JSON
+REST --> CORE
+CORE --> IDX
+CORE --> SES
+IDX ..> DATA : carga al iniciar
+CORE --> QW : HTTP /api/generate
+QW ..> GPU : inferencia
+GH ..> SQ : análisis en CI\n(solo código, sin corpus)
+@enduml

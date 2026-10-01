@@ -1,0 +1,53 @@
+@startuml
+skinparam dpi 200
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam sequence {
+  ParticipantBorderColor #2E5496
+  ParticipantBackgroundColor #EAF3FB
+  LifeLineBorderColor #999999
+  ArrowColor #333333
+  GroupBorderColor #8B2E2E
+  GroupBackgroundColor #FDECEA
+}
+skinparam noteBackgroundColor #FFF6E5
+skinparam noteBorderColor #B7882F
+title Flujo de extremo a extremo del PMV1 (lo que muestra el video)
+actor "Usuario\n(Streamlit)" as U
+participant "ConsultasController\n«adapter in · REST»" as C
+participant "ConsultarCorpusPort\n«input port»" as IP
+participant "ConsultarCorpusUseCase\n«use case»" as UC
+participant "DetectorIdiomaPort /\nTraductorPort → TraductorSLM" as TR
+participant "IndiceRecuperacionPort\n→ IndiceHibridoLexico\n«módulo IA: recuperación»" as IX
+participant "EvaluadorConfianza\n«domain service»" as EV
+participant "GeneradorTextoPort\n→ OllamaGenerador\n«módulo IA: Qwen3.5-4B»" as GEN
+participant "VerificadorFormaLiteral\n«domain service»" as VF
+participant "RespuestaFactory" as F
+participant "RepositorioConsultasPort\n→ sesión en memoria" as DB
+
+U -> C : POST /api/consultas\n{"texto": "¿cómo se dice zorro…?"}
+C -> C : validar DTO (vacía, > 300 car.)
+C -> IP : consultar(ConsultaDTO)
+IP -> UC : (implementación)
+UC -> TR : detectar idioma · traducir solo la consulta si EN
+TR --> UC : consulta en español
+UC -> IX : buscar(consulta depurada, k=5)
+IX --> UC : fragmentos + similitud
+UC -> EV : evaluar(similitud máx., τ = 0,41)
+alt similitud ≥ τ (hay respaldo)
+  UC -> GEN : redactar(fragmento recuperado)
+  GEN --> UC : redacción
+  UC -> VF : ¿toda forma quechua está en el fragmento?
+  VF --> UC : sí → se emite · no → se muestra el fragmento literal
+  UC -> F : crear_respuesta(forma, fragmento, documento, página)
+else similitud < τ (sin respaldo)
+  UC -> F : crear_abstencion()
+  note right of GEN : el generador\nNO se invoca
+end
+F --> UC : Respuesta
+UC -> DB : guardar(consulta, respuesta, fuente)
+UC --> IP : Respuesta
+IP --> C : Respuesta
+C --> U : 200 · RespuestaDTO\nforma «Atuq» · fragmento · documento · pág. 37
+@enduml

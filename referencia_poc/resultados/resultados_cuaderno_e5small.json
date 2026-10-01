@@ -1,0 +1,291 @@
+{
+ "corpus": {
+  "documentos": 8,
+  "fragmentos": 3605,
+  "caracteres": 683968,
+  "por_tipo": {
+   "caracteres": {
+    "lexicografico": 96341,
+    "prosa": 587627
+   },
+   "fragmentos": {
+    "lexicografico": 2470,
+    "prosa": 1135
+   }
+  }
+ },
+ "evaluacion": {
+  "A_lexico_es": 120,
+  "B_independiente": 60,
+  "D_ingles": 40,
+  "C_fuera_de_cobertura": 28
+ },
+ "lexico": {
+  "bm25": {
+   "nombre": "E1 · BM25 léxico",
+   "metricas": {
+    "A_lexico_es": {
+     "recall@1": 0.992,
+     "recall@5": 1.0,
+     "MRR@10": 0.996
+    },
+    "B_independiente": {
+     "recall@1": 1.0,
+     "recall@5": 1.0,
+     "MRR@10": 1.0
+    },
+    "D_ingles": {
+     "recall@1": 0.025,
+     "recall@5": 0.025,
+     "MRR@10": 0.025
+    }
+   },
+   "latencia_ms": 1.82
+  },
+  "palabra": {
+   "nombre": "E2 · TF-IDF de palabras",
+   "metricas": {
+    "A_lexico_es": {
+     "recall@1": 0.983,
+     "recall@5": 1.0,
+     "MRR@10": 0.992
+    },
+    "B_independiente": {
+     "recall@1": 1.0,
+     "recall@5": 1.0,
+     "MRR@10": 1.0
+    },
+    "D_ingles": {
+     "recall@1": 0.025,
+     "recall@5": 0.025,
+     "MRR@10": 0.025
+    }
+   },
+   "latencia_ms": 2.93
+  },
+  "caracter": {
+   "nombre": "E3 · TF-IDF de caracteres",
+   "metricas": {
+    "A_lexico_es": {
+     "recall@1": 0.942,
+     "recall@5": 0.992,
+     "MRR@10": 0.968
+    },
+    "B_independiente": {
+     "recall@1": 0.983,
+     "recall@5": 1.0,
+     "MRR@10": 0.992
+    },
+    "D_ingles": {
+     "recall@1": 0.175,
+     "recall@5": 0.2,
+     "MRR@10": 0.19
+    }
+   },
+   "latencia_ms": 7.75
+  },
+  "hibrido": {
+   "nombre": "E4 · híbrido léxico",
+   "metricas": {
+    "A_lexico_es": {
+     "recall@1": 0.983,
+     "recall@5": 1.0,
+     "MRR@10": 0.992
+    },
+    "B_independiente": {
+     "recall@1": 1.0,
+     "recall@5": 1.0,
+     "MRR@10": 1.0
+    },
+    "D_ingles": {
+     "recall@1": 0.175,
+     "recall@5": 0.175,
+     "MRR@10": 0.181
+    }
+   },
+   "latencia_ms": 21.23
+  }
+ },
+ "denso": {
+  "modelo": "intfloat/multilingual-e5-small",
+  "metricas": {
+   "A_lexico_es": {
+    "recall@1": 0.442,
+    "recall@5": 0.65,
+    "MRR@10": 0.541
+   },
+   "B_independiente": {
+    "recall@1": 0.417,
+    "recall@5": 0.65,
+    "MRR@10": 0.518
+   },
+   "D_ingles": {
+    "recall@1": 0.075,
+    "recall@5": 0.275,
+    "MRR@10": 0.178
+   }
+  },
+  "minutos_codificacion_corpus": 0.11
+ },
+ "separacion": {
+  "E4 · híbrido léxico": {
+   "similitud media con respaldo": 0.517,
+   "similitud media sin respaldo": 0.114,
+   "separación de medias": 0.403,
+   "máximo sin respaldo (el falso positivo más peligroso)": 0.401,
+   "mínimo con respaldo": 0.209
+  },
+  "E5 · multilingual-e5-small": {
+   "similitud media con respaldo": 0.86,
+   "similitud media sin respaldo": 0.836,
+   "separación de medias": 0.024,
+   "máximo sin respaldo (el falso positivo más peligroso)": 0.863,
+   "mínimo con respaldo": 0.795
+  }
+ },
+ "umbral": [
+  {
+   "Estrategia": "E2 · TF-IDF de palabras",
+   "Umbral sin FP": 0.53,
+   "VP": 101,
+   "FP": 0,
+   "VN": 28,
+   "FN": 79,
+   "Recall": 0.5611,
+   "F1": 0.7189,
+   "Cumple ≥ 0,70": "no"
+  },
+  {
+   "Estrategia": "E3 · TF-IDF de caracteres",
+   "Umbral sin FP": 0.49,
+   "VP": 124,
+   "FP": 0,
+   "VN": 28,
+   "FN": 56,
+   "Recall": 0.6889,
+   "F1": 0.8158,
+   "Cumple ≥ 0,70": "no"
+  },
+  {
+   "Estrategia": "E4 · híbrido léxico",
+   "Umbral sin FP": 0.41,
+   "VP": 154,
+   "FP": 0,
+   "VN": 28,
+   "FN": 26,
+   "Recall": 0.8556,
+   "F1": 0.9222,
+   "Cumple ≥ 0,70": "sí"
+  },
+  {
+   "Estrategia": "E5 · multilingual-e5-small",
+   "Umbral sin FP": 0.87,
+   "VP": 54,
+   "FP": 0,
+   "VN": 28,
+   "FN": 126,
+   "Recall": 0.3,
+   "F1": 0.4615,
+   "Cumple ≥ 0,70": "no"
+  },
+  {
+   "Estrategia": "E4 · punto de mayor F1 (descartado)",
+   "Umbral sin FP": 0.25,
+   "VP": 179,
+   "FP": 1,
+   "VN": 27,
+   "FN": 1,
+   "Recall": 0.9944,
+   "F1": 0.9944,
+   "Cumple ≥ 0,70": "descartado: 1 FP"
+  }
+ ],
+ "ablacion": [
+  {
+   "Configuración": "Uniforme de 650 caracteres · consulta depurada",
+   "A · r@5": 0.958,
+   "Umbral sin FP": 0.13,
+   "Recall en ese umbral": 0.3444,
+   "F1": 0.5124
+  },
+  {
+   "Configuración": "Por entrada · consulta SIN depurar",
+   "A · r@5": 0.992,
+   "Umbral sin FP": 0.23,
+   "Recall en ese umbral": 0.7667,
+   "F1": 0.8679
+  },
+  {
+   "Configuración": "Por entrada · consulta depurada (adoptada)",
+   "A · r@5": 1.0,
+   "Umbral sin FP": 0.41,
+   "Recall en ese umbral": 0.8556,
+   "F1": 0.9222
+  }
+ ],
+ "traduccion": {
+  "modelo": "Helsinki-NLP/opus-mt-en-es",
+  "ms_por_consulta": 71.6,
+  "tabla": [
+   {
+    "index": "Sin traducción (consulta en inglés)",
+    "recall@1": 0.175,
+    "recall@5": 0.175,
+    "MRR@10": 0.181,
+    "similitud media": 0.115,
+    "atendidas con τ=0.41": 1.0,
+    "atendidas y correctas": 1.0,
+    "¿alcanza el criterio 0,80?": "no"
+   },
+   {
+    "index": "Con traducción EN→ES previa",
+    "recall@1": 0.825,
+    "recall@5": 0.875,
+    "MRR@10": 0.85,
+    "similitud media": 0.383,
+    "atendidas con τ=0.41": 20.0,
+    "atendidas y correctas": 20.0,
+    "¿alcanza el criterio 0,80?": "sí"
+   }
+  ]
+ },
+ "validacion": [
+  {
+   "Hipótesis": "H1 · recuperación",
+   "Criterio": "recall@5 ≥ 0,80 en A y B",
+   "Resultado": "A = 1.000 · B = 1.000",
+   "Cumple": "sí"
+  },
+  {
+   "Hipótesis": "H2 · abstención",
+   "Criterio": "cero falsos positivos con recall ≥ 0,70",
+   "Resultado": "τ = 0.41 · FP = 0 · recall = 0.856 · F1 = 0.922",
+   "Cumple": "sí"
+  },
+  {
+   "Hipótesis": "H3 · consulta en inglés",
+   "Criterio": "recall@5 ≥ 0,80 en D",
+   "Resultado": "sin traducción = 0.175 · con traducción = 0.875",
+   "Cumple": "no sin traducción; sí con traducción previa"
+  },
+  {
+   "Hipótesis": "RNF-02 · latencia",
+   "Criterio": "≤ 100 ms por consulta",
+   "Resultado": "21.23 ms con la estrategia híbrida",
+   "Cumple": "sí"
+  },
+  {
+   "Hipótesis": "RF-07 · trazabilidad",
+   "Criterio": "toda respuesta con documento y página",
+   "Resultado": "3605 de 3605 fragmentos con procedencia completa",
+   "Cumple": "sí"
+  }
+ ],
+ "ejecucion": {
+  "fecha": "2026-09-10T22:58:43",
+  "modelo_denso": "intfloat/multilingual-e5-small",
+  "modelo_traduccion": "Helsinki-NLP/opus-mt-en-es",
+  "umbral_adoptado": 0.41,
+  "dispositivo": "cuda"
+ }
+}

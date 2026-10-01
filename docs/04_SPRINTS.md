@@ -1,0 +1,225 @@
+# 04 · Plan de sprints por PMV
+
+> Calendario, objetivos, compromiso y resultados de cada sprint. Las historias **entran** al tablero
+> (`05_KANBAN.md`) desde aquí en el Sprint Planning y **salen** en la Sprint Review; cada movimiento se
+> anota con fecha en ambos archivos.
+>
+> Mantenido por: **archivista** · Las fechas y los resultados solo se modifican con evidencia · Última
+> revisión: 2026-09-24 · Versión 1.0
+
+---
+
+## 1. Marco (Documento 4)
+
+- **Scrum** con cuatro sprints de **tres semanas**, cerrando en frontera de PMV, y **límite de trabajo en
+  curso** tomado de Kanban.
+- **Punto de control** a mitad de cada sprint.
+- **Alcance:** el plazo es inamovible; si hace falta, se posponen o reducen historias de prioridad media
+  (HU-04, HU-05, HU-09, HU-11), nunca las de prioridad alta.
+- **DoD-4** (salvaguarda) se verifica en todos los incrementos.
+- **Resultados:** se registran «por registrar» hasta que exista una medición.
+
+### 1.1 Calendario — confirmado el 2026-09-24
+
+El usuario confirmó que **la semana del 2026-09-21 es la semana 1 del desarrollo del PMV1**. La
+preparación del entorno (HT-00) no es una iteración aparte: se ejecuta **dentro del sprint 1** y consume
+parte de su capacidad, lo que se tiene en cuenta en el compromiso del §3.
+
+| Semana | Del | Al | Sprint |
+|---|---|---|---|
+| 1 | 2026-09-21 | 2026-09-27 | Sprint 1 · arranque y HT-00 |
+| 2 | 2026-09-28 | 2026-10-04 | Sprint 1 |
+| 3 | 2026-10-05 | 2026-10-11 | Sprint 1 |
+| 4 | 2026-10-12 | 2026-10-18 | Sprint 2 |
+| 5 | 2026-10-19 | 2026-10-25 | Sprint 2 |
+| 6 | 2026-10-26 | 2026-11-01 | Sprint 2 · **Hito 1** |
+| 7 | 2026-11-02 | 2026-11-08 | Sprint 3 |
+| 8 | 2026-11-09 | 2026-11-15 | Sprint 3 |
+| 9 | 2026-11-16 | 2026-11-22 | Sprint 3 · **Hito 2** |
+| 10 | 2026-11-23 | 2026-11-29 | Sprint 4 |
+| 11 | 2026-11-30 | 2026-12-06 | Sprint 4 |
+| 12 | 2026-12-07 | 2026-12-13 | Sprint 4 · **Hito 3** |
+
+### 1.2 Resumen
+
+| Sprint | Fechas | PMV | Objetivo | Estado |
+|---|---|---|---|---|
+| Sprint 1 | 2026-09-21 → 2026-10-11 | PMV1 | Entorno operativo; corpus indexado y consultable, con procedencia y arnés de evaluación | **En curso** |
+| Sprint 2 | 2026-10-12 → 2026-11-01 | PMV1 | Flujo de consulta completo con traducción, trazabilidad y abstención · Hito 1 | Planificado |
+| Sprint 3 | 2026-11-02 → 2026-11-22 | PMV2 | Analítica predictiva y artefactos móviles equivalentes · Hito 2 | Planificado |
+| Sprint 4 | 2026-11-23 → 2026-12-13 | PMV3 | Aplicación móvil sin conexión validada en dispositivo · Hito 3 | Planificado |
+
+### 1.3 Ceremonias adaptadas al trabajo con agentes
+
+| Ceremonia | Cuándo | Quién | Salida |
+|---|---|---|---|
+| Sprint Planning | Lunes de la semana 1 del sprint | Usuario + orquestador | Compromiso del sprint; specs a redactar; el archivista mueve tarjetas a «Listo» |
+| Sesión de trabajo | Cada sesión de Claude Code | Orquestador + subagentes | Tarjetas movidas; entrada en el registro de §7 |
+| Punto de control | Jueves de la semana 2 | Usuario + orquestador | Riesgo del compromiso; repriorización si hace falta |
+| Sprint Review | Domingo de la semana 3 | Usuario + orquestador | Demostración, DoD verificada, resultados medidos |
+| Retrospectiva | Tras la revisión | Usuario + orquestador | ≥ 1 acción de mejora para el sprint siguiente (también sobre las instrucciones de los agentes) |
+
+---
+
+## 2. Arranque del sprint 1 (semana 1) · HT-00
+
+**Objetivo.** Que un PR de prueba recorra el circuito completo: especificación → rama → pruebas →
+auditoría → revisión humana → fusión → actualización del tablero.
+
+| Tarea | Responsable | Estado |
+|---|---|---|
+| Crear `SDD_RAG_Quechua/docs` con la documentación base | Orquestador | Hecho (2026-09-24) |
+| Decidir calendario, SonarQube, repositorio y servidor MCP | Usuario | Hecho (2026-09-24) |
+| `CLAUDE.md`, `.claude/agents/*`, `.claude/settings.json`, `.mcp.json`, `.gitignore`, `sonar-project.properties` | Orquestador | Hecho (2026-09-24) |
+| Copia del corpus en `corpus/pdf/` con `MANIFIESTO.yaml` y del material de la PoC en `referencia_poc/` | Orquestador | Hecho (2026-09-24) |
+| Revisar y aprobar la documentación y la configuración | **Usuario** | Pendiente |
+| Completar en el manifiesto las licencias y fuentes «por registrar» | **Usuario** | Pendiente |
+| Crear el repositorio privado en GitHub y hacer el primer commit de esta carpeta | **Usuario** (o programador con `gh`) | Pendiente |
+| Crear tokens de SonarQube Cloud y local; definir las variables de entorno | **Usuario** | Pendiente |
+| Esqueleto hexagonal con `uv`, prueba de arquitectura y comandos del `CLAUDE.md` §9 | Programador | Pendiente |
+| Integración continua: `ruff`, `mypy`, `pytest --cov`, `pip-audit`, análisis de SonarQube Cloud | Programador + auditor | Pendiente |
+| PR de prueba de extremo a extremo | Todos | Pendiente |
+| Solicitar consultas a docentes de EIB (HT-02) | **Usuario** | Pendiente |
+
+**Criterio de salida.** HT-00 terminada, a más tardar el domingo 2026-09-27; si se extiende, reduce el
+margen del sprint 1 y se registra en §8.
+
+---
+
+## 3. Sprint 1 · PMV1 — 2026-09-21 → 2026-10-11
+
+**Objetivo (Documento 4).** Disponer de un corpus indexado y consultable por similitud, con la
+procedencia de cada fuente registrada.
+
+| Compromiso | Prior. | Épica | Criterio de cierre |
+|---|---|---|---|
+| HT-00 Repositorio, CI y entorno de agentes | Alta | — | Un PR de prueba recorre todo el circuito |
+| HU-01 Ingesta con procedencia | Alta | E-01 | Todo documento con manifiesto; OCR marcado; capas rotas recompuestas |
+| HU-02 Segmentación e indexación | Alta | E-02 | Índice reconstruible con un comando; segmentación por tipo; sin duplicados |
+| HT-01 Arnés de evaluación | Alta | — | Reproduce la línea base: recall@5 1,000 en A y B; 0 FP en C con el τ vigente (ADR-020) |
+| HT-02 Conjunto externo (inicio) | Alta | — | Procedimiento y formato listos; consultas recibidas o solicitud cursada |
+| Núcleo: normalización y depuración de la consulta | Alta | — | Prueba de arquitectura: el núcleo no importa bibliotecas de terceros |
+
+**Punto de control:** jueves 2026-10-01. **Revisión:** domingo 2026-10-11.
+
+**Hallazgo previsible (Documento 4, Tabla 18):** cobertura temática desigual → acotar el alcance temático
+y declararlo.
+
+| Resultado | Valor medido | Medio de verificación |
+|---|---|---|
+| Fragmentos indexados | por registrar | salida del comando de indexación |
+| recall@5 A / B / D (línea base) | por registrar | informe del arnés |
+| Falsos positivos en C con τ vigente | por registrar | informe del arnés |
+| Documentos con manifiesto completo | por registrar | validación de la ingesta |
+
+---
+
+## 4. Sprint 2 · PMV1 — 2026-10-12 → 2026-11-01 · **Hito 1**
+
+**Objetivo.** Completar el flujo de consulta con generación contextualizada, traducción de la consulta,
+trazabilidad de la fuente y umbral de abstención; aplicación de escritorio y web operativa.
+
+| Compromiso | Prior. | Épica | Criterio de cierre |
+|---|---|---|---|
+| HU-06 Salvaguarda de abstención | Alta | E-06 | 0 FP en C; generador no invocado si S < τ; τ en configuración |
+| HU-07 Trazabilidad | Alta | E-07 | 100 % de respuestas con documento y página; advertencia OCR |
+| HU-03 Consulta léxica | Alta | E-03 | Escenarios Gherkin en verde; forma quechua literal |
+| HT-04 Servicio local e interfaz | Alta | — | FastAPI en `127.0.0.1`; interfaz React endurecida (ADR-025) |
+| HT-03 Traducción y recalibración de τ | Alta | — | τ recalibrado con A, B, C, D (y E si existe) |
+| HU-05 Respuesta en el idioma de la consulta | Media | E-05 | recall@5 ≥ 0,80 en D con 0 FP en C |
+| HU-04 Contenido cultural | Media | E-04 | Funcional; evaluada solo si existe RD-05 |
+| HT-06 Medición escritorio | Alta | — | P95 ≤ 8 s; VRAM ≤ 8 GB |
+| HT-07 Espiga bge-m3 | Baja | — | Informe comparativo en el arnés |
+
+**Orden interno obligatorio:** HU-06 y HU-07 antes que HU-03; HT-03 antes que HU-05. Si el sprint se
+estrecha, se reduce HU-04 y después HU-05 (prioridad media), nunca HU-06 ni HU-07.
+
+**Criterios del Hito 1 (go/no-go hacia el PMV2):**
+
+| Criterio | Meta | Resultado |
+|---|---|---|
+| recall@5 en A y B | ≥ 0,80 | por registrar |
+| recall@5 en D (con traducción) | ≥ 0,80 | por registrar |
+| recall en la partición externa E | se reporta por separado | por registrar |
+| Falsos positivos en C | **0** | por registrar |
+| Respuestas con documento y página | 100 % | por registrar |
+| Tiempo de respuesta P95 en escritorio | ≤ 8 s | por registrar |
+| Pico de VRAM | ≤ 8 GB | por registrar |
+
+**Hallazgo previsible:** volumen documental distinto del previsto → activar la respuesta a R-01 antes de
+iniciar el sprint 3.
+
+---
+
+## 5. Sprint 3 · PMV2 — 2026-11-02 → 2026-11-22 · **Hito 2**
+
+**Objetivo.** Incorporar la analítica predictiva y generar los artefactos ejecutables en dispositivo,
+con equivalencia comprobada.
+
+**Decisiones previas obligatorias:** ADR-012 (estrategia de recuperación en el móvil) y ADR-013 (registro
+de consultas frente a RNF-06) deben estar **aceptadas** en el Sprint Planning.
+
+| Compromiso | Prior. | Épica | Criterio de cierre |
+|---|---|---|---|
+| HT-05 Artefactos móviles y equivalencia | Alta | — | Índice exportado + paridad (hechos en la revisión 2; verificar en M13) |
+| HU-08.1 Predicción de cobertura | Alta | E-08 | No más FP que τ solo en validación cruzada |
+| HU-08.2 Umbral adaptativo | Alta | E-08 | Nunca por debajo del τ sin FP; resultado negativo reportable |
+| HU-09 Priorización del corpus | Media | E-09 | Informe con ≥ 100 consultas o declaración de insuficiencia |
+
+**Criterio de paso del Hito 2 (Documento 4):** no es que los modelos predictivos rindan mucho, sino que
+la **equivalencia entre plataformas** quede comprobada. Si no se sostiene, el sprint 4 se reorienta a
+resolverla antes de construir la interfaz.
+
+| Resultado | Valor medido | Medio de verificación |
+|---|---|---|
+| Error de las tres predicciones | por registrar | validación cruzada |
+| Umbral fijo frente a adaptativo | por registrar | arnés |
+| Fidelidad de lectura de modelos candidatos | 4B 5/5; 2B 3/5; 0,8B fallos graves (5 casos) | anexo Doc. 5, tabla B |
+| Paridad escritorio ↔ móvil | 2,5 × 10⁻⁸ máx.; top-5 idéntico (declarado) | validador de paridad |
+| Tamaño del paquete | 21,5 MB (declarado) | artefacto ARM64 |
+
+---
+
+## 6. Sprint 4 · PMV3 — 2026-11-23 → 2026-12-13 · **Hito 3**
+
+**Objetivo.** Integrar los artefactos en la aplicación móvil y validarla en un dispositivo de gama media.
+
+| Compromiso | Prior. | Épica | Criterio de cierre |
+|---|---|---|---|
+| HU-10.1 Consulta sin conexión | Alta | E-10 | Modo avión; ≤ 15 s; recuperación ≤ 100 ms |
+| HU-10.2 Salvaguarda en el teléfono | Alta | E-10 | 0 FP en C ejecutado en el dispositivo |
+| HU-10.3 Instalación | Alta | E-10 | Paquete ≤ 1,2 GB o sustitución activada |
+| HU-11 Interfaz accesible | Media | E-11 | ≤ 3 interacciones; tipografía ampliable |
+| HT-06 Medición en dispositivo | Alta | — | Mínimos **verificados** declarados |
+
+**Hito 3:** no decide si se continúa, sino qué se declara alcanzado y qué queda como trabajo futuro.
+
+| Resultado | Valor medido | Medio de verificación |
+|---|---|---|
+| Latencia de respuesta en dispositivo | por registrar | instrumentación |
+| Latencia de recuperación en dispositivo | por registrar | instrumentación |
+| Tamaño del paquete | por registrar | artefacto |
+| Requisitos mínimos verificados | por registrar | dispositivo de prueba |
+| Prueba de usabilidad | por registrar | sesión con usuarios |
+
+---
+
+## 7. Registro de entradas y salidas del tablero
+
+El archivista añade una fila cada vez que una tarjeta cambia de columna. Formato: fecha ISO, tarjeta,
+origen → destino, agente, evidencia (PR, informe, commit).
+
+| Fecha | Tarjeta | Movimiento | Agente | Evidencia |
+|---|---|---|---|---|
+| 2026-09-24 | DOC-00 Documentación SDD base | En curso → En revisión humana | Orquestador | `docs/` creado |
+| 2026-09-24 | DOC-01 CLAUDE.md, subagentes y configuración | En curso → En revisión humana | Orquestador | `CLAUDE.md`, `.claude/`, `.mcp.json` |
+| 2026-09-24 | ADR-009/010/011/015 | Listo → Hecho | Usuario | Respuestas del usuario del 2026-09-24 |
+
+---
+
+## 8. Registro de cambios del plan
+
+| Fecha | Cambio | Motivo | Decisión |
+|---|---|---|---|
+| 2026-09-24 | Creación con fecha ancla supuesta 2026-09-28 | Calendario académico no confirmado | — |
+| 2026-09-24 | Fecha ancla corregida a 2026-09-21; la Iteración 0 se integra en la semana 1 del sprint 1 | El usuario confirmó que esta es la primera semana del PMV1 | Usuario |

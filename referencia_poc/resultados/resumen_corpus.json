@@ -1,0 +1,66 @@
+[
+  {
+    "documento": "293274822-diccionario-quechua-Wanka-docx.pdf",
+    "paginas": 37,
+    "paginas_con_texto": 37,
+    "caracteres": 78382,
+    "fragmentos": 2351,
+    "tipo": "lexicografico"
+  },
+  {
+    "documento": "Diccionario_Huanca_Quechua_Castellano_Ca.pdf",
+    "paginas": 6,
+    "paginas_con_texto": 6,
+    "caracteres": 13330,
+    "fragmentos": 24,
+    "tipo": "prosa"
+  },
+  {
+    "documento": "Lamina de alfabeto - quechua wanka.pdf",
+    "paginas": 1,
+    "paginas_con_texto": 1,
+    "caracteres": 1079,
+    "fragmentos": 2,
+    "tipo": "prosa"
+  },
+  {
+    "documento": "Saberes_y_Haceres_VII_1_Quechua_Wanka.pdf",
+    "paginas": 110,
+    "paginas_con_texto": 109,
+    "caracteres": 99329,
+    "fragmentos": 204,
+    "tipo": "prosa"
+  },
+  {
+    "documento": "Tarjetas con relatos - quechua wanka.pdf",
+    "paginas": 61,
+    "paginas_con_texto": 31,
+    "caracteres": 6367,
+    "fragmentos": 32,
+    "tipo": "prosa"
+  },
+  {
+    "documento": "cancionero-wanka_comprimido.pdf",
+    "paginas": 58,
+    "paginas_con_texto": 35,
+    "caracteres": 32775,
+    "fragmentos": 71,
+    "tipo": "prosa"
+  },
+  {
+    "documento": "diccionario-visual-quechua-wanka_comprimido.pdf",
+    "paginas": 120,
+    "paginas_con_texto": 104,
+    "caracteres": 20896,
+    "fragmentos": 119,
+    "tipo": "lexicografico"
+  },
+  {
+    "documento": "vbook.pub_cerron-palomino-rodolfo-gramatica-quechua-junin-huanca-1976-ocrpdf.pdf",
+    "paginas": 286,
+    "paginas_con_texto": 277,
+    "caracteres": 435464,
+    "fragmentos": 802,
+    "tipo": "prosa"
+  }
+]

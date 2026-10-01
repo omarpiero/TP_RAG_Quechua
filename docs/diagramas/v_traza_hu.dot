@@ -1,0 +1,39 @@
+digraph G {
+  rankdir=LR; dpi=220; nodesep=0.18; ranksep=0.55;
+  node [fontname="DejaVu Sans", fontsize=10, shape=box, style="rounded,filled", color="#555555", penwidth=1.2];
+  edge [color="#555555", arrowsize=0.7];
+  OG [label="Objetivo general\nAsistente de consulta documental\nque muestra la forma quechua\ncon su fuente y se abstiene\nsin respaldo", fillcolor="#1F3864", fontcolor="white", fontsize=10.5];
+  subgraph cluster_oe { label="Objetivos específicos"; fontname="DejaVu Sans"; fontsize=11; color="#AAAAAA"; style=dashed;
+    OE1 [label="OE1 · Constituir el corpus\ncon procedencia", fillcolor="#DCE6F1"];
+    OE2 [label="OE2 · Segmentar, indexar\ny recuperar", fillcolor="#DCE6F1"];
+    OE3 [label="OE3 · Trazabilidad de\ncada respuesta", fillcolor="#DCE6F1"];
+    OE4 [label="OE4 · Umbral de\nabstención", fillcolor="#DCE6F1"];
+  }
+  subgraph cluster_ep { label="Épicas (PMV1)"; fontname="DejaVu Sans"; fontsize=11; color="#AAAAAA"; style=dashed;
+    E1 [label="E-01 Ingesta y\ndocumentación de fuentes", fillcolor="#FFF6E5"];
+    E2 [label="E-02 Segmentación\ne indexación", fillcolor="#FFF6E5"];
+    E3 [label="E-03 Consulta léxica", fillcolor="#FFF6E5"];
+    E4 [label="E-04 Contenido cultural", fillcolor="#FFF6E5"];
+    E5 [label="E-05 Multilingüismo", fillcolor="#FFF6E5"];
+    E7 [label="E-07 Trazabilidad\ndocumental", fillcolor="#FFF6E5"];
+    E6 [label="E-06 Salvaguarda\nantialucinación", fillcolor="#FFF6E5"];
+  }
+  subgraph cluster_hu { label="Historias de usuario"; fontname="DejaVu Sans"; fontsize=11; color="#AAAAAA"; style=dashed;
+    H1 [label="HU-01 Cargar documentos\ncon procedencia", fillcolor="#EAF3FB"];
+    H2 [label="HU-02 Segmentar e\nindexar el corpus", fillcolor="#EAF3FB"];
+    H3 [label="HU-03 Consultar una\npalabra en quechua wanka", fillcolor="#EAF3FB"];
+    H4 [label="HU-04 Consultar\ncontenido cultural", fillcolor="#EAF3FB"];
+    H5 [label="HU-05 Recibir la respuesta\nen mi idioma", fillcolor="#EAF3FB"];
+    H7 [label="HU-07 Ver documento y\npágina de cada respuesta", fillcolor="#EAF3FB"];
+    H6 [label="HU-06 Saber cuándo no hay\ninformación documentada", fillcolor="#EAF3FB"];
+  }
+  G3 [label=<<B>Given</B> el índice del corpus y τ configurado<BR/><B>When</B> consulto «¿cómo se dice zorro…?»<BR/><B>Then</B> muestra «Atuq» literal del fragmento<BR/>«ZORRO: Atuq.» · diccionario · pág. 37>, shape=note, fillcolor="#F7F7F7", fontsize=9.5];
+  G6 [label=<<B>Given</B> similitud máxima menor que τ<BR/><B>When</B> el sistema procesa la consulta<BR/><B>Then</B> declara la ausencia de información<BR/><B>And</B> no invoca al modelo generador>, shape=note, fillcolor="#F7F7F7", fontsize=9.5];
+  P1 [label="PMV1\nRAG validado\nen escritorio", shape=box3d, fillcolor="#E8F5E9", fontsize=11];
+  OG -> {OE1 OE2 OE3 OE4};
+  OE1 -> E1; OE2 -> {E2 E3 E4 E5}; OE3 -> E7; OE4 -> E6;
+  E1 -> H1; E2 -> H2; E3 -> H3; E4 -> H4; E5 -> H5; E7 -> H7; E6 -> H6;
+  H3 -> G3; H6 -> G6;
+  {H1 H2 H4 H5 H7} -> P1 [style=dashed];
+  G3 -> P1; G6 -> P1;
+}

@@ -1,0 +1,54 @@
+@startuml
+skinparam dpi 220
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam packageStyle folder
+skinparam ArrowColor #333333
+skinparam ArrowThickness 1.3
+skinparam rectangle {
+  BorderColor #666666
+  BackgroundColor #FFFFFF
+  FontSize 11
+}
+skinparam package {
+  BorderColor #444444
+  FontSize 13
+}
+package "src/infrastructure" as INF #FDECEA {
+  rectangle "config.py — τ, rutas, BD, Ollama\ncontenedor.py — composition root (DI)\nmain.py — FastAPI, CORS, routers" as I1
+}
+package "src/adapters/in" as ADIN #FFF6E5 {
+  rectangle "rest/ — ConsultasController · HistorialController\nFuentesController · CorpusController + esquemas Pydantic" as R1
+  rectangle "cli/ — indexar · evaluar · consultar" as R2
+  rectangle "mcp/ — solo lectura (desarrollo)" as R3
+}
+package "src/adapters/out" as ADOUT #FFF6E5 {
+  rectangle "recuperacion/ IndiceHibridoLexico\ngeneracion/ OllamaGenerador\ntraduccion/ TraductorTabla · OllamaTraductor\nidioma/ DetectorIdiomaHeuristico\ndocumentos/ ExtractorPdf · CorpusJsonl\npersistencia/ Repositorios SQLAlchemy" as O1
+}
+package "src/application" as AP #EAF3FB {
+  package "ports/in" as PIN #F4F9FE {
+    rectangle "ConsultarCorpusPort · IngestarDocumentoPort\nGestionarFuentesPort · ConsultarHistorialPort\nReindexarCorpusPort" as P1
+  }
+  package "use_cases" as UC #F4F9FE {
+    rectangle "ConsultarCorpusUseCase\nIngestarDocumentoUseCase\nGestionarFuentesUseCase · …" as U1
+  }
+  package "factories" as FA #F4F9FE {
+    rectangle "RespuestaFactory" as F1
+  }
+  package "ports/out" as POUT #F4F9FE {
+    rectangle "IndiceRecuperacionPort · GeneradorTextoPort\nTraductorPort · DetectorIdiomaPort\nExtraccionDocumentalPort\nRepositorioCorpus/Fuentes/ConsultasPort" as Q1
+  }
+}
+package "src/domain  (solo biblioteca estándar)" as DO #E8F5E9 {
+  rectangle "entities/ Consulta · Fragmento · Fuente · FragmentoRecuperado · Respuesta\nvalue_objects/ Idioma · Procedencia · PuntuacionSimilitud · Umbral\nservices/ EvaluadorConfianza · DepuradorConsulta · Segmentador · VerificadorFormaLiteral" as D1
+}
+INF -down-> ADIN : «ensambla»
+INF -down-> ADOUT : «ensambla»
+ADIN -down-> PIN : «invoca»
+UC .up.|> PIN : «implementa»
+UC -right-> POUT : «usa»
+UC -down-> FA
+ADOUT .up.|> POUT : «implementa»
+AP -down-> DO : «usa»
+@enduml

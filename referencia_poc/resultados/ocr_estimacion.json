@@ -1,0 +1,20 @@
+{
+ "Tarjetas con relatos - quechua wanka.pdf": {
+  "paginas_sin_texto": 30,
+  "muestra": 6,
+  "car_ocr_muestra": 0,
+  "car_por_pagina": 0
+ },
+ "cancionero-wanka_comprimido.pdf": {
+  "paginas_sin_texto": 23,
+  "muestra": 6,
+  "car_ocr_muestra": 747,
+  "car_por_pagina": 124
+ },
+ "diccionario-visual-quechua-wanka_comprimido.pdf": {
+  "paginas_sin_texto": 16,
+  "muestra": 6,
+  "car_ocr_muestra": 86,
+  "car_por_pagina": 14
+ }
+}

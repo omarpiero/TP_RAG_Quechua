@@ -1,31 +1,60 @@
-# Entorno
+# --- Corpus y datos derivados (licencias heterogéneas: no se redistribuyen; ADR-015) ---
+corpus/pdf/
+referencia_poc/datos/fragmentos_v2.jsonl
+backend/data/fragmentos_*.jsonl
+backend/data/evaluacion_prosa.json
+backend/data/indices/
+backend/artefactos_movil/
+*.gguf
+*.onnx
+*.safetensors
+*.bin
+
+# --- Persistencia local (se crea al arrancar) ---
+*.db
+*.sqlite
+*.sqlite3
+
+# --- Secretos ---
 .env
+.env.*
+!.env.example
 backend/.env
 frontend/.env
+!backend/.env.example
+!frontend/.env.example
 
-# Python
+# --- Python ---
+.venv/
 backend/.venv/
 __pycache__/
 *.py[cod]
 .pytest_cache/
-
-# Node
-node_modules/
-frontend/dist/
-
-# Sistema
-Thumbs.db
-.DS_Store
-.vscode/
-.idea/
-
-# Artefactos generados para el movil (se reconstruyen con scripts/exportar_indice_movil.py)
-backend/artefactos_movil/
-
-# Distribucion como ejecutable: se reconstruye con PyInstaller a partir del .spec
+.ruff_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+htmlcov/
 backend/build/
 backend/dist/
-# Interfaz ya compilada que el servicio sirve; se genera con `npm run build`
 backend/interfaz/
-# Base de datos de SQLite que el ejecutable crea en su primer arranque
-backend/*.db
+
+# --- Node ---
+node_modules/
+frontend/dist/
+frontend/coverage/
+
+# --- SonarQube ---
+.scannerwork/
+.sonar/
+
+# --- Mediciones: los JSON/CSV y capturas de docs/evidencias SÍ se versionan; solo se excluyen temporales ---
+docs/evidencias/**/tmp/
+
+# --- Sistema y editores ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/*
+!.vscode/extensions.json

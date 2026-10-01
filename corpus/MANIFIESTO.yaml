@@ -1,0 +1,121 @@
+# Manifiesto del corpus — RNF-11 (gobernanza CARE) · DoD-7 · RD-02
+# Versionado en Git. Los PDF viven en corpus/pdf/ y NO se versionan.
+# Reglas:
+#  - La ingesta rechaza cualquier PDF sin entrada en este archivo.
+#  - "archivo" debe coincidir EXACTAMENTE con el nombre en corpus/pdf/: forma parte del identificador
+#    de fragmento md5("<archivo>|<página>|<índice>") que usa el conjunto de evaluación (ADR-018).
+#  - "por registrar" = dato pendiente que debe completar una persona. No bloquea la ingesta, pero sí el
+#    cierre del Hito 1 (DoD-7). Nunca se rellena con suposiciones.
+#  - Cifras de páginas, caracteres y fragmentos: medidas en la prueba de concepto (Documento 6, Tabla 5).
+
+version: 1
+actualizado: 2026-09-24
+documentos:
+
+  - archivo: "vbook.pub_cerron-palomino-rodolfo-gramatica-quechua-junin-huanca-1976-ocrpdf.pdf"
+    titulo: "Gramática quechua Junín-Huanca"
+    autoria: "Cerrón-Palomino, Rodolfo"
+    editorial: "Ministerio de Educación e Instituto de Estudios Peruanos, Lima, 1976"
+    fuente_obtencion: "por registrar"
+    fecha_incorporacion: "2026-09-08"
+    licencia: "por registrar"
+    tipo: prosa
+    procedencia_texto: "reconocimiento óptico (capa OCR con un componente por línea; se recompone)"
+    paginas: 286
+    paginas_con_texto: 277
+    fragmentos_poc: 802
+    sha256: "a6f99ef1d9db0b1b4c728e28b9182e3a045919f251374f5b8aae8abdb0dbd458"
+
+  - archivo: "Saberes_y_Haceres_VII_1_Quechua_Wanka.pdf"
+    nombre_original: "Yaćhaykuna, lulaykunapis 1 - Quechua Wanka. Saberes y Haceres VII 1 - Secundaria - Quechua Central (Variedad Wanka).pdf"
+    titulo: "Yaćhaykuna, lulaykunapis 1. Saberes y haceres VII-1, secundaria. Quechua central, variedad wanka"
+    autoria: "Ministerio de Educación del Perú"
+    fuente_obtencion: "MINEDU, Biblioteca Quechua Wanka: https://www.gob.pe/institucion/minedu/informes-publicaciones/4549026-biblioteca-quechua-wanka"
+    fecha_incorporacion: "2026-09-08"
+    licencia: "por registrar"
+    tipo: prosa
+    procedencia_texto: "capa de texto"
+    paginas: 110
+    paginas_con_texto: 109
+    fragmentos_poc: 204
+    sha256: "86d4bf17ef1f865e3de0623198f8d5f66e23c344993ac61afea469fdb3caacd7"
+
+  - archivo: "293274822-diccionario-quechua-Wanka-docx.pdf"
+    titulo: "Diccionario quechua wanka (castellano – wanka)"
+    autoria: "por registrar"
+    fuente_obtencion: "por registrar"
+    fecha_incorporacion: "2026-09-08"
+    licencia: "por registrar"
+    tipo: lexicografico
+    procedencia_texto: "capa de texto"
+    paginas: 37
+    paginas_con_texto: 37
+    fragmentos_poc: 2351
+    nota: "Base del conjunto de evaluación (2 272 entradas). Entradas fusionadas conocidas: 'CASA: Wasi.CASADO: Walmiyuq.' (pág. 7)."
+    sha256: "951a4c421821635b1372707f11d28137bc2e3a1aa03bd96a82d6ff6725cbecf4"
+
+  - archivo: "cancionero-wanka_comprimido.pdf"
+    titulo: "Cancionero wanka"
+    autoria: "por registrar"
+    fuente_obtencion: "por registrar"
+    fecha_incorporacion: "2026-09-08"
+    licencia: "por registrar"
+    tipo: prosa
+    procedencia_texto: "capa de texto en el 60 % de las páginas; el resto son partituras e ilustraciones"
+    paginas: 58
+    paginas_con_texto: 35
+    fragmentos_poc: 71
+    sha256: "c136854928b9ecea7f9b6657546bd78a48132829be178b9cf20d9a762f3764f6"
+
+  - archivo: "diccionario-visual-quechua-wanka_comprimido.pdf"
+    titulo: "Diccionario visual quechua wanka"
+    autoria: "por registrar"
+    fuente_obtencion: "por registrar"
+    fecha_incorporacion: "2026-09-08"
+    licencia: "por registrar"
+    tipo: lexicografico
+    procedencia_texto: "capa de texto (rótulos breves junto a ilustraciones)"
+    paginas: 120
+    paginas_con_texto: 104
+    fragmentos_poc: 119
+    sha256: "a6749a4083c874d1c9de6027cd12ab156e7937fa41d5866e371a8112f1c4ae79"
+
+  - archivo: "Diccionario_Huanca_Quechua_Castellano_Ca.pdf"
+    titulo: "Diccionario Huanca. Quechua-Castellano / Castellano-Quechua. Estudio introductorio y edición del manuscrito"
+    autoria: "Perales, M. y Ráez, J. F. M."
+    fuente_obtencion: "por registrar"
+    fecha_incorporacion: "2026-09-08"
+    licencia: "por registrar"
+    tipo: prosa
+    procedencia_texto: "capa de texto"
+    paginas: 6
+    paginas_con_texto: 6
+    fragmentos_poc: 24
+    sha256: "f43c017a183386856a0f9593ed08c3b9b6307e4ad8ea27c70e70bfcf9cc4253c"
+
+  - archivo: "Tarjetas con relatos - quechua wanka.pdf"
+    titulo: "Tarjetas con relatos, quechua wanka"
+    autoria: "por registrar"
+    fuente_obtencion: "por registrar"
+    fecha_incorporacion: "2026-09-08"
+    licencia: "por registrar"
+    tipo: prosa
+    procedencia_texto: "capa de texto en el 51 % de las páginas; el resto son ilustraciones sin texto impreso"
+    paginas: 61
+    paginas_con_texto: 31
+    fragmentos_poc: 32
+    nota: "Emparejar cada ilustración con el texto de su página contigua. No generar descripciones con IA."
+    sha256: "d462a31c8f9b107bc8c07486aac4836f92845490054dead367cf989dd9b6a33b"
+
+  - archivo: "Lamina de alfabeto - quechua wanka.pdf"
+    titulo: "Lámina de alfabeto, quechua wanka"
+    autoria: "por registrar"
+    fuente_obtencion: "por registrar"
+    fecha_incorporacion: "2026-09-08"
+    licencia: "por registrar"
+    tipo: prosa
+    procedencia_texto: "capa de texto"
+    paginas: 1
+    paginas_con_texto: 1
+    fragmentos_poc: 2
+    sha256: "86cbd9ce64b32ff66ae6941c89963fa01475af852b08b339b43a326d5e79eb66"
