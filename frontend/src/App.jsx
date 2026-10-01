@@ -1,45 +1,64 @@
 import { useEffect, useState } from "react";
 
-import { consultar, obtenerEstado } from "./api";
+import { borrarHistorial, consultar, obtenerEstado, obtenerHistorial } from "./api";
 import CajaConsulta from "./componentes/CajaConsulta";
 import GestionCorpus from "./componentes/GestionCorpus";
 import GestionFuentes from "./componentes/GestionFuentes";
 import Historial from "./componentes/Historial";
 import Respuesta from "./componentes/Respuesta";
+import TamanoTexto from "./componentes/TamanoTexto";
+import { guardarTamano, leerTamano, TAMANOS } from "./tamanoTexto";
 import "./App.css";
-
-const TAMANOS = ["normal", "grande", "mayor"];
 
 export default function App() {
   const [vista, setVista] = useState("consulta");
   const [resultado, setResultado] = useState(null);
-  const [historial, setHistorial] = useState([]);
+  const [historial, setHistorial] = useState({ entradas: [], disponible: true });
   const [estado, setEstado] = useState(null);
   const [cargando, setCargando] = useState(false);
   const [error, setError] = useState(null);
-  const [tamano, setTamano] = useState(0);
+  const [ultimaConsulta, setUltimaConsulta] = useState(null);
+  const [tamano, setTamano] = useState(leerTamano);
+
+  const cambiarTamano = (indice) => {
+    const acotado = Math.min(TAMANOS.length - 1, Math.max(0, indice));
+    setTamano(acotado);
+    guardarTamano(acotado);
+  };
+
+  const cargarHistorial = () =>
+    obtenerHistorial()
+      .then((entradas) => setHistorial({ entradas, disponible: true }))
+      .catch(() => setHistorial({ entradas: [], disponible: false }));
 
   useEffect(() => {
     obtenerEstado()
       .then(setEstado)
       .catch(() => setEstado(null));
+    cargarHistorial();
   }, []);
 
   const lanzarConsulta = async (texto) => {
     setCargando(true);
     setError(null);
+    setUltimaConsulta(texto);
     try {
       const respuesta = await consultar(texto);
       setResultado(respuesta);
-      setHistorial((previo) => [
-        { consulta: texto, abstenida: respuesta.abstenida },
-        ...previo,
-      ]);
+      await cargarHistorial();
     } catch (e) {
       setError(e.message);
       setResultado(null);
     } finally {
       setCargando(false);
+    }
+  };
+
+  const borrar = async () => {
+    try {
+      await borrarHistorial();
+    } finally {
+      await cargarHistorial();
     }
   };
 
@@ -52,13 +71,7 @@ export default function App() {
             Consulta sobre el corpus documental publicado de la variedad wanka de Junín
           </p>
         </div>
-        <button
-          className="cabecera__tipografia"
-          onClick={() => setTamano((t) => (t + 1) % TAMANOS.length)}
-          title="Cambiar el tamaño del texto"
-        >
-          A<span aria-hidden="true">+</span>
-        </button>
+        <TamanoTexto indice={tamano} onCambiar={cambiarTamano} />
       </header>
 
       <nav className="pestanas">
@@ -87,11 +100,31 @@ export default function App() {
           <>
             <CajaConsulta onConsultar={lanzarConsulta} cargando={cargando} />
 
-            {error && <p className="error">{error}</p>}
-            {cargando && <p className="cargando">Buscando en el corpus…</p>}
+            {error && (
+              <div className="error" role="alert">
+                <p className="error__mensaje">{error}</p>
+                <button
+                  type="button"
+                  className="error__reintentar"
+                  onClick={() => lanzarConsulta(ultimaConsulta)}
+                  disabled={cargando || !ultimaConsulta}
+                >
+                  Reintentar
+                </button>
+              </div>
+            )}
+            {cargando && (
+              <p className="cargando" role="status">
+                <span className="giro" aria-hidden="true" /> Buscando en el corpus…
+              </p>
+            )}
 
             <Respuesta resultado={resultado} />
-            <Historial entradas={historial} />
+            <Historial
+              entradas={historial.entradas}
+              disponible={historial.disponible}
+              onBorrar={borrar}
+            />
           </>
         ) : vista === "fuentes" ? (
           <GestionFuentes />
