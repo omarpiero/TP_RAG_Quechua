@@ -1,13 +1,58 @@
-const BASE = import.meta.env.VITE_API_URL ?? "http://127.0.0.1:8000";
+// URL de la API: solo desde VITE_API_URL. Vacia (o sin definir) = rutas relativas al mismo
+// origen, que es como el ejecutable sirve la interfaz; en desarrollo Vite redirige /api.
+const BASE = import.meta.env.VITE_API_URL ?? "";
+
+// La primera consulta con el modelo en CPU puede tardar decenas de segundos.
+export const TIEMPO_MAXIMO_MS = 180000;
+
+export class ErrorApi extends Error {
+  constructor(mensaje, tipo, estado) {
+    super(mensaje);
+    this.tipo = tipo; // "red" | "tiempo" | "validacion" | "servicio"
+    this.estado = estado;
+  }
+}
 
 async function pedir(ruta, opciones = {}) {
-  const respuesta = await fetch(`${BASE}${ruta}`, {
-    headers: { "Content-Type": "application/json" },
-    ...opciones,
-  });
+  const control = new AbortController();
+  const temporizador = setTimeout(() => control.abort(), TIEMPO_MAXIMO_MS);
+  let respuesta;
+  try {
+    respuesta = await fetch(`${BASE}${ruta}`, {
+      headers: { "Content-Type": "application/json" },
+      signal: control.signal,
+      ...opciones,
+    });
+  } catch (e) {
+    if (e?.name === "AbortError") {
+      throw new ErrorApi(
+        "La consulta tardó demasiado en responder. Inténtalo de nuevo.",
+        "tiempo",
+      );
+    }
+    throw new ErrorApi(
+      "No se pudo conectar con el servicio local. Comprueba que esté en marcha.",
+      "red",
+    );
+  } finally {
+    clearTimeout(temporizador);
+  }
   if (!respuesta.ok) {
     const detalle = await respuesta.json().catch(() => ({}));
-    throw new Error(detalle.detail ?? `Error ${respuesta.status}`);
+    if (respuesta.status === 422) {
+      throw new ErrorApi(
+        "La consulta no es válida: escribe entre 1 y 300 caracteres.",
+        "validacion",
+        422,
+      );
+    }
+    throw new ErrorApi(
+      typeof detalle.detail === "string"
+        ? detalle.detail
+        : `El servicio devolvió un error (${respuesta.status}).`,
+      "servicio",
+      respuesta.status,
+    );
   }
   return respuesta.status === 204 ? null : respuesta.json();
 }
@@ -18,6 +63,8 @@ export const consultar = (texto) =>
 export const obtenerEstado = () => pedir("/api/estado");
 
 export const obtenerHistorial = () => pedir("/api/historial");
+
+export const borrarHistorial = () => pedir("/api/historial", { method: "DELETE" });
 
 export const listarFuentes = () => pedir("/api/fuentes");
 

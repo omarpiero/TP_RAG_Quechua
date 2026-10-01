@@ -23,7 +23,7 @@ decisión. **Son cifras del código base, no del PMV1 final**: el §3 se rellena
 | ¿cómo se dice criptomoneda en quechua wanka? | Se abstiene, sin pasajes | 0,05 | — | **No** | **Sí** (salvaguarda) |
 | how do you say fox in Wanka Quechua? | Responde; traducción «zorro» | 0,610 | `ZORRO: Atuq.` · p. 37 | Sí | **Sí** (inglés) |
 | how do you say water in Wanka Quechua? | Responde con la lectura equivocada | 0,694 | `OCÉANO: Lamar.` p. 25, por delante de `AGUA: Yaku.` p. 2 | Sí | **No** hasta corregir **D-2** |
-| ¿cómo se dice sol en quechua wanka? | Responde **por lema** bajo τ | 0,351 | `SOL: Inti. (rayo de sol) Intip shaplan. (época de` (truncada) | Sí | Solo si se acepta ADR-021 y tras corregir **D-4** |
+| ¿cómo se dice sol en quechua wanka? | Responde **por lema** bajo τ | 0,351 | `SOL: Inti. (rayo de sol) Intip shaplan. (época de` (truncada) | Sí | ADR-021 aceptada (2026-10-01); solo tras corregir **D-4** |
 | ¿Qué referencia temporal implica la acción expresada por el verbo nominalizado? (P001) | Se abstiene **con pasajes** de la gramática | 0,339 | 2 pasajes de Cerrón-Palomino | No | **Sí** (prosa), cuando estén rotulados «no es una respuesta» |
 | ¿cómo se dice computadora en quechua wanka? | Se abstiene **con un pasaje en quechua** | 0,124 | Saberes y Haceres, p. 55 | No | **No** hasta corregir **D-1** |
 | Wie sagt man Fuchs auf Quechua? | Se abstiene (lo toma por español) | 0,176 | — | No | **No** hasta corregir **D-3** |
@@ -31,7 +31,7 @@ decisión. **Son cifras del código base, no del PMV1 final**: el §3 se rellena
 Latencia de recuperación y decisión: 4–17 ms por consulta en la nube; la de extremo a extremo con Ollama
 se mide en M5.
 
-### Defectos encontrados (se corrigen en el PMV1, `PROMPT_CIERRE_PMV1.md` §6)
+### Defectos encontrados (se corrigen en el PMV1, `PROMPT_CIERRE_PMV1.md` §6; D-1…D-6)
 
 | ID | Defecto | Riesgo en la demostración |
 |---|---|---|
@@ -40,6 +40,7 @@ se mide en M5.
 | D-3 | El detector clasifica el alemán como español | No se puede mostrar «idioma no soportado» |
 | D-4 | Entrada del diccionario truncada («SOL… (época de») | Fragmento incompleto en pantalla |
 | D-5 | Solo «A+», sin reducir ni restablecer; historial solo en estado local | Usabilidad (E1) y persistencia (E3) |
+| **D-6** | Con Ollama detenido, `OllamaGenerador.redactar` deja escapar la excepción de `httpx` (solo `precalentar` y `disponible` capturan `httpx.HTTPError`) y `/api/consultar` responde **500**. Hallado por lectura del código el 2026-10-01 (`13_BRECHAS_RUBRICA.md` §4.1); aún no reproducido en ejecución | Falla el manejo de excepciones que evalúa E3 (caso C-10). Corrección en el **PR 3**: el caso de uso captura el fallo del puerto y responde con el **fragmento literal** más el aviso «el servicio de redacción no está disponible»; prueba `@salvaguarda` con un generador que lanza excepción |
 
 ## 2. Pruebas a mano antes de grabar
 
@@ -51,13 +52,13 @@ cualquiera). Marca cada una y anota lo que veas en el §3.
 | C-01 | «¿cómo se dice zorro en quechua wanka?» | «Atuq» literal; fragmento `ZORRO: Atuq.`; diccionario Wanka, p. 37; similitud ≥ τ; vía «similitud» | HU-03, HU-07 | `E1-1_consulta_zorro.png` |
 | C-02 | «¿cómo se dice criptomoneda en quechua wanka?» | Mensaje de ausencia; **ninguna** forma quechua; similitud < τ visible; en el log del backend, el generador **no** se invoca | HU-06 | `E1-2_abstencion.png` |
 | C-03 | «how do you say fox in Wanka Quechua?» | Lecturas de la traducción visibles («zorro»); «Atuq» literal, p. 37 | HU-05 | `E1-3_consulta_ingles.png` |
-| C-04 | «¿cómo se dice sol en quechua wanka?» | Solo si ADR-021 se acepta: respuesta rotulada «respaldo: entrada exacta del diccionario», con la similitud (< τ) a la vista y la entrada **completa** | ADR-021 | `E1-4_respaldo_lema.png` |
+| C-04 | «¿cómo se dice sol en quechua wanka?» | ADR-021 aceptada el 2026-10-01 (tras corregir D-4): respuesta rotulada «respaldo: entrada exacta del diccionario», con la similitud (< τ) a la vista y la entrada **completa** | ADR-021 | `E1-4_respaldo_lema.png` |
 | C-05 | Pregunta de prosa P001 (texto en el §1) | Abstención + pasajes literales y citados, rotulados «no es una respuesta» | ADR-022 | `E1-5_pasajes_prosa.png` |
 | C-06 | «¿cómo se dice computadora en quechua wanka?» | Tras corregir D-1: abstención **sin** pasajes | HU-06 | — |
 | C-07 | Enviar la consulta vacía; pegar un texto de más de 300 caracteres | Mensaje de validación en español; no se llama a la API o esta responde 422 y la interfaz lo explica | RS-02, E3 «validaciones» | `E1-8_validacion.png` |
 | C-08 | Tras corregir D-3: «Wie sagt man Fuchs auf Quechua?» | «Solo se admiten consultas en español o en inglés» | RF-04 | (opcional) |
 | C-09 | Hacer 3 consultas → reiniciar el backend → recargar la página | El historial sigue ahí (SQLite); «Borrar historial» lo vacía; aviso de privacidad visible | RF-11, ADR-027, E3 «Persistencia» | `E1-6_historial.png` |
-| C-10 | Detener Ollama (`ollama stop qwen3.5:4b` o cerrar Ollama) y repetir C-01 | **Manejo de excepción**: la respuesta muestra el fragmento literal con un aviso de que el servicio de redacción no está disponible; nunca un error 500 ni una pantalla en blanco. *Comportamiento a confirmar por el agente; si no existe, es P0 del PR 3* | E3 «excepciones» | (opcional) |
+| C-10 | Detener Ollama (`ollama stop qwen3.5:4b` o cerrar Ollama) y repetir C-01 | **Manejo de excepción**: la respuesta muestra el fragmento literal con un aviso de que el servicio de redacción no está disponible; nunca un error 500 ni una pantalla en blanco. *Hoy es el defecto **D-6** (500); se corrige en el PR 3 (P0)* | E3 «excepciones» | (opcional) |
 | C-11 | Detener el backend y consultar | Estado de error con botón «Reintentar» | UI-02 | (opcional) |
 | C-12 | A−, A+ y restablecer | Tres tamaños; los extremos deshabilitan el botón; se recuerda al recargar | UI-01 | `E1-9_tamano_texto.png` |
 | C-13 | Ventana a 360 px (DevTools, modo dispositivo) | Sin desplazamiento horizontal; todo legible | UI-10 | `E1-10_movil_360px.png` |
@@ -69,14 +70,14 @@ Si un caso no da lo esperado, **no lo grabes**. Anótalo y pásaselo a Claude Co
 
 | Caso | Consulta exacta | Decisión | Vía | Similitud | Documento · página | Latencia total (ms) | ¿Generador? | Procesador (`ollama ps`) | Captura |
 |---|---|---|---|---:|---|---:|---|---|---|
-| C-01 | | | | por registrar | | por registrar | | | |
-| C-02 | | | | por registrar | | por registrar | | | |
-| C-03 | | | | por registrar | | por registrar | | | |
-| C-04 | | | | por registrar | | por registrar | | | |
-| C-05 | | | | por registrar | | por registrar | | | |
-| C-07 | | | | — | — | — | | | |
-| C-09 | | | | — | — | — | | | |
-| C-10 | | | | por registrar | | por registrar | | | |
+| C-01 | ¿cómo se dice zorro en quechua wanka? | Responde | similitud | 0,6095 | diccionario-quechua-Wanka · p. 37 | 2 475 | Sí | GPU (RTX 4060) | `E1-1_consulta_zorro.png` |
+| C-02 | ¿cómo se dice criptomoneda en quechua wanka? | Se abstiene | — | 0,0502 | — | 14 | No | — | `E1-2_abstencion.png` |
+| C-03 | how do you say fox in Wanka Quechua? | Responde | similitud | 0,6095 | diccionario-quechua-Wanka · p. 37 | 2 674 | Sí | GPU (RTX 4060) | `E1-3_consulta_ingles.png` |
+| C-04 | (pendiente: no ejecutado en este lote) | — | — | — | — | — | — | — | — |
+| C-05 | ¿Qué referencia temporal implica la acción expresada por el verbo nominalizado? | Se abstiene + 3 pasajes rotulados «no es una respuesta» | — | 0,3389 | (pasajes de Cerrón-Palomino) | 25 | No | — | `E1-5_pasajes_prosa.png` |
+| C-07 | (vacía) / (301 caracteres) | Rechazada 422 | — | — | — | — | — | — | `E1-8_validacion.png` |
+| C-09 | (3 consultas → reiniciar → recargar) | Historial preservado (4 entradas) | — | — | — | — | — | — | `E1-6_historial.png` |
+| C-10 | (Ollama detenido + C-01) | Fragmento literal + aviso «servicio de redacción no disponible», sin 500 | — | — | — | — | — | — | — |
 
 ## 4. Guion del video E3 (1,5–2 min, una sola toma)
 
@@ -109,3 +110,11 @@ Las de la tabla del §2 más: `GH-1_estructura_src.png` (árbol de `backend/src`
 `PM-1_projects_roadmap.png` · `PM-2_projects_board.png` · `HW-1_ollama_ps_gpu.png` ·
 `HW-2_ollama_ps_cpu.png` · `HW-3_ollama_show.png`. Formato PNG, ventana a 1366 × 768 o mayor, sin datos
 personales visibles (barra de marcadores, correo, rutas con el nombre de usuario).
+
+---
+
+## Registro de cambios
+
+| Fecha | Cambio |
+|---|---|
+| 2026-10-01 | Alta del defecto **D-6** (Ollama detenido → 500) en el §1; caso C-10 y C-04 actualizados (D-6 confirmado por lectura del código; ADR-021 aceptada). Fuente: `13_BRECHAS_RUBRICA.md` §4.1 y decisión del usuario del 2026-10-01 |

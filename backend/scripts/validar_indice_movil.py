@@ -14,14 +14,14 @@ import unicodedata
 from collections import Counter
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 CORPUS = "fragmentos_v3.jsonl"
 
 import numpy as np
 
-from infrastructure.adapters.output.corpus_jsonl import cargar_fragmentos
-from infrastructure.adapters.output.indice_hibrido_lexico import IndiceHibridoLexico
+from adapters.out.documentos.corpus_jsonl import cargar_fragmentos
+from adapters.out.recuperacion.indice_hibrido_lexico import IndiceHibridoLexico
 
 PATRON_TOKEN = re.compile(r"\b\w+\b", re.UNICODE)
 ESPACIOS_MULTIPLES = re.compile(r"\s\s+")

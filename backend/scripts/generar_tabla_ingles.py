@@ -17,12 +17,12 @@ import time
 import unicodedata
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 import httpx
 
+from adapters.out.documentos.corpus_jsonl import cargar_fragmentos
 from domain.entities.fragmento import TipoFragmento
-from infrastructure.adapters.output.corpus_jsonl import cargar_fragmentos
 
 CABECERA = re.compile(r"(?=\b[A-ZÁÉÍÓÚÜÑ][A-ZÁÉÍÓÚÜÑ\s\-]{1,30}:)")
 ENTRADA = re.compile(r"\s*([A-ZÁÉÍÓÚÜÑ][A-ZÁÉÍÓÚÜÑ\s\-]*?)\s*:\s*(.*)", re.S)

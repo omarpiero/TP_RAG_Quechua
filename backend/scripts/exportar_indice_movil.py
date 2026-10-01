@@ -14,17 +14,17 @@ import struct
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 CORPUS = "fragmentos_v3.jsonl"
 
 import numpy as np
 from scipy.sparse import csc_matrix
 
-from application.services.depurador_consulta import DepuradorConsulta
+from adapters.out.documentos.corpus_jsonl import cargar_fragmentos
+from adapters.out.recuperacion.indice_hibrido_lexico import IndiceHibridoLexico
 from domain.entities.fragmento import TipoFragmento
-from infrastructure.adapters.output.corpus_jsonl import cargar_fragmentos
-from infrastructure.adapters.output.indice_hibrido_lexico import IndiceHibridoLexico
+from domain.services.depurador_consulta import DepuradorConsulta
 
 VERSION_FORMATO = 1
 

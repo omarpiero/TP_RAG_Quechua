@@ -4,7 +4,7 @@
 > nunca se reescribe. Estados: `Propuesta` · `Aceptada` · `Sustituida por ADR-nn` · `Rechazada` ·
 > `Abierta` (hay que decidir antes de una fecha).
 >
-> Mantenido por: **archivista** · Última revisión: 2026-09-24 · Versión 1.2 (línea base v2, ver `09_LINEA_BASE_V2.md`)
+> Mantenido por: **archivista** · Última revisión: 2026-10-01 · Versión 1.3 (línea base v2, ver `09_LINEA_BASE_V2.md`)
 
 ---
 
@@ -24,21 +24,21 @@
 | 010 | SonarQube Cloud + Community local para calidad y cobertura (sustituye una exclusión del Documento 5) | Aceptada (2026-09-24) | Usuario | — |
 | 011 | GitHub Flow, Conventional Commits y repositorio privado | Aceptada (2026-09-24) | Usuario | — |
 | 012 | Estrategia de recuperación en el móvil | Aceptada: opción (b), índice léxico exportado (ADR-019) | Documentos 5 y 6 (C-5) | — |
-| 013 | Registro de consultas para la analítica frente a RNF-06 | **Abierta** | Documento 0 (RF-14…16) vs RNF-06 | Planning del sprint 3 (2026-11-02) |
+| 013 | Registro de consultas para la analítica frente a RNF-06 | **Abierta** · el usuario no expresó preferencia (2026-10-01); propuesta del orquestador pendiente de confirmación | Documento 0 (RF-14…16) vs RNF-06 | Antes del PR 8 (texto de la consulta en el historial) y Planning del sprint 3 (2026-11-02) |
 | 014 | Los modelos predictivos solo pueden añadir abstenciones | **Propuesta** | Salvaguarda + RF-14/15 | Planning del sprint 3 |
 | 015 | El corpus y los modelos no se versionan en Git | Aceptada (2026-09-24) | Usuario; R-07, RNF-11 | — |
 | 016 | Markdown como fuente única del tablero | **Propuesta** | Esta planificación | Revisión del sprint 1 (2026-10-11) |
 | 017 | FastAPI para la aplicación y servidor MCP de solo lectura para el desarrollo | Aceptada (2026-09-24) | Usuario | — |
 | 018 | Identificador de fragmento compatible con la prueba de concepto | **Propuesta** | Documento 6 + conjunto de evaluación | Inicio de HU-02 |
 | 019 | Sin base vectorial: índice léxico persistente y exportado al móvil | Aceptada (línea base v2) | Revisión 2, Docs. 0, 2 y 5 | — |
-| 020 | τ = 0,48 en la implementación; 0,41 queda como resultado de la PoC | Aceptada (línea base v2) · re-medir con M3 | Revisión 2, Doc. 6 | Cierre del PMV1 |
-| 021 | Coincidencia exacta de lema como segunda vía de respaldo | **Propuesta** · formalizar | Código base; anexo Doc. 5 | Antes del PR 3 |
+| 020 | τ = 0,48 en la implementación; 0,41 queda como resultado de la PoC | Aceptada (línea base v2) · **τ 0,48 confirmado el 2026-10-01** sobre `fragmentos_v3` (nota) · re-medir con M3 | Revisión 2, Doc. 6 | Cierre del PMV1 |
+| 021 | Coincidencia exacta de lema como segunda vía de respaldo | **Aceptada (2026-10-01)** con 5 condiciones · implementación en PR 3 | Código base; anexo Doc. 5; `13_BRECHAS_RUBRICA.md` §3 | — |
 | 022 | Pasajes de prosa sin afirmación como tercer caso de RF-08 | Aceptada (línea base v2) · con condiciones | Revisión 2, Doc. 0 RF-08 | — |
 | 023 | Tabla EN→ES de lemas calculada en tiempo de compilación | Aceptada (línea base v2) · con condiciones | Revisión 2, Doc. 0 RF-04 | — |
 | 024 | Sin OCR: señalar páginas sin texto y reparar acentos | Aceptada (línea base v2) | Revisión 2, Doc. 0 RF-01; anexo Doc. 5 | — |
 | 025 | Interfaz React + Vite sobre la API FastAPI (sustituye a Streamlit) | Aceptada (línea base v2) · endurecer la UI | Revisión 2, Doc. 5 | — |
 | 026 | Sin modelo generador en el móvil: plantilla determinista | Aceptada (línea base v2) · **revisión abierta** (modo enriquecido opcional) | Anexo Doc. 5, tabla B | Planning del PMV3 |
-| 027 | SQLite como persistencia en los tres PMV; PostgreSQL como segundo adaptador | **Propuesta** | Anexo Doc. 5, tabla E; RF-11; RNF-06 | Antes del PR 8 |
+| 027 | SQLite como persistencia en los tres PMV; PostgreSQL como segundo adaptador | **Propuesta** · el usuario no expresó preferencia (2026-10-01); pendiente de confirmación | Anexo Doc. 5, tabla E; RF-11; RNF-06 | Antes del PR 8 |
 
 ---
 
@@ -164,6 +164,12 @@ sale del equipo; con aviso en la interfaz. **Riesgo declarado.** En doce semanas
 alcanzar las 100 consultas de HU-09; no se completará con consultas fabricadas. **Decide:** usuario, en el
 Planning del sprint 3.
 
+**Nota 2026-10-01 (cierre del PMV1).** Para el historial del PMV1 (RF-11, PR 8) se preguntó al usuario si se
+guarda el texto de la consulta. El usuario respondió «sin preferencia» el 2026-10-01. **Sigue abierta.**
+Propuesta del orquestador, pendiente de confirmación antes del PR 8: guardar el texto de la consulta con aviso
+visible en la interfaz y borrado del historial (`DELETE /api/historial`), sin identificadores. No se marca como
+aceptada. Fuente: encargo del orquestador del 2026-10-01.
+
 ## ADR-014 · Los modelos predictivos solo pueden añadir abstenciones — Propuesta
 
 **Decisión propuesta.** El predictor de cobertura y el umbral adaptativo pueden convertir una respuesta en
@@ -235,15 +241,57 @@ positivos**. **Decisión.** τ vigente = 0,48, leído de configuración. El Docu
 resultado de la PoC, con una nota. **Condición.** Se vuelve a barrer (M3) sobre el código final; si cambia,
 nuevo ADR con su barrido.
 
-## ADR-021 · Coincidencia exacta de lema como segunda vía de respaldo — Propuesta
+**Nota 2026-10-01 · τ se conserva en 0,48 (no sustituye la decisión; la confirma con una medición nueva).**
+Medido el 2026-10-01 con el arnés del caso de uso sobre **`fragmentos_v3.jsonl`** (el corpus de la aplicación;
+línea base congelada en `docs/evidencias/2026-10-01_base-integrante_pc-rtx4060/`):
+
+| Dato (solo corpus v3) | Valor medido |
+|---|---|
+| Primer τ sin falsos positivos | **0,47** |
+| Similitud máxima de una consulta de C | **0,4698** (margen de 0,47: 0,0002; margen de 0,48: 0,010) |
+| A+B respondidas con τ 0,48, **sin** regla de lema | **165/180 (91,7 %)** |
+| A+B respondidas con τ 0,48, **con** regla de lema | **180/180**, 0 FP en C |
+| A+B con τ 0,47, sin regla de lema | 167/180 (92,8 %) |
+| Consultas que responde **solo** la regla de lema | 18 (A 12 · B 3 · D 3) |
+| Más cercanas a τ | A038, B038 y D023 («diablo» / «devil»): 0,4799, a 0,0001 de τ; hoy las salva la regla de lema |
+
+**Decisión del usuario (2026-10-01):** mantener 0,48 **por margen** sobre la consulta de C más alta; 0,47 queda
+registrado como primer τ sin FP en v3 y **no se adopta** (ganaría 2 consultas a costa de 0,0002 de margen).
+**Aclaración de cifras:** la cifra «0,48 → 167/180 (92,8 %)» que aparece en la revisión 2 y en la pregunta
+de ADR-021 sale de `scripts/calibrar_umbral.py` sobre `fragmentos_v2.jsonl` (PoC/revisión 2). Los informes y las
+diapositivas citan **solo v3** y lo declaran. Fuente: `resumen_arnes.json`, `barrido_umbral.csv`,
+`docs/13_BRECHAS_RUBRICA.md` §2.
+
+## ADR-021 · Coincidencia exacta de lema como segunda vía de respaldo — Aceptada (2026-10-01) con condiciones
 
 **Contexto.** El código base responde cuando el término depurado coincide exactamente con el lema de una
 entrada del diccionario, aunque el coseno quede bajo τ (visto: «sol», 0,351). En la auditoría no produjo
-ningún FP en C. No figura en RF-08 del Documento 0 (sí en el anexo del Doc. 5). **Propuesta.** Aceptarla
-como segunda vía explícita: *respaldo = coseno ≥ τ **o** lema exacto*. **Condiciones:** (1) RF-08 la
-menciona; (2) la interfaz muestra «respaldo: entrada exacta del diccionario» en lugar de presentar una
-similitud que parece no superar τ; (3) prueba `@salvaguarda` con 0 FP en C; (4) M4 reporta cuántas
-respuestas llegan por esta vía. **Decide:** usuario.
+ningún FP en C. No figura en RF-08 del Documento 0 (sí en el anexo del Doc. 5). **Propuesta original (2026-09-24).**
+Aceptarla como segunda vía explícita: *respaldo = coseno ≥ τ **o** lema exacto*, con cuatro condiciones: (1) RF-08
+la menciona; (2) la interfaz muestra «respaldo: entrada exacta del diccionario»; (3) prueba `@salvaguarda` con
+0 FP en C; (4) M4 reporta cuántas respuestas llegan por esta vía.
+
+**Decisión (usuario, 2026-10-01): ACEPTADA con las cinco condiciones de `13_BRECHAS_RUBRICA.md` §3**, que
+amplían las cuatro originales y se implementan en el PR 3:
+
+1. **Solo fragmentos lexicográficos** y solo si el término depurado es **un único lema**. Las consultas de varias
+   palabras no la activan; prueba obligatoria: «banco de peces» no responde por el lema «banco».
+2. **Normalización declarada y probada** de tildes y mayúsculas (p. ej. «cuanto» y «cuánto»), porque cambia qué
+   consultas activan la regla.
+3. **Entrada completa y literal** (depende de corregir D-4, truncado, en el PR 6); el generador recibe solo esa
+   entrada y el `VerificadorFormaLiteral` se aplica igual.
+4. **Rótulo visible** «respaldo: entrada exacta del diccionario», con la similitud (< τ) a la vista; nunca se
+   presenta como respuesta por similitud.
+5. **Reporte separado** en M4 y M15: respondidas por similitud y respondidas por lema. Se declara que la evidencia
+   «0 FP en C» es **débil** para esta regla, porque ninguna de las 28 consultas de C es un lema. Las negativas
+   que sí sean lemas (palabras funcionales o ambiguas usadas en otro sentido) **solo las formula el equipo**; los
+   agentes no fabrican consultas de evaluación.
+
+**Consecuencias.** RF-08, RN-01, HU-06 y la prueba `@salvaguarda` se alinean con esta regla (L-8 de
+`09_LINEA_BASE_V2.md`); la propagación a `02_REQUERIMIENTOS.md` y `03_HISTORIAS_USUARIO.md` queda por hacer y
+no modifica criterios Gherkin sin su cambio explícito. Con τ 0,48 la regla responde 18 consultas de A, B y D
+que por similitud no pasarían (ADR-020, nota). **Fuente:** decisión del usuario del 2026-10-01 (texto del §8 de
+`13_BRECHAS_RUBRICA.md`, transmitida por el orquestador).
 
 ## ADR-022 · Pasajes de prosa sin afirmación — Aceptada (línea base v2) con condiciones
 
@@ -287,6 +335,10 @@ PostgreSQL como segundo adaptador opcional. El archivo SQLite del escritorio es 
 de RF-14–16 (sujeto a ADR-013). El índice no se guarda en SQLite. **Condiciones de privacidad:** sin
 identificadores, aviso en la interfaz y borrado del historial. **Decide:** usuario.
 
+**Nota 2026-10-01.** El usuario no expresó preferencia el 2026-10-01. Propuesta del orquestador: SQLite por
+defecto, PostgreSQL opcional como segundo adaptador (P2). **Sigue en propuesta; pendiente de confirmación antes
+del PR 8.** Fuente: encargo del orquestador del 2026-10-01.
+
 ---
 
 ## Registro de cambios
@@ -296,3 +348,4 @@ identificadores, aviso en la interfaz y borrado del historial. **Decide:** usuar
 | 2026-09-24 | Creación: ADR-001…008 trasladados de la serie documental; ADR-009…016 propuestos o abiertos |
 | 2026-09-24 | Aceptadas ADR-009, 010, 011 y 015 por decisión del usuario; nuevas ADR-017 (aceptada) y ADR-018 (propuesta) |
 | 2026-09-24 | Línea base v2: ADR-019, 020, 022–026 aceptadas; ADR-021 y 027 propuestas; ADR-004, 008 y 012 actualizadas |
+| 2026-10-01 | **ADR-021 aceptada** con las cinco condiciones de `13_BRECHAS_RUBRICA.md` §3 (decisión del usuario). ADR-020: nota con la medición sobre `fragmentos_v3` y confirmación de τ 0,48 (no se reescribe el texto aceptado). ADR-013 y ADR-027: nota «sin preferencia del usuario; pendiente de confirmación antes del PR 8»; siguen abiertas y en propuesta |

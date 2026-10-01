@@ -19,8 +19,8 @@
 |---|---|---|---|---|
 | Recuperación | Semántica densa (bge-m3 / E5) sobre almacén vectorial | **Léxica híbrida**: coseno sobre TF-IDF de palabras completas y de n-gramas de caracteres 3–5, **promediados**; depuración del fraseo constante; capa de **coincidencia de lema** para entradas lexicográficas | PoC: denso recall@5 0,650 frente a 1,000; similitudes densas comprimidas | ADR-005 (ya aceptado) |
 | Almacén | ChromaDB (escritorio) · sqlite-vec (móvil) | **Ninguna base vectorial.** Índice léxico persistente en escritorio; en móvil, **índice exportado** en binario plano por columnas (índice invertido) | No hay vectores densos que almacenar | ADR-019 |
-| Umbral τ | 0,41 (PoC) | **0,48** en la implementación (formulación exacta del híbrido): 0 FP, 92,8 % de consultas atendibles. El Documento 6 conserva 0,41 como resultado de la PoC y añade una nota | Barrido sobre 248 consultas | ADR-020 |
-| Coincidencia de lema | No existía | Si el término depurado es **exactamente** el lema de una entrada del diccionario, esa entrada cuenta como respaldo documental **aunque el coseno quede bajo τ** | Auditoría: 0 FP en C con la regla activa | ADR-021 (**a formalizar**) |
+| Umbral τ | 0,41 (PoC) | **0,48** en la implementación (formulación exacta del híbrido), **confirmado el 2026-10-01 sobre `fragmentos_v3.jsonl`** (corpus de la aplicación): A+B respondidas **165/180 (91,7 %) sin regla de lema** y **180/180 con regla de lema**, 0 FP en C; el primer τ sin FP en v3 es **0,47** (margen de 0,0002 sobre la consulta de C más alta, 0,4698) y **no se adopta** (167/180 sin lema; 0,48 deja 0,010 de margen). La cifra «92,8 %» (167/180) es de `calibrar_umbral.py` sobre `fragmentos_v2.jsonl` (PoC/revisión 2): se cita solo como cifra de v2. El Documento 6 conserva 0,41 como resultado de la PoC y añade una nota | Línea base del arnés `docs/evidencias/2026-10-01_base-integrante_pc-rtx4060/` (248 consultas, caso de uso, v3) | ADR-020 |
+| Coincidencia de lema | No existía | Si el término depurado es **exactamente** el lema de una entrada del diccionario, esa entrada cuenta como respaldo documental **aunque el coseno quede bajo τ**. **Aceptada el 2026-10-01 con cinco condiciones** (solo lexicográficas y un único lema; normalización declarada; entrada completa y literal; rótulo visible con la similitud; reporte separado). Responde sola 18 consultas (A 12, B 3, D 3) | Auditoría: 0 FP en C con la regla activa (evidencia débil: ninguna consulta de C es un lema) | ADR-021 (**aceptada**; implementación en PR 3) |
 | Prosa | Responder o abstenerse | Tercer caso (RF-08): ante material de prosa **no se afirma nada**; se entregan los pasajes literales y citados si comparten ≥ 2 palabras de contenido con la consulta depurada. Cuenta como **abstención** | 60 preguntas de prosa + 135 negativas: 0 FP fuera de cobertura (conjunto sintético) | ADR-022 |
 | Consulta en inglés | Traducir con el SLM en tiempo de consulta | **Tabla EN→ES** de los 2 257 lemas del corpus, generada con el SLM **en tiempo de compilación**; se muestran **todas** las lecturas | Funciona sin modelo (necesario en el móvil). Límite: hereda errores del modelo que la generó (`boiled corn → huayco`) y D es un **techo** por construcción | ADR-023 |
 | OCR | Tesseract en la ingesta | **No se incorpora.** Las páginas sin capa de texto se **señalan**; se añade un **reparador de acentos** separados por la extracción (70,6 % de los fragmentos de prosa) | 88,4 % de páginas con texto; OCR aportaría el 0,45 % del corpus (PoC) | ADR-024 |
@@ -91,3 +91,11 @@ las corrige el equipo en los `.docx`.
 4. Corrección de las entradas lexicográficas truncadas (p. ej. «SOL: Inti. (rayo de sol) Intip shaplan.
    (época de»).
 5. Mediciones M1–M15 (`CONSIDERACIONES.md` §8), que además **verifican** las cifras nuevas de la revisión 2.
+
+---
+
+## Registro de cambios
+
+| Fecha | Cambio |
+|---|---|
+| 2026-10-01 | §1, filas «Umbral τ» y «Coincidencia de lema»: cifras de `fragmentos_v3` (165/180 sin lema, 180/180 con lema, primer τ sin FP = 0,47 no adoptado); 92,8 % queda como cifra de v2/PoC; ADR-021 aceptada. Fuente: `docs/evidencias/2026-10-01_base-integrante_pc-rtx4060/resumen_arnes.json`, `13_BRECHAS_RUBRICA.md` §2–3 |

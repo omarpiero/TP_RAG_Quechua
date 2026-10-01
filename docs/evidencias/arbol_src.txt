@@ -1,0 +1,96 @@
+backend/src
+├── adapters/
+│   ├── in/
+│   │   ├── cli/
+│   │   │   ├── __init__.py
+│   │   │   ├── __main__.py
+│   │   │   └── comandos.py
+│   │   ├── rest/
+│   │   │   ├── __init__.py
+│   │   │   ├── consultas_controller.py
+│   │   │   ├── corpus_controller.py
+│   │   │   ├── dependencias.py
+│   │   │   ├── esquemas.py
+│   │   │   ├── fuentes_controller.py
+│   │   │   ├── historial_controller.py
+│   │   │   └── sistema_controller.py
+│   │   └── __init__.py
+│   ├── out/
+│   │   ├── documentos/
+│   │   │   ├── __init__.py
+│   │   │   ├── corpus_jsonl.py
+│   │   │   └── extractor_pdf.py
+│   │   ├── generacion/
+│   │   │   ├── __init__.py
+│   │   │   ├── generador_literal.py
+│   │   │   └── ollama_generador.py
+│   │   ├── idioma/
+│   │   │   ├── __init__.py
+│   │   │   └── detector_idioma_heuristico.py
+│   │   ├── persistencia/
+│   │   │   ├── __init__.py
+│   │   │   ├── modelos.py
+│   │   │   ├── repositorio_consultas_sqlalchemy.py
+│   │   │   └── repositorio_fuentes_postgres.py
+│   │   ├── recuperacion/
+│   │   │   ├── __init__.py
+│   │   │   └── indice_hibrido_lexico.py
+│   │   ├── traduccion/
+│   │   │   ├── __init__.py
+│   │   │   ├── ollama_traductor.py
+│   │   │   └── traductor_tabla.py
+│   │   └── __init__.py
+│   └── __init__.py
+├── application/
+│   ├── ports/
+│   │   ├── in/
+│   │   │   ├── __init__.py
+│   │   │   ├── consultar_corpus_port.py
+│   │   │   ├── consultar_historial_port.py
+│   │   │   ├── gestionar_fuentes_port.py
+│   │   │   ├── ingestar_documento_port.py
+│   │   │   └── reindexar_corpus_port.py
+│   │   ├── out/
+│   │   │   ├── __init__.py
+│   │   │   ├── detector_idioma_port.py
+│   │   │   ├── extraccion_documental_port.py
+│   │   │   ├── generador_texto_port.py
+│   │   │   ├── indice_recuperacion_port.py
+│   │   │   ├── repositorio_consultas_port.py
+│   │   │   ├── repositorio_corpus_port.py
+│   │   │   ├── repositorio_fuentes_port.py
+│   │   │   └── traductor_port.py
+│   │   └── __init__.py
+│   ├── use_cases/
+│   │   ├── __init__.py
+│   │   ├── consultar_corpus.py
+│   │   ├── consultar_historial.py
+│   │   ├── gestionar_fuentes.py
+│   │   ├── ingestar_documento.py
+│   │   └── reindexar_corpus.py
+│   └── __init__.py
+├── domain/
+│   ├── entities/
+│   │   ├── __init__.py
+│   │   ├── consulta.py
+│   │   ├── documento_extraido.py
+│   │   ├── fragmento.py
+│   │   ├── fuente.py
+│   │   └── respuesta.py
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── clasificador_consulta.py
+│   │   ├── depurador_consulta.py
+│   │   ├── evaluador_confianza.py
+│   │   └── segmentador.py
+│   ├── value_objects/
+│   │   ├── __init__.py
+│   │   ├── idioma.py
+│   │   ├── procedencia.py
+│   │   └── puntuacion_similitud.py
+│   └── __init__.py
+└── infrastructure/
+    ├── __init__.py
+    ├── config.py
+    ├── contenedor.py
+    └── main.py

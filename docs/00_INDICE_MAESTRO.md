@@ -6,7 +6,7 @@ preservación y consulta digital del quechua wanka de Junín**
 Taller de Proyectos 1 · Universidad Continental · Ingeniería de Sistemas e Informática · 2026-20 · Grupo 02
 
 > **Punto de entrada para personas y agentes.** Todo agente lee este archivo antes de actuar y sigue el
-> orden de lectura del §3. Mantenido por: **archivista** · Última revisión: 2026-09-24 · Versión 1.1
+> orden de lectura del §3. Mantenido por: **archivista** · Última revisión: 2026-10-01 · Versión 1.4
 
 ---
 
@@ -26,9 +26,11 @@ qué construir, cómo comprobarlo, en qué orden y quién hace cada cosa.
 | Fase | **Cierre del PMV1** para la entrega de la Unidad II (semana del 2026-09-28; CHG-16) — `PROMPT_CIERRE_PMV1.md` |
 | Línea base | Revisión 2 de los Documentos 0–6 (`09_LINEA_BASE_V2.md`), adoptada el 2026-09-24 |
 | Repositorio | Creado con `crear_repo.ps1` (`10_REPOSITORIO.md`); etiqueta `base-integrante` |
-| Decisiones pendientes del usuario | ADR-021 (lema) · ADR-027 (SQLite) · ADR-013 · lista de fallos de la interfaz · roles · fecha exacta · licencias del manifiesto |
-| Bloqueos | Ninguno |
-| Última decisión registrada | 2026-09-24: adopción de la línea base v2 (ADR-019 a ADR-027) |
+| Línea base del arnés | Congelada el 2026-10-01: `docs/evidencias/2026-10-01_base-integrante_pc-rtx4060/` (40/40 pruebas; 0 FP en C con τ 0,48; cifras citan solo `fragmentos_v3`) |
+| Brechas frente a la rúbrica | `13_BRECHAS_RUBRICA.md` adoptado el 2026-10-01; su lista P0 (§7) sustituye a la del prompt §5 |
+| Decisiones pendientes del usuario | ADR-027 (SQLite) y ADR-013 (texto de la consulta): sin preferencia expresada, antes del PR 8 · historial de Git divergente local/remoto (`13` §1.1) · lista de fallos de la interfaz · nombres y roles · fecha exacta de la exposición · licencias del manifiesto · `.github/projects/crear_projects.ps1` · medir M16 · `SONARQUBE_ORG` y token de Cloud · aprobar las specs PR-01 y PR-02 |
+| Bloqueos | Ninguno (PR-08 depende de ADR-027 y ADR-013) |
+| Última decisión registrada | 2026-10-01: ADR-021 aceptada (5 condiciones); τ 0,48 confirmado (ADR-020, nota); defecto D-6 |
 
 ---
 
@@ -47,8 +49,9 @@ qué construir, cómo comprobarlo, en qué orden y quién hace cada cosa.
 | 9 | `08_AUDITORIA_REPO_BASE.md` | Auditoría del código base y brechas frente a la línea base v2 | Orquestador, auditor |
 | 10 | `09_LINEA_BASE_V2.md` | **Decisiones vigentes** (manda sobre 01…07 donde difieran) | Todos |
 | 11 | `10_REPOSITORIO.md` | Cómo se creó el repositorio | Usuario, orquestador |
-| 12 | `11_CASOS_VIDEO_Y_CAPTURAS.md` | Casos de prueba a mano, defectos D-1…D-5, guion del video, capturas E1 | Usuario, QA, frontend |
+| 12 | `11_CASOS_VIDEO_Y_CAPTURAS.md` | Casos de prueba a mano, defectos D-1…D-6, guion del video, capturas E1 | Usuario, QA, frontend |
 | 13 | `12_MEDICIONES_PARA_DIAPOSITIVAS.md` | Medición → diapositiva/figura; qué entregar | QA, orquestador |
+| 14 | `13_BRECHAS_RUBRICA.md` | Brechas frente a la rúbrica, cifras de la línea base (v3), condiciones de ADR-021, D-6, M16 y M17, lista P0 vigente (§7) | Orquestador, archivista, equipo |
 | — | `specs/_PLANTILLA_SPEC.md` | Plantilla de especificación por historia | Archivista |
 | — | `specs/<ID>/spec.md` | Especificación aprobada de cada historia | Programador |
 | — | `auditorias/<PR>.md` | Informes del auditor | Orquestador, usuario |
@@ -181,3 +184,4 @@ auditoría sin bloqueantes y aprobación humana del PR.
 | 2026-09-24 | 1.1 | Calendario confirmado (semana 1 = 2026-09-21); CLAUDE.md, subagentes, MCP, corpus y referencia de la PoC | Orquestador |
 | 2026-09-24 | 1.2 | Línea base v2 (revisión 2): `09`, ADR-019 a 027, CONSIDERACIONES v3 | Asistente documental |
 | 2026-10-01 | 1.3 | `10` (repositorio y `crear_repo.ps1`), `11` (casos, video, defectos D-1…D-5), `12` (mediciones para diapositivas), `PROMPT_CIERRE_PMV1.md`; subagentes a v2 | Asistente documental |
+| 2026-10-01 | 1.4 | `13_BRECHAS_RUBRICA.md` incorporado al mapa; estado del §2 al día (línea base congelada, ADR-021 aceptada, D-6); specs PR-01 y PR-02 en borrador | Archivista |

@@ -12,24 +12,24 @@ from pathlib import Path
 import numpy as np
 
 RAIZ = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(RAIZ))
+sys.path.insert(0, str(RAIZ / "src"))
 
-from application.services.depurador_consulta import DepuradorConsulta  # noqa: E402
-from application.services.evaluador_confianza import (  # noqa: E402
-    UMBRAL_CALIBRADO,
-    EvaluadorConfianza,
-)
-from application.use_cases.consultar_corpus import ConsultarCorpusUseCase  # noqa: E402
-from domain.entities.consulta import Consulta  # noqa: E402
-from domain.value_objects.idioma import Idioma  # noqa: E402
-from infrastructure.adapters.output.corpus_jsonl import cargar_fragmentos  # noqa: E402
-from infrastructure.adapters.output.detector_idioma_heuristico import (  # noqa: E402
+from adapters.out.documentos.corpus_jsonl import cargar_fragmentos  # noqa: E402
+from adapters.out.idioma.detector_idioma_heuristico import (  # noqa: E402
     DetectorIdiomaHeuristico,
 )
-from infrastructure.adapters.output.indice_hibrido_lexico import (  # noqa: E402
+from adapters.out.recuperacion.indice_hibrido_lexico import (  # noqa: E402
     IndiceHibridoLexico,
 )
-from infrastructure.adapters.output.ollama_traductor import OllamaTraductor  # noqa: E402
+from adapters.out.traduccion.ollama_traductor import OllamaTraductor  # noqa: E402
+from application.use_cases.consultar_corpus import ConsultarCorpusUseCase  # noqa: E402
+from domain.entities.consulta import Consulta  # noqa: E402
+from domain.services.depurador_consulta import DepuradorConsulta  # noqa: E402
+from domain.services.evaluador_confianza import (  # noqa: E402
+    EvaluadorConfianza,
+)
+from domain.value_objects.idioma import Idioma  # noqa: E402
+from infrastructure.config import configuracion  # noqa: E402
 
 DATOS = RAIZ / "data"
 
@@ -50,7 +50,7 @@ def medir(caso_uso, consulta_texto, oro, traduccion=None):
     posicion = next((p for p, fid in enumerate(ids, start=1) if fid in oro), None)
     return {
         "similitud_maxima": max((r.puntuacion.valor for r in recuperados), default=0.0),
-        "responde": EvaluadorConfianza().evaluar(recuperados).responder,
+        "responde": EvaluadorConfianza(configuracion.umbral_abstencion).evaluar(recuperados).responder,
         "recall_1": posicion == 1,
         "recall_5": posicion is not None and posicion <= 5,
     }
@@ -65,7 +65,7 @@ def main():
     caso_uso = ConsultarCorpusUseCase(
         indice=indice,
         generador=GeneradorNulo(),
-        evaluador=EvaluadorConfianza(),
+        evaluador=EvaluadorConfianza(configuracion.umbral_abstencion),
         detector_idioma=DetectorIdiomaHeuristico(),
         traductor=traductor,
     )
@@ -126,9 +126,9 @@ def main():
     print("\nEFECTO SOBRE EL UMBRAL")
     print(f"  ingles traducido: media {sim_pos_d.mean():.3f}  min {sim_pos_d.min():.3f}")
     print(f"  fuera de cobertura: media {sim_neg.mean():.3f}  max {sim_neg.max():.3f}")
-    atendidas = int((sim_pos_d >= UMBRAL_CALIBRADO).sum())
-    falsos = int((sim_neg >= UMBRAL_CALIBRADO).sum())
-    print(f"  con el umbral actual ({UMBRAL_CALIBRADO}): "
+    atendidas = int((sim_pos_d >= configuracion.umbral_abstencion).sum())
+    falsos = int((sim_neg >= configuracion.umbral_abstencion).sum())
+    print(f"  con el umbral actual ({configuracion.umbral_abstencion}): "
           f"{atendidas}/{len(sim_pos_d)} atendidas, {falsos} falsos positivos")
 
 
