@@ -1,4 +1,3 @@
-import json
 import logging
 import threading
 
@@ -35,8 +34,8 @@ class GeneradorExtractivo(GeneradorTextoPort):
         # GeneradorNoDisponible (modelo caido, extraccion truncada) se propaga: el caso de uso
         # responde con el fragmento literal y el aviso de redaccion.
         try:
-            datos = self._ollama.extraer(consulta, fragmentos, idioma)
-        except (json.JSONDecodeError, ValueError):
+            datos = self._ollama.extraer(consulta, fragmentos)
+        except ValueError:  # incluye json.JSONDecodeError
             datos = {}
         self._ultima.valor = (self.nombre, None)
         verificada = self._verificador.comprobar(

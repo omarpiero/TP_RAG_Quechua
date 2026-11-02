@@ -86,7 +86,7 @@ describe("despliegue en la nube", () => {
   it("en local no aparece el pie de entorno ni el aviso", async () => {
     simularApi({ ...ESTADO_NUBE, entorno: "local", generador: "ollama" });
     render(<App />);
-    await waitFor(() => expect(screen.queryByText(/fragmentos indexados/)).not.toBeNull());
+    await screen.findByText(/fragmentos indexados/);
     expect(screen.queryByTestId("pie-entorno")).toBeNull();
     expect(screen.queryByTestId("aviso-privacidad")).toBeNull();
   });

@@ -17,14 +17,16 @@ ZORRO = ["ZORRO: Atuq."]
 def test_separa_glosa_y_formas_quechuas():
     glosa, formas = m.separar_glosa_y_formas(["CONFESAR: Kunfisay.", "CÓNCAVO: Puklu."])
     assert {"confesar", "concavo"} <= glosa
-    assert {"kunfisay", "puklu"} <= formas and not (formas & glosa)
+    assert {"kunfisay", "puklu"} <= formas
+    assert not (formas & glosa)
 
 
 def test_una_redaccion_fiel_no_se_marca():
     r = m.evaluar_fidelidad(
         "La palabra zorro se dice Atuq.", "¿cómo se dice zorro en quechua wanka?", ZORRO
     )
-    assert not r["contradiccion_potencial"] and r["forma_quechua_presente"]
+    assert not r["contradiccion_potencial"]
+    assert r["forma_quechua_presente"]
 
 
 def test_la_forma_quechua_del_fragmento_no_cuenta_como_palabra_espanola():
@@ -34,7 +36,8 @@ def test_la_forma_quechua_del_fragmento_no_cuenta_como_palabra_espanola():
 
 def test_un_significado_distinto_al_de_la_glosa_se_marca():
     r = m.evaluar_fidelidad("Atuq significa lobo feroz de la montana.", "zorro", ZORRO)
-    assert r["contradiccion_potencial"] and r["palabras_extranas"] >= 2
+    assert r["contradiccion_potencial"]
+    assert r["palabras_extranas"] >= 2
 
 
 def test_tolera_flexiones_por_raiz():
@@ -70,7 +73,8 @@ def test_v2_tolera_la_negacion_que_viene_de_la_consulta():
 
 def test_v2_marca_palabras_cortas_de_contenido():
     r = m.evaluar_fidelidad("Atuq es un oso.", "zorro", ZORRO)
-    assert r["contradiccion_potencial"] and r["palabras_extranas"] == 1
+    assert r["contradiccion_potencial"]
+    assert r["palabras_extranas"] == 1
     assert not m.evaluar_fidelidad_v1("Atuq es un oso.", "zorro", ZORRO)["contradiccion_potencial"]
 
 

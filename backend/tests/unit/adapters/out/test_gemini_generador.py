@@ -57,7 +57,7 @@ def test_extrae_forma_y_glosa_y_la_clave_va_en_cabecera_no_en_la_url():
     gemini, peticiones = _gemini(
         lambda _: httpx.Response(200, json=_respuesta_gemini({"forma": "Atuq", "glosa": "ZORRO"}))
     )
-    datos = gemini.extraer("¿cómo se dice zorro?", [_zorro()], Idioma.ESPANOL)
+    datos = gemini.extraer("¿cómo se dice zorro?", [_zorro()])
     assert datos == {"forma": "Atuq", "glosa": "ZORRO"}
     assert peticiones[0].headers["x-goog-api-key"] == CLAVE
     assert CLAVE not in str(peticiones[0].url)
@@ -88,7 +88,8 @@ def test_una_forma_que_no_esta_en_el_fragmento_se_sustituye_por_el_literal():
     assert texto.startswith("ZORRO: Atuq.")
     assert "inventado" not in texto
     quien, motivo = generador.procedencia_redaccion()
-    assert quien == "extractivo" and "verificador" in motivo
+    assert quien == "extractivo"
+    assert "verificador" in motivo
 
 
 @pytest.mark.parametrize(
@@ -101,16 +102,18 @@ def test_una_forma_que_no_esta_en_el_fragmento_se_sustituye_por_el_literal():
 )
 def test_errores_de_la_api_degradan_sin_filtrar_la_clave(respuesta, motivo):
     gemini, _ = _gemini(lambda _: respuesta)
+    fragmentos = [_zorro()]
     with pytest.raises(GeneradorNoDisponible) as exc:
-        gemini.extraer("zorro", [_zorro()], Idioma.ESPANOL)
+        gemini.extraer("zorro", fragmentos)
     assert motivo in str(exc.value)
     assert CLAVE not in str(exc.value)
 
 
 def test_el_429_se_cuenta_para_la_medicion():
     gemini, _ = _gemini(lambda _: httpx.Response(429))
+    fragmentos = [_zorro()]
     with pytest.raises(GeneradorNoDisponible):
-        gemini.extraer("zorro", [_zorro()], Idioma.ESPANOL)
+        gemini.extraer("zorro", fragmentos)
     assert gemini.errores_429 == 1
 
 
@@ -119,15 +122,17 @@ def test_tiempo_agotado_degrada():
         raise httpx.ReadTimeout("lento", request=peticion)
 
     gemini, _ = _gemini(lento)
+    fragmentos = [_zorro()]
     with pytest.raises(GeneradorNoDisponible, match="tiempo agotado"):
-        gemini.extraer("zorro", [_zorro()], Idioma.ESPANOL)
+        gemini.extraer("zorro", fragmentos)
 
 
 def test_sin_clave_no_llama_a_la_api():
     gemini, peticiones = _gemini(lambda _: httpx.Response(200), clave="")
     assert gemini.disponible() is False
+    fragmentos = [_zorro()]
     with pytest.raises(GeneradorNoDisponible, match="sin clave"):
-        gemini.extraer("zorro", [_zorro()], Idioma.ESPANOL)
+        gemini.extraer("zorro", fragmentos)
     assert peticiones == []
 
 
@@ -138,7 +143,7 @@ def test_la_clave_de_la_peticion_tiene_prioridad_y_caduca():
     )
     ficha = clave_de_la_peticion.set("clave-del-usuario")
     try:
-        gemini.extraer("zorro", [_zorro()], Idioma.ESPANOL)
+        gemini.extraer("zorro", [_zorro()])
     finally:
         clave_de_la_peticion.reset(ficha)
     assert peticiones[0].headers["x-goog-api-key"] == "clave-del-usuario"
@@ -149,15 +154,16 @@ def test_ninguna_traza_contiene_la_clave(caplog):
     gemini, _ = _gemini(lambda _: httpx.Response(429))
     generador = GeneradorExtractivo(gemini)
     with caplog.at_level(logging.DEBUG):
+        fragmentos = [_zorro()]
         with pytest.raises(GeneradorNoDisponible):
-            generador.redactar("zorro", [_zorro()], Idioma.ESPANOL)
+            generador.redactar("zorro", fragmentos, Idioma.ESPANOL)
     assert CLAVE not in caplog.text
 
 
 def test_no_se_invoca_sin_fragmentos():
     gemini, peticiones = _gemini(lambda _: httpx.Response(200))
     with pytest.raises(ValueError):
-        gemini.extraer("zorro", [], Idioma.ESPANOL)
+        gemini.extraer("zorro", [])
     assert peticiones == []
 
 
@@ -176,7 +182,7 @@ def test_si_el_modelo_rechaza_la_configuracion_de_razonamiento_se_reintenta_sin_
 
     cliente = httpx.Client(transport=httpx.MockTransport(manejador))
     gemini = GeminiGenerador(clave=CLAVE, modelo="gemini-3-flash", cliente=cliente)
-    assert gemini.extraer("zorro", [_zorro()], Idioma.ESPANOL)["forma"] == "Atuq"
+    assert gemini.extraer("zorro", [_zorro()])["forma"] == "Atuq"
     assert "thinkingConfig" in json.loads(peticiones[0].content)["generationConfig"]
     assert "thinkingConfig" not in json.loads(peticiones[1].content)["generationConfig"]
 
@@ -186,7 +192,7 @@ def test_gemini_3_usa_razonamiento_bajo_con_margen_de_salida():
         lambda _: httpx.Response(200, json=_respuesta_gemini({"forma": "Atuq", "glosa": "ZORRO"}))
     )
     gemini._modelo = "gemini-3.8-flash"
-    gemini.extraer("zorro", [_zorro()], Idioma.ESPANOL)
+    gemini.extraer("zorro", [_zorro()])
     config = json.loads(peticiones[0].content)["generationConfig"]
     assert config["thinkingConfig"] == {"thinkingLevel": "low"}
     assert config["maxOutputTokens"] > 300

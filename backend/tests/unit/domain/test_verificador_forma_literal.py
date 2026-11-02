@@ -22,7 +22,8 @@ def test_el_indice_y_el_verificador_comparten_el_patron_de_lema():
 def test_segmenta_un_fragmento_con_varias_entradas():
     entradas = segmentar_entradas("CONFESAR: Kunfisay. CÓNCAVO: Puklu.")
     assert [e.lema for e in entradas] == ["CONFESAR", "CÓNCAVO"]
-    assert "Kunfisay" in entradas[0].cuerpo and "Puklu" not in entradas[0].cuerpo
+    assert "Kunfisay" in entradas[0].cuerpo
+    assert "Puklu" not in entradas[0].cuerpo
     assert "Puklu" in entradas[1].cuerpo
 
 
@@ -37,7 +38,9 @@ def test_acepta_forma_y_glosa_de_la_misma_entrada():
 
 def test_la_forma_aceptada_se_devuelve_tal_como_esta_en_el_fragmento():
     r = v.comprobar("atuq", "Zorro", ZORRO_Y_CONFESAR)  # solo se normalizan mayusculas
-    assert r is not None and r.forma == "Atuq" and r.glosa == "zorro"
+    assert r is not None
+    assert r.forma == "Atuq"
+    assert r.glosa == "zorro"
 
 
 def test_varias_formas_de_la_misma_entrada():
@@ -126,7 +129,8 @@ PERRO = ["PERRO: Allqu, ashuti."]
 def test_rechaza_dos_formas_fusionadas_sin_la_coma():
     assert not v.verificar("Allqu ashuti", "perro", PERRO)
     assert v.verificar("Allqu, ashuti", "perro", PERRO)
-    assert v.verificar("Allqu", "perro", PERRO) and v.verificar("ashuti", "perro", PERRO)
+    assert v.verificar("Allqu", "perro", PERRO)
+    assert v.verificar("ashuti", "perro", PERRO)
 
 
 @pytest.mark.salvaguarda

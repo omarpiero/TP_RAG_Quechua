@@ -129,7 +129,7 @@ class OllamaGenerador(GeneradorTextoPort):
                 raise GeneradorNoDisponible("respuesta truncada (done_reason=length)")
         return texto
 
-    def extraer(self, consulta: str, fragmentos: list[FragmentoRecuperado], idioma: Idioma) -> dict:
+    def extraer(self, consulta: str, fragmentos: list[FragmentoRecuperado]) -> dict:
         """Extraccion restringida (ADR-028): el modelo devuelve solo JSON con `forma` y `glosa`,
         copiadas de los fragmentos. No redacta nada; lo verifica quien lo llama."""
         contexto = "\n\n".join(f"[Fragmento {i}] {f.texto}" for i, f in enumerate(fragmentos, 1))

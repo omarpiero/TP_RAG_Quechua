@@ -21,6 +21,8 @@ log = logging.getLogger("rag.repositorio")
 
 ESQUEMA = Path(__file__).resolve().parents[4] / "db" / "postgres" / "esquema.sql"
 
+CONTAR_FRAGMENTOS = text("SELECT COUNT(*) FROM fragmentos")
+
 INSERTAR = text(
     "INSERT INTO fragmentos (id, documento, pagina, texto, tipo, derivado_ocr) "
     "VALUES (:id, :documento, :pagina, :texto, :tipo, :derivado_ocr) "
@@ -82,9 +84,9 @@ class RepositorioCorpusPostgres(RepositorioCorpusPort):
             for f in fragmentos
         ]
         with self._motor.begin() as conexion:
-            antes = conexion.execute(text("SELECT COUNT(*) FROM fragmentos")).scalar_one()
+            antes = conexion.execute(CONTAR_FRAGMENTOS).scalar_one()
             conexion.execute(INSERTAR, filas)
-            despues = conexion.execute(text("SELECT COUNT(*) FROM fragmentos")).scalar_one()
+            despues = conexion.execute(CONTAR_FRAGMENTOS).scalar_one()
         return int(despues - antes)
 
     def documentos(self) -> list[str]:
@@ -97,4 +99,4 @@ class RepositorioCorpusPostgres(RepositorioCorpusPort):
 
     def total(self) -> int:
         with self._motor.connect() as conexion:
-            return int(conexion.execute(text("SELECT COUNT(*) FROM fragmentos")).scalar_one())
+            return int(conexion.execute(CONTAR_FRAGMENTOS).scalar_one())

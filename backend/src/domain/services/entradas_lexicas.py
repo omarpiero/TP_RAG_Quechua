@@ -4,7 +4,7 @@ from dataclasses import dataclass
 # Lema de una entrada lexicografica: la parte en mayusculas que precede a los dos puntos,
 # como en "PERRO: Allqu, ashuti." Un mismo fragmento puede contener mas de una entrada.
 # Es la unica definicion: el indice de recuperacion y el verificador de formas la comparten.
-PATRON_LEMA = re.compile(r"([A-ZÁÉÍÓÚÜÑ][A-ZÁÉÍÓÚÜÑ\s\-]*?)\s*:")
+PATRON_LEMA = re.compile(r"([A-ZÁÉÍÓÚÜÑ](?:[A-ZÁÉÍÓÚÜÑ\s\-]*[A-ZÁÉÍÓÚÜÑ\-])?)\s*:")
 
 
 @dataclass(frozen=True)

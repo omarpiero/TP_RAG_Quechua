@@ -66,8 +66,9 @@ def test_si_topa_con_el_limite_se_reintenta_con_mas_margen(monkeypatch):
 @pytest.mark.salvaguarda
 def test_una_respuesta_truncada_nunca_se_entrega(monkeypatch):
     _ollama(monkeypatch, _fin("Se dice At", "length"), _fin("Se dice At", "length"))
+    generador, fragmentos = OllamaGenerador(), [_zorro()]
     with pytest.raises(GeneradorNoDisponible, match="truncada"):
-        OllamaGenerador().redactar("zorro", [_zorro()], Idioma.ESPANOL)
+        generador.redactar("zorro", fragmentos, Idioma.ESPANOL)
 
 
 # --- Redaccion extractiva ---
@@ -86,7 +87,8 @@ def _json(forma, glosa):
 def test_la_forma_verificada_se_compone_en_una_plantilla(monkeypatch):
     g, doble = _extractivo(monkeypatch, _json("Atuq", "zorro"))
     texto = g.redactar("¿cómo se dice zorro?", [_zorro()], Idioma.ESPANOL)
-    assert "Atuq" in texto and "zorro" in texto
+    assert "Atuq" in texto
+    assert "zorro" in texto
     assert (g.aceptadas, g.descartadas) == (1, 0)
     assert doble.peticiones[0]["format"] == "json"
 
@@ -95,7 +97,9 @@ def test_la_forma_verificada_se_compone_en_una_plantilla(monkeypatch):
 def test_una_forma_alterada_se_descarta_y_se_muestra_el_fragmento_literal(monkeypatch):
     g, _ = _extractivo(monkeypatch, _json("Atoq", "zorro"))
     texto = g.redactar("¿cómo se dice zorro?", [_zorro()], Idioma.ESPANOL)
-    assert texto.startswith("ZORRO: Atuq.") and DOC in texto and "37" in texto
+    assert texto.startswith("ZORRO: Atuq.")
+    assert DOC in texto
+    assert "37" in texto
     assert "Atoq" not in texto
     assert (g.aceptadas, g.descartadas) == (0, 1)
 
@@ -104,7 +108,8 @@ def test_una_forma_alterada_se_descarta_y_se_muestra_el_fragmento_literal(monkey
 def test_una_glosa_inventada_se_descarta(monkeypatch):
     g, _ = _extractivo(monkeypatch, _json("Atuq", "lobo"))
     texto = g.redactar("¿cómo se dice zorro?", [_zorro()], Idioma.ESPANOL)
-    assert texto.startswith("ZORRO: Atuq.") and "lobo" not in texto
+    assert texto.startswith("ZORRO: Atuq.")
+    assert "lobo" not in texto
     assert g.descartadas == 1
 
 
@@ -119,14 +124,16 @@ def test_si_el_modelo_no_responde_se_propaga_para_el_aviso_de_redaccion(monkeypa
         raise httpx.ConnectError("sin red")
 
     monkeypatch.setattr(httpx, "post", cae)
+    generador, fragmentos = GeneradorExtractivo(OllamaGenerador()), [_zorro()]
     with pytest.raises(GeneradorNoDisponible):
-        GeneradorExtractivo(OllamaGenerador()).redactar("zorro", [_zorro()], Idioma.ESPANOL)
+        generador.redactar("zorro", fragmentos, Idioma.ESPANOL)
 
 
 def test_la_plantilla_en_ingles(monkeypatch):
     g, _ = _extractivo(monkeypatch, _json("Atuq", "zorro"))
     texto = g.redactar("how do you say fox?", [_zorro()], Idioma.INGLES)
-    assert "Atuq" in texto and "Wanka Quechua" in texto
+    assert "Atuq" in texto
+    assert "Wanka Quechua" in texto
 
 
 # --- Fallos de la auditoria del PR #13: nada de esto debe llegar a la plantilla ---
@@ -166,7 +173,8 @@ def test_el_generador_extractivo_muestra_el_fragmento_literal_ante_cada_fallo(
 def test_la_plantilla_usa_la_forma_tal_como_esta_en_el_fragmento(monkeypatch):
     g, _ = _extractivo(monkeypatch, _json("añalla, MISHKI", "Miel"))
     texto = g.redactar("consulta", _dos_entradas(), Idioma.ESPANOL)
-    assert "Añalla, mishki" in texto and "«miel»" in texto
+    assert "Añalla, mishki" in texto
+    assert "«miel»" in texto
     assert g.aceptadas == 1
 
 
@@ -184,5 +192,6 @@ def test_formas_fusionadas_o_castellano_entre_parentesis_muestran_el_fragmento_l
     ]
     g, _ = _extractivo(monkeypatch, _json(forma, "perro"))
     salida = g.redactar("consulta", fragmentos, Idioma.ESPANOL)
-    assert salida.startswith("PERRO: Allqu, ashuti") and "se dice" not in salida
+    assert salida.startswith("PERRO: Allqu, ashuti")
+    assert "se dice" not in salida
     assert (g.aceptadas, g.descartadas) == (0, 1)

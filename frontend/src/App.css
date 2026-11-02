@@ -337,6 +337,8 @@
   flex-direction: row;
   align-items: center;
   gap: 0.5rem;
+  min-height: 44px; /* objetivo tactil (B13) */
+  display: flex;
 }
 
 .campo input[type="text"],
@@ -709,16 +711,20 @@ img, video { max-width: 100%; }
   padding: 0;
   list-style: none;
 }
-.origenes__control { display: block; margin: 0.25rem 0 0.75rem; }
+.origenes__control {
+  margin: 0.25rem 0 0.75rem;
+  min-height: 44px; /* objetivo tactil (B13) */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
 output { display: block; }
 
 /* Accesibilidad (B13): objetivos tactiles de al menos 44 px */
 button, select, input:not([type="checkbox"]) { min-height: 44px; }
 button { min-width: 44px; }
-.campo--casilla { min-height: 44px; display: flex; align-items: center; gap: 0.5rem; }
 input[type="checkbox"] { width: 1.5rem; height: 1.5rem; }
-.origenes__control { min-height: 44px; display: flex; align-items: center; gap: 0.5rem; }
 
 /* Estado inicial (B14) */
 .estado { margin: 0 0 1rem; padding: 0.75rem 1rem; border: 1px solid var(--borde); border-radius: 10px; background: var(--papel-hundido); }
