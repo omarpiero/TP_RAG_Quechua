@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 from domain.services.entradas_lexicas import EntradaLexica, segmentar_entradas
 
-SEPARADOR_DE_FORMAS = re.compile(r"\s*(?:,|;|/)\s*")
+SEPARADOR_DE_FORMAS = re.compile(r"[,;/]")
 # Un token es una secuencia sin espacios ni signos de puntuacion; los apostrofos y guiones de las
 # formas quechuas forman parte del token.
 SEPARADORES_DE_TOKEN = re.compile(r"[\s,;:.()\[\]¿?¡!\"«»]+")

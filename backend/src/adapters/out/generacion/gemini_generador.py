@@ -72,7 +72,7 @@ class GeminiGenerador(GeneradorTextoPort):
         # Solo se usa envuelto en GeneradorExtractivo: Gemini no redacta texto libre.
         raise GeneradorNoDisponible("Gemini solo se usa para la extraccion verificada (ADR-028)")
 
-    def extraer(self, consulta: str, fragmentos: list[FragmentoRecuperado], idioma: Idioma) -> dict:
+    def extraer(self, consulta: str, fragmentos: list[FragmentoRecuperado]) -> dict:
         if not fragmentos:
             raise ValueError("El generador no puede invocarse sin fragmentos de respaldo")
         clave = self._clave_vigente()
