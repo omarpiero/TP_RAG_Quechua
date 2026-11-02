@@ -1,7 +1,9 @@
 // HU-09 con la base de demostración (copia de backend/carga.db, consultas sintéticas rotuladas).
 import { expect, test } from "@playwright/test";
 
-import { capturar, pestana } from "./ayudas.js";
+import { join } from "node:path";
+
+import { CAPTURAS, capturar, pestana } from "./ayudas.js";
 
 test("HU-09 · demostración rotulada con la base de carga", async ({ page }) => {
   await page.goto("/");
@@ -24,4 +26,10 @@ test("HU-09 · demostración rotulada con la base de carga", async ({ page }) =>
     "HU-09_demostracion_priorizacion",
     page.getByRole("table", { name: "Demanda insatisfecha" }),
   );
+  // Pagina completa: cabecera con el aviso de base de demostracion, aviso del panel y prioridades.
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.screenshot({
+    path: join(CAPTURAS, "HU-09_demostracion_pagina_completa.png"),
+    fullPage: true,
+  });
 });

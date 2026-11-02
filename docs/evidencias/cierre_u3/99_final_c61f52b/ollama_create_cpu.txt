@@ -1,0 +1,6 @@
+[?2026h[?25l[1Ggathering model components [K
+using existing layer sha256:81fb60c7daa80fc1123380b98970b320ae233409f0f71a72ed7b9b0d62f40490 [K
+using existing layer sha256:7339fa418c9ad3e8e12e74ad0fd26a9cc4be8703f9c110728a992b193be85cb2 [K
+creating new layer sha256:8f1f5d81d74eb6cb09cdaf0d8367204b9c634847598b50f510455039ce1f78cb [K
+writing manifest [K
+success [K[?25h[?2026l

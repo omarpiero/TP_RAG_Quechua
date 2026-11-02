@@ -1,0 +1,25 @@
+[GEMINI] 20/20
+{
+ "url_api": "https://quechua-api.onrender.com",
+ "momento_utc": "2026-11-02T04:37:43+00:00",
+ "modelo": "gemini-3.5-flash-lite",
+ "regla": "v2 (medir_fidelidad.evaluar_fidelidad)",
+ "consultas": 20,
+ "afirmativas": 20,
+ "redactadas_por_gemini": 16,
+ "contradiccion_potencial": 0,
+ "contradiccion_potencial_pct": 0.0,
+ "sustituidas_por_fragmento_literal": 4,
+ "sustituidas_pct": 20.0,
+ "motivos_de_sustitucion": {
+  "cuota agotada": 2,
+  "verificador: forma o glosa ausentes del fragmento": 2
+ },
+ "errores_429": 2,
+ "latencia_servidor_ms": {
+  "p50": 765.3,
+  "p95": 859.2,
+  "media": 724
+ },
+ "errores_http": 0
+}

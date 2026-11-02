@@ -1,0 +1,58 @@
+[
+ {
+  "consulta": "¿cómo se dice zorro en quechua wanka?",
+  "p_cobertura": 0.9994,
+  "p_pasajes": 0.9981,
+  "similitud": 0.6071,
+  "corte_pasajes": 0.5,
+  "abstenida": false,
+  "via": "similitud",
+  "redactado_por": "gemini",
+  "latencia_ms": 705.5,
+  "documento": "293274822-diccionario-quechua-Wanka-docx.pdf",
+  "pagina": 37,
+  "pasajes_mostrados": 0
+ },
+ {
+  "consulta": "¿cómo se dice criptomoneda en quechua wanka?",
+  "p_cobertura": 0.0,
+  "p_pasajes": 0.0,
+  "similitud": 0.0502,
+  "corte_pasajes": 0.5,
+  "abstenida": true,
+  "via": null,
+  "redactado_por": null,
+  "latencia_ms": 12.3,
+  "documento": null,
+  "pagina": null,
+  "pasajes_mostrados": 0
+ },
+ {
+  "consulta": "¿Cuántas vocales tiene el sistema fonológico?",
+  "p_cobertura": 0.3168,
+  "p_pasajes": 0.5298,
+  "similitud": 0.302,
+  "corte_pasajes": 0.5,
+  "abstenida": true,
+  "via": null,
+  "redactado_por": null,
+  "latencia_ms": 75.0,
+  "documento": null,
+  "pagina": null,
+  "pasajes_mostrados": 3
+ },
+ {
+  "consulta": "¿Cuál es el procedimiento para renovar un pasaporte?",
+  "p_cobertura": 0.0168,
+  "p_pasajes": 0.0325,
+  "similitud": 0.2973,
+  "corte_pasajes": 0.5,
+  "abstenida": true,
+  "via": null,
+  "redactado_por": null,
+  "latencia_ms": 57.7,
+  "documento": null,
+  "pagina": null,
+  "pasajes_mostrados": 0
+ }
+]

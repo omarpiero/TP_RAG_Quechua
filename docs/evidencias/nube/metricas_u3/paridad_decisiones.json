@@ -1,0 +1,40 @@
+{
+ "campos": "decision reconstruida: similitud>=0.48 o coincidencia_lema",
+ "por_particion": {
+  "A": {
+   "resp_nube": 120,
+   "resp_local": 120,
+   "sim_nube": 108,
+   "lema_nube": 12,
+   "sim_local": 108
+  },
+  "B": {
+   "resp_nube": 60,
+   "resp_local": 60,
+   "sim_nube": 57,
+   "lema_nube": 3,
+   "sim_local": 57
+  },
+  "C": {
+   "resp_nube": 0,
+   "resp_local": 0,
+   "sim_nube": 0,
+   "lema_nube": 0,
+   "sim_local": 0
+  },
+  "D": {
+   "resp_nube": 40,
+   "resp_local": 40,
+   "sim_nube": 37,
+   "lema_nube": 3,
+   "sim_local": 37
+  }
+ },
+ "cambios_frente_a_local": [],
+ "similitud_maxima_en_C": {
+  "nube": 0.46649671578643154,
+  "local": 0.46979207927555366
+ },
+ "dif_similitud_max": 0.0034728020681701055,
+ "dif_similitud_media": 5.832039741259749e-05
+}
