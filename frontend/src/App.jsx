@@ -13,6 +13,55 @@ import TamanoTexto from "./componentes/TamanoTexto";
 import { guardarTamano, leerTamano, TAMANOS } from "./tamanoTexto";
 import "./App.css";
 
+const PESTANAS = [
+  { id: "consulta", texto: "Consultar" },
+  { id: "fuentes", texto: "Fuentes del corpus" },
+  { id: "corpus", texto: "Incorporar documentos" },
+  { id: "prediccion", texto: "Predicción ML" },
+];
+
+function Pestanas({ vista, onCambiar }) {
+  return (
+    <nav className="pestanas">
+      {PESTANAS.map(({ id, texto }) => (
+        <button
+          key={id}
+          className={`pestana ${vista === id ? "pestana--activa" : ""}`}
+          onClick={() => onCambiar(id)}
+        >
+          {texto}
+        </button>
+      ))}
+    </nav>
+  );
+}
+
+function PieEstado({ estado }) {
+  if (!estado) {
+    return <span>Sin conexión con el servicio local</span>;
+  }
+  if (estado.entorno && estado.entorno !== "local") {
+    return (
+      <span data-testid="pie-entorno">
+        Entorno: {estado.entorno} · API: {URL_API} · base {estado.motor_base_datos} · corpus{" "}
+        {estado.origen_corpus} ({estado.fragmentos_indexados.toLocaleString("es-PE")}{" "}
+        fragmentos, {estado.documentos_corpus} documentos) · redacción {estado.generador}
+        {estado.generador === "gemini" ? ` (${estado.modelo})` : ""} · modelos ML{" "}
+        {estado.predictores_disponibles ? "cargados" : "no cargados"} · umbral{" "}
+        {estado.umbral_abstencion}
+      </span>
+    );
+  }
+  return (
+    <span>
+      {estado.fragmentos_indexados.toLocaleString("es-PE")} fragmentos indexados ·
+      umbral de abstención {estado.umbral_abstencion} · modelo {estado.modelo} ·
+      {estado.predictores_disponibles ? " predictores ML activos ·" : ""}
+      procesamiento local
+    </span>
+  );
+}
+
 export default function App() {
   const [vista, setVista] = useState("consulta");
   const [resultado, setResultado] = useState(null);
@@ -97,32 +146,7 @@ export default function App() {
         </output>
       )}
 
-      <nav className="pestanas">
-        <button
-          className={`pestana ${vista === "consulta" ? "pestana--activa" : ""}`}
-          onClick={() => setVista("consulta")}
-        >
-          Consultar
-        </button>
-        <button
-          className={`pestana ${vista === "fuentes" ? "pestana--activa" : ""}`}
-          onClick={() => setVista("fuentes")}
-        >
-          Fuentes del corpus
-        </button>
-        <button
-          className={`pestana ${vista === "corpus" ? "pestana--activa" : ""}`}
-          onClick={() => setVista("corpus")}
-        >
-          Incorporar documentos
-        </button>
-        <button
-          className={`pestana ${vista === "prediccion" ? "pestana--activa" : ""}`}
-          onClick={() => setVista("prediccion")}
-        >
-          Predicción ML
-        </button>
-      </nav>
+      <Pestanas vista={vista} onCambiar={setVista} />
 
       <main className="contenido">
         {vista === "consulta" ? (
@@ -164,25 +188,7 @@ export default function App() {
       </main>
 
       <footer className="pie">
-        {estado && estado.entorno && estado.entorno !== "local" ? (
-          <span data-testid="pie-entorno">
-            Entorno: {estado.entorno} · API: {URL_API} · base {estado.motor_base_datos} · corpus{" "}
-            {estado.origen_corpus} ({estado.fragmentos_indexados.toLocaleString("es-PE")}{" "}
-            fragmentos, {estado.documentos_corpus} documentos) · redacción {estado.generador}
-            {estado.generador === "gemini" ? ` (${estado.modelo})` : ""} · modelos ML{" "}
-            {estado.predictores_disponibles ? "cargados" : "no cargados"} · umbral{" "}
-            {estado.umbral_abstencion}
-          </span>
-        ) : estado ? (
-          <span>
-            {estado.fragmentos_indexados.toLocaleString("es-PE")} fragmentos indexados ·
-            umbral de abstención {estado.umbral_abstencion} · modelo {estado.modelo} ·
-            {estado.predictores_disponibles ? " predictores ML activos ·" : ""}
-            procesamiento local
-          </span>
-        ) : (
-          <span>Sin conexión con el servicio local</span>
-        )}
+        <PieEstado estado={estado} />
       </footer>
     </div>
   );
