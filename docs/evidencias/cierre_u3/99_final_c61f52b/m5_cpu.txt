@@ -1,0 +1,68 @@
+=== M5: en frio (primera ronda) ===
+  [frio] 1/30: 6114ms (gen=True) necesito el término wanka para referirme a diablo
+  [frio] 2/30: 7183ms (gen=True) how do you say to swallow in Wanka Quechua?
+  [frio] 3/30: 14ms (gen=False) ¿cómo se dice contrato de arrendamiento en quechua
+  [frio] 4/30: 6225ms (gen=True) necesito el término wanka para referirme a compara
+  [frio] 5/30: 10ms (gen=False) ¿cómo se dice algoritmo genético en quechua wanka?
+  [frio] 6/30: 7176ms (gen=True) how do you say to fold in Wanka Quechua?
+  [frio] 7/30: 12ms (gen=False) ¿cómo se dice criptomoneda en quechua wanka?
+  [frio] 8/30: 5722ms (gen=True) ¿cómo se dice cueva en quechua wanka?
+  [frio] 9/30: 6362ms (gen=True) how do you say to paint in Wanka Quechua?
+  [frio] 10/30: 13ms (gen=False) ¿cómo se dice resonancia magnética en quechua wank
+  [frio] 11/30: 6110ms (gen=True) ¿cómo se dice huincha en quechua wanka?
+  [frio] 12/30: 6112ms (gen=True) what is the Wanka Quechua word for camarada?
+  [frio] 13/30: 8128ms (gen=True) how do you say to walk in Wanka Quechua?
+  [frio] 14/30: 6265ms (gen=True) ¿cómo se dice nuevo en quechua wanka?
+  [frio] 15/30: 13ms (gen=False) ¿cómo se dice vacuna de ARN mensajero en quechua w
+  [frio] 16/30: 6027ms (gen=True) ¿cómo se dice espinilla en quechua wanka?
+  [frio] 17/30: 6105ms (gen=True) ¿cómo se dice afecto en quechua wanka?
+  [frio] 18/30: 6671ms (gen=True) how do you say bird in Wanka Quechua?
+  [frio] 19/30: 6165ms (gen=True) ¿cómo se dice olvido en quechua wanka?
+  [frio] 20/30: 6269ms (gen=True) ¿cómo se dice barbechado en quechua wanka?
+  [frio] 21/30: 6692ms (gen=True) how do you say lizard in Wanka Quechua?
+  [frio] 22/30: 5920ms (gen=True) estoy buscando la palabra que designa mellizo en l
+  [frio] 23/30: 6433ms (gen=True) necesito el término wanka para referirme a castañe
+  [frio] 24/30: 6438ms (gen=True) how do you say to confess in Wanka Quechua?
+  [frio] 25/30: 6607ms (gen=True) ¿cómo se dice lagartija en quechua wanka?
+  [frio] 26/30: 6728ms (gen=True) how do you say to accuse in Wanka Quechua?
+  [frio] 27/30: 5919ms (gen=True) ¿cómo se dice necesitado en quechua wanka?
+  [frio] 28/30: 7653ms (gen=True) how do you say to sew in Wanka Quechua?
+  [frio] 29/30: 6644ms (gen=True) how do you say to continue in Wanka Quechua?
+  [frio] 30/30: 5933ms (gen=True) ¿cómo se dice sueldo en quechua wanka?
+
+=== M5: en caliente (segunda ronda) ===
+  [caliente] 1/30: 6047ms (gen=True) necesito el término wanka para referirme a diablo
+  [caliente] 2/30: 6896ms (gen=True) how do you say to swallow in Wanka Quechua?
+  [caliente] 3/30: 13ms (gen=False) ¿cómo se dice contrato de arrendamiento en quechua
+  [caliente] 4/30: 6216ms (gen=True) necesito el término wanka para referirme a compara
+  [caliente] 5/30: 11ms (gen=False) ¿cómo se dice algoritmo genético en quechua wanka?
+  [caliente] 6/30: 7000ms (gen=True) how do you say to fold in Wanka Quechua?
+  [caliente] 7/30: 11ms (gen=False) ¿cómo se dice criptomoneda en quechua wanka?
+  [caliente] 8/30: 5933ms (gen=True) ¿cómo se dice cueva en quechua wanka?
+  [caliente] 9/30: 6240ms (gen=True) how do you say to paint in Wanka Quechua?
+  [caliente] 10/30: 13ms (gen=False) ¿cómo se dice resonancia magnética en quechua wank
+  [caliente] 11/30: 5934ms (gen=True) ¿cómo se dice huincha en quechua wanka?
+  [caliente] 12/30: 6002ms (gen=True) what is the Wanka Quechua word for camarada?
+  [caliente] 13/30: 8201ms (gen=True) how do you say to walk in Wanka Quechua?
+  [caliente] 14/30: 6139ms (gen=True) ¿cómo se dice nuevo en quechua wanka?
+  [caliente] 15/30: 12ms (gen=False) ¿cómo se dice vacuna de ARN mensajero en quechua w
+  [caliente] 16/30: 5909ms (gen=True) ¿cómo se dice espinilla en quechua wanka?
+  [caliente] 17/30: 6378ms (gen=True) ¿cómo se dice afecto en quechua wanka?
+  [caliente] 18/30: 6725ms (gen=True) how do you say bird in Wanka Quechua?
+  [caliente] 19/30: 6062ms (gen=True) ¿cómo se dice olvido en quechua wanka?
+  [caliente] 20/30: 6394ms (gen=True) ¿cómo se dice barbechado en quechua wanka?
+  [caliente] 21/30: 7128ms (gen=True) how do you say lizard in Wanka Quechua?
+  [caliente] 22/30: 6148ms (gen=True) estoy buscando la palabra que designa mellizo en l
+  [caliente] 23/30: 6630ms (gen=True) necesito el término wanka para referirme a castañe
+  [caliente] 24/30: 6323ms (gen=True) how do you say to confess in Wanka Quechua?
+  [caliente] 25/30: 6900ms (gen=True) ¿cómo se dice lagartija en quechua wanka?
+  [caliente] 26/30: 7277ms (gen=True) how do you say to accuse in Wanka Quechua?
+  [caliente] 27/30: 5907ms (gen=True) ¿cómo se dice necesitado en quechua wanka?
+  [caliente] 28/30: 7836ms (gen=True) how do you say to sew in Wanka Quechua?
+  [caliente] 29/30: 6775ms (gen=True) how do you say to continue in Wanka Quechua?
+  [caliente] 30/30: 5970ms (gen=True) ¿cómo se dice sueldo en quechua wanka?
+
+Resultado en C:\dev\TP_RAG_Quechua\docs\evidencias\cierre_u3\99_final_c61f52b\m5_cpu\mediciones_m5.json
+  Frio:    P50=6225ms  P95=7653ms
+  Caliente: P50=6216ms  P95=7836ms
+  ollama ps: NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL

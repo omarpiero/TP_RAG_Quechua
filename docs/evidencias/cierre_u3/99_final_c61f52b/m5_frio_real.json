@@ -1,0 +1,1 @@
+{"metodo": "ollama stop + 8 s, primera consulta (carga del modelo en GPU) y la siguiente en caliente; 3 repeticiones; consulta C-01", "frio_ms": [6224, 6491, 6763], "caliente_ms": [2379, 2363, 2375], "http": 200}

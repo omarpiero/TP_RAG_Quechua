@@ -1,0 +1,40 @@
+{
+ "fecha": "2026-11-02T04:35:20+00:00",
+ "n": 248,
+ "p50_ms": 158.4,
+ "p95_ms": 283.0,
+ "por_particion": {
+  "A": {
+   "n": 120,
+   "http_200": 120,
+   "identicas_a_local": 0
+  },
+  "B": {
+   "n": 60,
+   "http_200": 60,
+   "identicas_a_local": 0
+  },
+  "C": {
+   "n": 28,
+   "http_200": 28,
+   "identicas_a_local": 0
+  },
+  "D": {
+   "n": 40,
+   "http_200": 40,
+   "identicas_a_local": 0
+  }
+ },
+ "campos_con_diferencia": [
+  "caracteristicas.dispersion_top5",
+  "caracteristicas.margen_top1_top2",
+  "caracteristicas.palabras_compartidas_prosa",
+  "caracteristicas.proporcion_compartida_prosa",
+  "caracteristicas.similitud_maxima",
+  "caracteristicas.similitud_media_top5",
+  "caracteristicas.similitud_prosa_maxima",
+  "caracteristicas.similitud_prosa_media_top3",
+  "cobertura.probabilidad",
+  "pasajes.probabilidad"
+ ]
+}

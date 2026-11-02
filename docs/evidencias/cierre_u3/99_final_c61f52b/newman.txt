@@ -1,0 +1,121 @@
+npm warn deprecated har-validator@5.1.5: this library is no longer supported
+npm warn deprecated uuid@3.4.0: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
+npm warn deprecated uuid@8.3.2: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
+npm warn deprecated @faker-js/faker@5.5.3: Please update to a newer version.
+newman
+
+Asistente de consulta del quechua wanka
+
+□ 1. Sistema
+└ Estado del sistema
+  GET http://127.0.0.1:8000/api/estado [200 OK, 995B, 41ms]
+  √  Responde 200
+  √  El corpus esta indexado
+  √  El generador esta disponible
+  √  La base de datos esta conectada
+  √  El umbral es el calibrado
+
+□ 2. Consulta del corpus
+└ HU-03 y HU-07: consulta con respaldo documental
+  POST http://127.0.0.1:8000/api/consultas [200 OK, 1.46kB, 17ms]
+  √  Responde 200
+  √  No se abstiene
+  √  Cita al menos un fragmento
+  √  RNF-08: cada fragmento indica documento y pagina
+  √  Incluye el aviso de alcance
+
+└ HU-06: abstencion ante consulta sin respaldo
+  POST http://127.0.0.1:8000/api/consultas [200 OK, 1.31kB, 13ms]
+  √  Responde 200
+  √  Se abstiene
+  √  No propone ningun fragmento
+  √  La similitud queda por debajo del umbral
+
+└ HU-05: consulta en ingles con traduccion previa
+  POST http://127.0.0.1:8000/api/consultas [200 OK, 1.55kB, 15ms]
+  √  Responde 200
+  √  Detecta el ingles
+  √  Registra con que termino se busco
+  √  No se abstiene
+
+└ RF-11: historial de la sesion
+  GET http://127.0.0.1:8000/api/historial [200 OK, 1.56kB, 11ms]
+  √  Responde 200
+  √  Devuelve las consultas registradas
+  √  Registra tambien las abstenciones
+
+□ 3. Gestion de fuentes (CRUD)
+└ Crear fuente
+  POST http://127.0.0.1:8000/api/fuentes [201 Created, 951B, 12ms]
+  √  Responde 201
+  √  Calcula la cobertura de extraccion
+
+└ Listar fuentes
+  GET http://127.0.0.1:8000/api/fuentes [200 OK, 948B, 3ms]
+  √  Responde 200
+  √  Devuelve al menos una fuente
+
+└ Obtener fuente por identificador
+  GET http://127.0.0.1:8000/api/fuentes/598bc2eb-0767-4fe6-850c-416015a29f86 [200 OK, 946B, 5ms]
+  √  Responde 200
+  √  Es la fuente solicitada
+
+└ Actualizar fuente
+  PUT http://127.0.0.1:8000/api/fuentes/598bc2eb-0767-4fe6-850c-416015a29f86 [200 OK, 962B, 7ms]
+  √  Responde 200
+  √  Aplica el cambio
+  √  Recalcula la cobertura
+
+└ RNF-11: rechazar fuente sin licenciamiento
+  POST http://127.0.0.1:8000/api/fuentes [422 Unprocessable Entity, 682B, 3ms]
+  √  Rechaza con 422
+
+└ Eliminar fuente
+  DELETE http://127.0.0.1:8000/api/fuentes/598bc2eb-0767-4fe6-850c-416015a29f86 [204 No Content, 547B, 4ms]
+  √  Responde 204
+
+└ Eliminar fuente inexistente
+  DELETE http://127.0.0.1:8000/api/fuentes/no-existe [404 Not Found, 599B, 3ms]
+  √  Responde 404
+
+□ 4. Corpus documental
+└ Listar documentos indexados
+  GET http://127.0.0.1:8000/api/corpus/documentos [200 OK, 989B, 23ms]
+  √  Responde 200
+  √  Hay documentos en el corpus
+  √  Informa del total de fragmentos
+
+└ RF-01: incorporar documento PDF
+  ┌
+  │ 'Form param `archivo`, file load error: missing file s
+  │ ource'
+  └
+  POST http://127.0.0.1:8000/api/corpus/documentos (node:32376) [DEP0044] DeprecationWarning: The `util.isArray` API is deprecated. Please use `Array.isArray()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[422 Unprocessable Entity, 669B, 4ms]
+  √  Pendiente: seleccionar un PDF en la pestana Body y reenviar
+
+└ RF-13: reconstruir el indice
+  POST http://127.0.0.1:8000/api/corpus/reindexar [200 OK, 989B, 791ms]
+  √  Responde 200
+  √  El indice conserva los fragmentos
+
+┌─────────────────────────┬───────────────────┬───────────────────┐
+│                         │          executed │            failed │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│              iterations │                 1 │                 0 │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│                requests │                15 │                 0 │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│            test-scripts │                15 │                 0 │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│      prerequest-scripts │                 0 │                 0 │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│              assertions │                39 │                 0 │
+├─────────────────────────┴───────────────────┴───────────────────┤
+│ total run duration: 1679ms                                      │
+├─────────────────────────────────────────────────────────────────┤
+│ total data received: 6.72kB (approx)                            │
+├─────────────────────────────────────────────────────────────────┤
+│ average response time: 63ms [min: 3ms, max: 791ms, s.d.: 194ms] │
+└─────────────────────────────────────────────────────────────────┘

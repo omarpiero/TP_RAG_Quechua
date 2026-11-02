@@ -1,0 +1,43 @@
+{
+ "metodo": "MD5 del texto extraido por pagina con PdfReader.extract_text(); sin texto del corpus",
+ "pypdf_antes": "5.1.0",
+ "pypdf_despues": "6.21.4",
+ "fecha": "2026-10-29",
+ "documentos": {
+  "293274822-diccionario-quechua-Wanka-docx.pdf": {
+   "paginas": 37,
+   "paginas_distintas": 0
+  },
+  "Diccionario_Huanca_Quechua_Castellano_Ca.pdf": {
+   "paginas": 6,
+   "paginas_distintas": 3
+  },
+  "Lamina de alfabeto - quechua wanka.pdf": {
+   "paginas": 1,
+   "paginas_distintas": 0
+  },
+  "Saberes_y_Haceres_VII_1_Quechua_Wanka.pdf": {
+   "paginas": 110,
+   "paginas_distintas": 4
+  },
+  "Tarjetas con relatos - quechua wanka.pdf": {
+   "paginas": 61,
+   "paginas_distintas": 1
+  },
+  "cancionero-wanka_comprimido.pdf": {
+   "paginas": 58,
+   "paginas_distintas": 32
+  },
+  "diccionario-visual-quechua-wanka_comprimido.pdf": {
+   "paginas": 120,
+   "paginas_distintas": 11
+  },
+  "vbook.pub_cerron-palomino-rodolfo-gramatica-quechua-junin-huanca-1976-ocrpdf.pdf": {
+   "paginas": 286,
+   "paginas_distintas": 0
+  }
+ },
+ "total_paginas": 679,
+ "paginas_distintas": 51,
+ "impacto": "Nulo sobre fragmentos_v3.jsonl ya ingerido (arnes identico). Solo afecta a reingestas o PDF nuevos: identico en el diccionario Wanka y en la gramatica."
+}

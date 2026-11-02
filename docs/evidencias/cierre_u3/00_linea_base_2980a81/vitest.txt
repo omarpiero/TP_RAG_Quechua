@@ -1,0 +1,9 @@
+
+ RUN  v5.0.3 C:/dev/TP_RAG_Quechua/frontend
+
+
+ Test Files  2 passed (2)
+      Tests  16 passed (16)
+   Start at  01:38:06
+   Duration  19.63s (environment 80%, setup 15%, import 2%, tests 1%, transform 1%)
+

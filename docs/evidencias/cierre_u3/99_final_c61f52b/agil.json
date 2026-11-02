@@ -1,0 +1,218 @@
+{
+ "commits_sin_merges_por_autor": {
+  "jamesSSC": {
+   "total": 4,
+   "Sprint 1": 0,
+   "Sprint 2": 4,
+   "fuera": 0
+  },
+  "omarpiero": {
+   "total": 47,
+   "Sprint 1": 14,
+   "Sprint 2": 33,
+   "fuera": 0
+  },
+  "James Saenz Castro": {
+   "total": 19,
+   "Sprint 1": 16,
+   "Sprint 2": 3,
+   "fuera": 0
+  }
+ },
+ "pr_por_autor": {
+  "omarpiero": 16,
+  "jamesSSC": 3
+ },
+ "prs": [
+  {
+   "pr": 1,
+   "titulo": "Feat/cierre pmv1 video",
+   "autor": "omarpiero",
+   "estado": "MERGED",
+   "rama": "feat/cierre-pmv1-video",
+   "primer_commit": "2026-10-01T17:44:41Z",
+   "fusion": "2026-10-01T19:32:51Z",
+   "lead_time_h": 1.8
+  },
+  {
+   "pr": 2,
+   "titulo": "PMV2 · predicción ML (HU-08.1, HU-04/RF-15, HU-09) y procedimientos almacenados",
+   "autor": "omarpiero",
+   "estado": "MERGED",
+   "rama": "feat/pmv2-prediccion-ml",
+   "primer_commit": "2026-10-29T04:08:18Z",
+   "fusion": "2026-10-29T05:56:59Z",
+   "lead_time_h": 1.8
+  },
+  {
+   "pr": 3,
+   "titulo": "chore(deps): actualizar dependencias con avisos de seguridad",
+   "autor": "omarpiero",
+   "estado": "MERGED",
+   "rama": "chore/deps-seguridad",
+   "primer_commit": "2026-10-29T06:57:32Z",
+   "fusion": "2026-10-29T20:09:20Z",
+   "lead_time_h": 13.2
+  },
+  {
+   "pr": 4,
+   "titulo": "fix(datos): carpeta de datos escribible y PDF incorporados persistentes",
+   "autor": "omarpiero",
+   "estado": "MERGED",
+   "rama": "fix/BUG-01-datos-escribibles",
+   "primer_commit": "2026-10-29T06:57:32Z",
+   "fusion": "2026-10-29T20:12:03Z",
+   "lead_time_h": 13.2
+  },
+  {
+   "pr": 5,
+   "titulo": "feat(demanda): origen de las consultas y demostracion rotulada",
+   "autor": "omarpiero",
+   "estado": "MERGED",
+   "rama": "feat/HU-09-origen-consultas",
+   "primer_commit": "2026-10-29T06:57:32Z",
+   "fusion": "2026-10-29T20:12:22Z",
+   "lead_time_h": 13.2
+  },
+  {
+   "pr": 6,
+   "titulo": "test(postgres): procedimientos visibles, seleccion de adaptador y arquitectura",
+   "autor": "omarpiero",
+   "estado": "MERGED",
+   "rama": "test/procedimientos-postgres",
+   "primer_commit": "2026-10-29T06:57:32Z",
+   "fusion": "2026-10-29T20:13:31Z",
+   "lead_time_h": 13.3
+  },
+  {
+   "pr": 7,
+   "titulo": "chore(demo): scripts de data masiva y metricas para el video",
+   "autor": "omarpiero",
+   "estado": "MERGED",
+   "rama": "chore/demo-data-masiva",
+   "primer_commit": "2026-10-29T06:57:32Z",
+   "fusion": "2026-10-29T20:14:00Z",
+   "lead_time_h": 13.3
+  },
+  {
+   "pr": 8,
+   "titulo": "chore(demo): verificador del entorno previo a la grabacion",
+   "autor": "omarpiero",
+   "estado": "MERGED",
+   "rama": "chore/verificar-entorno-demo",
+   "primer_commit": "2026-10-29T06:57:32Z",
+   "fusion": "2026-10-29T20:14:24Z",
+   "lead_time_h": 13.3
+  },
+  {
+   "pr": 9,
+   "titulo": "fix(privacidad): quitar textos de evaluacion_prosa de las evidencias versionadas",
+   "autor": "omarpiero",
+   "estado": "MERGED",
+   "rama": "fix/privacidad-evidencias",
+   "primer_commit": "2026-10-29T06:57:32Z",
+   "fusion": "2026-10-29T20:15:26Z",
+   "lead_time_h": 13.3
+  },
+  {
+   "pr": 10,
+   "titulo": "test(e2e): capturas por historia y prueba PF-18 con Playwright",
+   "autor": "omarpiero",
+   "estado": "MERGED",
+   "rama": "test/e2e-capturas",
+   "primer_commit": "2026-10-29T06:57:32Z",
+   "fusion": "2026-10-29T20:15:43Z",
+   "lead_time_h": 13.3
+  },
+  {
+   "pr": 11,
+   "titulo": "refactor(consulta): resolver la complejidad de _resolver y calidad estatica",
+   "autor": "omarpiero",
+   "estado": "MERGED",
+   "rama": "refactor/resolver-complejidad",
+   "primer_commit": "2026-10-29T06:57:32Z",
+   "fusion": "2026-10-29T20:16:00Z",
+   "lead_time_h": 13.3
+  },
+  {
+   "pr": 12,
+   "titulo": "test(carga): carga HTTP con Locust y correccion de bloqueos de SQLite",
+   "autor": "omarpiero",
+   "estado": "MERGED",
+   "rama": "test/carga-http",
+   "primer_commit": "2026-10-29T06:57:32Z",
+   "fusion": "2026-10-29T20:17:00Z",
+   "lead_time_h": 13.3
+  },
+  {
+   "pr": 13,
+   "titulo": "fix(redaccion): respuestas completas y forma y glosa verificadas (ADR-028)",
+   "autor": "omarpiero",
+   "estado": "MERGED",
+   "rama": "fix/respuestas-fidelidad",
+   "primer_commit": "2026-10-29T06:57:32Z",
+   "fusion": "2026-10-29T20:17:20Z",
+   "lead_time_h": 13.3
+  },
+  {
+   "pr": 14,
+   "titulo": "test(movil): paridad del indice movil tras los cambios del cierre",
+   "autor": "omarpiero",
+   "estado": "MERGED",
+   "rama": "test/paridad-movil",
+   "primer_commit": "2026-10-29T06:57:32Z",
+   "fusion": "2026-10-29T20:18:47Z",
+   "lead_time_h": 13.4
+  },
+  {
+   "pr": 15,
+   "titulo": "feat(a11y): 0 infracciones WCAG 2 A/AA con datos y objetivos de 44 px",
+   "autor": "omarpiero",
+   "estado": "MERGED",
+   "rama": "feat/a11y-formularios",
+   "primer_commit": "2026-10-29T06:57:32Z",
+   "fusion": "2026-10-29T20:19:14Z",
+   "lead_time_h": 13.4
+  },
+  {
+   "pr": 16,
+   "titulo": "feat(arranque): estado inicial, modo sin Ollama y ejecutable recompilado",
+   "autor": "omarpiero",
+   "estado": "MERGED",
+   "rama": "feat/arranque-exe",
+   "primer_commit": "2026-10-29T06:57:32Z",
+   "fusion": "2026-10-29T20:19:50Z",
+   "lead_time_h": 13.4
+  },
+  {
+   "pr": 17,
+   "titulo": "Feat/despliegue nube",
+   "autor": "jamesSSC",
+   "estado": "MERGED",
+   "rama": "feat/despliegue-nube",
+   "primer_commit": "2026-10-29T21:19:29Z",
+   "fusion": "2026-10-29T21:30:01Z",
+   "lead_time_h": 0.2
+  },
+  {
+   "pr": 18,
+   "titulo": "fix(nube): Gemini 3.8 Flash con razonamiento bajo; evidencia del semb…",
+   "autor": "jamesSSC",
+   "estado": "MERGED",
+   "rama": "fix/gemini-modelo",
+   "primer_commit": "2026-10-29T22:08:27Z",
+   "fusion": "2026-10-29T22:14:45Z",
+   "lead_time_h": 0.1
+  },
+  {
+   "pr": 19,
+   "titulo": "docs(nube): reporte de despliegue, evidencias y Gemini 3.5 Flash-Lite",
+   "autor": "jamesSSC",
+   "estado": "MERGED",
+   "rama": "docs/reporte-nube",
+   "primer_commit": "2026-10-29T22:37:09Z",
+   "fusion": "2026-10-29T22:41:55Z",
+   "lead_time_h": 0.1
+  }
+ ]
+}

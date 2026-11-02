@@ -1,0 +1,464 @@
+
+> frontend@0.0.0 test:e2e
+> playwright test
+
+[WebServer] INFO:     Started server process [29920]
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] 22:59:04 [REPOSITORIO] base de datos conectada
+[WebServer] 22:59:04 [DATOS] primer arranque: corpus base copiado a C:\dev\TP_RAG_Quechua\frontend\e2e\.tmp\datos_8000\fragmentos_v3.jsonl
+[WebServer] 22:59:05 [INDICE] construido con 3605 fragmentos (jsonl)
+[WebServer] 22:59:05 [PREDICTOR] cargado cobertura.joblib
+[WebServer] 22:59:05 [PREDICTOR] cargado relevancia_pasajes.joblib
+[WebServer] INFO:     Application startup complete.
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+[WebServer] 22:59:08 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 22:59:08 [REST] GET /api/estado
+[WebServer] INFO:     Started server process [6276]
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] 22:59:11 [REPOSITORIO] base de datos conectada
+[WebServer] 22:59:11 [DATOS] primer arranque: corpus base copiado a C:\dev\TP_RAG_Quechua\frontend\e2e\.tmp\datos_8001\fragmentos_v3.jsonl
+[WebServer] 22:59:11 HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[WebServer] 22:59:11 [INDICE] construido con 3605 fragmentos (jsonl)
+[WebServer] 22:59:12 [PREDICTOR] cargado cobertura.joblib
+[WebServer] 22:59:12 [PREDICTOR] cargado relevancia_pasajes.joblib
+[WebServer] INFO:     Application startup complete.
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+[WebServer] 22:59:14 HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[WebServer] 22:59:15 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 22:59:15 [REST] GET /api/estado
+[WebServer] INFO:     Started server process [10460]
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] 22:59:17 [REPOSITORIO] base de datos conectada
+[WebServer] 22:59:17 [DATOS] primer arranque: corpus base copiado a C:\dev\TP_RAG_Quechua\frontend\e2e\.tmp\datos_8002\fragmentos_v3.jsonl
+[WebServer] 22:59:18 [INDICE] construido con 3605 fragmentos (jsonl)
+[WebServer] 22:59:18 [PREDICTOR] cargado cobertura.joblib
+[WebServer] 22:59:18 [PREDICTOR] cargado relevancia_pasajes.joblib
+[WebServer] INFO:     Application startup complete.
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:8002 (Press CTRL+C to quit)
+[WebServer] 22:59:21 [REST] GET /api/estado
+
+Running 21 tests using 1 worker
+
+[WebServer] 22:59:25 [REST] GET /api/historial
+[WebServer] 22:59:25 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:25 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 22:59:25 [REST] GET /api/historial
+[WebServer] 22:59:25 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:25 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 22:59:27 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 22:59:27 [REST] GET /api/estado
+[WebServer] 22:59:27 [REST] POST /api/consultas
+[WebServer] 22:59:27 [PUERTO-IN] ConsultarCorpusPort.ejecutar
+[WebServer] 22:59:27 [CASO-USO] ConsultarCorpus: idioma=es
+[WebServer] 22:59:27 [TRADUCTOR] lecturas candidatas=0
+[WebServer] 22:59:27 [INDICE] k=5 recuperados=5 sim_max=0.610 mejor=35d5d6d6b8a4 (293274822-diccionario-quechua-Wanka-docx.pdf, p. 37)
+[WebServer] 22:59:27 [EVALUADOR] responder=True via=similitud tau=0.48
+[WebServer] 22:59:27 [PREDICTOR] probabilidad de cobertura=0.999
+[WebServer] 22:59:27 [GENERADOR] invocado (1 fragmentos de respaldo)
+[WebServer] 22:59:29 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 22:59:29 [REST] GET /api/estado
+[WebServer] 22:59:30 HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[WebServer] 22:59:30 [REPOSITORIO] registrada consulta_id=ef7c834c-b23a-4cd6-8834-848637cedd68 abstenida=False
+[WebServer] 22:59:30 [REST] GET /api/historial
+[WebServer] 22:59:30 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:30 [CASO-USO] ConsultarHistorial: limite=50
+  ok  1 [real] › e2e\a11y.real.spec.js:55:1 › axe · Consultar con una respuesta (6.1s)
+[WebServer] 22:59:31 [REST] GET /api/historial
+[WebServer] 22:59:31 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:31 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 22:59:31 [REST] GET /api/historial
+[WebServer] 22:59:31 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:31 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 22:59:31 [REST] GET /api/fuentes
+[WebServer] 22:59:31 [REST] GET /api/fuentes
+  ok  2 [real] › e2e\a11y.real.spec.js:65:1 › axe · Fuentes del corpus (703ms)
+[WebServer] 22:59:31 [REST] GET /api/historial
+[WebServer] 22:59:31 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:31 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 22:59:31 [REST] GET /api/historial
+[WebServer] 22:59:31 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:31 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 22:59:31 [REST] GET /api/corpus/documentos
+[WebServer] 22:59:31 [REST] GET /api/corpus/documentos
+  ok  3 [real] › e2e\a11y.real.spec.js:74:1 › axe · Incorporar documentos (693ms)
+[WebServer] 22:59:32 [REST] GET /api/historial
+[WebServer] 22:59:32 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:32 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 22:59:32 [REST] GET /api/historial
+[WebServer] 22:59:32 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:32 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 22:59:32 [REST] GET /api/analitica/demanda
+[WebServer] 22:59:32 [REST] GET /api/modelos
+[WebServer] 22:59:32 [PUERTO-IN] AnalizarDemandaPort.ejecutar
+[WebServer] 22:59:32 [REST] GET /api/modelos
+[WebServer] 22:59:32 [CASO-USO] AnalizarDemanda: 66 consultas contadas ({'usuario': 66})
+[WebServer] 22:59:32 [REST] GET /api/analitica/demanda
+[WebServer] 22:59:32 [PUERTO-IN] AnalizarDemandaPort.ejecutar
+[WebServer] 22:59:32 [CASO-USO] AnalizarDemanda: 66 consultas contadas ({'usuario': 66})
+[WebServer] 22:59:33 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 22:59:33 [REST] GET /api/estado
+  ok  4 [real] › e2e\a11y.real.spec.js:83:1 › axe · Predicción ML (869ms)
+[WebServer] 22:59:33 [REST] GET /api/historial
+[WebServer] 22:59:33 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:33 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 22:59:33 [REST] GET /api/historial
+[WebServer] 22:59:33 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:33 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 22:59:33 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 22:59:33 [REST] GET /api/estado
+[WebServer] 22:59:34 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 22:59:34 [REST] GET /api/estado
+[WebServer] 22:59:35 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 22:59:35 [REST] GET /api/estado
+[WebServer] 22:59:35 [REST] GET /api/fuentes
+[WebServer] 22:59:35 [REST] GET /api/fuentes
+[WebServer] 22:59:35 [REST] POST /api/fuentes
+[WebServer] 22:59:36 [REST] GET /api/fuentes
+[WebServer] 22:59:36 [REST] PUT /api/fuentes/{id}
+[WebServer] 22:59:36 [REST] GET /api/fuentes
+[WebServer] 22:59:36 [REST] DELETE /api/fuentes/{id}
+[WebServer] 22:59:36 [REST] GET /api/fuentes
+  ok  5 [real] › e2e\capturas.real.spec.js:17:1 › HU-01 · registrar, editar y eliminar una fuente (CRUD) (3.0s)
+[WebServer] 22:59:36 [REST] GET /api/historial
+[WebServer] 22:59:36 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:36 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 22:59:36 [REST] GET /api/historial
+[WebServer] 22:59:36 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:36 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 22:59:37 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 22:59:37 [REST] GET /api/estado
+[WebServer] 22:59:38 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 22:59:38 [REST] GET /api/estado
+[WebServer] 22:59:38 [REST] POST /api/consultas
+[WebServer] 22:59:38 [PUERTO-IN] ConsultarCorpusPort.ejecutar
+[WebServer] 22:59:38 [CASO-USO] ConsultarCorpus: idioma=es
+[WebServer] 22:59:38 [TRADUCTOR] lecturas candidatas=0
+[WebServer] 22:59:38 [INDICE] k=5 recuperados=5 sim_max=0.610 mejor=35d5d6d6b8a4 (293274822-diccionario-quechua-Wanka-docx.pdf, p. 37)
+[WebServer] 22:59:38 [EVALUADOR] responder=True via=similitud tau=0.48
+[WebServer] 22:59:38 [PREDICTOR] probabilidad de cobertura=0.999
+[WebServer] 22:59:38 [GENERADOR] invocado (1 fragmentos de respaldo)
+[WebServer] 22:59:40 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 22:59:40 [REST] GET /api/estado
+[WebServer] 22:59:41 HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[WebServer] 22:59:41 [REPOSITORIO] registrada consulta_id=2adadb2b-7bc2-4cd3-9f11-ce8ac31009c9 abstenida=False
+[WebServer] 22:59:41 [REST] GET /api/historial
+[WebServer] 22:59:41 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:41 [CASO-USO] ConsultarHistorial: limite=50
+  ok  6 [real] › e2e\capturas.real.spec.js:41:1 › HU-03 y HU-07 · una palabra con documento y página (5.5s)
+[WebServer] 22:59:41 [REST] GET /api/historial
+[WebServer] 22:59:41 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:41 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 22:59:42 [REST] GET /api/historial
+[WebServer] 22:59:42 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:42 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 22:59:44 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 22:59:44 [REST] GET /api/estado
+[WebServer] 22:59:44 [REST] POST /api/consultas
+[WebServer] 22:59:44 [PUERTO-IN] ConsultarCorpusPort.ejecutar
+[WebServer] 22:59:44 [CASO-USO] ConsultarCorpus: idioma=es
+[WebServer] 22:59:44 [TRADUCTOR] lecturas candidatas=0
+[WebServer] 22:59:44 [INDICE] k=5 recuperados=5 sim_max=0.331 mejor=35d5d6d6b8a4 (293274822-diccionario-quechua-Wanka-docx.pdf, p. 37)
+[WebServer] 22:59:44 [EVALUADOR] responder=False via=ninguna tau=0.48
+[WebServer] 22:59:44 [PREDICTOR] probabilidad de cobertura=0.451
+[WebServer] 22:59:44 [GENERADOR] NO invocado (sin respaldo)
+[WebServer] 22:59:44 [CASO-USO] pasajes de prosa ofrecidos=0 (no es una respuesta)
+[WebServer] 22:59:44 [REPOSITORIO] registrada consulta_id=232732f2-ebac-4004-808d-d69dde92dbdf abstenida=True
+[WebServer] 22:59:44 [REST] GET /api/historial
+[WebServer] 22:59:44 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:44 [CASO-USO] ConsultarHistorial: limite=50
+  ok  7 [real] › e2e\capturas.real.spec.js:53:1 › HU-04 · contenido cultural (2.8s)
+[WebServer] 22:59:44 [REST] GET /api/historial
+[WebServer] 22:59:44 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:44 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 22:59:44 [REST] GET /api/historial
+[WebServer] 22:59:44 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:44 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 22:59:46 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 22:59:46 [REST] GET /api/estado
+[WebServer] 22:59:46 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 22:59:46 [REST] GET /api/estado
+[WebServer] 22:59:47 [REST] POST /api/consultas
+[WebServer] 22:59:47 [PUERTO-IN] ConsultarCorpusPort.ejecutar
+[WebServer] 22:59:47 [CASO-USO] ConsultarCorpus: idioma=en
+[WebServer] 22:59:47 [TRADUCTOR] lecturas candidatas=1
+[WebServer] 22:59:47 [INDICE] k=5 recuperados=5 sim_max=0.610 mejor=35d5d6d6b8a4 (293274822-diccionario-quechua-Wanka-docx.pdf, p. 37)
+[WebServer] 22:59:47 [EVALUADOR] responder=True via=similitud tau=0.48
+[WebServer] 22:59:47 [PREDICTOR] probabilidad de cobertura=1.000
+[WebServer] 22:59:47 [GENERADOR] invocado (1 fragmentos de respaldo)
+[WebServer] 22:59:48 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 22:59:48 [REST] GET /api/estado
+[WebServer] 22:59:49 HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[WebServer] 22:59:49 [REPOSITORIO] registrada consulta_id=7e8d6ca3-893d-43e8-b87a-cafa21d3b1b3 abstenida=False
+[WebServer] 22:59:49 [REST] GET /api/historial
+[WebServer] 22:59:49 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:49 [CASO-USO] ConsultarHistorial: limite=50
+  ok  8 [real] › e2e\capturas.real.spec.js:58:1 › HU-05 · consulta en inglés (5.5s)
+[WebServer] 22:59:50 [REST] GET /api/historial
+[WebServer] 22:59:50 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:50 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 22:59:50 [REST] GET /api/historial
+[WebServer] 22:59:50 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:50 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 22:59:52 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 22:59:52 [REST] GET /api/estado
+[WebServer] 22:59:52 [REST] POST /api/consultas
+[WebServer] 22:59:52 [PUERTO-IN] ConsultarCorpusPort.ejecutar
+[WebServer] 22:59:52 [CASO-USO] ConsultarCorpus: idioma=es
+[WebServer] 22:59:52 [TRADUCTOR] lecturas candidatas=0
+[WebServer] 22:59:52 [INDICE] k=5 recuperados=5 sim_max=0.050 mejor=b2a0c64b7e2d (293274822-diccionario-quechua-Wanka-docx.pdf, p. 28)
+[WebServer] 22:59:52 [EVALUADOR] responder=False via=ninguna tau=0.48
+[WebServer] 22:59:52 [PREDICTOR] probabilidad de cobertura=0.000
+[WebServer] 22:59:52 [CASO-USO] consulta lexica: sin pasajes de prosa
+[WebServer] 22:59:52 [GENERADOR] NO invocado (sin respaldo)
+[WebServer] 22:59:52 [CASO-USO] pasajes de prosa ofrecidos=0 (no es una respuesta)
+[WebServer] 22:59:52 [REPOSITORIO] registrada consulta_id=aa7f4acb-b2b4-4cc7-ad20-c301d35d068f abstenida=True
+[WebServer] 22:59:52 [REST] GET /api/historial
+[WebServer] 22:59:52 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:52 [CASO-USO] ConsultarHistorial: limite=50
+  ok  9 [real] › e2e\capturas.real.spec.js:65:1 › HU-06 · sin respaldo no hay respuesta (2.7s)
+[WebServer] 22:59:52 [REST] GET /api/historial
+[WebServer] 22:59:52 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:52 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 22:59:52 [REST] GET /api/historial
+[WebServer] 22:59:52 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:52 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 22:59:54 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 22:59:54 [REST] GET /api/estado
+[WebServer] 22:59:54 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 22:59:55 [REST] GET /api/estado
+[WebServer] 22:59:55 [REST] POST /api/consultas
+[WebServer] 22:59:55 [PUERTO-IN] ConsultarCorpusPort.ejecutar
+[WebServer] 22:59:55 [CASO-USO] ConsultarCorpus: idioma=es
+[WebServer] 22:59:55 [TRADUCTOR] lecturas candidatas=0
+[WebServer] 22:59:55 [INDICE] k=5 recuperados=5 sim_max=0.610 mejor=35d5d6d6b8a4 (293274822-diccionario-quechua-Wanka-docx.pdf, p. 37)
+[WebServer] 22:59:55 [EVALUADOR] responder=True via=similitud tau=0.48
+[WebServer] 22:59:55 [PREDICTOR] probabilidad de cobertura=0.999
+[WebServer] 22:59:55 [GENERADOR] invocado (1 fragmentos de respaldo)
+[WebServer] 22:59:57 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 22:59:57 [REST] GET /api/estado
+[WebServer] 22:59:58 HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[WebServer] 22:59:58 [REPOSITORIO] registrada consulta_id=43e47950-895d-4fe8-8acb-b518ba70d89c abstenida=False
+[WebServer] 22:59:58 [REST] GET /api/historial
+[WebServer] 22:59:58 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:58 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 22:59:58 [REST] GET /api/modelos
+[WebServer] 22:59:58 [REST] GET /api/analitica/demanda
+[WebServer] 22:59:58 [PUERTO-IN] AnalizarDemandaPort.ejecutar
+[WebServer] 22:59:58 [CASO-USO] AnalizarDemanda: 71 consultas contadas ({'usuario': 71})
+[WebServer] 22:59:58 [REST] GET /api/modelos
+[WebServer] 22:59:58 [REST] GET /api/analitica/demanda
+[WebServer] 22:59:58 [PUERTO-IN] AnalizarDemandaPort.ejecutar
+[WebServer] 22:59:58 [CASO-USO] AnalizarDemanda: 71 consultas contadas ({'usuario': 71})
+  ok 10 [real] › e2e\capturas.real.spec.js:73:1 › HU-08.1 · probabilidad de respaldo antes de generar (5.6s)
+[WebServer] 22:59:58 [REST] GET /api/historial
+[WebServer] 22:59:58 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:58 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 22:59:58 [REST] GET /api/historial
+[WebServer] 22:59:58 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 22:59:58 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 23:00:00 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 23:00:00 [REST] GET /api/estado
+[WebServer] 23:00:00 [REST] POST /api/consultas
+[WebServer] 23:00:00 [PUERTO-IN] ConsultarCorpusPort.ejecutar
+[WebServer] 23:00:00 [CASO-USO] ConsultarCorpus: idioma=es
+[WebServer] 23:00:00 [TRADUCTOR] lecturas candidatas=0
+[WebServer] 23:00:00 [INDICE] k=5 recuperados=5 sim_max=0.436 mejor=097395698cd4 (vbook.pub_cerron-palomino-rodolfo-gramatica-quechua-junin-huanca-1976-ocrpdf.pdf, p. 125)
+[WebServer] 23:00:00 [EVALUADOR] responder=False via=ninguna tau=0.48
+[WebServer] 23:00:00 [PREDICTOR] probabilidad de cobertura=0.728
+[WebServer] 23:00:00 [GENERADOR] NO invocado (sin respaldo)
+[WebServer] 23:00:00 [CASO-USO] pasajes de prosa ofrecidos=1 (no es una respuesta)
+[WebServer] 23:00:00 [REPOSITORIO] registrada consulta_id=d2f00fe6-fcb3-4470-947f-89dd61343c40 abstenida=True
+[WebServer] 23:00:00 [REST] GET /api/historial
+[WebServer] 23:00:00 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 23:00:00 [CASO-USO] ConsultarHistorial: limite=50
+  ok 11 [real] › e2e\capturas.real.spec.js:86:1 › RF-15 · pasajes con la segunda probabilidad (2.9s)
+[WebServer] 23:00:01 [REST] GET /api/historial
+[WebServer] 23:00:01 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 23:00:01 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 23:00:01 [REST] GET /api/historial
+[WebServer] 23:00:01 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 23:00:01 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 23:00:02 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 23:00:02 [REST] GET /api/estado
+[WebServer] 23:00:03 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 23:00:03 [REST] GET /api/estado
+[WebServer] 23:00:03 [REST] GET /api/modelos
+[WebServer] 23:00:03 [REST] GET /api/analitica/demanda
+[WebServer] 23:00:03 [PUERTO-IN] AnalizarDemandaPort.ejecutar
+[WebServer] 23:00:03 [CASO-USO] AnalizarDemanda: 72 consultas contadas ({'usuario': 72})
+[WebServer] 23:00:03 [REST] GET /api/modelos
+[WebServer] 23:00:03 [REST] GET /api/analitica/demanda
+[WebServer] 23:00:03 [PUERTO-IN] AnalizarDemandaPort.ejecutar
+[WebServer] 23:00:03 [CASO-USO] AnalizarDemanda: 72 consultas contadas ({'usuario': 72})
+  ok 12 [real] › e2e\capturas.real.spec.js:96:1 › HU-09 · insuficiencia con la base real (2.8s)
+[WebServer] 23:00:04 [REST] GET /api/historial
+[WebServer] 23:00:04 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 23:00:04 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 23:00:04 [REST] GET /api/historial
+[WebServer] 23:00:04 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 23:00:04 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 23:00:05 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 23:00:05 [REST] GET /api/estado
+[WebServer] 23:00:06 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 23:00:06 [REST] GET /api/estado
+  ok 13 [real] › e2e\capturas.real.spec.js:102:1 › Historial · consultas guardadas (RF-11) (2.7s)
+[WebServer] 23:00:06 [REST] GET /api/historial
+[WebServer] 23:00:06 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 23:00:06 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 23:00:06 [REST] GET /api/historial
+[WebServer] 23:00:06 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 23:00:06 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 23:00:08 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 23:00:08 [REST] GET /api/estado
+[WebServer] 23:00:08 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 23:00:08 [REST] GET /api/estado
+  ok 14 [real] › e2e\capturas.real.spec.js:107:1 › Validación · consulta vacía y demasiado larga no llegan a la API (2.7s)
+[WebServer] 23:00:09 [REST] GET /api/historial
+[WebServer] 23:00:09 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 23:00:09 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 23:00:09 [REST] GET /api/historial
+[WebServer] 23:00:09 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 23:00:09 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 23:00:10 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 23:00:10 [REST] GET /api/estado
+[WebServer] 23:00:11 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 23:00:11 [REST] GET /api/estado
+[WebServer] 23:00:13 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 23:00:13 [REST] GET /api/estado
+  ok 15 [real] › e2e\capturas.real.spec.js:121:1 › Validación 422 y Swagger · la API rechaza una consulta inválida (6.9s)
+[WebServer] 23:00:16 [REST] GET /api/historial
+[WebServer] 23:00:16 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 23:00:16 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 23:00:16 [REST] GET /api/historial
+[WebServer] 23:00:16 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 23:00:16 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 23:00:18 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 23:00:18 [REST] GET /api/estado
+[WebServer] 23:00:18 [REST] GET /api/corpus/documentos
+[WebServer] 23:00:18 [REST] GET /api/corpus/documentos
+[WebServer] 23:00:19 [REST] POST /api/corpus/documentos
+[WebServer] 23:00:19 [PUERTO-IN] IngestarDocumentoPort.ejecutar
+[WebServer] 23:00:19 [CASO-USO] IngestarDocumento: tipo=lexicografico
+[WebServer] 23:00:20 [DATOS] PDF guardado sha256=951a4c421821 duplicado=False
+[WebServer] 23:00:20 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 23:00:21 [INDICE] fragmentos generados=2360 nuevos=2360
+[WebServer] 23:00:21 [REST] GET /api/estado
+[WebServer] 23:00:21 [REST] GET /api/corpus/documentos
+[WebServer] 23:00:21 [REST] POST /api/corpus/reindexar
+[WebServer] 23:00:21 [PUERTO-IN] ReindexarCorpusPort.ejecutar
+[WebServer] 23:00:21 [CASO-USO] ReindexarCorpus
+  ok 16 [real] › e2e\capturas.real.spec.js:165:1 › HU-02 · incorporar un PDF ya registrado en el corpus y reindexar (5.2s)
+[WebServer] 23:00:22 [REST] GET /api/historial
+[WebServer] 23:00:22 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 23:00:22 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 23:00:22 [INDICE] reindexado: fragmentos=5965
+[WebServer] 23:00:24 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 23:00:24 [REST] GET /api/estado
+[WebServer] 23:00:24 [REST] POST /api/consultas
+[WebServer] 23:00:24 [PUERTO-IN] ConsultarCorpusPort.ejecutar
+[WebServer] 23:00:24 [CASO-USO] ConsultarCorpus: idioma=es
+[WebServer] 23:00:24 [TRADUCTOR] lecturas candidatas=0
+[WebServer] 23:00:24 [INDICE] k=5 recuperados=5 sim_max=0.614 mejor=35d5d6d6b8a4 (293274822-diccionario-quechua-Wanka-docx.pdf, p. 37)
+[WebServer] 23:00:24 [EVALUADOR] responder=True via=similitud tau=0.48
+[WebServer] 23:00:24 [PREDICTOR] probabilidad de cobertura=0.998
+[WebServer] 23:00:24 [GENERADOR] invocado (2 fragmentos de respaldo)
+[WebServer] 23:00:27 HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[WebServer] 23:00:27 [REPOSITORIO] registrada consulta_id=30eaa583-6aa0-4819-8df2-aea405d17a63 abstenida=False
+[WebServer] 23:00:27 [REST] GET /api/historial
+[WebServer] 23:00:27 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 23:00:27 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 23:00:27 [REST] GET /api/modelos
+[WebServer] 23:00:27 [REST] GET /api/analitica/demanda
+[WebServer] 23:00:27 [PUERTO-IN] AnalizarDemandaPort.ejecutar
+[WebServer] 23:00:27 [CASO-USO] AnalizarDemanda: 73 consultas contadas ({'usuario': 73})
+[WebServer] 23:00:27 [REST] GET /api/fuentes
+[WebServer] 23:00:27 [REST] GET /api/corpus/documentos
+  ok 17 [real] › e2e\csp.real.spec.js:11:1 › CSP · la interfaz servida por el backend no viola su política (6.3s)
+[WebServer] 23:00:28 [REST] GET /api/historial
+[WebServer] 23:00:28 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 23:00:28 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 23:00:28 [REST] GET /api/historial
+[WebServer] 23:00:28 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 23:00:28 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 23:00:30 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 23:00:30 [REST] GET /api/estado
+  ok 18 [real] › e2e\estado.real.spec.js:6:1 › Estado inicial · todo disponible (2.6s)
+[WebServer] 23:00:30 [REST] GET /api/historial
+[WebServer] 23:00:30 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 23:00:30 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 23:00:30 [REST] GET /api/historial
+[WebServer] 23:00:30 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 23:00:30 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 23:00:30 [REST] POST /api/consultas
+[WebServer] 23:00:30 [PUERTO-IN] ConsultarCorpusPort.ejecutar
+[WebServer] 23:00:30 [CASO-USO] ConsultarCorpus: idioma=es
+[WebServer] 23:00:30 [TRADUCTOR] lecturas candidatas=0
+[WebServer] 23:00:30 [INDICE] k=5 recuperados=5 sim_max=0.614 mejor=35d5d6d6b8a4 (293274822-diccionario-quechua-Wanka-docx.pdf, p. 37)
+[WebServer] 23:00:30 [EVALUADOR] responder=True via=similitud tau=0.48
+[WebServer] 23:00:30 [PREDICTOR] probabilidad de cobertura=0.998
+[WebServer] 23:00:30 [GENERADOR] invocado (2 fragmentos de respaldo)
+[WebServer] 23:00:32 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 23:00:32 [REST] GET /api/estado
+[WebServer] 23:00:32 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 23:00:32 [REST] GET /api/estado
+[WebServer] 23:00:33 HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[WebServer] 23:00:33 [REPOSITORIO] registrada consulta_id=bf7ae6cf-c6ae-46d6-a5ec-2ba293bd246f abstenida=False
+[WebServer] 23:00:33 [REST] GET /api/historial
+[WebServer] 23:00:33 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 23:00:33 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 23:00:33 [REST] DELETE /api/historial
+[WebServer] 23:00:33 [PUERTO-IN] ConsultarHistorialPort.borrar
+[WebServer] 23:00:33 [CASO-USO] ConsultarHistorial: borrar
+[WebServer] 23:00:33 [REPOSITORIO] historial borrado (74 consultas)
+[WebServer] 23:00:33 [REST] GET /api/historial
+[WebServer] 23:00:33 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 23:00:33 [CASO-USO] ConsultarHistorial: limite=50
+  ok 19 [real] › e2e\pf18.real.spec.js:6:1 › PF-18 · consulta, trazabilidad, historial y borrado (3.1s)
+[WebServer] 23:00:34 [REST] GET /api/historial
+[WebServer] 23:00:34 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 23:00:34 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 23:00:34 [REST] GET /api/historial
+[WebServer] 23:00:34 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 23:00:34 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 23:00:34 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 23:00:34 [REST] GET /api/estado
+[WebServer] 23:00:36 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 23:00:36 [REST] GET /api/estado
+[WebServer] 23:00:37 [REST] GET /api/modelos
+[WebServer] 23:00:37 [REST] GET /api/analitica/demanda
+[WebServer] 23:00:37 [PUERTO-IN] AnalizarDemandaPort.ejecutar
+[WebServer] 23:00:37 [REST] GET /api/modelos
+[WebServer] 23:00:37 [CASO-USO] AnalizarDemanda: 0 consultas contadas ({'carga': 800})
+[WebServer] 23:00:37 [REST] GET /api/analitica/demanda
+[WebServer] 23:00:37 [PUERTO-IN] AnalizarDemandaPort.ejecutar
+[WebServer] 23:00:37 [CASO-USO] AnalizarDemanda: 0 consultas contadas ({'carga': 800})
+[WebServer] 23:00:37 [REST] GET /api/analitica/demanda
+[WebServer] 23:00:37 [PUERTO-IN] AnalizarDemandaPort.ejecutar
+[WebServer] 23:00:37 [CASO-USO] AnalizarDemanda: 800 consultas contadas ({'carga': 800})
+  ok 20 [demo] › e2e\capturas.demo.spec.js:6:1 › HU-09 · demostración rotulada con la base de carga (3.1s)
+[WebServer] 23:00:38 [REST] GET /api/historial
+[WebServer] 23:00:38 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 23:00:38 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 23:00:38 [REST] GET /api/historial
+[WebServer] 23:00:38 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 23:00:38 [CASO-USO] ConsultarHistorial: limite=50
+[WebServer] 23:00:38 HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+[WebServer] 23:00:38 [REST] GET /api/estado
+[WebServer] 23:00:40 [REST] GET /api/estado
+[WebServer] 23:00:41 [REST] POST /api/consultas
+[WebServer] 23:00:41 [PUERTO-IN] ConsultarCorpusPort.ejecutar
+[WebServer] 23:00:41 [CASO-USO] ConsultarCorpus: idioma=es
+[WebServer] 23:00:41 [TRADUCTOR] lecturas candidatas=0
+[WebServer] 23:00:41 [INDICE] k=5 recuperados=5 sim_max=0.610 mejor=35d5d6d6b8a4 (293274822-diccionario-quechua-Wanka-docx.pdf, p. 37)
+[WebServer] 23:00:41 [EVALUADOR] responder=True via=similitud tau=0.48
+[WebServer] 23:00:41 [PREDICTOR] probabilidad de cobertura=0.999
+[WebServer] 23:00:41 [GENERADOR] invocado (1 fragmentos de respaldo)
+[WebServer] 23:00:42 [REST] GET /api/estado
+[WebServer] 23:00:43 [GENERADOR] fallo: GeneradorNoDisponible -> plantilla literal
+[WebServer] 23:00:43 [REPOSITORIO] registrada consulta_id=0d9daef5-53bf-4579-a33b-5fc8740db608 abstenida=False
+[WebServer] 23:00:43 [REST] GET /api/historial
+[WebServer] 23:00:43 [PUERTO-IN] ConsultarHistorialPort.ejecutar
+[WebServer] 23:00:43 [CASO-USO] ConsultarHistorial: limite=50
+  ok 21 [sin-ollama] › e2e\c10.sin-ollama.spec.js:7:1 › C-10 · Ollama detenido: fragmento literal con aviso, sin error 500 (4.8s)
+
+  21 passed (1.7m)

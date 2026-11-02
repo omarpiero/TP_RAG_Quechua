@@ -1,0 +1,34 @@
+[22:41:49] pytest con cobertura y PostgreSQL de prueba
+1 failed, 370 passed, 2 warnings in 44.04s
+[22:42:50] frontend: npm ci, vitest con cobertura, build
+      Tests  34 passed (34)
+[22:43:02] E2E Playwright (regenera capturas)
+    Error: expect(locator).toHaveCount(expected) failed
+  1 failed
+  20 passed (3.4m)
+[22:46:30] arnes 248 consultas (con y sin lema, barrido)
+arnes_por_consulta.csv identico a 2980a81
+barrido_umbral.csv identico a 2980a81
+[22:46:34] modelos: reentreno en carpeta temporal y evaluar_pmv2
+metricas.json reproducido (sin fechas): True
+[22:46:55] inferencia ML por consulta
+{"n": 248, "p50_ms": 6.11, "p95_ms": 12.66, "nota": "caso de uso de prediccion completo: recuperacion + rasgos + dos modelos, sin generador ni registro"}
+[22:47:00] radon, bandit, pip-audit
+Average complexity: A (2.55470737913486)
+[22:48:10] Newman local contra API con base aparte
+{"requests": {"total": 15, "pending": 0, "failed": 0}, "assertions": {"total": 39, "pending": 0, "failed": 0}}
+[22:48:34] data masiva SQLite 800 y PostgreSQL 1000
+[ ok ] Para verla en la app:  scripts\demo\01_arrancar_app.ps1 -BaseDemo
+[ ok ] Para verla en la app:  scripts\demo\01_arrancar_app.ps1 -Base postgres -BaseDemo
+[22:49:06] paridad del indice movil
+Desajustes en el top-5    : 0
+
+RESULTADO: EQUIVALENTE
+[22:49:11] M5 con Qwen en GPU y predictores
+VRAM pico MiB: 4676
+[22:51:40] M5 en pocos recursos: Qwen en CPU (num_gpu=0)
+[22:57:18] SonarQube local
+INFO: Analysis total time: 32.830 s
+INFO: SonarScanner Engine completed successfully
+{"projectStatus":{"status":"ERROR","conditions":[{"status":"OK","metricKey":"new_coverage","comparator":"LT","errorThreshold":"80","actualValue":"87.8"},{"status":"OK","metricKey":"new_duplicated_lines_density","comparator":"GT","errorThreshold":"3","actualValue":"0.0"},{"status":"ERROR","metricKey"[22:58:20] agil: commits y PR
+[22:58:21] FIN

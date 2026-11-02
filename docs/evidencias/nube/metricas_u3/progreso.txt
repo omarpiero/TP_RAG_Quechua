@@ -1,0 +1,18 @@
+[23:33:18] paridad 248 consultas contra /api/predicciones
+{"fecha": "2026-11-02T04:35:20+00:00", "n": 248, "p50_ms": 158.4, "p95_ms": 283.0, "por_particion": {"A": {"n": 120, "http_200": 120, "identicas_a_local": 0}, "B": {"n": 60, "http_200": 60, "identicas_a_local": 0}, "C": {"n": 28, "http_200": 28, "identicas_a_local": 0}, "D": {"n": 40, "http_200": 40, "identicas_a_local": 0}}, "campos_con_diferencia": ["caracteristicas.dispersion_top5", "caracteris
+[23:35:21] humo por endpoint (servicio despierto)
+[HUMO] GET /api/modelos -> 200 p50=126.4 ms
+[HUMO] CRUD fuentes APROBADO {'crear': {'estado': 201, 'ms': 134.3}, 'listar': {'estado': 200, 'ms': 129.6, 'total': 11}, 'actualizar': {'estado': 200, 'ms': 140.8}, 'eliminar': {'estado': 204, 'ms': 
+[HUMO] escrito C:\dev\TP_RAG_Quechua\docs\evidencias\nube\metricas_u3\humo_2026-11-02_0435.json
+[23:35:45] Gemini: 20 consultas de A con 5 s de pausa
+  "media": 724
+ },
+ "errores_http": 0
+}
+[23:37:43] comparacion local frente a nube (10 A + 10 C)
+{"n": 20, "misma_decision": 20}
+[23:39:41] Newman contra la nube con cabeceras de humo
+{"requests": {"total": 15, "pending": 0, "failed": 0}, "assertions": {"total": 39, "pending": 0, "failed": 0}, "tiempo_medio_ms": 898.1333333333333}
+[23:40:00] conteo por origen e historial
+{"conteo_por_origen": null, "suficiente": false, "total": null, "modo": "real", "mensaje": "Historial insuficiente: hay 13 consultas registradas y se necesitan al menos 100. No se emite priorización. Otras 764 consultas de prueba no cuentan como demanda real."}
+[23:40:00] FIN
