@@ -41,8 +41,9 @@ def test_verificar_acepta_carga_db_y_bases_temporales(tmp_path):
 
 
 def test_verificar_aborta_con_la_base_postgres_real():
+    real = SimpleNamespace(base_datos="postgres", postgres_db="quechua_wanka")
     with pytest.raises(SystemExit):
-        seguro.verificar(SimpleNamespace(base_datos="postgres", postgres_db="quechua_wanka"))
+        seguro.verificar(real)
     seguro.verificar(SimpleNamespace(base_datos="postgres", postgres_db="quechua_wanka_demo"))
 
 

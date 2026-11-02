@@ -147,7 +147,8 @@ def test_byok_la_clave_vale_solo_para_su_peticion_y_no_se_devuelve(caplog):
     assert con.json() == {"clave_presente": True}
     assert sin.json() == {"clave_presente": False}
     assert vistas == [SECRETO, None]
-    assert SECRETO not in con.text and SECRETO not in str(con.headers)
+    assert SECRETO not in con.text
+    assert SECRETO not in str(con.headers)
     assert SECRETO not in caplog.text
     assert clave_de_la_peticion.get() is None
 
