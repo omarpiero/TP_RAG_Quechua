@@ -1,0 +1,9 @@
+# Demostracion LOCAL (127.0.0.1:8120, SQLite temporal, GENERADOR=literal). Auditoria OWASP S13, 2026-11-12T17:04:55-05:00. No toca la nube.
+
+== Archivo no PDF con extension .pdf (comprobacion de contenido)
+POST /api/corpus/documentos -> HTTP 422
+{"detail":"El archivo 'falso.pdf' no es un PDF legible"}
+
+== Nombre con traversal
+POST /api/corpus/documentos -> HTTP 422
+{"detail":"El nombre del archivo no puede contener '..'"}

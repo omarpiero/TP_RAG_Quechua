@@ -1,0 +1,28 @@
+# Nube, solo lecturas permitidas (GET /openapi.json, GET /docs, GET /api/estado, HEAD). 2026-11-12T17:08:14-05:00
+== GET https://quechua-api.onrender.com/openapi.json -> metodos por ruta y esquema de seguridad declarado
+   GET              /api/estado  security= [None]
+   POST             /api/consultas  security= [None]
+   GET DELETE       /api/historial  security= [None, None]
+   GET POST         /api/corpus/documentos  security= [None, None]
+   POST             /api/corpus/reindexar  security= [None]
+   GET POST         /api/fuentes  security= [None, None]
+   GET PUT DELETE   /api/fuentes/{fuente_id}  security= [None, None, None]
+   POST             /api/predicciones  security= [None]
+   GET              /api/modelos  security= [None]
+   GET              /api/analitica/demanda  security= [None]
+   GET              /  security= [None]
+   components.securitySchemes = None
+== GET https://quechua-api.onrender.com/docs (recursos externos)
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui.css">
+<link rel="shortcut icon" href="https://fastapi.tiangolo.com/img/favicon.png">
+<script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui-bundle.js">
+<script>
+== GET https://quechua-api.onrender.com/api/estado
+{"fragmentos_indexados":3607,"umbral_abstencion":0.48,"generador_disponible":true,"base_datos_disponible":true,"modelo":"gemini-3.5-flash-lite","predictores_disponibles":true,"consistencia":{"estado":"ok","avisos":[]},"consultas_por_origen":{"carga":1005,"humo":268,"usuario":37},"base_demostracion":true,"entorno":"staging","motor_base_datos":"postgres","origen_corpus":"postgres","generador":"gemini","modelos_ml":{"cobertura_hu08_1":true,"pasajes_rf15":true},"documentos_corpus":10}
+== HEAD http://quechua-api.onrender.com/api/vivo (redireccion a HTTPS)
+HTTP/1.1 301 Moved Permanently
+Location: https://quechua-api.onrender.com/api/vivo
+== HEAD https://quechua-api.onrender.com/api/vivo (HSTS)
+HTTP/1.1 404 Not Found
+content-security-policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'
+(sin strict-transport-security en la API si no aparece arriba)

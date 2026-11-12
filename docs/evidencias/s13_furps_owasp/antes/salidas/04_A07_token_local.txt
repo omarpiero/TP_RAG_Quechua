@@ -1,0 +1,9 @@
+# Demostracion LOCAL (127.0.0.1:8120, SQLite temporal, GENERADOR=literal). Auditoria OWASP S13, 2026-11-12T17:05:00-05:00. No toca la nube.
+
+== X-Origen-Consultas sin token valido (TOKEN_PRUEBAS vacio en local)
+POST /api/consultas -> HTTP 200
+{"consulta_id":"90b7c6ac-9148-42ac-9067-533e56a312f8","texto":"AGUA: Yaku. (agua clara) Chuyaq yaku. (agua (293274822-diccionario-quechua-Wanka-docx.pdf, p. 2)\n128 CERRON - PALOMINO aun cuando existen ejemplos marginales del uso dey como marca de dicho caso, como en mamay ‘ madre mía ’, taytay ‘ padre mío ’, etc. Los once casos que integran la flexión casual del quechua huanca son: Sufijo Ejemplo Caso a) Genitivo b) Acusativo c) Ilativo d) Ablativo yakupkta yakuktaman yakumanpiqta yakupiqta ‘ de, acerca de (l) agua ’traw yakutraw ‘ en (el) agua ’wan yakuu; an ‘ con agua ’ ‘ para (el) agua ’la...
+
+== Conteo por origen (debe seguir en 'usuario')
+GET /api/estado -> HTTP 200
+{"fragmentos_indexados":3606,"umbral_abstencion":0.48,"generador_disponible":true,"base_datos_disponible":true,"modelo":"qwen3.5:4b","predictores_disponibles":true,"consistencia":{"estado":"ok","avisos":[]},"consultas_por_origen":{"usuario":63},"base_demostracion":false,"entorno":"local","motor_base_datos":"sqlite","origen_corpus":"jsonl","generador":"extractivo","modelos_ml":{"cobertura_hu08_1":true,"pasajes_rf15":true},"documentos_corpus":9}

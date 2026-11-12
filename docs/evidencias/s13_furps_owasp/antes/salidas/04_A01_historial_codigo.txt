@@ -1,0 +1,24 @@
+$ cat -n backend/src/adapters/in/rest/historial_controller.py (rama s13/owasp, antes de la fase 2)
+
+    14	@router.get("/historial", response_model=list[EntradaHistorial], tags=["consulta"])
+    15	def historial(
+    16	    # R-04 (S13): fuera de rango da 422; antes, un LIMIT negativo era un 500 de PostgreSQL.
+    17	    limite: int = Query(50, ge=1, le=500),
+    18	    puerto: ConsultarHistorialPort = Depends(dependencias.consultar_historial),
+    19	):
+    20	    log.info("[REST] GET /api/historial")
+    21	    log.info("[PUERTO-IN] ConsultarHistorialPort.ejecutar")
+    22	    return [
+    23	        EntradaHistorial(
+    24	            consulta=consulta.texto,
+    25	            respuesta=respuesta.texto,
+    26	            abstenida=respuesta.abstenida,
+    27	            similitud_maxima=round(respuesta.similitud_maxima, 4),
+    28	            via_respaldo=respuesta.via_respaldo,
+    29	            momento=respuesta.momento,
+    30	            probabilidad_cobertura=respuesta.probabilidad_cobertura,
+    31	        )
+    32	        for consulta, respuesta in puerto.ejecutar(limite)
+    33	    ]
+    34	
+    35	

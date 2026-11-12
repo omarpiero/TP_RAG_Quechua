@@ -1,0 +1,63 @@
+$ cat -n backend/src/application/use_cases/ingestar_documento.py (rama s13/owasp, antes de la fase 2)
+
+    35	        self._corpus = corpus
+    36	        self._indice = indice
+    37	        self._repositorio_fuentes = repositorio_fuentes
+    38	        self._segmentador = segmentador or Segmentador()
+    39	        self._almacen = almacen_documentos
+    40	
+    41	    def ejecutar(
+    42	        self,
+    43	        contenido: bytes,
+    44	        nombre_archivo: str,
+    45	        tipo: TipoFragmento,
+    46	        titulo: str,
+    47	        entidad_publicadora: str,
+    48	        licenciamiento: str,
+    49	        derivado_ocr: bool = False,
+    50	    ) -> ResultadoIngesta:
+    51	        log.info("[CASO-USO] IngestarDocumento: tipo=%s", tipo.value)
+    52	        documento = self._extractor.extraer(contenido, nombre_archivo)
+    53	
+    54	        fuente = Fuente(
+    55	            titulo=titulo,
+    56	            entidad_publicadora=entidad_publicadora,
+    57	            licenciamiento=licenciamiento,
+    58	            fecha_extraccion=date.today(),
+    59	            nombre_archivo=nombre_archivo,
+    60	            paginas_totales=documento.paginas_totales,
+    61	            paginas_con_texto=documento.paginas_con_texto,
+    62	            derivado_ocr=derivado_ocr,
+    63	        )
+    64	
+    65	        if self._almacen is not None:
+    66	            guardado = self._almacen.guardar(contenido, nombre_archivo)
+    67	            log.info(
+    68	                "[DATOS] PDF guardado sha256=%s duplicado=%s",
+    69	                guardado.sha256[:12],
+    70	                guardado.duplicado,
+    71	            )
+    72	            # El almacen puede haber cambiado el nombre (colision o PDF ya guardado): fuente y
+    73	            # fragmentos usan el nombre con el que el documento quedo guardado.
+    74	            if guardado.nombre != nombre_archivo:
+    75	                documento = replace(documento, nombre_archivo=guardado.nombre)
+    76	                fuente = replace(fuente, nombre_archivo=guardado.nombre)
+    77	
+    78	        fragmentos = self._segmentador.segmentar(documento, tipo, derivado_ocr)
+    79	        nuevos = self._corpus.agregar(fragmentos)
+    80	
+    81	        if nuevos:
+    82	            self._indice.indexar(self._corpus.cargar())
+    83	
+    84	        if self._repositorio_fuentes is not None:
+    85	            self._repositorio_fuentes.crear(fuente)
+    86	
+    87	        log.info("[INDICE] fragmentos generados=%d nuevos=%d", len(fragmentos), nuevos)
+    88	        return ResultadoIngesta(
+    89	            fuente=fuente,
+    90	            paginas_totales=documento.paginas_totales,
+    91	            paginas_con_texto=documento.paginas_con_texto,
+    92	            fragmentos_generados=len(fragmentos),
+    93	            fragmentos_nuevos=nuevos,
+    94	            total_indexado=self._indice.total_indexado(),
+    95	        )
