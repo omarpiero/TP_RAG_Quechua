@@ -1,0 +1,118 @@
+(node:26912) [DEP0176] DeprecationWarning: fs.F_OK is deprecated, use fs.constants.F_OK instead
+(Use `node --trace-deprecation ...` to show where the warning was created)
+newman
+
+Asistente de consulta del quechua wanka
+
+Folder 1. Sistema
+Sub-folder Estado del sistema
+  GET http://127.0.0.1:8098/api/estado [200 OK, 995B, 119ms]
+  Pass  Responde 200
+  Pass  El corpus esta indexado
+  Pass  El generador esta disponible
+  Pass  La base de datos esta conectada
+  Pass  El umbral es el calibrado
+
+Folder 2. Consulta del corpus
+Sub-folder HU-03 y HU-07: consulta con respaldo documental
+  POST http://127.0.0.1:8098/api/consultas [200 OK, 1.46kB, 51ms]
+  Pass  Responde 200
+  Pass  No se abstiene
+  Pass  Cita al menos un fragmento
+  Pass  RNF-08: cada fragmento indica documento y pagina
+  Pass  Incluye el aviso de alcance
+
+Sub-folder HU-06: abstencion ante consulta sin respaldo
+  POST http://127.0.0.1:8098/api/consultas [200 OK, 1.31kB, 32ms]
+  Pass  Responde 200
+  Pass  Se abstiene
+  Pass  No propone ningun fragmento
+  Pass  La similitud queda por debajo del umbral
+
+Sub-folder HU-05: consulta en ingles con traduccion previa
+  POST http://127.0.0.1:8098/api/consultas [200 OK, 1.55kB, 39ms]
+  Pass  Responde 200
+  Pass  Detecta el ingles
+  Pass  Registra con que termino se busco
+  Pass  No se abstiene
+
+Sub-folder RF-11: historial de la sesion
+  GET http://127.0.0.1:8098/api/historial [200 OK, 1.56kB, 19ms]
+  Pass  Responde 200
+  Pass  Devuelve las consultas registradas
+  Pass  Registra tambien las abstenciones
+
+Folder 3. Gestion de fuentes (CRUD)
+Sub-folder Crear fuente
+  POST http://127.0.0.1:8098/api/fuentes [201 Created, 951B, 26ms]
+  Pass  Responde 201
+  Pass  Calcula la cobertura de extraccion
+
+Sub-folder Listar fuentes
+  GET http://127.0.0.1:8098/api/fuentes [200 OK, 948B, 7ms]
+  Pass  Responde 200
+  Pass  Devuelve al menos una fuente
+
+Sub-folder Obtener fuente por identificador
+  GET http://127.0.0.1:8098/api/fuentes/9d594536-833d-417e-9b97-42a48b86097f [200 OK, 946B, 9ms]
+  Pass  Responde 200
+  Pass  Es la fuente solicitada
+
+Sub-folder Actualizar fuente
+  PUT http://127.0.0.1:8098/api/fuentes/9d594536-833d-417e-9b97-42a48b86097f [200 OK, 962B, 11ms]
+  Pass  Responde 200
+  Pass  Aplica el cambio
+  Pass  Recalcula la cobertura
+
+Sub-folder RNF-11: rechazar fuente sin licenciamiento
+  POST http://127.0.0.1:8098/api/fuentes [422 Unprocessable Entity, 682B, 6ms]
+  Pass  Rechaza con 422
+
+Sub-folder Eliminar fuente
+  DELETE http://127.0.0.1:8098/api/fuentes/9d594536-833d-417e-9b97-42a48b86097f [204 No Content, 547B, 13ms]
+  Pass  Responde 204
+
+Sub-folder Eliminar fuente inexistente
+  DELETE http://127.0.0.1:8098/api/fuentes/no-existe [404 Not Found, 599B, 11ms]
+  Pass  Responde 404
+
+Folder 4. Corpus documental
+Sub-folder Listar documentos indexados
+  GET http://127.0.0.1:8098/api/corpus/documentos [200 OK, 989B, 63ms]
+  Pass  Responde 200
+  Pass  Hay documentos en el corpus
+  Pass  Informa del total de fragmentos
+
+Sub-folder RF-01: incorporar documento PDF
+  -
+  | 'Form param `archivo`, file load error: missing file s
+  | ource'
+  -
+  POST http://127.0.0.1:8098/api/corpus/documentos (node:26912) [DEP0044] DeprecationWarning: The `util.isArray` API is deprecated. Please use `Array.isArray()` instead.
+[422 Unprocessable Entity, 669B, 10ms]
+  Pass  Pendiente: seleccionar un PDF en la pestana Body y reenviar
+
+Sub-folder RF-13: reconstruir el indice
+  POST http://127.0.0.1:8098/api/corpus/reindexar [200 OK, 989B, 2.2s]
+  Pass  Responde 200
+  Pass  El indice conserva los fragmentos
+
+-------------------------------------------------------------------
+|                         |          executed |            failed |
+--------------------------+-------------------+--------------------
+|              iterations |                 1 |                 0 |
+--------------------------+-------------------+--------------------
+|                requests |                15 |                 0 |
+--------------------------+-------------------+--------------------
+|            test-scripts |                15 |                 0 |
+--------------------------+-------------------+--------------------
+|      prerequest-scripts |                 0 |                 0 |
+--------------------------+-------------------+--------------------
+|              assertions |                39 |                 0 |
+-------------------------------------------------------------------
+| total run duration: 3.8s                                        |
+-------------------------------------------------------------------
+| total data received: 6.72kB (approx)                            |
+-------------------------------------------------------------------
+| average response time: 175ms [min: 6ms, max: 2.2s, s.d.: 545ms] |
+-------------------------------------------------------------------

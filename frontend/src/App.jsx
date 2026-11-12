@@ -1,6 +1,14 @@
 import { useEffect, useState } from "react";
 
-import { borrarHistorial, consultar, obtenerEstado, obtenerHistorial, URL_API } from "./api";
+import {
+  API_REMOTA,
+  AVISO_ESPERA_MS,
+  borrarHistorial,
+  consultar,
+  obtenerEstado,
+  obtenerHistorial,
+  URL_API,
+} from "./api";
 import ConfiguracionNube from "./componentes/ConfiguracionNube";
 import CajaConsulta from "./componentes/CajaConsulta";
 import EstadoInicial from "./componentes/EstadoInicial";
@@ -27,6 +35,7 @@ function Pestanas({ vista, onCambiar }) {
         <button
           key={id}
           className={`pestana ${vista === id ? "pestana--activa" : ""}`}
+          aria-current={vista === id ? "page" : undefined}
           onClick={() => onCambiar(id)}
         >
           {texto}
@@ -36,9 +45,39 @@ function Pestanas({ vista, onCambiar }) {
   );
 }
 
-function PieEstado({ estado }) {
+// REF-02 (ADR-033): verdadero cuando `activo` lleva mas de AVISO_ESPERA_MS sin resolverse.
+function useEsperaLarga(activo) {
+  const [larga, setLarga] = useState(false);
+  useEffect(() => {
+    if (!activo) return undefined;
+    const temporizador = setTimeout(() => setLarga(true), AVISO_ESPERA_MS);
+    return () => {
+      clearTimeout(temporizador);
+      setLarga(false);
+    };
+  }, [activo]);
+  return activo && larga;
+}
+
+function AvisoEspera({ visible }) {
+  if (!visible) return null;
+  return (
+    <output className="aviso-arranque" data-testid="aviso-arranque">
+      {API_REMOTA
+        ? "El servicio en la nube se está activando tras un periodo sin uso (plan gratuito). " +
+          "La primera respuesta puede tardar hasta un minuto; no hace falta recargar la página."
+        : "La respuesta está tardando más de lo habitual: el modelo puede estar cargándose. " +
+          "Espere, por favor."}
+    </output>
+  );
+}
+
+function PieEstado({ estado, conectando }) {
   if (!estado) {
-    return <span>Sin conexión con el servicio local</span>;
+    if (conectando) return <span>Conectando con el servicio…</span>;
+    return (
+      <span>Sin conexión con el servicio {API_REMOTA ? "en la nube" : "local"}</span>
+    );
   }
   if (estado.entorno && estado.entorno !== "local") {
     return (
@@ -67,6 +106,8 @@ export default function App() {
   const [resultado, setResultado] = useState(null);
   const [historial, setHistorial] = useState({ entradas: [], disponible: true });
   const [estado, setEstado] = useState(null);
+  // Mientras /api/estado no responde (arranque en frio de Render: 62-72 s medidos).
+  const [conectando, setConectando] = useState(true);
   const [cargando, setCargando] = useState(false);
   const [error, setError] = useState(null);
   const [ultimaConsulta, setUltimaConsulta] = useState(null);
@@ -83,12 +124,24 @@ export default function App() {
       .then((entradas) => setHistorial({ entradas, disponible: true }))
       .catch(() => setHistorial({ entradas: [], disponible: false }));
 
-  useEffect(() => {
+  const cargarEstado = () =>
     obtenerEstado()
       .then(setEstado)
-      .catch(() => setEstado(null));
+      .catch(() => setEstado(null))
+      .finally(() => setConectando(false));
+
+  const reintentarEstado = () => {
+    setConectando(true);
+    cargarEstado();
+    cargarHistorial();
+  };
+
+  useEffect(() => {
+    cargarEstado();
     cargarHistorial();
   }, []);
+
+  const esperaLarga = useEsperaLarga(conectando || cargando);
 
   const lanzarConsulta = async (texto) => {
     setCargando(true);
@@ -146,12 +199,18 @@ export default function App() {
         </output>
       )}
 
+      <AvisoEspera visible={esperaLarga} />
+
       <Pestanas vista={vista} onCambiar={setVista} />
 
       <main className="contenido">
         {vista === "consulta" ? (
           <>
-            <EstadoInicial estado={estado} />
+            <EstadoInicial
+              estado={estado}
+              conectando={conectando}
+              onReintentar={reintentarEstado}
+            />
             {estado?.generador === "gemini" && <ConfiguracionNube />}
             <CajaConsulta onConsultar={lanzarConsulta} cargando={cargando} />
 
@@ -188,7 +247,7 @@ export default function App() {
       </main>
 
       <footer className="pie">
-        <PieEstado estado={estado} />
+        <PieEstado estado={estado} conectando={conectando} />
       </footer>
     </div>
   );

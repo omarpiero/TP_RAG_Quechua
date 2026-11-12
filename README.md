@@ -59,6 +59,7 @@ adaptador correspondiente y se resuelve en `infrastructure/contenedor.py`.
 | HU-07 | Trazabilidad documental | Campo `respaldo` de la respuesta | Consultar |
 | RF-11 | Historial de sesión | `GET /api/historial` | Consultar |
 | RF-13 | Reconstrucción del índice | `POST /api/corpus/reindexar` | Incorporar documentos |
+| REF-01 | Prueba de vida para el ping programado, sin tocar la base (ADR-034) | `GET /api/vivo` | — |
 
 ## Reparto de roles
 

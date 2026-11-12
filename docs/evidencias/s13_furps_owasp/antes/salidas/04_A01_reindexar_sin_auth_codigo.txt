@@ -1,0 +1,16 @@
+$ grep -n (fragmento) backend/src/adapters/in/rest/corpus_controller.py  —  rama s13/furps-owasp = main 1d0b129
+
+    92	    )
+    93	
+    94	
+    95	@router.get("/corpus/documentos", response_model=DocumentosCorpus, tags=["corpus"])
+    96	def listar_documentos(puerto: ReindexarCorpusPort = Depends(dependencias.reindexar_corpus)):
+    97	    log.info("[REST] GET /api/corpus/documentos")
+    98	    return _a_salida(puerto.estado())
+    99	
+   100	
+   101	@router.post("/corpus/reindexar", response_model=DocumentosCorpus, tags=["corpus"])
+   102	def reindexar(puerto: ReindexarCorpusPort = Depends(dependencias.reindexar_corpus)):
+   103	    log.info("[REST] POST /api/corpus/reindexar")
+   104	    log.info("[PUERTO-IN] ReindexarCorpusPort.ejecutar")
+   105	    return _a_salida(puerto.ejecutar())

@@ -1,0 +1,19 @@
+$ grep -n (fragmento) backend/src/infrastructure/main.py  —  rama s13/furps-owasp = main 1d0b129
+
+    44	)
+    45	
+    46	app.add_middleware(ClaveGeminiDeLaPeticion)
+    47	app.add_middleware(OrigenDePruebasAutorizado, token=configuracion.token_pruebas)
+    48	app.add_middleware(CabecerasDeSeguridad)
+    49	app.add_middleware(
+    50	    CORSMiddleware,
+    51	    allow_origins=configuracion.lista_cors,
+    52	    allow_credentials=True,
+    53	    allow_methods=["*"],
+    54	    allow_headers=["*"],
+    55	)
+    56	
+    57	for router in routers:
+    58	    app.include_router(router)
+    59	
+    60	

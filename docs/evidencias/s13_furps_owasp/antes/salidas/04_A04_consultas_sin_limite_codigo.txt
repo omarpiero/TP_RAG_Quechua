@@ -1,0 +1,15 @@
+$ grep -n (fragmento) backend/src/adapters/in/rest/consultas_controller.py  —  rama s13/furps-owasp = main 1d0b129
+
+    28	    )
+    29	
+    30	
+    31	@router.post("/consultas", response_model=RespuestaSalida, tags=["consulta"])
+    32	def consultar(
+    33	    entrada: ConsultaEntrada,
+    34	    puerto: ConsultarCorpusPort = Depends(dependencias.consultar_corpus),
+    35	):
+    36	    """HU-03, HU-06 y HU-07. La respuesta no puede emitirse sin los campos de documento y
+    37	    pagina cuando no es una abstencion: el contrato lo hace verificable."""
+    38	    log.info("[REST] POST /api/consultas")
+    39	    log.info("[PUERTO-IN] ConsultarCorpusPort.ejecutar")
+    40	    respuesta = puerto.ejecutar(entrada.texto)

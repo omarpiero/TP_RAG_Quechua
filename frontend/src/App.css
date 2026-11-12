@@ -770,3 +770,15 @@ input[type="checkbox"] { width: 1.5rem; height: 1.5rem; }
   font-size: 0.85em;
   color: var(--tinta-suave);
 }
+
+/* REF-02 (ADR-033): aviso de arranque en frio. */
+.aviso-arranque {
+  display: block;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--abstencion);
+  border-left-width: 4px;
+  border-radius: 6px;
+  font-weight: 600;
+  color: var(--abstencion);
+}

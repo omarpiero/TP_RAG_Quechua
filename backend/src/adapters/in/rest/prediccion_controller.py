@@ -3,7 +3,7 @@ HU-09). Solo traduce HTTP <-> DTO y depende de los puertos de entrada."""
 
 import logging
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Query
 
 from application.ports import AnalizarDemandaPort, PredecirConsultaPort
 
@@ -35,7 +35,7 @@ def modelos(puerto: PredecirConsultaPort = Depends(dependencias.predecir_consult
 
 @router.get("/analitica/demanda", tags=["prediccion"])
 def demanda(
-    top: int = 15,
+    top: int = Query(15, ge=1, le=100),  # R-04 (S13)
     incluir_sinteticas: bool = False,
     puerto: AnalizarDemandaPort = Depends(dependencias.analizar_demanda),
 ):

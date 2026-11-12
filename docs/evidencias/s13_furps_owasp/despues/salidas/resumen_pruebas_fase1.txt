@@ -1,0 +1,29 @@
+== pytest (backend, corpus v3, sin PostgreSQL)
+antes:   365 passed, 6 skipped, 2 warnings in 26.32s
+después: 378 passed, 6 skipped, 2 warnings in 128.76s (0:02:08)
+TOTAL                                                                2426    286    88%
+
+== Vitest
+antes:
+      Tests  34 passed (34)
+después:
+      Tests  43 passed (43)
+
+== E2E Playwright (sin Ollama: 'Estado inicial · todo disponible' exige Ollama)
+antes:
+  1 failed
+  1 skipped
+  19 passed (4.3m)
+después:
+  1 failed
+  1 skipped
+  19 passed (4.3m)
+
+== Newman local (15 peticiones)
+antes:   |              assertions |                39 |                 0 |
+después: |              assertions |                39 |                 0 |
+
+== Arnés 248 consultas, tau 0,48
+arnes_por_consulta.csv: idéntico byte a byte antes/después
+barrido_umbral.csv: idéntico byte a byte antes/después
+"tau":"0.48","regla_lema":"si","vp":180,"fp":0,"vn":28,"fn":0,"precision":"1.0000","recall":"1.0000","f1":"1.0000","especificidad":"1.0000"

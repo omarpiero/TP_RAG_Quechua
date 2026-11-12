@@ -1,0 +1,44 @@
+$ grep -n (fragmento) backend/src/adapters/in/rest/historial_controller.py  —  rama s13/furps-owasp = main 1d0b129
+
+     1	import logging
+     2	
+     3	from fastapi import APIRouter, Depends, Response
+     4	
+     5	from application.ports import ConsultarHistorialPort
+     6	
+     7	from . import dependencias
+     8	from .esquemas import EntradaHistorial
+     9	
+    10	log = logging.getLogger("rag.rest")
+    11	router = APIRouter(prefix="/api")
+    12	
+    13	
+    14	@router.get("/historial", response_model=list[EntradaHistorial], tags=["consulta"])
+    15	def historial(
+    16	    limite: int = 50,
+    17	    puerto: ConsultarHistorialPort = Depends(dependencias.consultar_historial),
+    18	):
+    19	    log.info("[REST] GET /api/historial")
+    20	    log.info("[PUERTO-IN] ConsultarHistorialPort.ejecutar")
+    21	    return [
+    22	        EntradaHistorial(
+    23	            consulta=consulta.texto,
+    24	            respuesta=respuesta.texto,
+    25	            abstenida=respuesta.abstenida,
+    26	            similitud_maxima=round(respuesta.similitud_maxima, 4),
+    27	            via_respaldo=respuesta.via_respaldo,
+    28	            momento=respuesta.momento,
+    29	            probabilidad_cobertura=respuesta.probabilidad_cobertura,
+    30	        )
+    31	        for consulta, respuesta in puerto.ejecutar(limite)
+    32	    ]
+    33	
+    34	
+    35	@router.delete("/historial", status_code=204, tags=["consulta"])
+    36	def borrar_historial(
+    37	    puerto: ConsultarHistorialPort = Depends(dependencias.consultar_historial),
+    38	):
+    39	    log.info("[REST] DELETE /api/historial")
+    40	    log.info("[PUERTO-IN] ConsultarHistorialPort.borrar")
+    41	    puerto.borrar()
+    42	    return Response(status_code=204)
