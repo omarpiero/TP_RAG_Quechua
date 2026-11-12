@@ -407,10 +407,13 @@ registró como REF-02.
 **Decisión.** Si `/api/estado` o una consulta tardan más de 4 s, la interfaz muestra un aviso
 `role="status"`: el servicio se está activando y la primera respuesta puede tardar hasta un minuto.
 Si la API es remota (`VITE_API_URL` definido), los errores de red lo explican y el estado inicial
-ofrece «Reintentar». En local los textos no cambian. No se toca la API.
+ofrece «Reintentar». En local los errores conservan su texto de escritorio y, si una
+consulta tarda más de 4 s (p. ej. Qwen en CPU), el aviso dice que el modelo puede estar cargándose.
+No se toca la API.
 
 **Consecuencias.** El aviso no acelera el arranque: solo lo explica. La reducción real del tiempo
-es ADR-034.
+es ADR-034. En la web, una consulta lenta con el servicio ya despierto (p. ej. Gemini con 429)
+también se atribuye a la activación: es una simplificación aceptada (OBS-02 de `docs/03`).
 
 ## ADR-034 · Ruta de vida sin base para el ping programado (REF-01) — Propuesta (S13, fase 1)
 
