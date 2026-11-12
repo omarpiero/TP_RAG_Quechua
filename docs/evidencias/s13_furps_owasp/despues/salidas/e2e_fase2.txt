@@ -1,0 +1,30 @@
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByTestId('aviso-sin-ollama')
+    Expected: 0
+    Received: 1
+    Timeout:  60000ms
+
+    Call log:
+      - Expect "toHaveCount" getByTestId('aviso-sin-ollama') with timeout 60000ms
+      - waiting for getByTestId('aviso-sin-ollama')
+        121 × locator resolved to 1 element
+            - unexpected value "1"
+
+
+      12 |   await expect(page.getByTestId("estado-corpus")).toContainText("fragmentos en el corpus");
+      13 |   await expect(page.getByTestId("estado-base")).toContainText("conectada");
+    > 14 |   await expect(page.getByTestId("aviso-sin-ollama")).toHaveCount(0);
+         |                                                      ^
+      15 |   await capturar(page, "B14_estado_inicial_todo_disponible");
+      16 | });
+      17 |
+        at C:\Users\zoomy\Downloads\TallerProyectos\GitHub_RAG_QUECHUA\TP_RAG_Quechua\frontend\e2e\estado.real.spec.js:14:54
+
+    Error Context: e2e\.tmp\resultados\estado.real-Estado-inicial-·-todo-disponible-real\error-context.md
+
+  1 failed
+    [real] › e2e\estado.real.spec.js:6:1 › Estado inicial · todo disponible ────────────────────────
+  1 skipped
+  19 passed (4.3m)
