@@ -1,6 +1,6 @@
 import logging
 
-from fastapi import APIRouter, Depends, Response
+from fastapi import APIRouter, Depends, Query, Response
 
 from application.ports import ConsultarHistorialPort
 
@@ -13,7 +13,8 @@ router = APIRouter(prefix="/api")
 
 @router.get("/historial", response_model=list[EntradaHistorial], tags=["consulta"])
 def historial(
-    limite: int = 50,
+    # R-04 (S13): fuera de rango da 422; antes, un LIMIT negativo era un 500 de PostgreSQL.
+    limite: int = Query(50, ge=1, le=500),
     puerto: ConsultarHistorialPort = Depends(dependencias.consultar_historial),
 ):
     log.info("[REST] GET /api/historial")
