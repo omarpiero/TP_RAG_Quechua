@@ -1,0 +1,30 @@
+$ gh run list --branch main -L 3
+completed	success	Merge pull request #24 from omarpiero/s13/owasp	CI	main	push	43321833863	1m58s	2026-11-12T22:38:55Z
+completed	success	Merge pull request #23 from omarpiero/s13/furps-owasp	CI	main	push	43321787545	2m2s	2026-11-12T22:38:37Z
+completed	success	Merge pull request #21 from omarpiero/docs/metricas-finales-u3	CI	main	push	41391032506	1m3s	2026-11-02T04:54:49Z
+
+$ gh pr view 23/24 --json state,mergedAt
+#23 MERGED 2026-11-12T22:38:35Z
+#24 MERGED 2026-11-12T22:38:52Z
+
+$ gh run view (último en main)
+
+✓ main CI · 43321833863
+Triggered via push about 10 minutes ago
+
+JOBS
+✓ backend in 1m54s (ID 131544181350)
+✓ frontend in 20s (ID 131544181771)
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+backend: .github#1
+
+! src/componentes/PanelPrediccion.jsx:281:19: React Hook useEffect has a missing dependency: 'sinteticas'
+frontend: src/componentes/PanelPrediccion.jsx#281
+
+! src/componentes/GestionFuentes.jsx:31:5: Calling setState synchronously within an effect can trigger cascading renders
+frontend: src/componentes/GestionFuentes.jsx#31
+
+! src/componentes/GestionFuentes.jsx:67:17: Variable 'cobertura_extraccion' is declared but never used. Unused variables should start with a '_'.
+frontend: src/componentes/GestionFuentes.jsx#67

@@ -192,3 +192,29 @@ Nube hoy: **Alto**.
 6. Programar OW-10 (CSP del sitio estático) y OW-14 (`npm audit fix` + paso en la CI), comprometidos en el plan.
 7. Recalcular el puntaje FURPS+ tras la fase 2 y registrar F-03 (PF-01..PF-17).
 8. Hacer commit de `06_auditoria_implementacion_owasp.md` y de este informe en el PR #24.
+
+---
+
+## Adenda · Verificación del paso 9 en la nube (2026-11-12, 22:45–22:50 UTC)
+
+Añadida por el agente principal tras fusionar #23 y #24 (`main` `eba7ce7`). La CI de `main` está en verde en los dos *merges* y Render desplegó: `GET /api/vivo` → 200 y `/api/estado` → `escritura_protegida: true`. Solo se enviaron peticiones inocuas: cuerpos inválidos o IDs inexistentes, que no escribirían aunque el control fallara, y consultas como origen `humo` con el token de pruebas. Los tokens no aparecen en ninguna evidencia.
+
+| Comprobación | Resultado en la nube | Evidencia |
+|---|---|---|
+| `GET /api/historial` sin token | **401** | `nube/salidas/09_verificacion_nube.txt` · `nube/09_A01_escrituras_sin_token_401_403_nube.png` |
+| `POST`/`PUT`/`DELETE /api/fuentes`, `POST /api/corpus/documentos` sin token | **401** en todos | ídem |
+| `POST /api/fuentes` con token incorrecto | **403** | ídem |
+| Con `ADMIN_TOKEN` (ya definido en Render) | historial **200**; `POST /api/fuentes {}` → **422** (token aceptado, no escribe) | `nube/salidas/09_verificacion_nube_con_tokens.txt` · `nube/09_A01_con_admin_token_y_consulta_publica_nube.png` |
+| Consulta pública sin token de administración | **200**, redactada por Gemini, documento y página (p. 37), similitud 0,607 ≥ 0,48 | ídem |
+| Abstención pública | `abstenida=true`, 0 respaldos, similitud 0,050 < 0,48 | ídem |
+| Predicción pública y consulta vacía | 200 y 422 (no 401) | ambas salidas |
+| HSTS en la API · CORS desde un origen ajeno | `max-age=31536000; includeSubDomains` · 400 | `09_verificacion_nube.txt` |
+| Interfaz pública | Consultar y Predicción ML operativas; Fuentes e Incorporar en «Modo solo lectura» | `nube/09_F_*.png`, `nube/09_A01_*_solo_lectura_nube.png` |
+| CI | `main` en verde tras #23 y #24 | `nube/09_CI_main_verde_github_actions.png` |
+
+**Paso 9: cerrado.** Se cumplen las tres condiciones del dictamen condicionado: los PR están fusionados,
+`ADMIN_TOKEN` está definido y la verificación en la nube se superó. El dictamen pasa a **apto para producción
+con observaciones** también para la nube, que ahora puntúa **79,0 / 100** en OWASP. Las observaciones son las
+de los riesgos pendientes: OW-03 (demanda agregada pública), OW-08 y NV-03 (límite en memoria), OW-10, OW-12,
+OW-14, OW-17, NV-01, NV-02 y R-02, que depende del PR #22. El agente principal no evaluó si el despliegue
+cambia los puntajes FURPS+ de R y P más allá de lo medido.

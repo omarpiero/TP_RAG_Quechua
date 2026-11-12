@@ -1,0 +1,45 @@
+# Paso 9 · verificación en la NUBE tras fusionar #23 y #24 (2026-11-12 22:48 UTC). Solo peticiones inocuas:
+# cuerpos inválidos o IDs inexistentes que, aun sin control, darían 422/404 sin escribir. No se envían consultas.
+
+$ curl https://quechua-api.onrender.com/api/vivo
+{"vivo":true}   [HTTP 200]
+
+$ curl https://quechua-api.onrender.com/api/estado  (campos relevantes)
+{'entorno': 'staging', 'escritura_protegida': True, 'umbral_abstencion': 0.48, 'fragmentos_indexados': 3607, 'documentos_corpus': 10}
+
+$ curl https://quechua-api.onrender.com/api/historial   (lectura del historial del servidor, sin token)
+{"detail": "Esta operación requiere el token de administración (cabecera X-Admin-Token). En la versión pública la consulta es de solo lectura."}
+   [HTTP 401]
+
+$ curl -X POST https://quechua-api.onrender.com/api/fuentes -d '{}'   (cuerpo inválido, sin token)
+{"detail": "Esta operación requiere el token de administración (cabecera X-Admin-Token). En la versión pública la consulta es de solo lectura."}
+   [HTTP 401]
+
+$ curl -X PUT https://quechua-api.onrender.com/api/fuentes/no-existe-s13 -d '{}'
+{"detail": "Esta operación requiere el token de administración (cabecera X-Admin-Token). En la versión pública la consulta es de solo lectura."}
+   [HTTP 401]
+
+$ curl -X DELETE https://quechua-api.onrender.com/api/fuentes/no-existe-s13
+{"detail": "Esta operación requiere el token de administración (cabecera X-Admin-Token). En la versión pública la consulta es de solo lectura."}
+   [HTTP 401]
+
+$ curl -X POST https://quechua-api.onrender.com/api/corpus/documentos   (sin archivo, sin token)
+{"detail": "Esta operación requiere el token de administración (cabecera X-Admin-Token). En la versión pública la consulta es de solo lectura."}
+   [HTTP 401]
+
+$ curl -X POST https://quechua-api.onrender.com/api/fuentes -H 'X-Admin-Token: incorrecto' -d '{}'
+{"detail": "Token de administración no válido o administración deshabilitada en este servicio."}
+   [HTTP 403]
+
+$ curl -X POST https://quechua-api.onrender.com/api/consultas -d '{"texto":""}'   (consulta vacía: debe seguir pública -> 422, no 401; no se registra)
+   [HTTP 422]
+
+$ curl -sI https://quechua-api.onrender.com/api/vivo  (cabeceras)
+HTTP/1.1 200 OK
+content-security-policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'
+referrer-policy: no-referrer
+strict-transport-security: max-age=31536000; includeSubDomains
+x-frame-options: DENY
+
+$ OPTIONS desde origen ajeno
+   [HTTP 400]
