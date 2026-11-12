@@ -1,0 +1,2 @@
+TOTAL                                                                2426    286    88%
+378 passed, 6 skipped, 2 warnings in 128.76s (0:02:08)

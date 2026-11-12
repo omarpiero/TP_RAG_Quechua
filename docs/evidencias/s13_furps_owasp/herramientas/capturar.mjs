@@ -22,7 +22,19 @@ const escapar = (s) => s.replace(/[&<>]/g, (x) => ({ "&": "&amp;", "<": "&lt;", 
 const navegador = await chromium.launch();
 const page = await navegador.newPage({ viewport: { width: 1366, height: 900 }, locale: "es-PE" });
 
-if (modo === "url") {
+if (modo === "url" && process.env.ESPERA_MS) {
+  // Captura a los N ms de cargar, sin esperar a la red (p. ej. el aviso de arranque en frio).
+  await page.goto(a, { waitUntil: "load", timeout: 180_000 });
+  await page.waitForTimeout(Number(process.env.ESPERA_MS));
+  await page.evaluate((hora) => {
+    const barra = document.createElement("div");
+    barra.textContent = `URL: ${location.href}   ·   ${hora}`;
+    barra.style.cssText =
+      "position:relative;z-index:99999;background:#202124;color:#e8eaed;font:14px monospace;" +
+      "padding:8px 12px;border-bottom:3px solid #8ab4f8";
+    document.body.prepend(barra);
+  }, new Date().toISOString().replace("T", " ").slice(0, 19) + " UTC");
+} else if (modo === "url") {
   await page.goto(a, { waitUntil: "networkidle", timeout: 180_000 });
   if (b) {
     await page.getByRole("button", { name: b }).click();

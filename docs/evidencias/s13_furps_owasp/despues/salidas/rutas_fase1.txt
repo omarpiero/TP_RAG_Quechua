@@ -1,0 +1,10 @@
+$ curl 127.0.0.1:8098/api/vivo
+{"vivo":true}
+
+$ curl -w %{http_code} "127.0.0.1:8098/api/historial?limite=-1"
+{"detail":[{"type":"greater_than_equal","loc":["query","limite"],"msg":"Input should be greater than or equal to 1","input":"-1","ctx":{"ge":1}}]}
+HTTP 422
+
+$ curl -w %{http_code} "127.0.0.1:8098/api/analitica/demanda?top=0"
+{"detail":[{"type":"greater_than_equal","loc":["query","top"],"msg":"Input should be greater than or equal to 1","input":"0","ctx":{"ge":1}}]}
+HTTP 422
