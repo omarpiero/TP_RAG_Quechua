@@ -2,6 +2,10 @@
 // origen, que es como el ejecutable sirve la interfaz; en desarrollo Vite redirige /api.
 const BASE = import.meta.env.VITE_API_URL ?? "";
 export const URL_API = BASE || "mismo origen";
+// La version web habla con una API remota (Render); el escritorio, con la del propio equipo.
+export const API_REMOTA = BASE !== "";
+// REF-02 (ADR-033): pasado este tiempo sin respuesta, la interfaz avisa de la espera.
+export const AVISO_ESPERA_MS = 4000;
 
 // BYOK (ADR-032): clave de Gemini del propio usuario. Solo en memoria de esta pestaña: sin
 // localStorage ni cookies; se pierde al recargar. Viaja en la cabecera X-Gemini-Key por HTTPS.
@@ -41,7 +45,10 @@ async function pedir(ruta, opciones = {}) {
       );
     }
     throw new ErrorApi(
-      "No se pudo conectar con el servicio local. Comprueba que esté en marcha.",
+      API_REMOTA
+        ? "No se pudo conectar con el servicio en la nube. Si estuvo sin uso, puede tardar " +
+            "hasta un minuto en activarse: vuelve a intentarlo."
+        : "No se pudo conectar con el servicio local. Comprueba que esté en marcha.",
       "red",
     );
   } finally {
@@ -49,7 +56,9 @@ async function pedir(ruta, opciones = {}) {
   }
   if (!respuesta.ok) {
     const detalle = await respuesta.json().catch(() => ({}));
-    if (respuesta.status === 422) {
+    // Un 422 con detalle de texto (p. ej. una fuente sin licenciamiento) se muestra tal cual;
+    // el de la validacion del cuerpo (lista de errores) es el de la consulta (M-03).
+    if (respuesta.status === 422 && typeof detalle.detail !== "string") {
       throw new ErrorApi(
         "La consulta no es válida: escribe entre 1 y 300 caracteres.",
         "validacion",

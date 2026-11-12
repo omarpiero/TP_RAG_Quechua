@@ -1,5 +1,7 @@
 // Pantalla de estado inicial (B14): lo que el sistema tiene disponible al arrancar. Lee /api/estado.
 // Sin Ollama la aplicacion sigue funcionando: responde con el fragmento literal y lo avisa.
+import { API_REMOTA } from "../api";
+
 function Indicador({ nombre, ok, detalle, testId }) {
   return (
     <li className={`estado__item ${ok ? "estado__item--ok" : "estado__item--aviso"}`} data-testid={testId}>
@@ -12,13 +14,30 @@ function Indicador({ nombre, ok, detalle, testId }) {
   );
 }
 
-export default function EstadoInicial({ estado }) {
+export default function EstadoInicial({ estado, conectando = false, onReintentar }) {
+  if (!estado && conectando) {
+    return (
+      <section className="estado" aria-label="Estado del sistema" data-testid="estado-inicial">
+        <output className="estado__aviso" data-testid="estado-conectando">
+          <span className="giro" aria-hidden="true" /> Conectando con el servicio…
+        </output>
+      </section>
+    );
+  }
   if (!estado) {
     return (
       <section className="estado" aria-label="Estado del sistema" data-testid="estado-inicial">
         <output className="estado__aviso" data-testid="estado-sin-servicio">
-          Sin conexión con el servicio local. Compruebe que la aplicación esté en marcha.
+          {API_REMOTA
+            ? "Sin conexión con el servicio en la nube. Si estuvo sin uso, puede tardar hasta " +
+              "un minuto en activarse."
+            : "Sin conexión con el servicio local. Compruebe que la aplicación esté en marcha."}
         </output>
+        {onReintentar && (
+          <button type="button" className="error__reintentar" onClick={onReintentar}>
+            Reintentar conexión
+          </button>
+        )}
       </section>
     );
   }
