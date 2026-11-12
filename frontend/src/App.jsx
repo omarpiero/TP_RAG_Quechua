@@ -6,9 +6,11 @@ import {
   borrarHistorial,
   consultar,
   obtenerEstado,
+  hayTokenAdmin,
   obtenerHistorial,
   URL_API,
 } from "./api";
+import AccesoAdministracion from "./componentes/AccesoAdministracion";
 import ConfiguracionNube from "./componentes/ConfiguracionNube";
 import CajaConsulta from "./componentes/CajaConsulta";
 import EstadoInicial from "./componentes/EstadoInicial";
@@ -112,6 +114,11 @@ export default function App() {
   const [error, setError] = useState(null);
   const [ultimaConsulta, setUltimaConsulta] = useState(null);
   const [tamano, setTamano] = useState(leerTamano);
+  // S13 · ADR-036: en la nube el historial publico es el de esta pestaña (en memoria); el de la
+  // base solo lo lee el administrador. En local sigue siendo el de la base (RF-11).
+  const [historialSesion, setHistorialSesion] = useState([]);
+  const [administrando, setAdministrando] = useState(hayTokenAdmin);
+  const protegida = Boolean(estado?.escritura_protegida);
 
   const cambiarTamano = (indice) => {
     const acotado = Math.min(TAMANOS.length - 1, Math.max(0, indice));
@@ -126,19 +133,24 @@ export default function App() {
 
   const cargarEstado = () =>
     obtenerEstado()
-      .then(setEstado)
+      .then((datos) => {
+        setEstado(datos);
+        return datos;
+      })
       .catch(() => setEstado(null))
       .finally(() => setConectando(false));
 
   const reintentarEstado = () => {
     setConectando(true);
-    cargarEstado();
-    cargarHistorial();
+    cargarEstado().then((datos) => {
+      if (!datos?.escritura_protegida) cargarHistorial();
+    });
   };
 
   useEffect(() => {
-    cargarEstado();
-    cargarHistorial();
+    cargarEstado().then((datos) => {
+      if (!datos?.escritura_protegida) cargarHistorial();
+    });
   }, []);
 
   const esperaLarga = useEsperaLarga(conectando || cargando);
@@ -150,7 +162,19 @@ export default function App() {
     try {
       const respuesta = await consultar(texto);
       setResultado(respuesta);
-      await cargarHistorial();
+      if (protegida) {
+        setHistorialSesion((previo) => [
+          {
+            consulta: texto,
+            abstenida: respuesta.abstenida,
+            via_respaldo: respuesta.via_respaldo,
+            momento: new Date().toISOString(),
+          },
+          ...previo,
+        ]);
+      } else {
+        await cargarHistorial();
+      }
     } catch (e) {
       setError(e.message);
       setResultado(null);
@@ -160,6 +184,10 @@ export default function App() {
   };
 
   const borrar = async () => {
+    if (protegida) {
+      setHistorialSesion([]);
+      return;
+    }
     try {
       await borrarHistorial();
     } finally {
@@ -167,10 +195,12 @@ export default function App() {
     }
   };
 
+  const soloLectura = protegida && !administrando;
+  const acceso = <AccesoAdministracion onAcceso={() => setAdministrando(true)} />;
   const otrasVistas = {
     prediccion: <PanelPrediccion />,
-    fuentes: <GestionFuentes />,
-    corpus: <GestionCorpus />,
+    fuentes: soloLectura ? acceso : <GestionFuentes />,
+    corpus: soloLectura ? acceso : <GestionCorpus />,
   };
 
   return (
@@ -236,8 +266,9 @@ export default function App() {
             <Respuesta resultado={resultado} />
             <Historial
               enLaNube={Boolean(estado?.entorno && estado.entorno !== "local")}
-              entradas={historial.entradas}
-              disponible={historial.disponible}
+              porSesion={protegida}
+              entradas={protegida ? historialSesion : historial.entradas}
+              disponible={protegida || historial.disponible}
               onBorrar={borrar}
             />
           </>

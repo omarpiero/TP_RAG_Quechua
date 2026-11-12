@@ -782,3 +782,17 @@ input[type="checkbox"] { width: 1.5rem; height: 1.5rem; }
   font-weight: 600;
   color: var(--abstencion);
 }
+
+/* S13 · ADR-035: pestañas de administracion en solo lectura en la nube. */
+.solo-lectura {
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid var(--abstencion);
+  border-radius: 8px;
+}
+.solo-lectura__form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
