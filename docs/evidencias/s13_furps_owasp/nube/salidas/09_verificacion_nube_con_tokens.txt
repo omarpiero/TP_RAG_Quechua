@@ -1,0 +1,16 @@
+# Paso 9 (cont.) · con ADMIN_TOKEN y TOKEN_PRUEBAS del servidor (mostrados como <ADMIN_TOKEN>/<TOKEN_PRUEBAS>). 2026-11-12 22:51 UTC
+
+$ curl https://quechua-api.onrender.com/api/historial -H 'X-Admin-Token: <ADMIN_TOKEN>'   (solo se registra el código y el número de filas)
+   [HTTP 200] filas devueltas: 5
+
+$ curl -X POST https://quechua-api.onrender.com/api/fuentes -H 'X-Admin-Token: <ADMIN_TOKEN>' -d '{}'   (token aceptado; cuerpo inválido -> 422, no escribe)
+   [HTTP 422]
+
+$ Consulta pública SIN X-Admin-Token, registrada como origen humo (X-Token-Pruebas: <TOKEN_PRUEBAS>): {"texto":"zorro"}
+   [HTTP 200] abstenida= False | redactado_por= gemini | documento= 293274822-diccionario-quechua-Wanka-docx.pdf p. 37 | similitud= 0.6071
+
+$ Predicción pública SIN X-Admin-Token: {"texto":"zorro"}
+   [HTTP 200]
+
+$ Abstención (fuera de cobertura) como humo: {"texto":"criptomoneda"}
+   abstenida= True | respaldo= 0 | similitud= 0.0502 < 0.48
