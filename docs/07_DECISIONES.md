@@ -395,6 +395,47 @@ productos). E1 (local) sigue sin enviar nada fuera del equipo.
 **Consecuencias.** Depende de la cuota gratuita, que es baja y variable; la medición frente a Qwen
 declara el tamaño de muestra alcanzado.
 
+## ADR-033 · Aviso de arranque en frío en la interfaz (REF-02) — Propuesta (S13, fase 1)
+
+**Contexto.** En el plan gratuito, Render suspende el servicio tras 15 min sin tráfico. La U3 midió
+un arranque en frío de 62–72 s (`docs/17` N-01) y el 2026-11-12 se midieron 72,65 s
+(`docs/evidencias/s13_furps_owasp/antes/salidas/arranque_estado_antes.txt`). Durante ese tiempo la
+interfaz no avisaba de nada y, si fallaba, mostraba «Sin conexión con el servicio local», un texto
+pensado para el escritorio (hallazgos U-01 y U-02 de `docs/01_auditoria_furps.md`). La experta lo
+registró como REF-02.
+
+**Decisión.** Si `/api/estado` o una consulta tardan más de 4 s, la interfaz muestra un aviso
+`role="status"`: el servicio se está activando y la primera respuesta puede tardar hasta un minuto.
+Si la API es remota (`VITE_API_URL` definido), los errores de red lo explican y el estado inicial
+ofrece «Reintentar». En local los textos no cambian. No se toca la API.
+
+**Consecuencias.** El aviso no acelera el arranque: solo lo explica. La reducción real del tiempo
+es ADR-034.
+
+## ADR-034 · Ruta de vida sin base para el ping programado (REF-01) — Propuesta (S13, fase 1)
+
+**Contexto.** REF-01 propone mantener despierto el servicio con un ping programado. El PR #22
+(abierto por otro integrante) lo implementa con `GET /api/estado` cada 10 min, 24/7. Hay dos
+presupuestos en juego:
+- **Render free:** 750 h de instancia al mes por *workspace*. Si se agotan, Render suspende todos
+  los servicios free del *workspace* hasta el mes siguiente. Un servicio dormido no consume horas
+  (<https://render.com/docs/free>, consultado el 2026-11-12). 24/7 son 720–744 h.
+- **Neon free:** 100 CU-h al mes por proyecto y suspensión de la computación a los 5 min sin
+  actividad (<https://neon.com/faqs/free-plan-limits-and-quotas>, consultado el 2026-11-12).
+  `/api/estado` consulta la base, así que un ping cada 10 min tendría Neon activo cerca de la mitad
+  del tiempo: ~360 h × 0,25 CU ≈ 90 CU-h, casi toda la cuota.
+
+**Decisión.** Nueva ruta `GET /api/vivo` → `{"vivo": true}`, que no toca la base, el corpus ni
+Gemini. El ping debe apuntar a ella, de modo que Render no se suspenda y Neon sí pueda hacerlo. Se
+recomienda además limitar el ping a una franja horaria; por ejemplo, cron `*/10 11-23,0-4 * * *`
+(UTC), que en Perú es de 06:00 a 23:59 y suma unas 560 h al mes. Así quedan unas 190 h de margen
+en el *workspace*. El repositorio es público, de modo que los minutos de GitHub Actions no se
+facturan. `/api/estado` sigue siendo la comprobación completa (`healthCheckPath`).
+
+**Consecuencias.** La primera petición que llegue fuera de la franja seguirá pagando el arranque en
+frío, y ADR-033 lo explica en la interfaz. Para fusionar el PR #22 con el cambio de ruta y de
+franja hace falta una decisión del equipo (acción para personas).
+
 ---
 
 ## Registro de cambios
@@ -406,3 +447,4 @@ declara el tamaño de muestra alcanzado.
 | 2026-09-24 | Línea base v2: ADR-019, 020, 022–026 aceptadas; ADR-021 y 027 propuestas; ADR-004, 008 y 012 actualizadas |
 | 2026-10-01 | **ADR-021 aceptada** con las cinco condiciones de `13_BRECHAS_RUBRICA.md` §3 (decisión del usuario). ADR-020: nota con la medición sobre `fragmentos_v3` y confirmación de τ 0,48 (no se reescribe el texto aceptado). ADR-013 y ADR-027: nota «sin preferencia del usuario; pendiente de confirmación antes del PR 8»; siguen abiertas y en propuesta |
 | 2026-10-29 | Guía 11 (despliegue en la nube): ADR-030, 031 y 032 propuestas en la rama `feat/despliegue-nube` |
+| 2026-11-12 | S13 fase 1 (FURPS+): ADR-033 (aviso de arranque en frío, REF-02) y ADR-034 (`/api/vivo` y presupuesto de horas del ping, REF-01) propuestas en `s13/furps-owasp` |
