@@ -4,7 +4,7 @@
 |---|---|
 | Fecha | 2026-11-12 |
 | Rama y commit auditados | `s13/furps-owasp`, `HEAD` `dbaa6cc` (PR #23 contra `main` `1d0b129`) |
-| Entradas | `docs/01_auditoria_furps.md` (línea base, global 6,9 / 10) y `docs/02_plan_furps.md` (M-01 a M-08) |
+| Entradas | `docs_auditoria/01_auditoria_furps.md` (línea base, global 6,9 / 10) y `docs_auditoria/02_plan_furps.md` (M-01 a M-08) |
 | Diff verificado | `git diff 1d0b129..HEAD` — commits `cc544be`, `0af3322`, `9f767b1`, `c2c06d0`, `2798d6b`, `dbaa6cc` |
 | Rol | Auditor independiente. No se modificó ningún archivo salvo este informe; ningún comando git de escritura |
 | Método | Lectura del diff con `ruta:línea`; **reejecución propia** de pytest, Vitest, oxlint, `npm run build` y del arnés de 248 consultas; API local en el puerto 8110 (SQLite temporal, generador `literal`) para `/api/vivo` y los 422; lectura de la CI del PR #23 con `gh`; un único `GET` contra la nube (`/api/vivo`). Ninguna escritura contra la nube |
