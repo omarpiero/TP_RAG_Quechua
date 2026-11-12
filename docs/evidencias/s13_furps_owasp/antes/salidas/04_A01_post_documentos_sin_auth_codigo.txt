@@ -1,0 +1,18 @@
+$ grep -n (fragmento) backend/src/adapters/in/rest/corpus_controller.py  —  rama s13/furps-owasp = main 1d0b129
+
+    30	def _a_salida(estado: EstadoCorpus) -> DocumentosCorpus:
+    31	    return DocumentosCorpus(documentos=estado.documentos, total_fragmentos=estado.total_fragmentos)
+    32	
+    33	
+    34	@router.post("/corpus/documentos", response_model=ResultadoIngestaSalida, tags=["corpus"])
+    35	async def ingestar_documento(
+    36	    archivo: UploadFile = File(...),
+    37	    titulo: str = Form(...),
+    38	    entidad_publicadora: str = Form(...),
+    39	    licenciamiento: str = Form(...),
+    40	    tipo: str = Form("lexicografico"),
+    41	    puerto: IngestarDocumentoPort = Depends(dependencias.ingestar_documento),
+    42	):
+    43	    """RF-01, RF-02 y RF-13: incorpora un PDF al corpus, lo segmenta segun su tipo y
+    44	    reconstruye el indice sin reiniciar el servicio."""
+    45	    log.info("[REST] POST /api/corpus/documentos")

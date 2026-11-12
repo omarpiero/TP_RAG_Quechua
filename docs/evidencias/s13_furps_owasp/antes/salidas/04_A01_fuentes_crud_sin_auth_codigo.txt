@@ -1,0 +1,59 @@
+$ grep -n (fragmento) backend/src/adapters/in/rest/fuentes_controller.py  —  rama s13/furps-owasp = main 1d0b129
+
+    28	
+    29	
+    30	@router.post("/fuentes", response_model=FuenteSalida, status_code=201, tags=["fuentes"])
+    31	def crear_fuente(
+    32	    entrada: FuenteEntrada,
+    33	    puerto: GestionarFuentesPort = Depends(dependencias.gestionar_fuentes),
+    34	):
+    35	    log.info("[REST] POST /api/fuentes")
+    36	    try:
+    37	        fuente = Fuente(**entrada.model_dump())
+    38	    except ValueError as exc:
+    39	        raise HTTPException(422, str(exc)) from exc
+    40	    return _a_salida(puerto.registrar(fuente))
+    41	
+    42	
+    43	@router.get("/fuentes", response_model=list[FuenteSalida], tags=["fuentes"])
+    44	def listar_fuentes(puerto: GestionarFuentesPort = Depends(dependencias.gestionar_fuentes)):
+    45	    log.info("[REST] GET /api/fuentes")
+    46	    return [_a_salida(f) for f in puerto.listar()]
+    47	
+    48	
+    49	@router.get("/fuentes/{fuente_id}", response_model=FuenteSalida, tags=["fuentes"])
+    50	def obtener_fuente(
+    51	    fuente_id: str,
+    52	    puerto: GestionarFuentesPort = Depends(dependencias.gestionar_fuentes),
+    53	):
+    54	    log.info("[REST] GET /api/fuentes/{id}")
+    55	    fuente = puerto.obtener(fuente_id)
+    56	    if fuente is None:
+    57	        raise HTTPException(404, "Fuente no encontrada")
+    58	    return _a_salida(fuente)
+    59	
+    60	
+    61	@router.put("/fuentes/{fuente_id}", response_model=FuenteSalida, tags=["fuentes"])
+    62	def actualizar_fuente(
+    63	    fuente_id: str,
+    64	    entrada: FuenteEntrada,
+    65	    puerto: GestionarFuentesPort = Depends(dependencias.gestionar_fuentes),
+    66	):
+    67	    log.info("[REST] PUT /api/fuentes/{id}")
+    68	    try:
+    69	        fuente = Fuente(id=fuente_id, **entrada.model_dump())
+    70	        return _a_salida(puerto.actualizar(fuente))
+    71	    except KeyError as exc:
+    72	        raise HTTPException(404, "Fuente no encontrada") from exc
+    73	    except ValueError as exc:
+    74	        raise HTTPException(422, str(exc)) from exc
+    75	
+    76	
+    77	@router.delete("/fuentes/{fuente_id}", status_code=204, tags=["fuentes"])
+    78	def eliminar_fuente(
+    79	    fuente_id: str,
+    80	    puerto: GestionarFuentesPort = Depends(dependencias.gestionar_fuentes),
+    81	):
+    82	    log.info("[REST] DELETE /api/fuentes/{id}")
+    83	    if not puerto.eliminar(fuente_id):
+    84	        raise HTTPException(404, "Fuente no encontrada")

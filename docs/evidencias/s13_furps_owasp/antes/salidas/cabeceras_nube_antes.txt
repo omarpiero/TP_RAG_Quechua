@@ -1,0 +1,41 @@
+== curl -sI https://quechua-api.onrender.com/api/estado
+HTTP/1.1 405 Method Not Allowed
+Date: Thu, 12 Nov 2026 21:21:07 GMT
+Content-Type: application/json
+Connection: keep-alive
+allow: GET
+Cache-Control: no-store
+content-security-policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'
+cross-origin-resource-policy: same-origin
+permissions-policy: camera=(), microphone=(), geolocation=()
+referrer-policy: no-referrer
+rndr-id: 6559321f-243a-491b
+Server: cloudflare
+vary: Origin
+vary: Accept-Encoding
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-render-origin-server: uvicorn
+cf-cache-status: DYNAMIC
+CF-RAY: a59895a2bf2e3d82-LIM
+alt-svc: h3=":443"; ma=86400
+
+== curl -sI https://quechua-web.onrender.com/
+HTTP/1.1 200 OK
+Date: Thu, 12 Nov 2026 21:21:07 GMT
+Content-Type: text/html; charset=utf-8
+Connection: keep-alive
+Cache-Control: public, max-age=0, s-maxage=300
+cf-cache-status: EXPIRED
+etag: W/"644655c008c92e6263386670f440f627"
+last-modified: Mon, 02 Nov 2026 04:56:13 UTC
+rndr-id: 45c4252b-2e9a-432f
+Server: cloudflare
+strict-transport-security: max-age=315360000; includeSubdomains; preload
+vary: Accept-Encoding
+vary: Accept-Encoding
+x-content-type-options: nosniff
+x-frame-options: DENY
+CF-RAY: a59895a63adab53e-LIM
+alt-svc: h3=":443"; ma=86400
+

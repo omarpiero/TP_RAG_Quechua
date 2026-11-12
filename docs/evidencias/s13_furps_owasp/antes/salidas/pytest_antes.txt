@@ -1,0 +1,4 @@
+    opt_res = optimize.minimize(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+365 passed, 6 skipped, 2 warnings in 26.32s
