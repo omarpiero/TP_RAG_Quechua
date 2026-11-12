@@ -294,7 +294,7 @@ medido en local). `/api/estado` no gasta cuota de Gemini (`gemini_generador.py:1
 | E-09 | `grep` de aviso de arranque en frío en `frontend/src` | sin coincidencias funcionales |
 | E-10 | `grep` de limitador de peticiones en backend | sin coincidencias |
 
-`docs/evidencias/s13_furps_owasp/antes/salidas/` contiene `arranque_estado_antes.txt` y
+`docs_auditoria/evidencias/antes/salidas/` contiene `arranque_estado_antes.txt` y
 `pytest_antes.txt`, **ambos vacíos (0 bytes)** al cierre de esta auditoría: conviene volcar en ellos
 E-01/E-02 y E-07.
 
@@ -306,7 +306,7 @@ E-01/E-02 y E-07.
 
 ### 4.3 Capturas «antes» propuestas (hallazgos críticos y altos)
 
-Carpeta: `docs/evidencias/s13_furps_owasp/antes/`.
+Carpeta: `docs_auditoria/evidencias/antes/`.
 
 | Archivo sugerido | Hallazgo | Qué debe verse |
 |---|---|---|

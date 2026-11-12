@@ -3,7 +3,7 @@
 | Dato | Valor |
 |---|---|
 | Fecha | 2026-11-12 |
-| Entrada | `docs/01_auditoria_furps.md` (global 6,9 / 10; 2 críticos, 4 altos, 10 medios, 8 bajos) |
+| Entrada | `docs_auditoria/01_auditoria_furps.md` (global 6,9 / 10; 2 críticos, 4 altos, 10 medios, 8 bajos) |
 | Rama | `s13/furps-owasp`, sobre `main` `1d0b129` |
 | Rol | Arquitecto de software (planificador). Este documento planifica; la aplicación es el paso 3 |
 | Restricción principal | **El sistema ya funciona y está desplegado** (Render + Neon + Gemini). Ninguna mejora puede poner en riesgo la consulta pública, la salvaguarda (τ = 0,48, RN-06, verificador literal de ADR-028) ni la versión de escritorio |
@@ -25,7 +25,7 @@
 
 | Batería | Resultado | Evidencia |
 |---|---|---|
-| pytest (con corpus, sin PostgreSQL) | 365 aprobadas, 6 omitidas (requieren PostgreSQL) | `docs/evidencias/s13_furps_owasp/antes/salidas/pytest_antes.txt` |
+| pytest (con corpus, sin PostgreSQL) | 365 aprobadas, 6 omitidas (requieren PostgreSQL) | `docs_auditoria/evidencias/antes/salidas/pytest_antes.txt` |
 | Vitest | 34/34 | `…/antes/salidas/vitest_antes.txt` |
 | Arnés 248 (τ 0,48) | con lema: VP 180 · FP 0 · VN 28 · FN 0 · sin lema: A+B 165/180, F1 0,9565 | `…/antes/salidas/arnes/`, `arnes_antes.txt` |
 | E2E Playwright | ver `e2e_antes.txt` (generador `extractivo`, sin Ollama en esta máquina) | `…/antes/salidas/e2e_antes.txt` |

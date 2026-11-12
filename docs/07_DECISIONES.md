@@ -399,9 +399,9 @@ declara el tamaño de muestra alcanzado.
 
 **Contexto.** En el plan gratuito, Render suspende el servicio tras 15 min sin tráfico. La U3 midió
 un arranque en frío de 62–72 s (`docs/17` N-01) y el 2026-11-12 se midieron 72,65 s
-(`docs/evidencias/s13_furps_owasp/antes/salidas/arranque_estado_antes.txt`). Durante ese tiempo la
+(`docs_auditoria/evidencias/antes/salidas/arranque_estado_antes.txt`). Durante ese tiempo la
 interfaz no avisaba de nada y, si fallaba, mostraba «Sin conexión con el servicio local», un texto
-pensado para el escritorio (hallazgos U-01 y U-02 de `docs/01_auditoria_furps.md`). La experta lo
+pensado para el escritorio (hallazgos U-01 y U-02 de `docs_auditoria/01_auditoria_furps.md`). La experta lo
 registró como REF-02.
 
 **Decisión.** Si `/api/estado` o una consulta tardan más de 4 s, la interfaz muestra un aviso
@@ -413,7 +413,7 @@ No se toca la API.
 
 **Consecuencias.** El aviso no acelera el arranque: solo lo explica. La reducción real del tiempo
 es ADR-034. En la web, una consulta lenta con el servicio ya despierto (p. ej. Gemini con 429)
-también se atribuye a la activación: es una simplificación aceptada (OBS-02 de `docs/03`).
+también se atribuye a la activación: es una simplificación aceptada (OBS-02 de `docs_auditoria/03_auditoria_implementacion_furps.md`).
 
 ## ADR-034 · Ruta de vida sin base para el ping programado (REF-01) — Propuesta (S13, fase 1)
 
@@ -441,7 +441,7 @@ franja hace falta una decisión del equipo (acción para personas).
 
 ## ADR-035 · Token de administración para las escrituras en modo nube — Propuesta (S13, fase 2)
 
-**Contexto.** `docs/04_auditoria_owasp.md` (OW-01, OW-02, OW-04, OW-16) demostró en local que cualquier
+**Contexto.** `docs_auditoria/04_auditoria_owasp.md` (OW-01, OW-02, OW-04, OW-16) demostró en local que cualquier
 visitante podía incorporar un PDF al corpus, que pasaba a ser respaldo citado y rompía RN-06; también
 podía falsificar fuentes y borrar el historial de todos. No existía autenticación para administrar.
 

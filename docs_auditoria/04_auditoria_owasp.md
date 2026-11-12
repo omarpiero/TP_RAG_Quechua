@@ -25,14 +25,14 @@ iría la remediación de la fase 2, sin contenido de código.
 3. **Demostraciones locales.** Instancias efímeras en `127.0.0.1:8120` y `127.0.0.1:8121` con
    `BASE_DATOS=sqlite`, base y carpeta de datos en `%TEMP%` y `GENERADOR=literal`. Se detuvieron al
    terminar y no tocaron `backend/data/` ni la nube. Las salidas están en
-   `docs/evidencias/s13_furps_owasp/antes/salidas/04_*.txt`.
+   `docs_auditoria/evidencias/antes/salidas/04_*.txt`.
 4. **Herramientas.** `pip-audit` (venv `backend/.venv`), `npm audit` y `npm audit --omit=dev`, y una
    búsqueda de secretos en todo el historial de Git (`git log --all -p`) con salida enmascarada.
 5. **Mediciones ya hechas en U3 que no se repiten y se citan** (`docs/17_REPORTE_METRICAS_U3.md`):
    Bandit con 0 altos, 0 medios y 2 bajos (M-18); `pip-audit` con 0 avisos (M-19); SonarQube Passed
    con 0 vulnerabilidades y 0 hotspots (M-20); ZAP pasivo, **solo local**, con 0 altas y 0 medias (M-21);
    axe-core con 0 infracciones (M-22).
-   Hallazgos de la auditoría FURPS+ que aquí se reclasifican: `docs/01_auditoria_furps.md`, PLUS-02 y PLUS-04.
+   Hallazgos de la auditoría FURPS+ que aquí se reclasifican: `docs_auditoria/01_auditoria_furps.md`, PLUS-02 y PLUS-04.
 
 ### 1.2 Escalas
 
@@ -211,7 +211,7 @@ origen ajeno da 400 (`salidas/cors_preflight_ajeno_antes.txt`), pero un cliente 
 #### OW-06 · La API no envía HSTS (**Bajo**, I2 × P2 = 4)
 - **Evidencia.** `salidas/cabeceras_nube_antes.txt` y `04_A05_openapi_estado_nube.txt`: la API no
   devuelve `strict-transport-security`. La web estática sí lo envía (`max-age=315360000; includeSubdomains;
-  preload`). Ya registrado como PLUS-02 en `docs/01_auditoria_furps.md:78`.
+  preload`). Ya registrado como PLUS-02 en `docs_auditoria/01_auditoria_furps.md:78`.
 - **Impacto 2.** La primera petición HTTP de un cliente de la API podría degradarse a HTTP
   (*SSL stripping*) antes del 301 y exponer la cabecera `X-Gemini-Key`. La interfaz usa `https://`
   fijo (`render.yaml:61`), lo que reduce la exposición.
@@ -496,7 +496,7 @@ autenticado, A01 quedaría en 10 − (5 + 0) = 5 por OW-05 y A07 en 10, lo que l
 
 ### 5.1 Salidas de terminal generadas por esta auditoría
 
-Todas están en `docs/evidencias/s13_furps_owasp/antes/salidas/`:
+Todas están en `docs_auditoria/evidencias/antes/salidas/`:
 
 | Archivo | Hallazgos | Contenido |
 |---|---|---|

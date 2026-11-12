@@ -5,7 +5,7 @@
 | Fecha | 2026-11-12 |
 | Rol | Auditor principal de calidad y seguridad, independiente. No se modificó ningún archivo salvo este informe; ningún comando git de escritura; no se ejecutó la E2E |
 | Rama auditada | `s13/owasp`, `HEAD` `ba6a746` (PR #24, apilado sobre PR #23 `5829ca1`; ambos contra `main` `1d0b129`) |
-| Entradas | `03_auditoria_implementacion_furps.md`, `06_auditoria_implementacion_owasp.md` (leído ya estable, 13 331 bytes), `04_auditoria_owasp.md`, `05_plan_owasp.md`, evidencias de `docs/evidencias/s13_furps_owasp/` y estado actual de GitHub y de la nube |
+| Entradas | `03_auditoria_implementacion_furps.md`, `06_auditoria_implementacion_owasp.md` (leído ya estable, 13 331 bytes), `04_auditoria_owasp.md`, `05_plan_owasp.md`, evidencias de `docs_auditoria/evidencias/` y estado actual de GitHub y de la nube |
 | Contra la nube | Solo `GET /api/estado`, `GET /api/vivo` y `curl -sI`. Ninguna escritura ni consulta |
 
 ## 0. Estado del proyecto comprobado por este auditor
@@ -21,7 +21,7 @@
 | `GET …/api/estado` | 200; `entorno: staging`, `umbral_abstencion: 0.48`, 3 607 fragmentos, PostgreSQL, Gemini. **No** incluye el booleano `escritura_protegida` que añade la fase 2: confirma que la nube sigue en `main` |
 | `curl -sI …/api/estado` | `405` a `HEAD` (comportamiento conocido, E-03 de 01). Llevan ya `x-content-type-options`, `x-frame-options` y CSP de la API; no aparece `Strict-Transport-Security` |
 | `git log 1d0b129..HEAD` | 14 commits: fase 1 (M-01 a M-08), auditorías 01 a 05, fase 2 (`20303f6`, `51b60da`, `abf7be2`, `ba6a746`) |
-| `docs/evidencias/s13_furps_owasp/nube/salidas/` | **Vacía**: no hay ninguna verificación en la nube posterior a la fusión |
+| `docs_auditoria/evidencias/nube/salidas/` | **Vacía**: no hay ninguna verificación en la nube posterior a la fusión |
 
 **Paso 9 del encargo: PENDIENTE y no cerrado.** No se ha fusionado ninguno de los dos PR, Render no ha
 desplegado la rama y, por tanto, no se ha podido comprobar en la nube que las escrituras sin token
@@ -177,7 +177,7 @@ Nube hoy: **Alto**.
   (1) fusionar el PR #23 y luego el #24; (2) definir `ADMIN_TOKEN` en Render; (3) completar el paso 9 en
   la nube solo con peticiones inocuas (escrituras sin token con cuerpo vacío → 401, `GET /api/historial`
   → 401, `GET /api/vivo` → 200, `curl -sI` con HSTS, una consulta pública desde la interfaz) y guardar
-  las salidas en `docs/evidencias/s13_furps_owasp/nube/salidas/`. Si alguna comprobación falla, el
+  las salidas en `docs_auditoria/evidencias/nube/salidas/`. Si alguna comprobación falla, el
   dictamen pasa a **No apto** y se revierte el PR #24.
 - **Nube hoy (`main` `1d0b129`): No apto para producción** como servicio público, por OW-01 crítico
   abierto.

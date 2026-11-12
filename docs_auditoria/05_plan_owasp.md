@@ -3,7 +3,7 @@
 | Dato | Valor |
 |---|---|
 | Fecha | 2026-11-12 |
-| Entrada | `docs/04_auditoria_owasp.md`: score **61,0 / 100**, 19 hallazgos (1 crítico, 7 altos, 5 medios, 6 bajos); dictamen «no apto para exposición pública» |
+| Entrada | `docs_auditoria/04_auditoria_owasp.md`: score **61,0 / 100**, 19 hallazgos (1 crítico, 7 altos, 5 medios, 6 bajos); dictamen «no apto para exposición pública» |
 | Rama | `s13/owasp`, apilada sobre `s13/furps-owasp` (PR #23). Se entrega en un PR propio, el de la fase 2 |
 | Rol | Arquitecto de seguridad. Este documento planifica; la aplicación es el paso 7 |
 | Restricción principal | No romper la consulta pública (HU-03 a HU-07), la Predicción ML (HU-08, RF-15), la versión de escritorio ni la salvaguarda (τ = 0,48, RN-06, ADR-028). Compatibilidad hacia atrás en rutas y contratos |
