@@ -93,6 +93,20 @@ export const obtenerEstado = () => pedir("/api/estado");
 
 export const obtenerHistorial = () => pedir("/api/historial");
 
+// S13 · ADR-035: antes de desbloquear la gestion, el token se comprueba contra el servidor con una
+// lectura protegida e inocua (`GET /api/historial?limite=1`). Si la API lo rechaza (401/403), se
+// descarta y la interfaz sigue en solo lectura. La autorizacion real sigue siendo la del servidor.
+export async function verificarTokenAdmin(token) {
+  fijarTokenAdmin(token);
+  try {
+    await pedir("/api/historial?limite=1");
+    return true;
+  } catch (e) {
+    fijarTokenAdmin("");
+    throw e;
+  }
+}
+
 export const borrarHistorial = () => pedir("/api/historial", { method: "DELETE" });
 
 export const listarFuentes = () => pedir("/api/fuentes");

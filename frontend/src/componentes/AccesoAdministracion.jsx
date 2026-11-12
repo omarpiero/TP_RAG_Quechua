@@ -1,19 +1,34 @@
 // S13 · ADR-035: en la nube, «Fuentes del corpus» e «Incorporar documentos» son de solo lectura
 // para el publico. El token se guarda solo en memoria (api.js): ni localStorage, ni cookies, ni
-// el bundle; se pierde al recargar. La autorizacion real la hace la API (401/403).
+// el bundle; se pierde al recargar. Se valida contra la API antes de desbloquear la gestion; aun
+// asi, la autorizacion real la hace la API en cada escritura (401/403).
 import { useState } from "react";
 
-import { fijarTokenAdmin } from "../api";
+import { verificarTokenAdmin } from "../api";
 
 export default function AccesoAdministracion({ onAcceso }) {
   const [valor, setValor] = useState("");
+  const [error, setError] = useState(null);
+  const [comprobando, setComprobando] = useState(false);
 
-  const entrar = (evento) => {
+  const entrar = async (evento) => {
     evento.preventDefault();
     if (!valor.trim()) return;
-    fijarTokenAdmin(valor);
-    setValor("");
-    onAcceso();
+    setComprobando(true);
+    setError(null);
+    try {
+      await verificarTokenAdmin(valor);
+      setValor("");
+      onAcceso();
+    } catch (e) {
+      setError(
+        e?.estado === 401 || e?.estado === 403
+          ? "Token de administración no válido. La gestión sigue en solo lectura."
+          : e.message,
+      );
+    } finally {
+      setComprobando(false);
+    }
   };
 
   return (
@@ -33,10 +48,15 @@ export default function AccesoAdministracion({ onAcceso }) {
           value={valor}
           onChange={(e) => setValor(e.target.value)}
         />
-        <button type="submit" className="error__reintentar">
-          Acceder
+        <button type="submit" className="error__reintentar" disabled={comprobando}>
+          {comprobando ? "Comprobando…" : "Acceder"}
         </button>
       </form>
+      {error && (
+        <p className="error__mensaje" role="alert" data-testid="token-invalido">
+          {error}
+        </p>
+      )}
     </section>
   );
 }
