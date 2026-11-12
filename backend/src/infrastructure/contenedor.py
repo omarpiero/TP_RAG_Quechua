@@ -196,6 +196,7 @@ class Contenedor:
             "modelo": self.gemini.modelo if self.gemini else configuracion.ollama_modelo,
             # Nube (ADR-030 a 032): solo nombres y conteos, ningun secreto.
             "entorno": configuracion.entorno,
+            "escritura_protegida": configuracion.modo_nube,
             "motor_base_datos": configuracion.base_datos,
             "origen_corpus": self.origen_corpus,
             "generador": self.generador.nombre,

@@ -1,0 +1,4 @@
+# Demostracion LOCAL (127.0.0.1:8120, SQLite temporal, GENERADOR=literal). Auditoria OWASP S13, 2026-11-12T17:04:57-05:00. No toca la nube.
+
+== 60 POST /api/consultas seguidos desde un mismo cliente en 1.4 s
+codigos HTTP: {200: 60} (ningun 429: no hay limite de peticiones)

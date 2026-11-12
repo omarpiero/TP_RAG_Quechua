@@ -14,7 +14,17 @@ export const fijarClaveGemini = (clave) => {
   claveGemini = (clave ?? "").trim();
 };
 export const hayClaveGemini = () => claveGemini !== "";
-const cabecerasClave = () => (claveGemini ? { "X-Gemini-Key": claveGemini } : {});
+// S13 · ADR-035: token de administracion, tambien solo en memoria (nunca en el bundle ni en
+// localStorage). Solo se envia si el administrador lo escribio en la pestaña correspondiente.
+let tokenAdmin = "";
+export const fijarTokenAdmin = (token) => {
+  tokenAdmin = (token ?? "").trim();
+};
+export const hayTokenAdmin = () => tokenAdmin !== "";
+const cabecerasClave = () => ({
+  ...(claveGemini ? { "X-Gemini-Key": claveGemini } : {}),
+  ...(tokenAdmin ? { "X-Admin-Token": tokenAdmin } : {}),
+});
 
 // La primera consulta con el modelo en CPU puede tardar decenas de segundos.
 export const TIEMPO_MAXIMO_MS = 180000;
@@ -108,6 +118,7 @@ export async function ingestarDocumento(datos) {
   // Sin Content-Type explicito: el navegador anade el boundary de multipart.
   const respuesta = await fetch(`${BASE}/api/corpus/documentos`, {
     method: "POST",
+    headers: cabecerasClave(),
     body: cuerpo,
   });
   if (!respuesta.ok) {

@@ -1,0 +1,58 @@
+# Modo nube en LOCAL (ENTORNO=staging, ADMIN_TOKEN de prueba generado en la sesión; se muestra como <TOKEN>). 2026-11-12T17:21:22-05:00
+
+$ curl -X DELETE http://127.0.0.1:8130/api/historial   (sin token)
+{"detail": "Esta operación requiere el token de administración (cabecera X-Admin-Token). En la versión pública la consulta es de solo lectura."}
+[HTTP 401]
+
+$ curl http://127.0.0.1:8130/api/historial   (lectura del historial del servidor, sin token)
+{"detail": "Esta operación requiere el token de administración (cabecera X-Admin-Token). En la versión pública la consulta es de solo lectura."}
+[HTTP 401]
+
+$ curl -X POST http://127.0.0.1:8130/api/fuentes -H 'X-Admin-Token: incorrecto' -d '{}'
+{"detail": "Token de administración no válido o administración deshabilitada en este servicio."}
+[HTTP 403]
+
+$ curl -X POST http://127.0.0.1:8130/api/corpus/reindexar   (sin token)
+{"detail": "Esta operación requiere el token de administración (cabecera X-Admin-Token). En la versión pública la consulta es de solo lectura."}
+[HTTP 401]
+
+$ curl -X POST http://127.0.0.1:8130/api/corpus/documentos -F archivo=@x.pdf   (sin token)
+{"detail": "Esta operación requiere el token de administración (cabecera X-Admin-Token). En la versión pública la consulta es de solo lectura."}
+[HTTP 401]
+
+$ curl -X POST http://127.0.0.1:8130/api/fuentes -H 'X-Admin-Token: <TOKEN>' (fuente válida)
+[HTTP 201]
+id=8edf0547-f62d-40ab-b8c0-6f698ad97ee1
+
+$ curl -X DELETE http://127.0.0.1:8130/api/fuentes/<id> -H 'X-Admin-Token: <TOKEN>'
+[HTTP 204]
+
+$ curl http://127.0.0.1:8130/api/historial -H 'X-Admin-Token: <TOKEN>'
+[HTTP 200]
+
+$ Consulta pública sin token: curl -X POST http://127.0.0.1:8130/api/consultas -d '{"texto":"¿cómo se dice zorro en quechua wanka?"}'
+(el texto con acentos enviado desde Git Bash llegó mal codificado; se repite abajo con «zorro»)
+
+$ Predicción pública sin token
+[HTTP 200]
+
+$ Ráfaga: 21 POST /api/consultas más desde la misma IP (límite 20/min; ya se hizo 1)
+200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 429 429 
+HTTP/1.1 429 Too Many Requests
+retry-after: 57
+strict-transport-security: max-age=31536000; includeSubDomains
+{"detail": "Demasiadas consultas seguidas: el límite es 20 por minuto. Inténtalo de nuevo en 57 s."}
+
+$ grep SEGURIDAD api.log (bitácora sin token ni IP en claro)
+17:21:22 [SEGURIDAD] rechazada 401 DELETE /api/historial cliente=12ca17b49a
+17:21:22 [SEGURIDAD] rechazada 401 GET /api/historial cliente=12ca17b49a
+17:21:22 [SEGURIDAD] rechazada 403 POST /api/fuentes cliente=12ca17b49a
+17:21:22 [SEGURIDAD] rechazada 401 POST /api/corpus/reindexar cliente=12ca17b49a
+17:21:23 [SEGURIDAD] rechazada 401 POST /api/corpus/documentos cliente=12ca17b49a
+17:21:23 [SEGURIDAD] autorizada POST /api/fuentes cliente=12ca17b49a
+17:21:23 [SEGURIDAD] autorizada DELETE /api/fuentes/8edf0547-f62d-40ab-b8c0-6f698ad97ee1 cliente=12ca17b49a
+17:21:23 [SEGURIDAD] autorizada GET /api/historial cliente=12ca17b49a
+
+$ Consulta pública sin token desde otra IP (CF-Connecting-IP: 10.0.0.2): curl -X POST .../api/consultas -d {"texto":"zorro"}
+abstenida= False | via= similitud | documento= 293274822-diccionario-quechua-Wanka-docx.pdf p. 37 | [HTTP 200]
+

@@ -283,6 +283,9 @@ def main() -> int:
         cabeceras = {"X-Origen-Consultas": origen}
         if token:
             cabeceras["X-Token-Pruebas"] = token
+        # S13 · ADR-035: el CRUD de fuentes exige el token de administracion en la nube.
+        if os.environ.get("ADMIN_TOKEN"):
+            cabeceras["X-Admin-Token"] = os.environ["ADMIN_TOKEN"]
         return httpx.Client(base_url=url, headers=cabeceras, timeout=120.0)
 
     comun = {"url_api": url, "momento_utc": marca, "token_pruebas_usado": bool(token)}

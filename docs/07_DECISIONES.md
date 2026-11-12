@@ -439,6 +439,57 @@ facturan. `/api/estado` sigue siendo la comprobación completa (`healthCheckPath
 frío, y ADR-033 lo explica en la interfaz. Para fusionar el PR #22 con el cambio de ruta y de
 franja hace falta una decisión del equipo (acción para personas).
 
+## ADR-035 · Token de administración para las escrituras en modo nube — Propuesta (S13, fase 2)
+
+**Contexto.** `docs/04_auditoria_owasp.md` (OW-01, OW-02, OW-04, OW-16) demostró en local que cualquier
+visitante podía incorporar un PDF al corpus, que pasaba a ser respaldo citado y rompía RN-06; también
+podía falsificar fuentes y borrar el historial de todos. No existía autenticación para administrar.
+
+**Decisión.** En modo nube (`ENTORNO` ≠ `local`), el middleware `EscrituraProtegida`
+(`infrastructure/seguridad_nube.py`) exige la cabecera `X-Admin-Token`, comparada con
+`hmac.compare_digest` contra `ADMIN_TOKEN`, en toda petición `/api/*` que no sea GET, HEAD u OPTIONS,
+salvo `POST /api/consultas` y `POST /api/predicciones`. La protección es por defecto: una ruta de
+escritura nueva queda protegida sin registrarla. Sin cabecera → 401. Token incorrecto o `ADMIN_TOKEN`
+vacío → 403 (falla de forma segura). El token no se registra en la bitácora. La interfaz pide el token
+en un campo (solo en memoria) o muestra «Modo solo lectura». En local no cambia nada.
+
+**Consecuencias.** Acción para el dueño de Render: definir `ADMIN_TOKEN` (secreto, `sync: false`).
+Mientras no lo haga, nadie puede administrar el corpus en la nube, ni siquiera el equipo.
+`humo_nube.py` envía el token si existe la variable de entorno `ADMIN_TOKEN` del operador.
+
+## ADR-036 · Historial por sesión en la nube; el del servidor, solo para el administrador — Propuesta (S13, fase 2)
+
+**Contexto.** OW-03 y U-03: `GET /api/historial` mostraba a cualquiera las consultas de todos.
+
+**Decisión.** En modo nube, `GET` y `DELETE /api/historial` exigen el token (ADR-035). La interfaz
+pública muestra solo las consultas de la pestaña actual, guardadas en memoria; «Borrar» vacía esa
+lista. El servidor sigue registrando las consultas sin datos personales, de modo que HU-09 no pierde
+datos. En local, RF-11 sigue mostrando el historial de la base.
+
+**Alternativas descartadas.** (a) Un identificador de sesión persistido en la base, que exige migrar
+el esquema de Neon (base de otro integrante) y crea un dato persistente por visitante. (b) Retirar el
+historial de la nube.
+
+**Riesgo residual.** `GET /api/analitica/demanda` sigue siendo público, porque la Predicción ML no puede
+cambiar para el público. Expone términos agregados sin respaldo, no consultas completas.
+
+## ADR-037 · Límite de peticiones por IP sin dependencias — Propuesta (S13, fase 2)
+
+**Contexto.** OW-08 y P-01: 60 consultas seguidas obtuvieron 60 respuestas 200, de modo que la cuota
+compartida de Gemini se podía agotar.
+
+**Decisión.** El middleware `LimitePeticiones` aplica una ventana deslizante de 60 s en memoria (un
+solo proceso uvicorn) por IP y ruta: `POST /api/consultas` 20/min y `POST /api/predicciones` 60/min
+(`LIMITE_CONSULTAS_POR_MINUTO` y `LIMITE_PREDICCIONES_POR_MINUTO`; 0 = desactivado). Solo se aplica en
+modo nube. Al superarlo responde 429 con `Retry-After` y un mensaje en español. La IP se toma de
+`CF-Connecting-IP` (Render sirve detrás de Cloudflare), luego de `X-Forwarded-For` y luego del
+socket. Quedan exentas las corridas con un token de pruebas válido (`humo` y `carga`). Se guardan
+como máximo 10 000 IP.
+
+**Consecuencias.** Al reiniciar el servicio el contador se pierde, lo cual es aceptable. Si alguien
+llegara al origen sin pasar por Cloudflare podría falsificar `CF-Connecting-IP` (riesgo residual
+bajo). Detrás de un NAT, varios usuarios comparten el límite: 20/min sigue siendo holgado.
+
 ---
 
 ## Registro de cambios
@@ -451,3 +502,4 @@ franja hace falta una decisión del equipo (acción para personas).
 | 2026-10-01 | **ADR-021 aceptada** con las cinco condiciones de `13_BRECHAS_RUBRICA.md` §3 (decisión del usuario). ADR-020: nota con la medición sobre `fragmentos_v3` y confirmación de τ 0,48 (no se reescribe el texto aceptado). ADR-013 y ADR-027: nota «sin preferencia del usuario; pendiente de confirmación antes del PR 8»; siguen abiertas y en propuesta |
 | 2026-10-29 | Guía 11 (despliegue en la nube): ADR-030, 031 y 032 propuestas en la rama `feat/despliegue-nube` |
 | 2026-11-12 | S13 fase 1 (FURPS+): ADR-033 (aviso de arranque en frío, REF-02) y ADR-034 (`/api/vivo` y presupuesto de horas del ping, REF-01) propuestas en `s13/furps-owasp` |
+| 2026-11-12 | S13 fase 2 (OWASP): ADR-035 (token de administración), ADR-036 (historial por sesión) y ADR-037 (límite de peticiones) propuestas en `s13/owasp` |

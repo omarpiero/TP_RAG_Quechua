@@ -1,0 +1,13 @@
+# Demostracion LOCAL (127.0.0.1:8120, SQLite temporal, GENERADOR=literal). Auditoria OWASP S13, 2026-11-12T17:04:47-05:00. No toca la nube.
+
+== POST /api/fuentes sin credenciales
+POST /api/fuentes -> HTTP 201
+{"titulo":"FUENTE-AUDITORIA-OWASP","entidad_publicadora":"anonimo","licenciamiento":"ninguna verificada","fecha_extraccion":"2026-11-12","nombre_archivo":"auditoria.pdf","paginas_totales":0,"paginas_con_texto":0,"derivado_ocr":false,"id":"8ffb6a54-d36d-4773-9a7e-9abaeabfc7d6","cobertura_extraccion":0.0}
+
+== PUT /api/fuentes/{id} sin credenciales
+PUT /api/fuentes/8ffb6a54-d36d-4773-9a7e-9abaeabfc7d6 -> HTTP 200
+{"titulo":"FUENTE-ALTERADA","entidad_publicadora":"anonimo","licenciamiento":"x","fecha_extraccion":"2026-11-12","nombre_archivo":"auditoria.pdf","paginas_totales":0,"paginas_con_texto":0,"derivado_ocr":false,"id":"8ffb6a54-d36d-4773-9a7e-9abaeabfc7d6","cobertura_extraccion":0.0}
+
+== DELETE /api/fuentes/{id} sin credenciales
+DELETE /api/fuentes/8ffb6a54-d36d-4773-9a7e-9abaeabfc7d6 -> HTTP 204
+

@@ -1,0 +1,17 @@
+# Demostracion LOCAL (127.0.0.1:8120, SQLite temporal, GENERADOR=literal). Auditoria OWASP S13, 2026-11-12T17:04:49-05:00. No toca la nube.
+
+== Antes: consulta 'auditoriaowasp'
+POST /api/consultas -> HTTP 200
+{"consulta_id":"736675b8-ebb7-4aa5-8ab2-968cde421f90","texto":"No dispongo de respaldo documental para esa consulta en el corpus indexado. No propongo ninguna traducción, para evitar introducir una forma no documentada.","abstenida":true,"idioma":"es","similitud_maxima":0.0609,"aviso":"Esta es una consulta sobre fuentes documentales publicadas; no constituye una validación por hablantes de la comunidad.","respaldo":[],"consulta_traducida":null,"pasajes":[],"via_respaldo":null,"umbral":0.48,"latencia_ms":17.5,"lecturas_traduccion":[],"traduccion_usada":null,"generador_invocado":false,"aviso_gen...
+
+== POST /api/corpus/documentos sin credenciales (PDF arbitrario)
+POST /api/corpus/documentos -> HTTP 200
+{"nombre_archivo":"auditoria_owasp.pdf","titulo":"t","paginas_totales":1,"paginas_con_texto":1,"cobertura_extraccion":1.0,"fragmentos_generados":1,"fragmentos_nuevos":1,"total_indexado":3606,"requiere_ocr":false,"aviso":null}
+
+== Despues: la misma consulta se responde citando el documento subido
+POST /api/consultas -> HTTP 200
+{"consulta_id":"a40eb84b-56ee-4989-afb1-321393a374db","texto":"AUDITORIAOWASP: CONTENIDO ARBITRARIO SUBIDO SIN AUTORIZACION (auditoria_owasp.pdf, p. 1)","abstenida":false,"idioma":"es","similitud_maxima":0.526,"aviso":"Esta es una consulta sobre fuentes documentales publicadas; no constituye una validación por hablantes de la comunidad.","respaldo":[{"fragmento_id":"851e01983c7f","texto":"AUDITORIAOWASP: CONTENIDO ARBITRARIO SUBIDO SIN AUTORIZACION","documento":"auditoria_owasp.pdf","pagina":1,"puntuacion":0.526,"similitud":0.526,"derivado_ocr":false,"coincidencia_lema":true,"rotulo":null}],"c...
+
+== POST /api/corpus/reindexar sin credenciales
+POST /api/corpus/reindexar -> HTTP 200
+{"documentos":["293274822-diccionario-quechua-Wanka-docx.pdf","Diccionario_Huanca_Quechua_Castellano_Ca.pdf","Lamina de alfabeto - quechua wanka.pdf","Saberes_y_Haceres_VII_1_Quechua_Wanka.pdf","Tarjetas con relatos - quechua wanka.pdf","auditoria_owasp.pdf","cancionero-wanka_comprimido.pdf","diccionario-visual-quechua-wanka_comprimido.pdf","vbook.pub_cerron-palomino-rodolfo-gramatica-quechua-junin-huanca-1976-ocrpdf.pdf"],"total_fragmentos":3606}

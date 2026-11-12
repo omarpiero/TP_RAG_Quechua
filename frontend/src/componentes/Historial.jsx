@@ -10,9 +10,13 @@ export default function Historial({
   onBorrar,
   borrando = false,
   enLaNube = false,
+  porSesion = false,
 }) {
   const confirmarBorrado = () => {
-    if (window.confirm("¿Borrar todo el historial de consultas de este equipo?")) onBorrar();
+    const pregunta = porSesion
+      ? "¿Borrar el historial de esta sesión?"
+      : "¿Borrar todo el historial de consultas de este equipo?";
+    if (window.confirm(pregunta)) onBorrar();
   };
 
   return (
@@ -32,7 +36,9 @@ export default function Historial({
       </div>
 
       <p className="historial__privacidad">
-        {enLaNube
+        {porSesion
+          ? "Solo ves las consultas de esta pestaña: no se muestran a otros visitantes y se borran al recargar. El servicio las registra sin datos personales para la analítica de demanda (HU-09)."
+          : enLaNube
           ? "No se guardan datos personales. En la versión en la nube las consultas se guardan en la base de datos del servicio, compartida por todos los visitantes."
           : "No se guardan datos personales; las consultas se almacenan solo en este equipo y puedes borrarlas."}
       </p>

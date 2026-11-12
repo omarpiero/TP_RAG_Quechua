@@ -1,0 +1,22 @@
+$ cat -n backend/src/infrastructure/main.py (rama s13/owasp, antes de la fase 2)
+
+    66	    app.mount(
+    67	        "/assets",
+    68	        StaticFiles(directory=configuracion.ruta_interfaz / "assets"),
+    69	        name="assets",
+    70	    )
+    71	
+    72	    @app.get("/", include_in_schema=False)
+    73	    def interfaz():
+    74	        return FileResponse(configuracion.ruta_interfaz / "index.html")
+    75	
+    76	    @app.get("/{recurso:path}", include_in_schema=False)
+    77	    def interfaz_o_recurso(recurso: str):
+    78	        archivo = configuracion.ruta_interfaz / recurso
+    79	        if archivo.is_file():
+    80	            return FileResponse(archivo)
+    81	        # Cualquier otra ruta devuelve la interfaz: el enrutado es del lado del cliente.
+    82	        return FileResponse(configuracion.ruta_interfaz / "index.html")
+    83	
+    84	else:
+    85	

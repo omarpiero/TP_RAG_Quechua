@@ -1,0 +1,17 @@
+# Demostracion LOCAL (127.0.0.1:8120, SQLite temporal, GENERADOR=literal). Auditoria OWASP S13, 2026-11-12T17:04:45-05:00. No toca la nube.
+
+== Usuario A consulta (texto ficticio)
+POST /api/consultas -> HTTP 200
+{"consulta_id":"10060b16-7b9e-4687-8bbc-706b347f3e46","texto":"No dispongo de respaldo documental para esa consulta en el corpus indexado. No propongo ninguna traducción, para evitar introducir una forma no documentada.","abstenida":true,"idioma":"es","similitud_maxima":0.2115,"aviso":"Esta es una consulta sobre fuentes documentales publicadas; no constituye una validación por hablantes de la comunidad.","respaldo":[],"consulta_traducida":null,"pasajes":[],"via_respaldo":null,"umbral":0.48,"latencia_ms":38.4,"lecturas_traduccion":[],"traduccion_usada":null,"generador_invocado":false,"aviso_gen...
+
+== Usuario B (otro cliente, sin credenciales) lee el historial de todos
+GET /api/historial -> HTTP 200
+[{"consulta":"agua (consulta privada del usuario A, dato ficticio)","respuesta":"No dispongo de respaldo documental para esa consulta en el corpus indexado. No propongo ninguna traducción, para evitar introducir una forma no documentada.","abstenida":true,"similitud_maxima":0.2115,"via_respaldo":null,"momento":"2026-11-12T22:04:47.281389","probabilidad_cobertura":0.027260877133005526}]
+
+== Usuario B borra el historial de todos sin credenciales
+DELETE /api/historial -> HTTP 204
+
+
+== Historial tras el DELETE
+GET /api/historial -> HTTP 200
+[]

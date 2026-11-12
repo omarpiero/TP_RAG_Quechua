@@ -124,3 +124,6 @@ class EstadoSistema(BaseModel):
     generador: str = "ollama"
     modelos_ml: dict[str, bool] = {}
     documentos_corpus: int = 0
+    # S13 · ADR-035: en modo nube las escrituras exigen X-Admin-Token (la interfaz pasa a solo
+    # lectura sin token). Solo el booleano: nunca el token.
+    escritura_protegida: bool = False
