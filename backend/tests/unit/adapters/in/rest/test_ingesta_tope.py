@@ -62,7 +62,7 @@ def test_un_archivo_dentro_del_tope_llega_al_caso_de_uso(monkeypatch):
     puerto = IngestaQueFalla(ValueError("llego"))
     r = _cliente(puerto).post(
         "/api/corpus/documentos",
-        files={"archivo": ("ok.pdf", b"0123456789", "application/pdf")},
+        files={"archivo": ("ok.pdf", b"%PDF-56789", "application/pdf")},
         data=DATOS,
     )
     assert puerto.llamadas == 1
@@ -73,7 +73,7 @@ def test_el_error_del_almacen_sale_como_4xx_no_como_500():
     puerto = IngestaQueFalla(ErrorAlmacenDocumentos("Nombre reservado del sistema operativo"))
     r = _cliente(puerto).post(
         "/api/corpus/documentos",
-        files={"archivo": ("CON.pdf", b"x", "application/pdf")},
+        files={"archivo": ("CON.pdf", b"%PDF-x", "application/pdf")},
         data=DATOS,
     )
     assert r.status_code == 422

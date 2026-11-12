@@ -47,6 +47,9 @@ async def ingestar_documento(
         raise HTTPException(422, "Solo se admiten archivos PDF")
 
     contenido = await _leer_con_tope(archivo)
+    # OW-09 (S13): firma del formato antes de extraer; la extension no basta.
+    if not contenido.lstrip()[:5] == b"%PDF-":
+        raise HTTPException(422, "El archivo no es un PDF valido (falta la firma %PDF-)")
 
     try:
         tipo_fragmento = TipoFragmento(tipo)

@@ -15,6 +15,20 @@ from infrastructure.seguridad import (
     ClaveGeminiDeLaPeticion,
     OrigenDePruebasAutorizado,
 )
+from infrastructure.seguridad_nube import CabeceraHsts, EscrituraProtegida, LimitePeticiones
+
+
+def resolver_recurso_interfaz(raiz, recurso: str):
+    """OW-05: devuelve el archivo pedido solo si esta contenido en `raiz`; si no, index.html."""
+    base = raiz.resolve()
+    try:
+        archivo = (base / recurso).resolve()
+    except (OSError, ValueError):
+        return base / "index.html"
+    if archivo.is_relative_to(base) and archivo.is_file():
+        return archivo
+    return base / "index.html"
+
 
 # `in` es palabra reservada de Python: el paquete adapters/in solo se importa por cadena.
 routers = import_module("adapters.in.rest").routers
@@ -43,15 +57,38 @@ app = FastAPI(
     lifespan=ciclo_vida,
 )
 
+# Orden: el ultimo registrado es el mas externo. OrigenDePruebas va por fuera del limite para que
+# las corridas de humo/carga autorizadas queden exentas (ADR-037); CORS envuelve a todos, de modo
+# que un 401/403/429 tambien lleva las cabeceras CORS y el navegador puede leer el mensaje.
 app.add_middleware(ClaveGeminiDeLaPeticion)
+app.add_middleware(
+    LimitePeticiones,
+    limites={
+        "/api/consultas": configuracion.limite_consultas_por_minuto,
+        "/api/predicciones": configuracion.limite_predicciones_por_minuto,
+    }
+    if configuracion.modo_nube
+    else {},
+)
+app.add_middleware(
+    EscrituraProtegida, activo=configuracion.modo_nube, token=configuracion.admin_token
+)
 app.add_middleware(OrigenDePruebasAutorizado, token=configuracion.token_pruebas)
 app.add_middleware(CabecerasDeSeguridad)
+app.add_middleware(CabeceraHsts, activo=configuracion.modo_nube)
+# S13 (OW-11): metodos y cabeceras explicitos y sin credenciales (la API no usa cookies).
 app.add_middleware(
     CORSMiddleware,
     allow_origins=configuracion.lista_cors,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_credentials=False,
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=[
+        "Content-Type",
+        "X-Gemini-Key",
+        "X-Admin-Token",
+        "X-Token-Pruebas",
+        "X-Origen-Consultas",
+    ],
 )
 
 for router in routers:
@@ -75,9 +112,9 @@ if configuracion.sirve_interfaz:
 
     @app.get("/{recurso:path}", include_in_schema=False)
     def interfaz_o_recurso(recurso: str):
-        archivo = configuracion.ruta_interfaz / recurso
-        if archivo.is_file():
-            return FileResponse(archivo)
+        # OW-05 (S13): solo se sirve lo que queda DENTRO de la carpeta de la interfaz; `..`,
+        # `%2e%2e` o una ruta absoluta (`/C:/...`) caen en index.html, como una ruta del cliente.
+        return FileResponse(resolver_recurso_interfaz(configuracion.ruta_interfaz, recurso))
         # Cualquier otra ruta devuelve la interfaz: el enrutado es del lado del cliente.
         return FileResponse(configuracion.ruta_interfaz / "index.html")
 

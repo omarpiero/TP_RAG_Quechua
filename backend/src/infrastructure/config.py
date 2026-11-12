@@ -85,6 +85,12 @@ class Configuracion(BaseSettings):
     # Secreto que autoriza a las pruebas contra la nube a registrar sus consultas como `carga` o
     # `humo` (cabeceras X-Token-Pruebas y X-Origen-Consultas). Vacio: desactivado.
     token_pruebas: str = ""
+    # S13 · ADR-035: token que autoriza las escrituras en modo nube (cabecera X-Admin-Token).
+    # Secreto del panel de Render. Vacio en modo nube = escrituras denegadas (403).
+    admin_token: str = ""
+    # S13 · ADR-037: limite por IP y minuto en modo nube (0 = sin limite). En local no se aplica.
+    limite_consultas_por_minuto: int = 20
+    limite_predicciones_por_minuto: int = 60
     # Redaccion con modelo: "extractiva" (ADR-028: el modelo extrae {forma, glosa}, se verifica
     # contra el fragmento y se compone en una plantilla) o "libre" (el modelo escribe la frase).
     modo_redaccion: Literal["extractiva", "libre"] = "extractiva"
@@ -133,6 +139,11 @@ class Configuracion(BaseSettings):
             f"postgresql+psycopg://{self.postgres_user}:{self.postgres_password}"
             f"@{self.postgres_host}:{self.postgres_port}/{self.postgres_db}"
         )
+
+    @property
+    def modo_nube(self) -> bool:
+        """S13: los controles de la nube (token, limite, HSTS) solo se activan fuera de local."""
+        return self.entorno.strip().lower() != "local"
 
     @property
     def lista_cors(self) -> list[str]:
